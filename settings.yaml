@@ -1,3 +1,5 @@
+# Source for csv inputs; most files should change infrequently, although
+# the latter two will be updated with every reporting cycle
 inputs:
     AllColleges: inputs/all_colleges.csv
     CollegeListLookup: inputs/college_list_lookup.csv
@@ -8,10 +10,15 @@ inputs:
     current_applications: current_applications.csv
     current_roster: current_students.csv
 
+# The output filename is a combination of these with campus and counselor
+# if chosen via the command line options
 output_file:
     root_name: Weekly Report
     date_format: '%m_%d_%Y' # for strftime function
 
+# An explicit list of all campuses to be included in the default report.
+# Listing explicitly allows for intentional groups specified by alternate yamls
+# these are Noble campuses--to be replaced with generic ones
 all_campuses: # campuses to try if "all" selected
     - Noble
     - Pritzker
@@ -28,12 +35,22 @@ all_campuses: # campuses to try if "all" selected
     - Baker
     - Butler
 
-sort_students: # how to sort the students tab for the single student views
+# -------------
+# Labelling convention:
+# From this point down, this file uses a convention to specify Excel equations
+# that operate within a single row. By specifying the column label with
+# percent signs on either side (e.g. %Last%), it tells the output code
+# to substitute the column letter & current row in the final equation (e.g. B7)
+# -------------
+
+# This allows individual campuses to customize the sorting behavior
+sort_students:
     Standard: '=%Counselor%&%LastFirst%'
     UIC: '=%Counselor%&%Cohort%&%LastFirst%'
     Golder: '=%Cohort%&%Counselor%&%LastFirst%'
 
-category_labels: # this is for customizing certain odds/class language
+# This allows individual schools to customize odds/class language
+category_labels:
     Standard:
         TargetGR: Target
         IdealGR: Ideal
@@ -73,6 +90,22 @@ category_labels: # this is for customizing certain odds/class language
 
 ###################################################
 # Students tab details
+# The below specifies the exact formatting and content for each column in the
+# order presented. Each column is assumed to have a 2 row header. format
+# species the format of data, while head_format and head_text specify value
+# and format of the first header row and label_format specifies the format of
+# the second header row (which has text equal to the column label.)
+#
+# The formula field follows one of four forms:
+# tbl:Label: drops in columns from the roster file (typically from 
+# current_students.csv)
+# =FORMULA: an Excel equation that can reference other columns in the same
+# row using the %Label% convention
+# cfg:Label: refers to a formula defined in the config (settings.yaml) file
+# and might have a provision for campus-specific formulas in addition to a
+# general standard one
+# <id>:Label: for debugging, just copy the label id into data rows
+#
 students_columns:
     - Campus:
         formula: tbl:Campus
@@ -211,7 +244,13 @@ students_columns:
         label_format: bold_blue_wrap
         cond_format: dash_bottom
 
-student_names: #Excel named ranges based on these columns
+# The specifications here cause the output code to create Excel named ranges
+# with the column specified. For example, the first entry will create a named
+# range with name 'LastFirst' that is a single column referenced wherever
+# the 'LastFirst' column ends up. Columns with quotes are the same as the
+# single word columns--quotes are just used to contain the spaces in the name
+#
+student_names:
     LastFirst: LastFirst
     KidIDs: StudentID
     KidGPAs: GPA
@@ -227,6 +266,18 @@ student_names: #Excel named ranges based on these columns
 
 ###################################################
 # Applications tab details
+# This tab is structured with sets of columns:
+#
+# First 'app_fields' specifies columns to pull directly from the Naviance file
+# (normally labeled current_applications.csv) and simply copies them in the
+# following order. 'app_format_catch' applies a format to the headers of
+# some of these columns
+#
+# Second 'applications_calculations' specifies calculated fields in order,
+# allowing for format specifications of the header. This text is mostly in
+# the form of Excel functions, but uses the %Label% convention introduced
+# earlier to allow for reference to other columns within same row
+#
 app_fields: # fields to grab from the Naviance application data in order
     - Campus
     - hs_student_id
@@ -367,7 +418,7 @@ applications_calculations: # definitions for calculated columns in order
     - ILPub:
         formula: =IF(ISNUMBER(%6yr_AA/H%),INDEX(AllCollegeILPub, MATCH(%NCES%,AllCollegeNCES,0)),0)
         format: bold_yellow
-    # These odds fields all need to be consecutive
+    # These odds fields should all be consecutive
     - Reach:
         formula: =IF(%Class%="Reach",%6yrAll/AAH_forSorting%,0)
         format: bold_yellow
@@ -425,7 +476,11 @@ applications_calculations: # definitions for calculated columns in order
       
            
 
-application_names: #Excel named ranges based on these columns
+# The specifications here cause the output code to create Excel named ranges
+# with the column specified. For example, the first entry will create a named
+# range with name 'CollegeNames' that is a single column referenced wherever
+# the 'collegename' column ends up
+application_names:
     CollegeNames: collegename
     Stages: stage
     Students: hs_student_id
@@ -457,6 +512,8 @@ application_names: #Excel named ranges based on these columns
 
 ##################################################3
 ## Excel Formats
+## These formats are used above when specifying the structure of the columns
+## They are structured to match formatting in the xlsxwriter library
 ##################################################3
 excel_formats:
     # non-colored number formats
