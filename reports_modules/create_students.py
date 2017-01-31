@@ -37,7 +37,7 @@ def push_column(columns, letters, label, formula, fmt,
     columns.append(new_col)
     return columns
 
-def make_students_tab(writer, f_db, dfs, cfg, campus, debug):
+def make_students_tab(writer, f_db, dfs, cfg, cfg_stu, campus, debug):
     '''Creates the Excel tab for students using cfg details'''
     if debug:
         print('Writing students tab...',flush=True,end='')
@@ -50,7 +50,7 @@ def make_students_tab(writer, f_db, dfs, cfg, campus, debug):
 
     master_cols = []
     col_letters = make_excel_indices()
-    for stu_column in cfg['students_columns']:
+    for stu_column in cfg_stu['students_columns']:
         for column_name in stu_column: # there's only one, but need to deref
             col = stu_column[column_name]
             if col['formula'].startswith('cfg:'):
@@ -93,7 +93,7 @@ def make_students_tab(writer, f_db, dfs, cfg, campus, debug):
 
     # Add Names
     col_ltr = {x[1]:x[0] for x in master_cols}
-    for name, label in cfg['student_names'].items():
+    for name, label in cfg_stu['student_names'].items():
         col = col_ltr[label]
         wb.define_name(name,'='+sn+'!$'+col+'$'+str(start_row+1)+':$'+
                 col+'$'+str(end_row+1))

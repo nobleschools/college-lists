@@ -1,0 +1,173 @@
+###################################################
+# Students tab details
+# The below specifies the exact formatting and content for each column in the
+# order presented. Each column is assumed to have a 2 row header. format
+# species the format of data, while head_format and head_text specify value
+# and format of the first header row and label_format specifies the format of
+# the second header row (which has text equal to the column label.)
+#
+# The formula field follows one of four forms:
+# tbl:Label: drops in columns from the roster file (typically from 
+# current_students.csv)
+# =FORMULA: an Excel equation that can reference other columns in the same
+# row using the %Label% convention
+# cfg:Label: refers to a formula defined in the config (settings.yaml) file
+# and might have a provision for campus-specific formulas in addition to a
+# general standard one
+# <id>:Label: for debugging, just copy the label id into data rows
+#
+students_columns:
+    - Campus:
+        formula: tbl:Campus
+        format: yellow
+        width: 10h
+        head_text: ''
+        head_format: yellow
+        label_format: bold_yellow_wrap
+        cond_format: dash_bottom
+    - EFC:
+        formula: tbl:EFC
+        format: left_normal_text
+        width: 6
+        head_text: ''
+        head_format: left_normal_text
+        label_format: bold_wrap
+        cond_format: dash_bottom
+    - SpEd:
+        formula: tbl:SpEd
+        format: yellow
+        width: 6h
+        head_text: ''
+        head_format: yellow
+        label_format: bold_yellow_wrap
+        cond_format: dash_bottom
+    - LastFirst:
+        formula: tbl:LastFirst
+        format: yellow
+        width: 16h
+        head_text: ''
+        head_format: yellow
+        label_format: bold_yellow_wrap
+        cond_format: dash_bottom
+    - StudentID:
+        formula: <id>
+        format: left_normal_text
+        width: 12
+        head_text: ''
+        head_format: left_normal_text
+        label_format: bold_wrap
+        cond_format: dash_bottom
+    - Last:
+        formula: tbl:Last
+        format: left_normal_text
+        width: 12
+        head_text: ''
+        head_format: blue
+        label_format: bold_blue_wrap
+        cond_format: dash_bottom
+    - First:
+        formula: tbl:First
+        format: right
+        width: 12
+        head_text: ''
+        head_format: blue_right
+        label_format: bold_blue_wrap_right
+        cond_format: dash_bottom_right
+    - GPA:
+        formula: tbl:GPA
+        format: two_point_centered
+        width: 5.57
+        head_text: 'Student profile'
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - ACT:
+        formula: tbl:ACT
+        format: centered
+        width: 4.43
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'Race / Eth':
+        formula: 'tbl:Race/ Eth'
+        format: centered
+        width: 4.86
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - Stra-tegy:
+        formula: '=IF(AND(%GPA%<>0,%ACT%<>0),IF(ISNUMBER(VLOOKUP(TEXT(MAX(FLOOR(%GPA%*10,1)/10,1.5),"0.0")&":"&MAX(%ACT%,12),StrategyLookup,4,FALSE)),VLOOKUP(TEXT(MAX(FLOOR(%GPA%*10,1)/10,1.5),"0.0")&":"&MAX(%ACT%,12),StrategyLookup,4,FALSE),"TBD"),"TBD")'
+        format: centered
+        width: 4.29
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - '=TargetGRLabel&" Grad Rate"':
+        formula: '=IF(ISNUMBER(%Stra-tegy%),VLOOKUP(IF(OR(%Stra-tegy%=4,%Stra-tegy%=5),%Stra-tegy%&IF(%GPA%>=3,"+","<"),%Stra-tegy%&""),TargetLookup,IF(%EFC%=-1,6,IF(OR(%Race / Eth%="W",%Race / Eth%="A"),4,2)),FALSE),"TBD")'
+        format: percent_centered
+        width: 7.57
+        head_text: ''
+        head_format: yellow
+        label_format: bold_yellow_center_wrap
+        cond_format: dash_bottom
+    - '=IdealGRLabel&" Grad Rate"':
+        formula: '=IF(ISNUMBER(%Stra-tegy%),VLOOKUP(IF(OR(%Stra-tegy%=4,%Stra-tegy%=5),%Stra-tegy%&IF(%GPA%>=3,"+","<"),%Stra-tegy%&""),TargetLookup,IF(%EFC%=-1,7,IF(OR(%Race / Eth%="W",%Race / Eth%="A"),5,3)),FALSE),"TBD")'
+        format: percent_centered
+        width: 7.57
+        head_text: ''
+        head_format: yellow
+        label_format: bold_yellow_center_wrap
+        cond_format: dash_bottom
+    - Cohort:
+        formula: tbl:Cohort
+        format: yellow
+        width: 7.57h
+        head_text: ''
+        head_format: yellow
+        label_format: bold_yellow_center_wrap
+        cond_format: dash_bottom
+    - Advisor:
+        formula: tbl:Advisor
+        format: left_normal_text
+        width: 7.57
+        head_text: ''
+        head_format: yellow
+        label_format: bold_yellow_center_wrap
+        cond_format: dash_bottom
+    - Counselor:
+        formula: tbl:Counselor
+        format: left_normal_text
+        width: 16.29
+        head_text: ''
+        head_format: blue
+        label_format: bold_blue_wrap
+        cond_format: dash_bottom
+    - SortCode:
+        formula: cfg:sort_students
+        format: left_normal_text
+        width: 16.29h
+        head_text: ''
+        head_format: blue
+        label_format: bold_blue_wrap
+        cond_format: dash_bottom
+
+# The specifications here cause the output code to create Excel named ranges
+# with the column specified. For example, the first entry will create a named
+# range with name 'LastFirst' that is a single column referenced wherever
+# the 'LastFirst' column ends up. Columns with quotes are the same as the
+# single word columns--quotes are just used to contain the spaces in the name
+#
+student_names:
+    LastFirst: LastFirst
+    KidIDs: StudentID
+    KidGPAs: GPA
+    KidACTs: ACT
+    KidRace: 'Race / Eth'
+    Strats: Stra-tegy
+    StudentTargets: '=TargetGRLabel&" Grad Rate"'
+    ReachStudentTargets: '=IdealGRLabel&" Grad Rate"'
+    Advisors: Advisor
+    Counselor: Counselor

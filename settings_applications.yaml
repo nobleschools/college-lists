@@ -1,0 +1,242 @@
+###################################################
+# Applications tab details
+# This tab is structured with sets of columns:
+#
+# First 'app_fields' specifies columns to pull directly from the Naviance file
+# (normally labeled current_applications.csv) and simply copies them in the
+# following order. 'app_format_catch' applies a format to the headers of
+# some of these columns
+#
+# Second 'applications_calculations' specifies calculated fields in order,
+# allowing for format specifications of the header. This text is mostly in
+# the form of Excel functions, but uses the %Label% convention introduced
+# earlier to allow for reference to other columns within same row
+#
+app_fields: # fields to grab from the Naviance application data in order
+    - Campus
+    - hs_student_id
+    - last_name
+    - first_name
+    - middle_name
+    - collegename
+    - stage
+    - type
+    - result_code
+    - attending
+    - waitlisted
+    - deferred
+    - comments
+    - NCES
+
+app_format_catch: # formats to add back to the Naviance application data
+    collegename: bold_orange
+    Campus: bold_blue
+    hs_student_id: bold_blue
+    last_name: bold_blue
+    first_name: bold_blue
+    NCES: bold_orange
+
+applications_calculations: # definitions for calculated columns in order
+    - Barron's:
+        formula: =INDEX(AllCollegeBarrons,MATCH(%NCES%,AllCollegeNCES,0))
+        format: bold_orange
+    - GPA:
+        formula: =INDEX(KidGPAs,MATCH(%hs_student_id%,KidIDs,0))
+        format: bold_blue
+    - ACT:
+        formula: =INDEX(KidACTs,MATCH(%hs_student_id%,KidIDs,0))
+        format: bold_blue
+    - Strategy:
+        formula: =INDEX(Strats,MATCH(%hs_student_id%,KidIDs,0))
+        format: bold_blue
+    - Race:
+        formula: =INDEX(KidRace,MATCH(%hs_student_id%,KidIDs,0))
+        format: bold_blue
+    - TargetGR:
+        formula: =INDEX(StudentTargets,MATCH(%hs_student_id%,KidIDs,0))
+        format: bold_blue
+    - IdealGR:
+        formula: =INDEX(ReachStudentTargets,MATCH(%hs_student_id%,KidIDs,0))
+        format: bold_blue
+    - PartnerBump:
+        formula: =IF(OR(%comments%="Posse"),1,0)
+        format: bold_orange
+    - 6yr_all:
+        formula: =IF(ISNUMBER(INDEX(AllCollegeGR, MATCH(%NCES%,AllCollegeNCES,0))),ROUND(INDEX(AllCollegeGR, MATCH(%NCES%,AllCollegeNCES,0))+%PartnerBump%*IF(INDEX(AllCollegeGR, MATCH(%NCES%,AllCollegeNCES,0))>0.7,(1-INDEX(AllCollegeGR, MATCH(%NCES%,AllCollegeNCES,0)))/2,0.15),2),INDEX(AllCollegeGR, MATCH(%NCES%,AllCollegeNCES,0)))
+        format: bold_orange
+    - 6yr_AA/H:
+        formula: =IF(ISNUMBER(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))),ROUND(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))+%PartnerBump%*IF(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))>0.7,(1-INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0)))/2,0.15),2),INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0)))
+        format: bold_orange
+    - ACT25/50:
+        formula: =IF(OR(%Race%="H",%Race%="B"),INDEX(AllCollegeACT25, MATCH(%NCES%,AllCollegeNCES,0)),INDEX(AllCollegeACT50, MATCH(%NCES%,AllCollegeNCES,0)))
+        format: bold_orange
+    - GPAcoefB:
+        formula: =INDEX(CustomWeightsGPA,MATCH(%Race%&":"&%NCES%,CustomWeightsIndex,0))
+        format: bold_yellow
+    - ACTcoefB:
+        formula: =INDEX(CustomWeightsACT,MATCH(%Race%&":"&%NCES%,CustomWeightsIndex,0))
+        format: bold_yellow
+    - InterceptB:
+        formula: =INDEX(CustomWeightsIntercept,MATCH(%Race%&":"&%NCES%,CustomWeightsIndex,0))
+        format: bold_yellow
+    - LogitB:
+        formula: =%GPAcoefB%*%GPA%+%ACTcoefB%*%ACT%+%InterceptB%
+        format: bold_yellow
+    - GPAcoefA:
+        formula: =INDEX(CoefficientsGPA,MATCH(%Race%&":"&%Barron's%,CoefficientsIndex,0))
+        format: bold_olive
+    - ACTcoefA:
+        formula: =INDEX(CoefficientsACT,MATCH(%Race%&":"&%Barron's%,CoefficientsIndex,0))
+        format: bold_olive
+    - InterceptA:
+        formula: =INDEX(CoefficientsIntercept,MATCH(%Race%&":"&%Barron's%,CoefficientsIndex,0))
+        format: bold_olive
+    - LogitA:
+        formula: =%GPAcoefA%*%GPA%+(%ACT%-%ACT25/50%)*%ACTcoefA%+%InterceptA%
+        format: bold_olive
+    - FinalLogit:
+        formula: =IF(ISNUMBER(%LogitB%),%LogitB%,%LogitA%)
+        format: bold_olive
+    - Odds:
+        formula: =IF(ISNUMBER(%FinalLogit%),IF(ISNUMBER(%GPAcoefA%),IF(AND(%GPAcoefA%=1,%ACTcoefA%=1,%InterceptA%=1),100,ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2)),ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2)),IF(ISTEXT(%Barron's%),IF(LEFT(%Barron's%,1)="2",100,"N/A"),"N/A"))
+        format: bold_olive
+    - Class:
+        formula: =IF(ISNUMBER(%Odds%),IF(%Odds%>=99,IF(OR(%Strategy%=10,%Strategy%=11),"Match","Sure Thing"),IF(%Odds%>=95,"Secure",IF(%Odds%>=80,"Safety",IF(%Odds%>=50,"Match",IF(%Odds%>=20,"Reach",IF(%Odds%>=10,"Longshot","Hail Mary")))))),"Other")
+        format: bold_olive
+    - Result:
+        formula: =IF(OR(%result_code%="accepted",%result_code%="cond. accept",%result_code%="summer admit"),IF(%attending%="yes","CHOICE!","Accepted!"),IF(%result_code%="denied","Denied",IF(%waitlisted%=1,"Waitlist",IF(%deferred%=1,"Deferred",IF(%stage%="pending","Pending",IF(OR(%stage%="initial materials submitted",%stage%="mid-year submitted",%stage%="final submitted"),"Submitted",IF(%type%="interest","Interest","?")))))))
+        format: bold_olive
+
+    - ReachOrBetter:
+        formula: =IF(OR(%Class%="Reach",%Class%="Longshot",%Class%="Hail Mary"),1,0)
+        format: bold_yellow
+    - MatchOrBetter:
+        formula: =IF(OR(%ReachOrBetter%=1,%Class%="Match"),1,0)
+        format: bold_yellow
+    - 6yrAll/AAH_forSorting:
+        formula: =IF(OR(%Race%="H",%Race%="B"),IF(ISNUMBER(%6yr_AA/H%),ROUND(%6yr_AA/H%,2),0),IF(ISNUMBER(%6yr_all%),ROUND(%6yr_all%,2),0))
+        format: bold_yellow
+    - TGROrBetter:
+        formula: =IF(%6yrAll/AAH_forSorting%>=%TargetGR%,1,0)
+        format: bold_yellow
+    - IGROrBetter:
+        formula: =IF(%6yrAll/AAH_forSorting%>=%IdealGR%,1,0)
+        format: bold_yellow
+    - InverseOdds:
+        formula: =1-%Odds%/100
+        format: bold_yellow
+    - MatchOrBetterMult:
+        formula: =IF(%MatchOrBetter%=1,%InverseOdds%,1)
+        format: bold_yellow
+    - ReachOrBetterMult:
+        formula: =IF(%ReachOrBetter%=1,%InverseOdds%,1)
+        format: bold_yellow
+    - TGRorBetterMult:
+        formula: =IF(AND(%TGROrBetter%=1,ISNUMBER(%InverseOdds%)),$%InverseOdds%,1)
+        format: bold_yellow
+    - IGRorBetterMult:
+        formula: =IF(AND(%IGROrBetter%=1,ISNUMBER(%InverseOdds%)),$%InverseOdds%,1)
+        format: bold_yellow
+    - MoneyYesNo:
+        formula: =IF(ISNUMBER(%6yr_AA/H%),INDEX(AllCollegeMoney, MATCH(%NCES%,AllCollegeNCES,0)),0)
+        format: bold_orange
+    - TGRorBetterMoneyMult:
+        formula: =IF(AND(%TGROrBetter%=1,ISNUMBER(%InverseOdds%),%MoneyYesNo%=1),$%InverseOdds%,1)
+        format: bold_yellow
+    - IGRorBetterMoneyMult:
+        formula: =IF(AND(%IGROrBetter%=1,ISNUMBER(%InverseOdds%),%MoneyYesNo%=1),$%InverseOdds%,1)
+        format: bold_yellow
+    - SGRMult:
+        formula: =IF(ISNUMBER(%TargetGR%),IF(AND(%6yrAll/AAH_forSorting%<%TargetGR%,%6yrAll/AAH_forSorting%>(%TargetGR%-0.08),ISNUMBER(%InverseOdds%)),%InverseOdds%,1),1)
+        format: bold_yellow
+    - ILPub:
+        formula: =IF(ISNUMBER(%6yr_AA/H%),INDEX(AllCollegeILPub, MATCH(%NCES%,AllCollegeNCES,0)),0)
+        format: bold_yellow
+    # These odds fields should all be consecutive
+    - Reach:
+        formula: =IF(%Class%="Reach",%6yrAll/AAH_forSorting%,0)
+        format: bold_yellow
+    - Match:
+        formula: =IF(%Class%="Match",%6yrAll/AAH_forSorting%,0)
+        format: bold_yellow
+    - Safety:
+        formula: =IF(%Class%="Safety",%6yrAll/AAH_forSorting%,0)
+        format: bold_yellow
+    - Secure:
+        formula: =IF(%Class%="Secure",%6yrAll/AAH_forSorting%,0)
+        format: bold_yellow
+    - Sure_Thing:
+        formula: =IF(%Class%="Sure Thing",%6yrAll/AAH_forSorting%,0)
+        format: bold_yellow
+    - Reach-:
+        formula: =MAX(%Reach%:%Sure_Thing%)
+        format: bold_yellow
+    - Match-:
+        formula: =MAX(%Match%:%Sure_Thing%)
+        format: bold_yellow
+    - Safety-:
+        formula: =MAX(%Safety%:%Sure_Thing%)
+        format: bold_yellow
+    - ReachMoney:
+        formula: =IF(AND(%Class%="Reach",%MoneyYesNo%=1),%6yrAll/AAH_forSorting%,0)
+        format: bold_yellow
+    # These Odds Money fields all need to be consecutive
+    - MatchMoney:
+        formula: =IF(AND(%Class%="Match",%MoneyYesNo%=1),%6yrAll/AAH_forSorting%,0)
+        format: bold_yellow
+    - SafetyMoney:
+        formula: =IF(AND(%Class%="Safety",%MoneyYesNo%=1),%6yrAll/AAH_forSorting%,0)
+        format: bold_yellow
+    - SecureMoney:
+        formula: =IF(AND(%Class%="Secure",%MoneyYesNo%=1),%6yrAll/AAH_forSorting%,0)
+        format: bold_yellow
+    - Sure_ThingMoney:
+        formula: =IF(AND(%Class%="Sure Thing",%MoneyYesNo%=1),%6yrAll/AAH_forSorting%,0)
+        format: bold_yellow
+    - Reach-Money:
+        formula: =MAX(%ReachMoney%:%Sure_ThingMoney%)
+        format: bold_yellow
+    - Match-Money:
+        formula: =MAX(%MatchMoney%:%Sure_ThingMoney%)
+        format: bold_yellow
+    - Safety-Money:
+        formula: =MAX(%SafetyMoney%:%Sure_ThingMoney%)
+        format: bold_yellow
+    - MoneyChicago:
+        formula: =IF(ISNUMBER(%6yr_AA/H%),INDEX(AllCollegeChicago, MATCH(%NCES%,AllCollegeNCES,0))*%MoneyYesNo%,0)
+        format: bold_yellow
+
+
+# The specifications here cause the output code to create Excel named ranges
+# with the column specified. For example, the first entry will create a named
+# range with name 'CollegeNames' that is a single column referenced wherever
+# the 'collegename' column ends up
+application_names:
+    CollegeNames: collegename
+    Stages: stage
+    Students: hs_student_id
+    NCESids: NCES
+    Barrons: Barron's
+    AllGradRates: 6yr_all
+    GradRates: 6yr_AA/H
+    Odds: Odds
+    Classes: Class
+    Results: Result
+    MGRcount: TGROrBetter
+    RGRcount: IGROrBetter
+    MatchMult: MatchOrBetterMult
+    ReachMult: ReachOrBetterMult
+    MGRMult: TGRorBetterMult
+    RGRMult: IGRorBetterMult
+    MoneyYesNo: MoneyYesNo
+    MGRMoneyMult: TGRorBetterMoneyMult
+    RGRMoneyMult: IGRorBetterMoneyMult
+    SGRMult: SGRMult
+    ILPublic: ILPub
+    ReachUnder: Reach-
+    MatchUnder: Match-
+    SafetyUnder: Safety-
+    ReachUnderMoney: Reach-Money
+    MatchUnderMoney: Match-Money
+    SafetyUnderMoney: Safety-Money
+    MoneyChicago: MoneyChicago

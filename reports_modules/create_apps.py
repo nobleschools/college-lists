@@ -40,7 +40,7 @@ def push_column(columns, letters, label, formula, fmt=None):
     columns.append(new_col)
     return columns
 
-def make_apps_tab(writer, f_db, dfs, cfg, debug):
+def make_apps_tab(writer, f_db, dfs, cfg, cfg_app, debug):
     '''Creates the Excel tab for applications only for students in roster'''
     if debug:
         print('Writing applications tab...',flush=True,end='')
@@ -53,19 +53,19 @@ def make_apps_tab(writer, f_db, dfs, cfg, debug):
     # Now define a list of columns and how they are constructed
 
     # First the columns that are direct from the df
-    cols = cfg['app_fields']
+    cols = cfg_app['app_fields']
     col_letters = make_excel_indices() # column headers used in Excel
     current_use = ['use_df']*len(cols)
     fmts = [None]*len(cols)
     master_cols = [list(a) for a in zip(col_letters,cols,current_use,fmts)]
 
-    format_catch = cfg['app_format_catch'] # for coloring df fields
+    format_catch = cfg_app['app_format_catch'] # for coloring df fields
     for x in master_cols:
         if x[1] in format_catch:
             x[3] = format_catch[x[1]]
 
     # Second define the calculated columns
-    for app_column in cfg['applications_calculations']:
+    for app_column in cfg_app['applications_calculations']:
         for column_name in app_column: # there's only one, but need to deref
             formula = app_column[column_name]['formula']
             fmt = app_column[column_name]['format']
@@ -95,7 +95,7 @@ def make_apps_tab(writer, f_db, dfs, cfg, debug):
 
     # Do names
     col_ltr = {x[1]:x[0] for x in master_cols}
-    for name, label in cfg['application_names'].items():
+    for name, label in cfg_app['application_names'].items():
     #for [name,label] in name_list:
         col = col_ltr[label]
         wb.define_name(name,'='+sn+'!$'+col+'$'+str(start_row+1)+':$'+
