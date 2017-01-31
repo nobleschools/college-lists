@@ -71,7 +71,8 @@ class Output():
                         flush=True)
         elif key == 'current_applications':
             self.dfs['applications'] = pd.read_csv(filename,na_values=[''],
-                    encoding='cp1252',usecols=self.cfg['app_fields'],
+                    encoding='cp1252',
+                    usecols=self.cfg_tabs['applications']['app_fields'],
                     converters={'NCES':safe2int})
             if self.debug:
                 print('(size {}).'.format(len(self.dfs['applications'])),
@@ -81,10 +82,11 @@ class Output():
             if self.debug:
                 print(' (not actually read)',flush=True)
 
-    def __init__(self, campus, counselor, cfg, debug=False):
+    def __init__(self, campus, counselor, cfg, cfg_tabs, debug=False):
         '''Instantiates object based on an expected yaml file'''
         self.debug=debug
         self.cfg = cfg
+        self.cfg_tabs = cfg_tabs
         self.fn = self._get_filename(campus, counselor,
                 cfg['output_file']['root_name'],
                 cfg['output_file']['date_format'])

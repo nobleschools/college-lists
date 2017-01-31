@@ -28,14 +28,14 @@ were originally developed in Excel, but that can be customized to a certain
 degree by changes to the yaml file.
 -----
 ##Examples of command line execution with various options:
-> **Standard report with all students:**
-> python create_reports.py
-> **Standard report with all students, quieting output**
-> python create_reports.py -q
-> python create_reports.py --quiet
-> **Standard report with for a single campus**
-> python create_reports.py -ca Bulls
-> python create_reports.py --campus Bulls
-> **Standard report with for a single campus and single counselor**
-> python create_reports.py -ca Bulls -co "Mary Counselor"
-> python create_reports.py --campus Bulls --counselor "Mary Counselor"
+- **Standard report with all students:**
+    - python create_reports.py
+- **Standard report with all students, quieting output**
+    - python create_reports.py -q
+    - python create_reports.py --quiet
+- **Standard report with for a single campus**
+    - python create_reports.py -ca Bulls
+    - python create_reports.py --campus Bulls
+- **Standard report with for a single campus and single counselor**
+    - python create_reports.py -ca Bulls -co "Mary Counselor"
+    - python create_reports.py --campus Bulls --counselor "Mary Counselor"

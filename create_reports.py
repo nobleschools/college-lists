@@ -25,7 +25,7 @@ def main(settings_file, settings_tabs, campus, counselor, debug=True):
             cfg_tabs[tab] = yaml.load(ymlfile)
 
     # Create the base output file
-    out = Output(campus, counselor, cfg, debug)
+    out = Output(campus, counselor, cfg, cfg_tabs, debug)
     reduce_roster(campus, cfg, out.dfs, counselor,debug)
     reduce_and_augment_apps(cfg, out.dfs, debug)
 
