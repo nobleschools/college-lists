@@ -106,6 +106,22 @@ excel_formats:
     two_point_centered:
         num_format: '0.00'
         align: center
+    centered_integer:
+        num_format: 0
+        align: center
+    centered_integer_dash_bottom:
+        num_format: 0
+        align: center
+        bottom: 3
+    centered_integer_right:
+        num_format: 0
+        align: center
+        right: 1
+    centered_integer_right_dash_bottom:
+        num_format: 0
+        align: center
+        right: 1
+        bottom: 3
 
     # non-colored non-number formats
     centered:
@@ -153,6 +169,9 @@ excel_formats:
     # yellow
     yellow:
         bg_color: "#FFFF00"
+    yellow_right:
+        bg_color: "#FFFF00"
+        right: 1
     bold_yellow:
         bg_color: "#FFFF00"
         bold: True
@@ -172,6 +191,14 @@ excel_formats:
         text_wrap: True
         bottom: 1
         valign: top
+    bold_yellow_center_wrap_right:
+        bold: True
+        align: center
+        bg_color: "#FFFF00"
+        text_wrap: True
+        bottom: 1
+        valign: top
+        right: 1
 
     # blue
     blue:
@@ -188,6 +215,14 @@ excel_formats:
         align: left
         text_wrap: True
         bottom: 1
+    bold_blue_center_wrap_right:
+        bg_color: "#92CDDC"
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
+        right: 1
     bold_blue_wrap_right:
         bg_color: "#92CDDC"
         bold: True

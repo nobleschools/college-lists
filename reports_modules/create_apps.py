@@ -19,9 +19,9 @@ def reduce_and_augment_apps(cfg, dfs, debug):
         df[field] = df['hs_student_id'].apply(lookup_roster_field,
             args=(dfs['roster'],field))
 
-
     # then add calculated columns (for use internally, not publishing)
-    print(df.columns)
+    if debug:
+        print(df.columns)
 
     # finally sort
     dfs['apps'] = df

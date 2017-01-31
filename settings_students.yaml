@@ -153,6 +153,38 @@ students_columns:
         head_format: blue
         label_format: bold_blue_wrap
         cond_format: dash_bottom
+    - '# of acceptances':
+        formula: '=COUNTIFS(Students,%StudentID%,Results,"Accepted!")+COUNTIFS(Students,%StudentID%,Results,"CHOICE!")'
+        format: centered_integer_right
+        width: 10.86
+        head_text: ''
+        head_format: yellow_right
+        label_format: bold_yellow_center_wrap_right
+        cond_format: centered_integer_right_dash_bottom
+    - 'Waitlist/ Deferred':
+        formula: '=COUNTIFS(Students,%StudentID%,Results,"Deferred")+COUNTIFS(Students,%StudentID%,Results,"Waitlist")'
+        format: centered_integer
+        width: 10.86
+        head_text: ''
+        head_format: yellow
+        label_format: bold_yellow_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - Denied:
+        formula: '=COUNTIFS(Students,%StudentID%,Results,"Denied")'
+        format: centered_integer_right
+        width: 10.86
+        head_text: ''
+        head_format: yellow_right
+        label_format: bold_yellow_center_wrap_right
+        cond_format: centered_integer_right_dash_bottom
+    - '# of apps submitted':
+        formula: '=%# of acceptances%+%Waitlist/ Deferred%+%Denied%+COUNTIFS(Students,%StudentID%,Results,"Submitted")'
+        format: centered_integer_right
+        width: 10.86
+        head_text: ''
+        head_format: blue_right
+        label_format: bold_blue_center_wrap_right
+        cond_format: centered_integer_right_dash_bottom
 
 # The specifications here cause the output code to create Excel named ranges
 # with the column specified. For example, the first entry will create a named
@@ -171,3 +203,7 @@ student_names:
     ReachStudentTargets: '=IdealGRLabel&" Grad Rate"'
     Advisors: Advisor
     Counselor: Counselor
+    AppsSubmitted: '# of apps submitted'
+    AcceptTotal: '# of acceptances'
+    WL_Defer: 'Waitlist/ Deferred'
+    Denied: Denied
