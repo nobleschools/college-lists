@@ -1,3 +1,11 @@
+# Local files to ignore
+current_applications.csv
+current_students.csv
+*.xlsx
+
+# Editing files
+*.swp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
