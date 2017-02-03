@@ -100,6 +100,18 @@ excel_formats:
     percent_centered:
         num_format: 0.0%
         align: center
+    single_percent_centered:
+        num_format: 0%
+        align: center
+    single_percent_centered_right:
+        num_format: 0%
+        align: center
+        right: 1
+    single_percent_centered_right_dash_bottom:
+        num_format: 0%
+        align: center
+        right: 1
+        bottom: 3
     percent_bold_fmt:
         num_format: 0.0%
         bold: True
@@ -235,3 +247,18 @@ excel_formats:
     bold_orange:
         bg_color: "#FFC000"
         bold: True
+
+    # red
+    bold_red_underline:
+        bold: True
+        bg_color: "#FF0000"
+        align: left
+        underline: True
+    bold_red_center_wrap_right:
+        bg_color: "#FF0000"
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
+        right: 1

@@ -107,7 +107,7 @@ students_columns:
         cond_format: dash_bottom
     - '=TargetGRLabel&" Grad Rate"':
         formula: '=IF(ISNUMBER(%Stra-tegy%),VLOOKUP(IF(OR(%Stra-tegy%=4,%Stra-tegy%=5),%Stra-tegy%&IF(%GPA%>=3,"+","<"),%Stra-tegy%&""),TargetLookup,IF(%EFC%=-1,6,IF(OR(%Race / Eth%="W",%Race / Eth%="A"),4,2)),FALSE),"TBD")'
-        format: percent_centered
+        format: single_percent_centered
         width: 7.57
         head_text: ''
         head_format: yellow
@@ -115,7 +115,7 @@ students_columns:
         cond_format: dash_bottom
     - '=IdealGRLabel&" Grad Rate"':
         formula: '=IF(ISNUMBER(%Stra-tegy%),VLOOKUP(IF(OR(%Stra-tegy%=4,%Stra-tegy%=5),%Stra-tegy%&IF(%GPA%>=3,"+","<"),%Stra-tegy%&""),TargetLookup,IF(%EFC%=-1,7,IF(OR(%Race / Eth%="W",%Race / Eth%="A"),5,3)),FALSE),"TBD")'
-        format: percent_centered
+        format: single_percent_centered
         width: 7.57
         head_text: ''
         head_format: yellow
@@ -185,6 +185,38 @@ students_columns:
         head_format: blue_right
         label_format: bold_blue_center_wrap_right
         cond_format: centered_integer_right_dash_bottom
+    - Perfect:
+        formula: '=0.3'
+        format: single_percent_centered_right
+        width: 8.43
+        head_text: Predictions
+        head_format: bold_red_underline
+        label_format: bold_red_center_wrap_right
+        cond_format: single_percent_centered_right_dash_bottom
+    - "Minus 1":
+        formula: '=0.2'
+        format: single_percent_centered_right
+        width: 8.43
+        head_text: ''
+        head_format: bold_red_underline
+        label_format: bold_red_center_wrap_right
+        cond_format: single_percent_centered_right_dash_bottom
+    - "Some prefer-ence":
+        formula: '=0.1'
+        format: single_percent_centered_right
+        width: 8.43
+        head_text: ''
+        head_format: bold_red_underline
+        label_format: bold_red_center_wrap_right
+        cond_format: single_percent_centered_right_dash_bottom
+    - "All equal":
+        formula: '=0'
+        format: single_percent_centered_right
+        width: 8.43
+        head_text: ''
+        head_format: bold_red_underline
+        label_format: bold_red_center_wrap_right
+        cond_format: single_percent_centered_right_dash_bottom
 
 # The specifications here cause the output code to create Excel named ranges
 # with the column specified. For example, the first entry will create a named
