@@ -1,6 +1,7 @@
 #!python3
 '''Module for working with student records and making Students tab'''
-from reports_modules.excel_base import safe_write, make_excel_indices
+from reports_modules.excel_base import safe_write, write_array
+from reports_modules.excel_base import make_excel_indices
 
 def reduce_roster(campus, cfg, dfs, counselor,debug):
     '''Uses campus info and config file to reduce the active student list'''
@@ -86,9 +87,11 @@ def make_students_tab(writer, f_db, dfs, cfg, cfg_stu, campus, debug):
                 data_name = formula[4:]
                 safe_write(ws, row, c, stu_data[data_name],f_db[fmt])
             elif formula.startswith('<id>'):
-                safe_write(ws, row, c, i,f_db[fmt])
+                safe_write(ws, row, c, i, f_db[fmt])
+            elif formula.startswith('{'):
+                write_array(ws, row, c, formula.replace('_r_', sr), f_db[fmt])
             else:
-                safe_write(ws, row, c, formula.replace('_r_',sr),f_db[fmt])
+                safe_write(ws, row, c, formula.replace('_r_', sr), f_db[fmt])
         row += 1
 
     # Add Names

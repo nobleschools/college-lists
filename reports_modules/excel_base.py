@@ -16,6 +16,14 @@ def safe_write(ws, r, c, val, f=None, n_a=''):
         else:
             ws.write(r, c, n_a)
 
+def write_array(ws, r, c, val, f=None):
+    """speciality function to write an array. Assumed non-null"""
+    if f:
+        ws.write_formula(r, c, val, f)
+    else:
+        ws.write_formula(r, c, val)
+
+
 def create_formats(wb, cfg_fmt, f_db={}):
     '''Takes a workbook and (likely empty) database to fill with formats'''
     for name, db in cfg_fmt.items():

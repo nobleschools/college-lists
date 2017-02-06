@@ -257,6 +257,86 @@ students_columns:
         head_format: bold_yellow_under_right
         label_format: bold_yellow_center_wrap_right
         cond_format: centered_integer_right_dash_bottom
+    - 'Money Ideal GR+ apps':
+        formula: '=SUMIFS(RGRcount,Students,%StudentID%,MoneyYesNo,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: 'Money apps of each type'
+        head_format: bold_green_underline
+        label_format: bold_green_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Money Target GR apps':
+        formula: '=SUMIFS(MGRcount,Students,%StudentID%,MoneyYesNo,1)-%Money Ideal GR+ apps%'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_green
+        label_format: bold_green_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Money Below Target GR apps':
+        formula: '=SUMIF(Students,%StudentID%,MoneyYesNo)-%Money Ideal GR+ apps%-%Money Target GR apps%'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_green
+        label_format: bold_green_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Total Money apps':
+        formula: '=SUM(%Money Ideal GR+ apps%,%Money Target GR apps%,%Money Below Target GR apps%)'
+        format: centered_integer_right
+        width: 8.43
+        head_text: ''
+        head_format: bold_green_right
+        label_format: bold_green_center_wrap_right
+        cond_format: centered_integer_right_dash_bottom
+    - 'Money Target GR or better':
+        formula: '{=1-PRODUCT(IF(Students=%StudentID%,MGRMoneyMult,1))}'
+        format: single_percent_centered
+        width: 10.14 
+        head_text: 'Odds of at least one'
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: single_percent_centered_dash_bottom
+    - 'Money Ideal GR or better':
+        formula: '{=1-PRODUCT(IF(Students=%StudentID%,RGRMoneyMult,1))}'
+        format: single_percent_centered_right
+        width: 10.14 
+        head_text: ''
+        head_format: bold_olive_right
+        label_format: bold_olive_center_wrap_right
+        cond_format: single_percent_centered_right_dash_bottom
+    - 'Ideal GR+ apps':
+        formula: '=SUMIF(Students,%StudentID%,RGRcount)'
+        format: centered_integer
+        width: 8.43
+        head_text: 'Apps of each type'
+        head_format: bold_underline
+        label_format: bold_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Target GR apps':
+        formula: '=SUMIF(Students,%StudentID%,MGRcount)-%Ideal GR+ apps%'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_underline
+        label_format: bold_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Below Target GR apps':
+        formula: '=COUNTIF(Students,%StudentID%)-%Ideal GR+ apps%-%Target GR apps%'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_underline
+        label_format: bold_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Total apps':
+        formula: '=COUNTIF(Students,%StudentID%)'
+        format: bold_centered_integer_right
+        width: 8.43
+        head_text: ''
+        head_format: right
+        label_format: bold_center_wrap_right
+        cond_format: bold_centered_integer_right_dash_bottom
 
 # The specifications here cause the output code to create Excel named ranges
 # with the column specified. For example, the first entry will create a named
@@ -279,3 +359,15 @@ student_names:
     AcceptTotal: '# of acceptances'
     WL_Defer: 'Waitlist/ Deferred'
     Denied: Denied
+    PredP: Perfect
+    PredM1: 'Minus 1'
+    PredPref: 'Some prefer-ence'
+    PredEqual: 'All equal'
+    MoneyRGRApps: 'Money Ideal GR+ apps'
+    MoneyMGRApps: 'Money Target GR apps'
+    MoneyBelowMGRApps: 'Money Below Target GR apps'
+    MoneyMGRPlus: 'Money Target GR or better'
+    MoneyRGRPlus: 'Money Ideal GR or better'
+    ReachGRApps: 'Ideal GR+ apps'
+    MatchGRApps: 'Target GR apps'
+    Apps: 'Total apps'

@@ -103,6 +103,10 @@ excel_formats:
     single_percent_centered:
         num_format: 0%
         align: center
+    single_percent_centered_dash_bottom:
+        num_format: 0%
+        align: center
+        bottom: 3
     single_percent_centered_right:
         num_format: 0%
         align: center
@@ -129,11 +133,22 @@ excel_formats:
         num_format: 0
         align: center
         right: 1
+    bold_centered_integer_right:
+        num_format: 0
+        align: center
+        right: 1
+        bold: True
     centered_integer_right_dash_bottom:
         num_format: 0
         align: center
         right: 1
         bottom: 3
+    bold_centered_integer_right_dash_bottom:
+        num_format: 0
+        align: center
+        right: 1
+        bottom: 3
+        bold: True
 
     # non-colored non-number formats
     centered:
@@ -148,6 +163,19 @@ excel_formats:
         align: left
         text_wrap: True
         bottom: 1
+    bold_center_wrap:
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
+    bold_center_wrap_right:
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
+        right: 1
     left_normal_text:
         bold: False
         align: left
@@ -160,11 +188,48 @@ excel_formats:
     dash_bottom_right:
         bottom: 3
         right: 1
+    bold_underline:
+        bold: True
+        align: left
+        underline: True
+
+    # green
+    bold_green:
+        bold: True
+        bg_color: "00B050"
+    bold_green_right:
+        bold: True
+        bg_color: "00B050"
+        right: 1
+    bold_green_underline:
+        bold: True
+        bg_color: "00B050"
+        align: left
+        underline: True
+    bold_green_center_wrap:
+        bold: True
+        bg_color: "00B050"
+        align: center
+        text_wrap: True
+        bottom: 1
+        valign: top
+    bold_green_center_wrap_right:
+        bold: True
+        bg_color: "00B050"
+        align: center
+        text_wrap: True
+        bottom: 1
+        right: 1
+        valign: top
 
     # olive
     bold_olive:
         bold: True
         bg_color: "#C4D79B"
+    bold_olive_right:
+        bold: True
+        bg_color: "#C4D79B"
+        right: 1
     bold_olive_underline:
         bold: True
         bg_color: "#C4D79B"
@@ -176,6 +241,14 @@ excel_formats:
         align: center
         text_wrap: True
         bottom: 1
+        valign: top
+    bold_olive_center_wrap_right:
+        bold: True
+        bg_color: "#C4D79B"
+        align: center
+        text_wrap: True
+        bottom: 1
+        right: 1
         valign: top
 
     # yellow
