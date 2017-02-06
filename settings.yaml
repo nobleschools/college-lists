@@ -187,6 +187,15 @@ excel_formats:
     bold_yellow:
         bg_color: "#FFFF00"
         bold: True
+    bold_yellow_under:
+        bg_color: "#FFFF00"
+        bold: True
+        bottom: 1
+    bold_yellow_under_right:
+        bg_color: "#FFFF00"
+        bold: True
+        bottom: 1
+        right: 1
     percent_yellow:
         bg_color: "#FFFF00"
         num_format: 0.0%
