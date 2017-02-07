@@ -193,6 +193,21 @@ excel_formats:
         align: left
         underline: True
 
+    # gray
+    bold_gray:
+        bold: True
+        bg_color: "BFBFBF"
+    bold_gray_underline:
+        bold: True
+        bg_color: "BFBFBF"
+        underline: True
+    bold_gray_vertical:
+        bold: True
+        bg_color: "BFBFBF"
+        rotation: 90
+        align: center
+        bottom: 1
+
     # green
     bold_green:
         bold: True

@@ -337,6 +337,46 @@ students_columns:
         head_format: right
         label_format: bold_center_wrap_right
         cond_format: bold_centered_integer_right_dash_bottom
+    - 'Target GR or better':
+        formula: '{=1-PRODUCT(IF(Students=%StudentID%,MGRMult,1))}'
+        format: single_percent_centered
+        width: 8.43
+        head_text: 'Odds of at least one'
+        head_format: bold_underline
+        label_format: bold_center_wrap
+        cond_format: single_percent_centered_dash_bottom
+    - 'Ideal GR or better':
+        formula: '{=1-PRODUCT(IF(Students=%StudentID%,RGRMult,1))}'
+        format: single_percent_centered_right
+        width: 8.43
+        head_text: ''
+        head_format: right
+        label_format: bold_center_wrap_right
+        cond_format: single_percent_centered_right_dash_bottom
+    - 'Hail Mary':
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Hail Mary")'
+        format: centered_integer
+        width: 8.43
+        head_text: 'Apps of each type'
+        head_format: bold_gray_underline
+        label_format: bold_gray_vertical
+        cond_format: centered_integer_dash_bottom
+    - Longshot:
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Longshot")'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_gray_underline
+        label_format: bold_gray_vertical
+        cond_format: centered_integer_dash_bottom
+    - Reach:
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Reach")'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_gray_underline
+        label_format: bold_gray_vertical
+        cond_format: centered_integer_dash_bottom
 
 # The specifications here cause the output code to create Excel named ranges
 # with the column specified. For example, the first entry will create a named
@@ -371,3 +411,6 @@ student_names:
     ReachGRApps: 'Ideal GR+ apps'
     MatchGRApps: 'Target GR apps'
     Apps: 'Total apps'
+    HailMaryApps: 'Hail Mary'
+    LongshotApps: Longshot
+    ReachApps: Reach
