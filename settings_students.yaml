@@ -377,6 +377,126 @@ students_columns:
         head_format: bold_gray_underline
         label_format: bold_gray_vertical
         cond_format: centered_integer_dash_bottom
+    - Match:
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Match")'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_gray_underline
+        label_format: bold_gray_vertical
+        cond_format: centered_integer_dash_bottom
+    - Safety:
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Safety")'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_gray_underline
+        label_format: bold_gray_vertical
+        cond_format: centered_integer_dash_bottom
+    - Secure:
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Secure")'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_gray_underline
+        label_format: bold_gray_vertical
+        cond_format: centered_integer_dash_bottom
+    - 'Sure Thing':
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Sure Thing")'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_gray_underline
+        label_format: bold_gray_vertical
+        cond_format: centered_integer_dash_bottom
+    - Other:
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Other")'
+        format: centered_integer_right
+        width: 8.43
+        head_text: ''
+        head_format: gray_right
+        label_format: bold_gray_vertical_right
+        cond_format: centered_integer_right_dash_bottom
+    - 'Money Reach':
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Reach",MoneyYesNo,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: 'Money apps of each type'
+        head_format: bold_green_underline
+        label_format: bold_green_vertical
+        cond_format: centered_integer_dash_bottom
+    - 'Money Match':
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Match",MoneyYesNo,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_green_underline
+        label_format: bold_green_vertical
+        cond_format: centered_integer_dash_bottom
+    - 'Money Safety':
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Safety",MoneyYesNo,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_green_underline
+        label_format: bold_green_vertical
+        cond_format: centered_integer_dash_bottom
+    - 'Money Secure':
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Secure",MoneyYesNo,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_green_underline
+        label_format: bold_green_vertical
+        cond_format: centered_integer_dash_bottom
+    - 'Money Sure Thing':
+        formula: '=COUNTIFS(Students,%StudentID%,Classes,"Sure Thing",MoneyYesNo,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_green_underline
+        label_format: bold_green_vertical
+        cond_format: centered_integer_dash_bottom
+    - 'All Money':
+        formula: '=SUM(%Money Reach%:%Money Sure Thing%)'
+        format: centered_integer
+        width: 8.43
+        head_text: 'Totals'
+        head_format: bold_green_underline
+        label_format: bold_green_vertical
+        cond_format: centered_integer_dash_bottom
+    - 'Money Ideal GR+ apps':
+        formula: '=SUMIFS(RGRcount,Students,%StudentID%,MoneyYesNo,1,Odds,">=20")'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_green_underline
+        label_format: bold_green_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Money Target GR apps':
+        formula: '=SUMIFS(MGRcount,Students,%StudentID%,MoneyYesNo,1,Odds,">=20")-%Money Ideal GR+ apps%'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_green_underline
+        label_format: bold_green_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'IL Public apps':
+        formula: '=COUNTIFS(Students,%StudentID%,ILPublic,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_blue
+        label_format: bold_blue_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Money Chicago apps':
+        formula: '=COUNTIFS(Students,%StudentID%,MoneyChicago,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_blue
+        label_format: bold_blue_center_wrap
+        cond_format: centered_integer_dash_bottom
 
 # The specifications here cause the output code to create Excel named ranges
 # with the column specified. For example, the first entry will create a named
@@ -414,3 +534,17 @@ student_names:
     HailMaryApps: 'Hail Mary'
     LongshotApps: Longshot
     ReachApps: Reach
+    MatchApps: Match
+    SafetyApps: Safety
+    SecureApps: Secure
+    SureThingApps: 'Sure Thing'
+    MoneyReachApps: 'Money Reach'
+    MoneyMatchApps: 'Money Match'
+    MoneySafetyApps: 'Money Safety'
+    MoneySecureApps: 'Money Secure'
+    MoneySureThingApps: 'Money Sure Thing'
+    AllMoneyApps: 'All Money'
+    MoneyRGROdds: 'Money Ideal GR+ apps'
+    MoneyMGROdds: 'Money Target GR apps'
+    ILPubApps: 'IL Public apps'
+    MoneyChicagoApps: 'Money Chicago apps'

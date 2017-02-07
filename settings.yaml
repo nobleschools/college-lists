@@ -197,6 +197,9 @@ excel_formats:
     bold_gray:
         bold: True
         bg_color: "BFBFBF"
+    gray_right:
+        right: 1
+        bg_color: "BFBFBF"
     bold_gray_underline:
         bold: True
         bg_color: "BFBFBF"
@@ -207,6 +210,13 @@ excel_formats:
         rotation: 90
         align: center
         bottom: 1
+    bold_gray_vertical_right:
+        bold: True
+        bg_color: "BFBFBF"
+        rotation: 90
+        align: center
+        bottom: 1
+        right: 1
 
     # green
     bold_green:
@@ -221,6 +231,13 @@ excel_formats:
         bg_color: "00B050"
         align: left
         underline: True
+    bold_green_vertical:
+        bold: True
+        bg_color: "00B050"
+        rotation: 90
+        align: center
+        bottom: 1
+        text_wrap: True
     bold_green_center_wrap:
         bold: True
         bg_color: "00B050"
@@ -322,6 +339,13 @@ excel_formats:
         bg_color: "#92CDDC"
         bold: True
         align: left
+        text_wrap: True
+        bottom: 1
+    bold_blue_center_wrap:
+        bg_color: "#92CDDC"
+        bold: True
+        align: center
+        valign: top
         text_wrap: True
         bottom: 1
     bold_blue_center_wrap_right:
