@@ -1,0 +1,373 @@
+# Source for csv inputs; most files should change infrequently, although
+# the latter two will be updated with every reporting cycle
+inputs:
+    AllColleges: inputs/all_colleges.csv
+    CollegeListLookup: inputs/college_list_lookup.csv
+    CustomWeights: inputs/custom_weights.csv
+    StandardWeights: inputs/standard_weights.csv
+    Strategies: inputs/strategy_definitions.csv
+    StudentTargets: inputs/targets_by_strategy.csv
+    current_applications: tests/NOBLE_TEST_applications.csv
+    current_roster: tests/NOBLE_TEST_students.csv
+
+# The output filename is a combination of these with campus and counselor
+# if chosen via the command line options
+output_file:
+    root_name: Weekly Report
+    date_format: 'NOBLE_TEST' # for strftime function
+
+# An explicit list of all campuses to be included in the default report.
+# Listing explicitly allows for intentional groups specified by alternate yamls
+# these are Noble campuses--to be replaced with generic ones
+all_campuses: # campuses to try if "all" selected
+    - Noble
+    - Golder
+    - RoweClark
+
+# -------------
+# Labelling convention:
+# From this point down, this file uses a convention to specify Excel equations
+# that operate within a single row. By specifying the column label with
+# percent signs on either side (e.g. %Last%), it tells the output code
+# to substitute the column letter & current row in the final equation (e.g. B7)
+# -------------
+
+# This allows individual campuses to customize the sorting behavior
+sort_students:
+    Standard: '=%Counselor%&%LastFirst%'
+    Golder: '=%Cohort%&%Counselor%&%LastFirst%'
+
+# This allows individual schools to customize odds/class language
+category_labels:
+    Standard:
+        TargetGR: Target
+        IdealGR: Ideal
+        BelowGR: Below Target
+        FarBelowGR: Far Below Target
+        SureThing: Sure Thing
+        Secure: Secure
+        Safety: Safety
+        Match: Match
+        Reach: Reach
+        Longshot: Longshot
+        HailMary: Hail Mary
+    Golder:
+        TargetGR: Expected
+        IdealGR: Ideal
+        BelowGR: Below Expected
+        FarBelowGR: Far Below Expected
+        SureThing: Sure Thing
+        Secure: Secure
+        Safety: Safety
+        Match: Match
+        Reach: Reach
+        Longshot: Longshot
+        HailMary: Hail Mary
+    RoweClark:
+        TargetGR: Average
+        IdealGR: Ideal
+        BelowGR: Minimum
+        FarBelowGR: Subpar
+        SureThing: Sure Thing
+        Secure: Secure
+        Safety: Safety
+        Match: Match
+        Reach: Reach
+        Longshot: Longshot
+        HailMary: Hail Mary
+
+##################################################3
+## Excel Formats
+## These formats are used above when specifying the structure of the columns
+## They are structured to match formatting in the xlsxwriter library
+##################################################3
+excel_formats:
+    # non-colored number formats
+    percent_fmt:
+        num_format: 0.0%
+    percent_centered:
+        num_format: 0.0%
+        align: center
+    single_percent_centered:
+        num_format: 0%
+        align: center
+    single_percent_centered_dash_bottom:
+        num_format: 0%
+        align: center
+        bottom: 3
+    single_percent_centered_right:
+        num_format: 0%
+        align: center
+        right: 1
+    single_percent_centered_right_dash_bottom:
+        num_format: 0%
+        align: center
+        right: 1
+        bottom: 3
+    percent_bold_fmt:
+        num_format: 0.0%
+        bold: True
+    two_point_centered:
+        num_format: '0.00'
+        align: center
+    centered_integer:
+        num_format: 0
+        align: center
+    centered_integer_dash_bottom:
+        num_format: 0
+        align: center
+        bottom: 3
+    centered_integer_right:
+        num_format: 0
+        align: center
+        right: 1
+    bold_centered_integer_right:
+        num_format: 0
+        align: center
+        right: 1
+        bold: True
+    centered_integer_right_dash_bottom:
+        num_format: 0
+        align: center
+        right: 1
+        bottom: 3
+    bold_centered_integer_right_dash_bottom:
+        num_format: 0
+        align: center
+        right: 1
+        bottom: 3
+        bold: True
+
+    # non-colored non-number formats
+    centered:
+        align: center
+    right:
+        right: 1
+    bold:
+        bold: True
+        align: left
+    bold_wrap:
+        bold: True
+        align: left
+        text_wrap: True
+        bottom: 1
+    bold_center_wrap:
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
+    bold_center_wrap_right:
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
+        right: 1
+    left_normal_text:
+        bold: False
+        align: left
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+    dash_bottom:
+        bottom: 3
+    dash_bottom_right:
+        bottom: 3
+        right: 1
+    bold_underline:
+        bold: True
+        align: left
+        underline: True
+
+    # gray
+    bold_gray:
+        bold: True
+        bg_color: "BFBFBF"
+    gray_right:
+        right: 1
+        bg_color: "BFBFBF"
+    bold_gray_underline:
+        bold: True
+        bg_color: "BFBFBF"
+        underline: True
+    bold_gray_vertical:
+        bold: True
+        bg_color: "BFBFBF"
+        rotation: 90
+        align: center
+        bottom: 1
+    bold_gray_vertical_right:
+        bold: True
+        bg_color: "BFBFBF"
+        rotation: 90
+        align: center
+        bottom: 1
+        right: 1
+
+    # green
+    bold_green:
+        bold: True
+        bg_color: "00B050"
+    bold_green_right:
+        bold: True
+        bg_color: "00B050"
+        right: 1
+    bold_green_underline:
+        bold: True
+        bg_color: "00B050"
+        align: left
+        underline: True
+    bold_green_vertical:
+        bold: True
+        bg_color: "00B050"
+        rotation: 90
+        align: center
+        bottom: 1
+        text_wrap: True
+    bold_green_center_wrap:
+        bold: True
+        bg_color: "00B050"
+        align: center
+        text_wrap: True
+        bottom: 1
+        valign: top
+    bold_green_center_wrap_right:
+        bold: True
+        bg_color: "00B050"
+        align: center
+        text_wrap: True
+        bottom: 1
+        right: 1
+        valign: top
+
+    # olive
+    bold_olive:
+        bold: True
+        bg_color: "#C4D79B"
+    bold_olive_right:
+        bold: True
+        bg_color: "#C4D79B"
+        right: 1
+    bold_olive_underline:
+        bold: True
+        bg_color: "#C4D79B"
+        align: left
+        underline: True
+    bold_olive_center_wrap:
+        bold: True
+        bg_color: "#C4D79B"
+        align: center
+        text_wrap: True
+        bottom: 1
+        valign: top
+    bold_olive_center_wrap_right:
+        bold: True
+        bg_color: "#C4D79B"
+        align: center
+        text_wrap: True
+        bottom: 1
+        right: 1
+        valign: top
+
+    # yellow
+    yellow:
+        bg_color: "#FFFF00"
+    yellow_right:
+        bg_color: "#FFFF00"
+        right: 1
+    bold_yellow:
+        bg_color: "#FFFF00"
+        bold: True
+    bold_yellow_under:
+        bg_color: "#FFFF00"
+        bold: True
+        bottom: 1
+    bold_yellow_under_right:
+        bg_color: "#FFFF00"
+        bold: True
+        bottom: 1
+        right: 1
+    percent_yellow:
+        bg_color: "#FFFF00"
+        num_format: 0.0%
+    bold_yellow_wrap:
+        bg_color: "#FFFF00"
+        bold: True
+        align: left
+        text_wrap: True
+        bottom: 1
+    bold_yellow_center_wrap:
+        bold: True
+        align: center
+        bg_color: "#FFFF00"
+        text_wrap: True
+        bottom: 1
+        valign: top
+    bold_yellow_center_wrap_right:
+        bold: True
+        align: center
+        bg_color: "#FFFF00"
+        text_wrap: True
+        bottom: 1
+        valign: top
+        right: 1
+
+    # blue
+    blue:
+        bg_color: "#92CDDC"
+    bold_blue:
+        bg_color: "#92CDDC"
+        bold: True
+    blue_right:
+        bg_color: "#92CDDC"
+        right: 1
+    bold_blue_wrap:
+        bg_color: "#92CDDC"
+        bold: True
+        align: left
+        text_wrap: True
+        bottom: 1
+    bold_blue_center_wrap:
+        bg_color: "#92CDDC"
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
+    bold_blue_center_wrap_right:
+        bg_color: "#92CDDC"
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
+        right: 1
+    bold_blue_wrap_right:
+        bg_color: "#92CDDC"
+        bold: True
+        align: left
+        text_wrap: True
+        bottom: 1
+        right: 1
+
+    # orange
+    bold_orange:
+        bg_color: "#FFC000"
+        bold: True
+
+    # red
+    bold_red_underline:
+        bold: True
+        bg_color: "#FF0000"
+        align: left
+        underline: True
+    bold_red_center_wrap_right:
+        bg_color: "#FF0000"
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
+        right: 1
