@@ -1,5 +1,2 @@
 max-line-length: 80
-python-targets:
-  - 2
-  - 3
 doc-warnings: true
