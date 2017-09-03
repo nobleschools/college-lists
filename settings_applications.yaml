@@ -88,6 +88,9 @@ applications_calculations: # definitions for calculated columns in order
     - ACT25/50:
         formula: =IF(OR(%Race%="H",%Race%="B"),INDEX(AllCollegeACT25, MATCH(%NCES%,AllCollegeNCES,0)),INDEX(AllCollegeACT50, MATCH(%NCES%,AllCollegeNCES,0)))
         format: bold_orange
+    - local_act_25_50: #REMOVE
+        formula: use_df
+        format: bold_red
     - local_act_25: #REMOVE
         formula: use_df
         format: bold_red
@@ -115,6 +118,9 @@ applications_calculations: # definitions for calculated columns in order
     - LogitB:
         formula: =%GPAcoefB%*%GPA%+%ACTcoefB%*%ACT%+%InterceptB%
         format: bold_yellow
+    - local_logitb: #REMOVE
+        formula: use_df
+        format: bold_red
     - GPAcoefA:
         formula: =INDEX(CoefficientsGPA,MATCH(%Race%&":"&%Barron's%,CoefficientsIndex,0))
         format: bold_olive
@@ -136,12 +142,21 @@ applications_calculations: # definitions for calculated columns in order
     - LogitA:
         formula: =%GPAcoefA%*%GPA%+(%ACT%-%ACT25/50%)*%ACTcoefA%+%InterceptA%
         format: bold_olive
+    - local_logita: #REMOVE
+        formula: use_df
+        format: bold_red
     - FinalLogit:
         formula: =IF(ISNUMBER(%LogitB%),%LogitB%,%LogitA%)
         format: bold_olive
+    - local_final_logit: #REMOVE
+        formula: use_df
+        format: bold_red
     - Odds:
         formula: =IF(ISNUMBER(%FinalLogit%),IF(ISNUMBER(%GPAcoefA%),IF(AND(%GPAcoefA%=1,%ACTcoefA%=1,%InterceptA%=1),100,ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2)),ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2)),IF(ISTEXT(%Barron's%),IF(LEFT(%Barron's%,1)="2",100,"N/A"),"N/A"))
         format: bold_olive
+    - local_odds: #REMOVE
+        formula: use_df
+        format: bold_red
     - Class:
         formula: =IF(ISNUMBER(%Odds%),IF(%Odds%>=99,IF(OR(%Strategy%=10,%Strategy%=11),"Match","Sure Thing"),IF(%Odds%>=95,"Secure",IF(%Odds%>=80,"Safety",IF(%Odds%>=50,"Match",IF(%Odds%>=20,"Reach",IF(%Odds%>=10,"Longshot","Hail Mary")))))),"Other")
         format: bold_olive

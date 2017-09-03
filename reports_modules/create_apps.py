@@ -1,12 +1,21 @@
 #!python3
 '''Module for creating the applications tab (with Excel formulas)'''
 import numpy as np
+import pandas as pd
 from reports_modules.excel_base import safe_write, make_excel_indices
 
 def lookup_source_field(x,source_df,field,default='N/A'):
     '''Utility function to map values from source df to a series
     in the apps table'''
     return source_df[field].get(x,default)
+
+def round2(x):
+    '''Utility function to round to nearest hundreth'''
+    return round(x, 2)
+
+def all_ones(x):
+    '''Utility function to check if all (3) elements all equal 1'''
+    return all(n == 1 for n in x)
 
 def reduce_and_augment_apps(cfg, dfs, debug):
     '''Restrict an applications table to those apps for students in roster
@@ -59,6 +68,30 @@ def reduce_and_augment_apps(cfg, dfs, debug):
 
 
     # C. then add calculated columns (for use internal use, not publishing)
+    # the next row picks "act 25" if race is "H" or "B" and "act 50 otherwise
+    df['local_act_25_50'] = df['local_act_25'].where(
+            df['local_race'].isin(['H','B']), df['local_act_50'])
+    df['local_logita'] = (
+            df['local_gpa_ca']*df['local_gpa']+
+            (df['local_act']-df['local_act_25_50'])*df['local_act_ca']+
+            df['local_inta'])
+    df['local_logitb'] = (
+            df['local_gpa_cb']*df['local_gpa']+
+            df['local_act_cb']*df['local_act']+
+            df['local_intb'])
+    # For community colleges, the "a" method for logit has coefficients
+    # equal to exactly 1 for all three coefficients. In this special
+    # case, the odds should automatically be 100
+    df['local_auto100'] = df[['local_gpa_ca',
+                              'local_act_ca',
+                              'local_inta']].apply(all_ones, axis=1)
+    df['local_final_logit'] = df['local_logitb'].where(
+            pd.notnull(df['local_logitb']), df['local_logita'])
+    df['local_odds_calc'] = (100*np.exp(df['local_final_logit'])/(
+            1+np.exp(df['local_final_logit']))).apply(round2)
+    # the next line assigns odds_calc unless auto100 is true
+    df['local_odds'] = df['local_odds_calc'].where(
+            ~df['local_auto100'], 100)
     if debug:
         print(df.columns)
 
