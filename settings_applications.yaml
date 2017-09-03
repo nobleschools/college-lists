@@ -40,18 +40,30 @@ applications_calculations: # definitions for calculated columns in order
     - Barron's:
         formula: =INDEX(AllCollegeBarrons,MATCH(%NCES%,AllCollegeNCES,0))
         format: bold_orange
+    - local_barrons: #REMOVE
+        formula: use_df
+        format: bold_red
     - GPA:
         formula: =INDEX(KidGPAs,MATCH(%hs_student_id%,KidIDs,0))
         format: bold_blue
+    - local_gpa: #REMOVE
+        formula: use_df
+        format: bold_red
     - ACT:
         formula: =INDEX(KidACTs,MATCH(%hs_student_id%,KidIDs,0))
         format: bold_blue
+    - local_act: #REMOVE
+        formula: use_df
+        format: bold_red
     - Strategy:
         formula: =INDEX(Strats,MATCH(%hs_student_id%,KidIDs,0))
         format: bold_blue
     - Race:
         formula: =INDEX(KidRace,MATCH(%hs_student_id%,KidIDs,0))
         format: bold_blue
+    - local_race: #REMOVE
+        formula: use_df
+        format: bold_red
     - TargetGR:
         formula: =INDEX(StudentTargets,MATCH(%hs_student_id%,KidIDs,0))
         format: bold_blue
@@ -64,33 +76,63 @@ applications_calculations: # definitions for calculated columns in order
     - 6yr_all:
         formula: =IF(ISNUMBER(INDEX(AllCollegeGR, MATCH(%NCES%,AllCollegeNCES,0))),ROUND(INDEX(AllCollegeGR, MATCH(%NCES%,AllCollegeNCES,0))+%PartnerBump%*IF(INDEX(AllCollegeGR, MATCH(%NCES%,AllCollegeNCES,0))>0.7,(1-INDEX(AllCollegeGR, MATCH(%NCES%,AllCollegeNCES,0)))/2,0.15),2),INDEX(AllCollegeGR, MATCH(%NCES%,AllCollegeNCES,0)))
         format: bold_orange
+    - local_6yr_all: #REMOVE
+        formula: use_df
+        format: bold_red
     - 6yr_AA/H:
         formula: =IF(ISNUMBER(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))),ROUND(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))+%PartnerBump%*IF(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))>0.7,(1-INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0)))/2,0.15),2),INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0)))
         format: bold_orange
+    - local_6yr_aah: #REMOVE
+        formula: use_df
+        format: bold_red
     - ACT25/50:
         formula: =IF(OR(%Race%="H",%Race%="B"),INDEX(AllCollegeACT25, MATCH(%NCES%,AllCollegeNCES,0)),INDEX(AllCollegeACT50, MATCH(%NCES%,AllCollegeNCES,0)))
         format: bold_orange
+    - local_act_25: #REMOVE
+        formula: use_df
+        format: bold_red
+    - local_act_50: #REMOVE
+        formula: use_df
+        format: bold_red
     - GPAcoefB:
         formula: =INDEX(CustomWeightsGPA,MATCH(%Race%&":"&%NCES%,CustomWeightsIndex,0))
         format: bold_yellow
+    - local_gpa_cb: #REMOVE
+        formula: use_df
+        format: bold_red
     - ACTcoefB:
         formula: =INDEX(CustomWeightsACT,MATCH(%Race%&":"&%NCES%,CustomWeightsIndex,0))
         format: bold_yellow
+    - local_act_cb: #REMOVE
+        formula: use_df
+        format: bold_red
     - InterceptB:
         formula: =INDEX(CustomWeightsIntercept,MATCH(%Race%&":"&%NCES%,CustomWeightsIndex,0))
         format: bold_yellow
+    - local_intb: #REMOVE
+        formula: use_df
+        format: bold_red
     - LogitB:
         formula: =%GPAcoefB%*%GPA%+%ACTcoefB%*%ACT%+%InterceptB%
         format: bold_yellow
     - GPAcoefA:
         formula: =INDEX(CoefficientsGPA,MATCH(%Race%&":"&%Barron's%,CoefficientsIndex,0))
         format: bold_olive
+    - local_gpa_ca: #REMOVE
+        formula: use_df
+        format: bold_red
     - ACTcoefA:
         formula: =INDEX(CoefficientsACT,MATCH(%Race%&":"&%Barron's%,CoefficientsIndex,0))
         format: bold_olive
+    - local_act_ca: #REMOVE
+        formula: use_df
+        format: bold_red
     - InterceptA:
         formula: =INDEX(CoefficientsIntercept,MATCH(%Race%&":"&%Barron's%,CoefficientsIndex,0))
         format: bold_olive
+    - local_inta: #REMOVE
+        formula: use_df
+        format: bold_red
     - LogitA:
         formula: =%GPAcoefA%*%GPA%+(%ACT%-%ACT25/50%)*%ACTcoefA%+%InterceptA%
         format: bold_olive

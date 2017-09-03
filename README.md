@@ -4,16 +4,16 @@
 This project creates an Excel spreadsheet used by a high school to
 aid in the counseling of seniors on their college lists.
 
-##It has two data inputs:
+## It has two data inputs:
 - current_applications.csv: an applications file (formatted like a Naviance export)
 - current_students.csv: a roster file (see further notes for specification)
 
-##It has "control" inputs:
+## It has "control" inputs:
 - settings.yaml: master configuration file for the report
 - settings_applications.yaml: formatting for the applications tab
 - settings_students.yaml: formatting for the students tab
 
-It has multiple global data inputs (in the 'inputs' folder):
+## It has multiple global data inputs (in the 'inputs' folder):
 - all_colleges.csv: general data about colleges, mostly from NCES data files
 - college_list_lookup.csv: A translation from college name to NCES id
 - custom_weights.csv: Empirical coefficients to calculate admissions odds
@@ -27,7 +27,7 @@ report with a number of tabs. These replicate reports used by Noble that
 were originally developed in Excel, but that can be customized to a certain
 degree by changes to the yaml file.
 -----
-##Examples of command line execution with various options:
+## Examples of command line execution with various options:
 - **Standard report with all students:**
     - python create_reports.py
 - **Standard report with all students, quieting output**

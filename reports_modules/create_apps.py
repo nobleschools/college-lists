@@ -1,29 +1,68 @@
 #!python3
 '''Module for creating the applications tab (with Excel formulas)'''
+import numpy as np
 from reports_modules.excel_base import safe_write, make_excel_indices
 
-def lookup_roster_field(x,roster,field):
-    return roster.loc[x,field]
+def lookup_source_field(x,source_df,field,default='N/A'):
+    '''Utility function to map values from source df to a series
+    in the apps table'''
+    return source_df[field].get(x,default)
 
 def reduce_and_augment_apps(cfg, dfs, debug):
     '''Restrict an applications table to those apps for students in roster
     then add lookup and calculated fields, finally sorting for output'''
-    # first reduce
+    # A. first reduce
     df = dfs['applications']
     id_list = set(dfs['roster'].index)
     df = df[df['hs_student_id'].isin(id_list)].copy()
 
-    # then add lookup columns
-    roster_fields = ['GPA','ACT','Race/ Eth']
-    for field in roster_fields:
-        df[field] = df['hs_student_id'].apply(lookup_roster_field,
-            args=(dfs['roster'],field))
+    # B. then add lookup columns
+    # B.1. first from the student roster
+    roster_fields = [('local_gpa', 'GPA'), #target label and source label
+                     ('local_act', 'ACT'),
+                     ('local_race','Race/ Eth'),
+                     ]
+    for local_label, roster_label in roster_fields:
+        df[local_label] = df['hs_student_id'].apply(lookup_source_field,
+            args=(dfs['roster'],roster_label))
 
-    # then add calculated columns (for use internally, not publishing)
+    # B.2. second from college table
+    college_fields = [('local_barrons', 'SimpleBarrons', 'N/A'),
+                      ('local_act_25', 'AdjACT25', np.nan),
+                      ('local_act_50', 'AdjACT50', np.nan),
+                      ('local_6yr_all', 'Adj6yrGrad_All', np.nan),
+                      ('local_6yr_aah', 'Adj6yrGrad_AA_Hisp', np.nan),
+                      ]
+    for local_label, college_label, na_val in college_fields:
+        df[local_label] = df['NCES'].apply(lookup_source_field,
+                args=(dfs['AllColleges'], college_label, na_val))
+    
+    # B.3. third from the standard odds table
+    weights_fields = [('local_gpa_ca', 'GPAcoef'),
+                      ('local_act_ca', 'ACT-coef'),
+                      ('local_inta', 'Intercept'),
+                      ]
+    coef_index = df['local_race'] + ':' + df['local_barrons']
+    for local_label, coef_label in weights_fields:
+        df[local_label] = coef_index.apply(lookup_source_field,
+                args=(dfs['StandardWeights'], coef_label, np.nan))
+
+    cweights_fields = [('local_gpa_cb', 'GPAcoef'),
+                      ('local_act_cb', 'ACTcoef'),
+                      ('local_intb', 'Intercept'),
+                      ]
+    coef_index = df['local_race'] + ':' + df['NCES'].apply(str)
+    for local_label, coef_label in cweights_fields:
+        df[local_label] = coef_index.apply(lookup_source_field,
+                args=(dfs['CustomWeights'], coef_label, np.nan))
+
+
+
+    # C. then add calculated columns (for use internal use, not publishing)
     if debug:
         print(df.columns)
 
-    # finally sort
+    # D. finally sort
     dfs['apps'] = df
 
 def push_column(columns, letters, label, formula, fmt=None):
@@ -88,7 +127,7 @@ def make_apps_tab(writer, f_db, dfs, cfg, cfg_app, debug):
         for c in range(len(master_cols)):
             letter, label, formula, fmt = master_cols[c]
             if formula == 'use_df':
-                safe_write(ws, row, c, app_data[label],n_a='')
+                safe_write(ws, row, c, app_data[label],n_a='N/A')
             else:
                 safe_write(ws, row, c, formula.replace('_r_',sr))
         row += 1

@@ -370,6 +370,10 @@ excel_formats:
         bold: True
 
     # red
+    bold_red:
+        bold: True
+        bg_color: "#FF0000"
+
     bold_red_underline:
         bold: True
         bg_color: "#FF0000"
