@@ -4,10 +4,17 @@ import numpy as np
 import pandas as pd
 from reports_modules.excel_base import safe_write, make_excel_indices
 
-def lookup_source_field(x,source_df,field,default='N/A'):
+def lookup_source_field(x,source_df,field,default='N/A', force_na=False):
     '''Utility function to map values from source df to a series
     in the apps table'''
-    return source_df[field].get(x,default)
+    if pd.isnull(x):
+        return np.nan
+    else:
+        return_value = source_df[field].get(x,default)
+        if force_na:
+            return default if return_value == force_na else return_value
+        else:
+            return return_value
 
 def round2(x):
     '''Utility function to round to nearest hundreth'''
@@ -16,6 +23,32 @@ def round2(x):
 def all_ones(x):
     '''Utility function to check if all (3) elements all equal 1'''
     return all(n == 1 for n in x)
+
+def calc6yr(args):
+    '''Calculates the final 6yr grad rate based on the baseline grad rate
+    and whether the college gets a "bump" for being a partner, where
+    bump is either 15% or half the distance to 100%, whichever smaller'''
+    gr, partner_bump = args
+    if np.isnan(gr):
+        return 0
+    else:
+        if partner_bump:
+            return round(gr + min(0.15, (1-gr)/2), 2)
+        else:
+            return round(gr, 2)
+
+def get_result(args):
+    '''Calculates a limited result code for use in generating predictions'''
+    result_code, attending = args
+    if result_code == 'denied':
+        return 'Denied'
+    elif result_code in ['accepted', 'cond. accept', 'summer admit']:
+        if attending == 'yes':
+            return 'Choice!'
+        else:
+            return 'Accepted!'
+    else:
+        return 'Pending'
 
 def reduce_and_augment_apps(cfg, dfs, debug):
     '''Restrict an applications table to those apps for students in roster
@@ -27,18 +60,20 @@ def reduce_and_augment_apps(cfg, dfs, debug):
 
     # B. then add lookup columns
     # B.1. first from the student roster
-    roster_fields = [('local_gpa', 'GPA'), #target label and source label
-                     ('local_act', 'ACT'),
-                     ('local_race','Race/ Eth'),
+    # The below specifies target label, source label, n/a value
+    roster_fields = [('local_gpa', 'GPA', np.nan),
+                     ('local_act', 'ACT', np.nan),
+                     ('local_race','Race/ Eth', 'TBD'),
                      ]
-    for local_label, roster_label in roster_fields:
+    for local_label, roster_label, na_val in roster_fields:
         df[local_label] = df['hs_student_id'].apply(lookup_source_field,
-            args=(dfs['roster'],roster_label))
+            args=(dfs['roster'],roster_label, na_val, 'TBD'))
 
     # B.2. second from college table
     college_fields = [('local_barrons', 'SimpleBarrons', 'N/A'),
                       ('local_act_25', 'AdjACT25', np.nan),
                       ('local_act_50', 'AdjACT50', np.nan),
+                      ('local_money', 'MoneyYesNo', 0),
                       ('local_6yr_all', 'Adj6yrGrad_All', np.nan),
                       ('local_6yr_aah', 'Adj6yrGrad_AA_Hisp', np.nan),
                       ]
@@ -92,11 +127,25 @@ def reduce_and_augment_apps(cfg, dfs, debug):
     # the next line assigns odds_calc unless auto100 is true
     df['local_odds'] = df['local_odds_calc'].where(
             ~df['local_auto100'], 100)
+
+    # all of the above are for odds, but a handful of other columns need
+    # to be calculated
+    df['local_6yr_all_aah_temp'] = df['local_6yr_aah'].where(
+            df['local_race'].isin(['H','B']), df['local_6yr_all'])
+    # before completing the above, we need to check whether the school
+    # gets a partner "bump" and then round
+    df['local_partner_bump'] = df['comments'] == 'Posse'
+    df['local_6yr_all_aah'] = df[['local_6yr_all_aah_temp',
+                          'local_partner_bump']].apply(calc6yr, axis=1)
+
+    df['local_result']=df[['result_code','attending']].apply(get_result, axis=1)
+
     if debug:
         print(df.columns)
 
     # D. finally sort
-    dfs['apps'] = df
+    dfs['apps'] = df.sort_values(['Campus','hs_student_id',
+        'local_6yr_all_aah'], ascending=[True, True, False])
 
 def push_column(columns, letters, label, formula, fmt=None):
     '''Adds an item to a list of length 3 lists that define columns with

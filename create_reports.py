@@ -9,6 +9,7 @@ import argparse
 from reports_modules.output import Output
 from reports_modules.excel_base import create_static_tabs
 from reports_modules.create_students import reduce_roster, make_students_tab
+from reports_modules.create_students import add_student_calculations
 from reports_modules.create_apps import reduce_and_augment_apps, make_apps_tab
 
 def main(settings_file, settings_tabs, campus, counselor, debug=True):
@@ -28,6 +29,7 @@ def main(settings_file, settings_tabs, campus, counselor, debug=True):
     out = Output(campus, counselor, cfg, cfg_tabs, debug)
     reduce_roster(campus, cfg, out.dfs, counselor,debug)
     reduce_and_augment_apps(cfg, out.dfs, debug)
+    add_student_calculations(cfg, out.dfs, debug)
 
     make_students_tab(out.writer, out.formats, out.dfs, cfg, 
             cfg_tabs['students'], campus, debug)

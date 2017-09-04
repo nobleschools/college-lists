@@ -1,5 +1,6 @@
 #!python3
 '''Module for working with student records and making Students tab'''
+import numpy as np
 from reports_modules.excel_base import safe_write, write_array
 from reports_modules.excel_base import make_excel_indices
 
@@ -18,6 +19,60 @@ def reduce_roster(campus, cfg, dfs, counselor,debug):
         df = df[df['Counselor'].str.contains(counselor)]
     if debug:
         print('..ending at {} students.'.format(len(df)),flush=True)
+    dfs['roster'] = df
+
+def get_strategies(x,lookup_df):
+    '''Apply function for calculating strategies based on gpa and act using the
+    lookup table (mirrors Excel equation for looking up strategy'''
+    gpa, act = x
+    if np.isreal(gpa) and np.isreal(act):
+        lookup = '{:.1f}:{:.0f}'.format(
+                max(np.floor(gpa*10)/10,1.5), max(act, 12))
+        return lookup_df['Strategy'].get(lookup,np.nan)
+    else:
+        return np.nan
+
+def get_gr_target(x, lookup_strat, goal_type):
+    '''Apply function to get the target or ideal grad rate for student'''
+    strat, gpa, efc, race = x
+    # 2 or 3 strategies are split by being above/below 3.0 GPA line
+    # First we identify those and then adjust the lookup index accordingly
+    special_strats = [int(x[0]) for x in lookup_strat.index if x[-1]=='+']
+    if np.isreal(gpa) and np.isreal(strat):
+        # First define the row in the lookup table
+        strat_str = '{:.0f}'.format(strat)
+        if strat in special_strats:
+            lookup = strat_str + '+' if gpa >= 3.0 else strat_str + '<'
+        else:
+            lookup = strat_str 
+        # Then define the column in the lookup table
+        if efc == -1:
+            column = 'minus1_' + goal_type
+        elif race in ['W', 'A']:
+            column = 'W/A_' + goal_type
+        else:
+            column = 'AA/H_' + goal_type
+        return lookup_strat[column].get(lookup,np.nan)
+    else:
+        return np.nan
+
+def add_student_calculations(cfg, dfs, debug):
+    '''Creates some calculated columns in the roster table'''
+    df = dfs['roster'].copy()
+    df['local_strategy'] = df[['GPA','ACT']].apply(get_strategies, axis=1,
+            args=(dfs['Strategies'],))
+    df['local_target_gr'] = df[
+            ['local_strategy','GPA','EFC','Race/ Eth']].apply(
+            get_gr_target, axis=1, args=(dfs['StudentTargets'],'target'))
+    df['local_ideal_gr'] = df[
+            ['local_strategy','GPA','EFC','Race/ Eth']].apply(
+            get_gr_target, axis=1, args=(dfs['StudentTargets'],'ideal'))
+    
+    #after we've got target_gr, get the predictions
+
+    if debug:
+        print(df.columns)
+
     dfs['roster'] = df
 
 def push_column(columns, letters, label, formula, fmt,
