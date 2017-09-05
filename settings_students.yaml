@@ -186,7 +186,7 @@ students_columns:
         label_format: bold_blue_center_wrap_right
         cond_format: centered_integer_right_dash_bottom
     - Perfect:
-        formula: '=0.3'
+        formula: tbl:pred_perfect
         format: single_percent_centered_right
         width: 8.43
         head_text: Predictions
@@ -194,7 +194,7 @@ students_columns:
         label_format: bold_red_center_wrap_right
         cond_format: single_percent_centered_right_dash_bottom
     - "Minus 1":
-        formula: '=0.2'
+        formula: tbl:pred_minus1
         format: single_percent_centered_right
         width: 8.43
         head_text: ''
@@ -202,7 +202,7 @@ students_columns:
         label_format: bold_red_center_wrap_right
         cond_format: single_percent_centered_right_dash_bottom
     - "Some prefer-ence":
-        formula: '=0.1'
+        formula: tbl:pred_some_pref
         format: single_percent_centered_right
         width: 8.43
         head_text: ''
@@ -210,7 +210,7 @@ students_columns:
         label_format: bold_red_center_wrap_right
         cond_format: single_percent_centered_right_dash_bottom
     - "All equal":
-        formula: '=0'
+        formula: tbl:pred_all_equal
         format: single_percent_centered_right
         width: 8.43
         head_text: ''

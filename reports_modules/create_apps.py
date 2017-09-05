@@ -44,7 +44,7 @@ def get_result(args):
         return 'Denied'
     elif result_code in ['accepted', 'cond. accept', 'summer admit']:
         if attending == 'yes':
-            return 'Choice!'
+            return 'CHOICE!'
         else:
             return 'Accepted!'
     else:
