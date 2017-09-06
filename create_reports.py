@@ -8,6 +8,7 @@ import yaml
 import argparse
 from reports_modules.output import Output
 from reports_modules.excel_base import create_static_tabs
+from reports_modules.create_summary import make_summary_tab
 from reports_modules.create_students import reduce_roster, make_students_tab
 from reports_modules.create_students import add_student_calculations
 from reports_modules.create_apps import reduce_and_augment_apps, make_apps_tab
@@ -15,11 +16,12 @@ from reports_modules.create_apps import reduce_and_augment_apps, make_apps_tab
 def main(settings_file, settings_tabs, campus, counselor, debug=True):
     '''Creates the reports according to instructions in yaml files either
     for a single campus or "All"'''
-    # Setup configuration
+    # Setup configuration--main settings file (includes Excel formats)
     print('Report for {},{}.'.format(campus, counselor), flush=True)
     with open(settings_file, 'r') as ymlfile:
         cfg = yaml.load(ymlfile)
 
+    # Setup configuration--tab settings files (includes layout of tabs)
     cfg_tabs = {}
     for tab, filename in settings_tabs.items():
         with open(filename, 'r') as ymlfile:
@@ -31,6 +33,8 @@ def main(settings_file, settings_tabs, campus, counselor, debug=True):
     reduce_and_augment_apps(cfg, out.dfs, debug)
     add_student_calculations(cfg, out.dfs, debug)
 
+    make_summary_tab(out.writer, out.formats, out.dfs, cfg,
+            cfg_tabs['summary'], campus, debug)
     make_students_tab(out.writer, out.formats, out.dfs, cfg, 
             cfg_tabs['students'], campus, debug)
     make_apps_tab(out.writer, out.formats, out.dfs, cfg,
@@ -45,6 +49,11 @@ if __name__ == '__main__':
             dest='settings_file', action='store',
             help='Name/path of yaml file with detailed settings',
             default='settings.yaml')
+
+    parser.add_argument('-sm','--settings_summary',
+            dest='settings_summary_file', action='store',
+            help='Name/path of yaml file with summary settings',
+            default='settings_summary.yaml')
 
     parser.add_argument('-ss','--settings_students',
             dest='settings_students_file', action='store',
@@ -68,10 +77,11 @@ if __name__ == '__main__':
 
     parser.add_argument('-q','--quiet',
             dest='debug', action='store_false', default=True,
-            help='Supress status messages during report creation')
+            help='Suppress status messages during report creation')
 
     args = parser.parse_args()
     settings_tabs = {
+            'summary': args.settings_summary_file,
             'students': args.settings_students_file,
             'applications': args.settings_applications_file,
             }

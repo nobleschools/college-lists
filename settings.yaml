@@ -185,6 +185,8 @@ excel_formats:
         bottom: 0
     dash_bottom:
         bottom: 3
+    solid_bottom:
+        bottom: 1
     dash_bottom_right:
         bottom: 3
         right: 1

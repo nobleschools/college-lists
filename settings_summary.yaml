@@ -1,0 +1,40 @@
+###################################################
+# Summary tab details
+# The below specifies the exact formatting and content for each column in the
+# order presented. Each column is assumed to have a one row header. format
+# specifies the format of data, while label_format specifies the format of
+# the header row (which has text equal to the column label.)
+#
+# The formula field follows one of four forms:
+# tbl:Label: drops in columns from the roster file (typically from 
+# current_students.csv)
+# =FORMULA: an Excel equation that can reference other columns in the same
+# row using the %Label% convention, although %*% instead gets replaced
+# with the value of summary_name (defined in the first row)
+# cfg:Label: refers to a formula defined in the config (settings.yaml) file
+# and might have a provision for campus-specific formulas in addition to a
+# general standard one
+# <id>:Label: for debugging, just copy the label id into data rows
+#
+# summary_name can be either Strats, Counselor, or Campus
+#
+summary_field:
+    excel_name: Counselor # named range being referenced on Students
+    excel_label: Counselor # label for the column in this tab
+    tbl_name: Counselor # reference for the students table to summarize
+    #excel_name: Strats # named range being referenced on Students
+    #excel_label: Strategy # label for the column in this tab
+    #tbl_name: local_strategy # reference for the students table to summarize
+summary_columns:
+    - summary_field: # this first column is special
+        formula: tbl:sum_field # created based on summary_name
+        format: right
+        width: 10.0
+        label_format: bold_olive_underline
+        cond_format: solid_bottom
+    - '# Students':
+        formula: '=COUNTIF(%*%,%summary_field%)'
+        format: centered
+        width: 6.14
+        label_format: bold_olive_underline
+        cond_format: solid_bottom
