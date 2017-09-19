@@ -18,23 +18,29 @@
 #
 # summary_name can be either Strats, Counselor, or Campus
 #
-summary_field:
-    excel_name: Counselor # named range being referenced on Students
-    excel_label: Counselor # label for the column in this tab
-    tbl_name: Counselor # reference for the students table to summarize
-    #excel_name: Strats # named range being referenced on Students
-    #excel_label: Strategy # label for the column in this tab
-    #tbl_name: local_strategy # reference for the students table to summarize
+summary_fields: # one of these is picked by summary_type in main settings.yaml
+    Strategy:
+        excel_name: Strats # named range being referenced on Students
+        excel_label: Strategy # label for the column in this tab
+        tbl_name: local_strategy # reference for the students table to summarize
+    Counselor:
+        excel_name: Counselor # named range being referenced on Students
+        excel_label: Counselor # label for the column in this tab
+        tbl_name: Counselor # reference for the students table to summarize
 summary_columns:
     - summary_field: # this first column is special
         formula: tbl:sum_field # created based on summary_name
         format: right
         width: 10.0
         label_format: bold_olive_underline
-        cond_format: solid_bottom
+        cond_format: solid_bottom_right
+        sum_formula: ''
+        sum_format: right
     - '# Students':
         formula: '=COUNTIF(%*%,%summary_field%)'
         format: centered
         width: 6.14
         label_format: bold_olive_underline
         cond_format: solid_bottom
+        sum_formula: '=COUNT(%*%)'
+        sum_format: centered_summary

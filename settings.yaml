@@ -16,6 +16,10 @@ output_file:
     root_name: Weekly Report
     date_format: '%m_%d_%Y' # for strftime function
 
+# This specifies the main summary field for the file
+summary_type: Strategy # the details for this are in settings_summary.yaml
+#summary_type: Counselor # the details for this are in settings_summary.yaml
+
 # An explicit list of all campuses to be included in the default report.
 # Listing explicitly allows for intentional groups specified by alternate yamls
 # these are Noble campuses--to be replaced with generic ones
@@ -149,6 +153,12 @@ excel_formats:
         right: 1
         bottom: 3
         bold: True
+    centered_summary:
+        num_format: 0
+        align: center
+        top: 1
+        bottom: 6
+        bold: True
 
     # non-colored non-number formats
     centered:
@@ -187,6 +197,9 @@ excel_formats:
         bottom: 3
     solid_bottom:
         bottom: 1
+    solid_bottom_right:
+        bottom: 1
+        right: 1
     dash_bottom_right:
         bottom: 3
         right: 1

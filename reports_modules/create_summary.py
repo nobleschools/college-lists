@@ -3,14 +3,29 @@
 from reports_modules.excel_base import safe_write, write_array
 from reports_modules.excel_base import make_excel_indices
 
+def parse_formulas(formula, col_ltr, sum_name):
+    '''parses formula strings and replaces references to other columns
+    or the specially summary field
+    col_ltr is a dict of Excel names for each column
+    sum_name is the name of the summary field'''
+    tokens = formula.split('%')
+    # look at every other token "=formula(%this%,%that%)", we want this, that
+    for i in range(1,len(tokens),2): 
+        if tokens[i] == '*': # this is the special signal that we'll sub a range
+            tokens[i] = sum_name
+        else:
+            tokens[i] = col_ltr[tokens[i]]+'_r_'
+    return ''.join(tokens)
 
 def push_column(columns, letters, label, formula, fmt,
-                width, label_fmt, cond_format, sum_name):
-    '''Adds a list of length 7 to the master column list with
+                width, label_fmt, cond_format, sum_formula,
+                sum_format, sum_name):
+    '''Adds a list of length 9 to the master column list with
     col0=Excel header, col1=label, col2=formula; replaces %label% with
     the corresponding letter in Excel for that letter plus a _r_,
     col3=format (data), col4=width,
     col5=label format, col6=conditional format
+    col7=summary format, col8=summary format
     Inputs:
     columns = list of existing columns (each element list of length 7)
     letters = reference list of each column header in Excel
@@ -20,6 +35,8 @@ def push_column(columns, letters, label, formula, fmt,
     width = width of the new column
     label_fmt = the format label for the header of the new column
     cond_format = conditional format to add if at a marked off row
+    sum_formula = a second formula field for the final row
+    sum_format = a third format field for the final row
     sum_name = the name to use if the %*% pattern is encountered'''
     # Here, col_ltr is assigned a local database of the Excel reference for
     # each column already in the master 'columns' list
@@ -27,17 +44,12 @@ def push_column(columns, letters, label, formula, fmt,
 
     # Assigns the new column to the next Excel reference and tacks on the label
     new_col = [letters[len(columns)],label]
-
-    # Now process the formula field and put proper excel references inside
-    tokens = formula.split('%')
-    # look at every other token "=formula(%this%,%that%)", we want this, that
-    for i in range(1,len(tokens),2): 
-        if tokens[i] == '*': # this is the special signal that we'll sub a range
-            tokens[i] = sum_name
-        else:
-            tokens[i] = col_ltr[tokens[i]]+'_r_'
-    new_col.append(''.join(tokens)) # now adding [2], the formula
+    
+    # now add [2], the formula after parsing and replacing references
+    new_col.append(parse_formulas(formula, col_ltr, sum_name))
     new_col.extend([fmt, width, label_fmt, cond_format]) #3-6
+    new_col.append(parse_formulas(sum_formula, col_ltr, sum_name))
+    new_col.append(sum_format)
     columns.append(new_col)
     return columns
 
@@ -52,7 +64,9 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
     ws = wb.add_worksheet(sn)
     master_cols = []
     col_letters = make_excel_indices() # creates and index of excel headers
-    summary_field = cfg_sum['summary_field']
+    # the summary_type field selects the right set of field details
+    summary_fields = cfg_sum['summary_fields']
+    summary_field = summary_fields[cfg['summary_type']]
     sum_name = summary_field['excel_name'] #named range in Students
     sum_label = summary_field['excel_label'] #how we should label this field
     sum_local = summary_field['tbl_name'] #field in roster table to sum by
@@ -75,7 +89,8 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
             # of columns ready to write out
             master_cols = push_column(master_cols, col_letters, column_name,
                     formula, col['format'], col['width'],
-                    col['label_format'], col['cond_format'], sum_name)
+                    col['label_format'], col['cond_format'], 
+                    col['sum_formula'], col['sum_format'], sum_name)
     
     # After everything is defined, overwrite the label to the first column:
     master_cols[0][1] = sum_label
@@ -106,6 +121,12 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
                 safe_write(ws, row, c, formula.replace('_r_', sr), f_db[fmt])
         row += 1
 
+    # Do summary row
+    sr = str(row+1)
+    for c in range(len(master_cols)):
+        sum_formula, sum_fmt = master_cols[c][-2:]
+        safe_write(ws, row, c, sum_formula.replace('_r_', sr), f_db[sum_fmt])
+
     # Do the conditional formating underlines
     for i in range(len(master_cols)):
         ws.conditional_format(start_row, i, end_row, i,
@@ -123,7 +144,6 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
     
     # Finally, the rest of the tab's formatting
     ws.set_row(0,45)
-    #ws.autofilter(start_row-1,0, end_row, end_col)
     ws.freeze_panes(start_row,2)
     if debug:
         print('Done!',flush=True)
