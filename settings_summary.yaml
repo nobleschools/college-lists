@@ -31,7 +31,7 @@ summary_columns:
     - summary_field: # this first column is special
         formula: tbl:sum_field # created based on summary_name
         format: right
-        width: 10.0
+        width: 15.0
         label_format: bold_olive_underline
         cond_format: solid_bottom_right
         sum_formula: ''
@@ -42,5 +42,53 @@ summary_columns:
         width: 6.14
         label_format: bold_olive_underline
         cond_format: solid_bottom
-        sum_formula: '=COUNT(%*%)'
+        sum_formula: '=SUM(|# Students|)'
         sum_format: centered_summary
+    - '':
+        formula: '=%# Students%/@# Students@'
+        format: single_percent_centered
+        width: 5.43
+        label_format: bold_olive_underline
+        cond_format: single_percent_centered_solid_bottom
+        sum_formula: '=%# Students%/@# Students@'
+        sum_format: single_percent_centered_summary
+    - '=TargetGRLabel&" Grad Rate"':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,StudentTargets)/%# Students%,"")'
+        format: single_percent_centered
+        width: 8.57
+        label_format: bold_yellow_center_wrap
+        cond_format: single_percent_centered_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|=TargetGRLabel&" Grad Rate"|)/@# Students@'
+        sum_format: single_percent_centered_summary
+    - '=IdealGRLabel&" Grad Rate"':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,ReachStudentTargets)/%# Students%,"")'
+        format: single_percent_centered_right
+        width: 6.57
+        label_format: bold_yellow_center_wrap_right
+        cond_format: single_percent_centered_right_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|=IdealGRLabel&" Grad Rate"|)/@# Students@'
+        sum_format: single_percent_centered_summary_right
+    - 'Predict-ion "Perfect"':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,PredP)/%# Students%,"")'
+        format: single_percent_centered
+        width: 8.43h
+        label_format: bold_red_center_wrap
+        cond_format: single_percent_centered_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|Predict-ion "Perfect"|)/@# Students@'
+        sum_format: single_percent_centered_summary
+    - 'Predict-ion "Minus 1"':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,PredM1)/%# Students%,"")'
+        format: single_percent_centered
+        width: 9.43h
+        label_format: bold_red_center_wrap
+        cond_format: single_percent_centered_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|Predict-ion "Minus 1"|)/@# Students@'
+        sum_format: single_percent_centered_summary
+    - 'Predict-ion "Some Pref"':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,PredPref)/%# Students%,"")'
+        format: single_percent_centered
+        width: 9.43h
+        label_format: bold_red_center_wrap
+        cond_format: single_percent_centered_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|Predict-ion "Some Pref"|)/@# Students@'
+        sum_format: single_percent_centered_summary

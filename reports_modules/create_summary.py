@@ -8,6 +8,7 @@ def parse_formulas(formula, col_ltr, sum_name):
     or the specially summary field
     col_ltr is a dict of Excel names for each column
     sum_name is the name of the summary field'''
+    # First look to replace the pattern %this% with letter_r_
     tokens = formula.split('%')
     # look at every other token "=formula(%this%,%that%)", we want this, that
     for i in range(1,len(tokens),2): 
@@ -15,6 +16,21 @@ def parse_formulas(formula, col_ltr, sum_name):
             tokens[i] = sum_name
         else:
             tokens[i] = col_ltr[tokens[i]]+'_r_'
+    new_formula = ''.join(tokens)
+
+    # Second replace the pattern |this| with letter_sr_:letter_er_
+    tokens = new_formula.split('|')
+    # Same logic as the prior loop
+    for i in range(1, len(tokens), 2):
+        letter = col_ltr[tokens[i]]
+        tokens[i] = letter+'_sr_:'+letter+'_er_'
+    new_formula = ''.join(tokens)
+
+    # Finally, replace the pattern @this@ with letter_xr_
+    tokens = new_formula.split('@')
+    for i in range(1, len(tokens), 2):
+        letter = col_ltr[tokens[i]]
+        tokens[i] = letter+'_xr_'
     return ''.join(tokens)
 
 def push_column(columns, letters, label, formula, fmt,
@@ -22,7 +38,8 @@ def push_column(columns, letters, label, formula, fmt,
                 sum_format, sum_name):
     '''Adds a list of length 9 to the master column list with
     col0=Excel header, col1=label, col2=formula; replaces %label% with
-    the corresponding letter in Excel for that letter plus a _r_,
+    the corresponding letter in Excel for that letter plus a _r_ and
+    replaces #label# with letter_sr_:letter_er_,
     col3=format (data), col4=width,
     col5=label format, col6=conditional format
     col7=summary format, col8=summary format
@@ -43,6 +60,7 @@ def push_column(columns, letters, label, formula, fmt,
     col_ltr = {x[1]:x[0] for x in columns}
 
     # Assigns the new column to the next Excel reference and tacks on the label
+    col_ltr[label] = letters[len(columns)] # so we can reference this column
     new_col = [letters[len(columns)],label]
     
     # now add [2], the formula after parsing and replacing references
@@ -63,7 +81,7 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
     sn = 'Summary'
     ws = wb.add_worksheet(sn)
     master_cols = []
-    col_letters = make_excel_indices() # creates and index of excel headers
+    col_letters = make_excel_indices() # creates an index of excel headers
     # the summary_type field selects the right set of field details
     summary_fields = cfg_sum['summary_fields']
     summary_field = summary_fields[cfg['summary_type']]
@@ -111,21 +129,27 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
         sr = str(row+1)
         for c in range(len(master_cols)):
             letter, label, formula, fmt = master_cols[c][:4]
+            new_formula = formula.replace('_r_', sr).replace(
+                '_sr_', str(start_row+1)).replace(
+                '_er_', str(end_row+1)).replace('_xr_', str(end_row+2))
             if formula == 'tbl:sum_field':
                 safe_write(ws, row, c, rows[i],f_db[fmt])
             elif formula.startswith('<id>'):
                 safe_write(ws, row, c, i, f_db[fmt])
             elif formula.startswith('{'):
-                write_array(ws, row, c, formula.replace('_r_', sr), f_db[fmt])
+                write_array(ws, row, c, new_formula, f_db[fmt])
             else:
-                safe_write(ws, row, c, formula.replace('_r_', sr), f_db[fmt])
+                safe_write(ws, row, c, new_formula, f_db[fmt])
         row += 1
 
     # Do summary row
     sr = str(row+1)
     for c in range(len(master_cols)):
         sum_formula, sum_fmt = master_cols[c][-2:]
-        safe_write(ws, row, c, sum_formula.replace('_r_', sr), f_db[sum_fmt])
+        new_formula = sum_formula.replace('_r_', sr).replace(
+                '_sr_', str(start_row+1)).replace(
+                '_er_', str(end_row+1)).replace('_xr_', str(end_row+2))
+        safe_write(ws, row, c, new_formula, f_db[sum_fmt])
 
     # Do the conditional formating underlines
     for i in range(len(master_cols)):
@@ -138,12 +162,13 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
     for i in range(len(master_cols)):
         width = master_cols[i][4]
         if isinstance(width, str): # an 'h' was appended to the width
-            ws.set_column(i,i,float(width[:-1]),f_db['yellow'],{'hidden':True})
+            ws.set_column(i,i,float(width[:-1]),f_db['centered'],
+                    {'hidden':True})
         else:
             ws.set_column(i,i,width)
     
     # Finally, the rest of the tab's formatting
     ws.set_row(0,45)
-    ws.freeze_panes(start_row,2)
+    #ws.freeze_panes(start_row,2)
     if debug:
         print('Done!',flush=True)

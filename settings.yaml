@@ -111,6 +111,10 @@ excel_formats:
         num_format: 0%
         align: center
         bottom: 3
+    single_percent_centered_solid_bottom:
+        num_format: 0%
+        align: center
+        bottom: 1
     single_percent_centered_right:
         num_format: 0%
         align: center
@@ -120,6 +124,11 @@ excel_formats:
         align: center
         right: 1
         bottom: 3
+    single_percent_centered_right_solid_bottom:
+        num_format: 0%
+        align: center
+        right: 1
+        bottom: 1
     percent_bold_fmt:
         num_format: 0.0%
         bold: True
@@ -153,12 +162,27 @@ excel_formats:
         right: 1
         bottom: 3
         bold: True
+
     centered_summary:
         num_format: 0
         align: center
         top: 1
         bottom: 6
         bold: True
+    single_percent_centered_summary:
+        num_format: 0%
+        align: center
+        top: 1
+        bottom: 6
+        bold: True
+    single_percent_centered_summary_right:
+        num_format: 0%
+        align: center
+        top: 1
+        bottom: 6
+        right: 1
+        bold: True
+
 
     # non-colored non-number formats
     centered:
@@ -394,6 +418,13 @@ excel_formats:
         bg_color: "#FF0000"
         align: left
         underline: True
+    bold_red_center_wrap:
+        bg_color: "#FF0000"
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
     bold_red_center_wrap_right:
         bg_color: "#FF0000"
         bold: True
