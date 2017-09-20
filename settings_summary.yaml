@@ -19,6 +19,10 @@
 # summary_name can be either Strats, Counselor, or Campus
 #
 summary_fields: # one of these is picked by summary_type in main settings.yaml
+    Campus:
+        excel_name: Campus # named range being referenced on Students
+        excel_label: Campus # label for the column in this tab
+        tbl_name: Campus # reference for the students table to summarize
     Strategy:
         excel_name: Strats # named range being referenced on Students
         excel_label: Strategy # label for the column in this tab
@@ -27,6 +31,14 @@ summary_fields: # one of these is picked by summary_type in main settings.yaml
         excel_name: Counselor # named range being referenced on Students
         excel_label: Counselor # label for the column in this tab
         tbl_name: Counselor # reference for the students table to summarize
+
+# Each of these entries specifies the details of a column
+# Formulas have a few special substitutions
+# %*% refers back to the summary field (excel_name above)
+# %label% refers to the cell in the same row from the column 'label'
+# |label| refers to a B2:B3 style reference of the entire column 'label'
+# @label@ refers to the summary row in the column 'label'
+# PERCENT_REPLACEMENT gets replaced with a % in order to avoid conflict
 summary_columns:
     - summary_field: # this first column is special
         formula: tbl:sum_field # created based on summary_name
@@ -92,3 +104,91 @@ summary_columns:
         cond_format: single_percent_centered_solid_bottom
         sum_formula: '=SUMPRODUCT(|# Students|,|Predict-ion "Some Pref"|)/@# Students@'
         sum_format: single_percent_centered_summary
+    - 'Predict-ion "All Equal"':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,PredEqual)/%# Students%,"")'
+        format: single_percent_centered_right
+        width: 9.43h
+        label_format: bold_red_center_wrap
+        cond_format: single_percent_centered_right_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|Predict-ion "All Equal"|)/@# Students@'
+        sum_format: single_percent_centered_summary_right
+    - 'Avg # of apps (planned)':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,Apps)/%# Students%,"")'
+        format: centered_right
+        width: 9.29
+        label_format: bold_olive_center_wrap_right
+        cond_format: centered_integer_right_solid_bottom
+        sum_formula: '=SUM(Apps)/@# Students@'
+        sum_format: centered_summary_right
+    - 'Avg # of apps (subm.)':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,AppsSubmitted)/%# Students%,"")'
+        format: centered_right
+        width: 8.57
+        label_format: bold_blue_center_wrap_right
+        cond_format: centered_integer_right_solid_bottom
+        sum_formula: '=SUM(AppsSubmitted)/@# Students@'
+        sum_format: centered_summary_right
+    - 'Avg # of accept-ances':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,AcceptTotal)/%# Students%,"")'
+        format: centered_right
+        width: 7.14
+        label_format: bold_yellow_center_wrap_right
+        cond_format: centered_integer_right_solid_bottom
+        sum_formula: '=SUM(AcceptTotal)/@# Students@'
+        sum_format: centered_summary_right
+    - '% w/ at least one acceptance':
+        formula: '=IF(%# Students%>0,COUNTIFS(%*%,%summary_field%,AcceptTotal,">0")/%# Students%,"")'
+        format: single_percent_centered
+        width: 10.00
+        label_format: bold_yellow_center_wrap
+        cond_format: single_percent_centered_solid_bottom
+        sum_formula: '=COUNTIF(AcceptTotal,">0")/@# Students@'
+        sum_format: single_percent_centered_summary
+    - '="% Money "&TargetGRLabel&" Grad Rate+"':
+        formula: '=IF(AND(%# Students%>0,%Avg # of apps (planned)%>0),(SUMIF(%*%,%summary_field%,MoneyMGRApps)+SUMIF(%*%,%summary_field%,MoneyRGRApps))/%Avg # of apps (planned)%/%# Students%,"")'
+        format: single_percent_centered
+        width: 12.14
+        label_format: bold_green_center_wrap
+        cond_format: single_percent_centered_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|="PERCENT_REPLACEMENT Money "&TargetGRLabel&" Grad Rate+"|)/@# Students@'
+        sum_format: single_percent_centered_summary
+    - '="% "&TargetGRLabel&" Grad Rate+"':
+        formula: '=IF(AND(%# Students%>0,%Avg # of apps (planned)%>0),(SUMIF(%*%,%summary_field%,MatchGRApps)+SUMIF(%*%,%summary_field%,ReachGRApps))/%Avg # of apps (planned)%/%# Students%,"")'
+        format: single_percent_centered_right
+        width: 10.57
+        label_format: bold_olive_center_wrap_right
+        cond_format: single_percent_centered_right_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|="PERCENT_REPLACEMENT "&TargetGRLabel&" Grad Rate+"|)/@# Students@'
+        sum_format: single_percent_centered_summary_right
+    - '="Odds of 1+ Money "&TargetGRLabel&" GR or better"':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,MoneyMGRPlus)/%# Students%,"")'
+        format: single_percent_centered
+        width: 15.57
+        label_format: bold_green_center_wrap
+        cond_format: single_percent_centered_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|="Odds of 1+ Money "&TargetGRLabel&" GR or better"|)/@# Students@'
+        sum_format: single_percent_centered_summary
+    - '="Odds of 1+ Money "&IdealGRLabel&" GR or better"':
+        formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,MoneyRGRPlus)/%# Students%,"")'
+        format: single_percent_centered_right
+        width: 14.00
+        label_format: bold_green_center_wrap_right
+        cond_format: single_percent_centered_right_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|="Odds of 1+ Money "&IdealGRLabel&" GR or better"|)/@# Students@'
+        sum_format: single_percent_centered_summary_right
+    - '="% of kids w/ low money "&LOWER(TargetGRLabel)&" gr+ odds"':
+        formula: '=IF(%# Students%>0,COUNTIFS(%*%,%summary_field%,MoneyMGRPlus,"<0.9")/%# Students%,"")'
+        format: single_percent_centered
+        width: 14.00
+        label_format: bold_green_center_wrap
+        cond_format: single_percent_centered_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|="PERCENT_REPLACEMENT of kids w/ low money "&LOWER(TargetGRLabel)&" gr+ odds"|)/@# Students@'
+        sum_format: single_percent_centered_summary
+    - '="% of kids w/ low money "&LOWER(IdealGRLabel)&" gr+ odds"':
+        formula: '=IF(%# Students%>0,COUNTIFS(%*%,%summary_field%,MoneyRGRPlus,"<0.5")/%# Students%,"")'
+        format: single_percent_centered_right
+        width: 14.00
+        label_format: bold_green_center_wrap_right
+        cond_format: single_percent_centered_right_solid_bottom
+        sum_formula: '=SUMPRODUCT(|# Students|,|="PERCENT_REPLACEMENT of kids w/ low money "&LOWER(IdealGRLabel)&" gr+ odds"|)/@# Students@'
+        sum_format: single_percent_centered_summary_right

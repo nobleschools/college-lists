@@ -15,6 +15,7 @@ def parse_formulas(formula, col_ltr, sum_name):
         if tokens[i] == '*': # this is the special signal that we'll sub a range
             tokens[i] = sum_name
         else:
+            tokens[i] = tokens[i].replace('PERCENT_REPLACEMENT','%')
             tokens[i] = col_ltr[tokens[i]]+'_r_'
     new_formula = ''.join(tokens)
 
@@ -22,6 +23,7 @@ def parse_formulas(formula, col_ltr, sum_name):
     tokens = new_formula.split('|')
     # Same logic as the prior loop
     for i in range(1, len(tokens), 2):
+        tokens[i] = tokens[i].replace('PERCENT_REPLACEMENT','%')
         letter = col_ltr[tokens[i]]
         tokens[i] = letter+'_sr_:'+letter+'_er_'
     new_formula = ''.join(tokens)
@@ -29,6 +31,7 @@ def parse_formulas(formula, col_ltr, sum_name):
     # Finally, replace the pattern @this@ with letter_xr_
     tokens = new_formula.split('@')
     for i in range(1, len(tokens), 2):
+        tokens[i] = tokens[i].replace('PERCENT_REPLACEMENT','%')
         letter = col_ltr[tokens[i]]
         tokens[i] = letter+'_xr_'
     return ''.join(tokens)
@@ -89,6 +92,16 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
     sum_label = summary_field['excel_label'] #how we should label this field
     sum_local = summary_field['tbl_name'] #field in roster table to sum by
     rows = list(set(df[sum_local])) # A list of unique values in sum column
+
+    # if the settings file specifies a custom list for the summary field,
+    # populate that here:
+    if cfg['summary_type'] == 'Campus':
+        rows = cfg['all_campuses']
+    elif cfg['summary_type'] == 'Strategy':
+        rows = cfg['all_strategies']
+
+    if debug:
+        print(rows)
 
     # Now define a list of columns and how they are constructed
     for sum_column in cfg_sum['summary_columns']:

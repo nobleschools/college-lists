@@ -505,6 +505,7 @@ students_columns:
 # single word columns--quotes are just used to contain the spaces in the name
 #
 student_names:
+    Campus: Campus
     LastFirst: LastFirst
     KidIDs: StudentID
     KidGPAs: GPA
