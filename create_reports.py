@@ -12,6 +12,7 @@ from reports_modules.create_summary import make_summary_tab
 from reports_modules.create_students import reduce_roster, make_students_tab
 from reports_modules.create_students import add_student_calculations
 from reports_modules.create_apps import reduce_and_augment_apps, make_apps_tab
+from reports_modules.create_single_student import make_single_tab
 
 def main(settings_file, settings_tabs, campus, counselor, debug=True):
     '''Creates the reports according to instructions in yaml files either
@@ -39,6 +40,10 @@ def main(settings_file, settings_tabs, campus, counselor, debug=True):
             cfg_tabs['students'], campus, debug)
     make_apps_tab(out.writer, out.formats, out.dfs, cfg,
             cfg_tabs['applications'], debug)
+    make_single_tab(out.writer, out.formats, out.dfs, cfg,
+            cfg_tabs['ssv'], campus, debug, blank=False)
+    make_single_tab(out.writer, out.formats, out.dfs, cfg,
+            cfg_tabs['ssv'], campus, debug, blank=True)
     create_static_tabs(out.writer, out.dfs, out.formats, cfg, campus, debug)
 
 
@@ -65,6 +70,11 @@ if __name__ == '__main__':
             help='Name/path of yaml file with students settings',
             default='settings_applications.yaml')
 
+    parser.add_argument('-sv','--settings_ssv',
+            dest='settings_ssv_file', action='store',
+            help='Name/path of yaml file with single student report settings',
+            default='settings_ssv.yaml')
+
     parser.add_argument('-ca', '--campus',
             dest='campus', action='store',
             help='Single campus name (default "All")',
@@ -84,6 +94,7 @@ if __name__ == '__main__':
             'summary': args.settings_summary_file,
             'students': args.settings_students_file,
             'applications': args.settings_applications_file,
+            'ssv': args.settings_ssv_file,
             }
     main(args.settings_file, settings_tabs, args.campus, args.counselor,
             args.debug)

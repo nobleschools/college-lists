@@ -469,3 +469,10 @@ excel_formats:
         text_wrap: True
         bottom: 1
         right: 1
+
+    # Formats specifically for single student view (may overlap
+    # with the above, but wanted to keep these clear)
+    ssv_yellow:
+        bg_color: "#FFFF00"
+    ssv_percent:
+        num_format: 0.0%

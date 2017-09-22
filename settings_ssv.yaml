@@ -1,0 +1,28 @@
+# This file allows for setting specific changes to the Single Student View
+# File, although it is less customizable through yaml than the other files
+
+# This allows individual campuses to customize the sorting behavior
+counselor_header:
+    Standard: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))'
+    Golder: '="Counselor: "&INDEX(Counselor,MATCH(D3,KidIDs,0))'
+
+# This allows individual schools to customize odds/class language
+bottom_targets: # specification for specific campus goals
+    Golder:
+        - 1:
+            Label: '="3+ "&LOWER(IdealGRLabel)&" grad rate schools"'
+            Eval: '=AE6'
+            Sign: '>'
+        - 2:
+            Label: '="3+ "&LOWER(IdealGRLabel)&" grad rate schools"'
+            Eval: '=AE6'
+            Sign: '>'
+    Bulls:
+        - 1:
+            Label: '="3+ "&LOWER(IdealGRLabel)&" grad rate schools"'
+            Eval: '=AE6'
+            Sign: '>'
+        - 2:
+            Label: '="3+ "&LOWER(IdealGRLabel)&" grad rate schools"'
+            Eval: '=AE6'
+            Sign: '>'
