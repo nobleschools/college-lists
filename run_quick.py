@@ -13,9 +13,9 @@ t0 = time()
 # initially, just runs a basic counselor setup
 call_stem = 'python create_reports.py'
 call_counselor = '-co "Emily Morgan" -ca Muchin'
-call_campus = '-ca RoweClark'
+call_campus = '-ca RoweClark -sum Counselor'
 if call_type == 'all':
-    os.system(call_stem)
+    os.system(call_stem +' -sum Campus')
 elif call_type == 'campus':
     os.system(call_stem+' '+call_campus)
 else:

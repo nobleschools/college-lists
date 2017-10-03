@@ -82,14 +82,15 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
     '&IGRshortLabel&") or better schools"',
             f_db['ssv_migr_label'])
 
-    safe_write(ws, 1, 5, 'GPA', f_db['ssv_gpa_title'])
-    safe_write(ws, 2, 5, '=INDEX(KidGPAs,MATCH(D3,KidIDs,0))', f_db['ssv_gpa'])
+    safe_write(ws, 1, 5, 'ACT/SAT', f_db['ssv_act_title'])
+    safe_write(ws, 2, 5, '=INDEX(ActualACT,MATCH(D3,KidIDs,0))&"/"&'+
+            'INDEX(ActualSAT,MATCH(D3,KidIDs,0))', f_db['ssv_act'])
     safe_write(ws, 3, 5, '', f_db['ssv_odds_title_b'])
     safe_write(ws, 5, 5, '', f_db['ssv_migr_label_b'])
 
-    safe_write(ws, 1, 6, 'ACT', f_db['ssv_act_title'])
-    safe_write(ws, 2, 6, '=INDEX(KidACTs,MATCH(D3,KidIDs,0))',
-            f_db['ssv_act'])
+    safe_write(ws, 1, 6, 'GPA', f_db['ssv_gpa_title'])
+    safe_write(ws, 2, 6, '=INDEX(KidGPAs,MATCH(D3,KidIDs,0))',
+            f_db['ssv_gpa'])
     safe_write(ws, 3, 6, '', f_db['ssv_odds_title_c'])
     safe_write(ws, 4, 6, '=1-PRODUCT(AF'+str(d_start+1)+
             ':AF'+str(d_end+1)+')', f_db['ssv_mtgr'])

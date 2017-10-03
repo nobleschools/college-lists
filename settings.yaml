@@ -7,6 +7,7 @@ inputs:
     StandardWeights: inputs/standard_weights.csv
     Strategies: inputs/strategy_definitions.csv
     StudentTargets: inputs/targets_by_strategy.csv
+    SATtoACT: inputs/sat_to_act.csv
     current_applications: current_applications.csv
     current_roster: current_students.csv
     chart: inputs/strategy_chart.jpg
@@ -65,8 +66,8 @@ all_strategies: # list all so summaries include those w/ no students
 # This allows individual campuses to customize the sorting behavior
 sort_students:
     Standard: '=%Counselor%&%LastFirst%'
-    UIC: '=%Counselor%&%Cohort%&%LastFirst%'
-    Golder: '=%Cohort%&%Counselor%&%LastFirst%'
+    Rauner: '=%Cohort%&%Counselor%&%LastFirst%'
+    UIC: '=%Cohort%&%Counselor%&%LastFirst%'
 
 # This allows individual schools to customize odds/class language
 category_labels:
@@ -87,18 +88,6 @@ category_labels:
         IdealGR: Ideal
         BelowTGR: Below Expected
         FarBelowTGR: Far Below Expected
-        SureThing: Sure Thing
-        Secure: Secure
-        Safety: Safety
-        Match: Match
-        Reach: Reach
-        Longshot: Longshot
-        HailMary: Hail Mary
-    RoweClark:
-        TargetGR: Average
-        IdealGR: Ideal
-        BelowTGR: Minimum
-        FarBelowTGR: Subpar
         SureThing: Sure Thing
         Secure: Secure
         Safety: Safety
@@ -523,23 +512,23 @@ excel_formats:
         bottom: 2
     ssv_migr_label_b:
         bottom: 2
-    ssv_gpa:
-        num_format: '0.00'
-        align: center
-        left: 2
-        bottom: 2
     ssv_act:
         num_format: '#'
         align: center
+        left: 2
+        bottom: 2
+    ssv_gpa:
+        num_format: '0.00'
+        align: center
         right: 2
         bottom: 2
-    ssv_gpa_title:
+    ssv_act_title:
         bg_color: "#dce6f1"
         top: 2
         left: 2
         bottom: 1
         align: center
-    ssv_act_title:
+    ssv_gpa_title:
         bg_color: "#dce6f1"
         top: 2
         right: 2

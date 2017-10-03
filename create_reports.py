@@ -14,7 +14,7 @@ from reports_modules.create_students import add_student_calculations
 from reports_modules.create_apps import reduce_and_augment_apps, make_apps_tab
 from reports_modules.create_single_student import make_single_tab
 
-def main(settings_file, settings_tabs, campus, counselor, debug=True):
+def main(settings_file, settings_tabs, campus, counselor, summary, debug=True):
     '''Creates the reports according to instructions in yaml files either
     for a single campus or "All"'''
     # Setup configuration--main settings file (includes Excel formats)
@@ -36,7 +36,7 @@ def main(settings_file, settings_tabs, campus, counselor, debug=True):
 
     create_chart_tab(out.writer, out.chart, debug)
     make_summary_tab(out.writer, out.formats, out.dfs, cfg,
-            cfg_tabs['summary'], campus, debug)
+            cfg_tabs['summary'], campus, debug, summary)
     make_students_tab(out.writer, out.formats, out.dfs, cfg, 
             cfg_tabs['students'], campus, debug)
     make_single_tab(out.writer, out.formats, out.dfs, cfg,
@@ -76,6 +76,11 @@ if __name__ == '__main__':
             help='Name/path of yaml file with single student report settings',
             default='settings_ssv.yaml')
 
+    parser.add_argument('-sum','--summary_type',
+            dest='summary', action='store',
+            help='Field to summarize by [Strategy,Campus,Counselor]',
+            default='Strategy')
+    
     parser.add_argument('-ca', '--campus',
             dest='campus', action='store',
             help='Single campus name (default "All")',
@@ -98,4 +103,4 @@ if __name__ == '__main__':
             'ssv': args.settings_ssv_file,
             }
     main(args.settings_file, settings_tabs, args.campus, args.counselor,
-            args.debug)
+            args.summary, args.debug)

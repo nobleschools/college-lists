@@ -56,7 +56,7 @@ class Output():
             if self.debug:
                 print('(size {}).'.format(len(self.dfs[key])),flush=True)
         elif key in ['CustomWeights','StandardWeights','Strategies',
-                     'StudentTargets']:
+                     'StudentTargets','SATtoACT']:
             self.dfs[key] = pd.read_csv(filename,index_col=0,
                     na_values=['N/A',''])
             if self.debug:
@@ -66,6 +66,7 @@ class Output():
                 na_values=['N/A',''],encoding='cp1252',converters={
                     'EFC':safe2int,
                     'ACT':safe2int,
+                    'SAT':safe2int,
                     'GPA':safe2f,
                     'StudentID':safe2int})
             if self.debug:

@@ -43,11 +43,11 @@ Ashford University,154022,No
 Ashland University,201104,No
 Assumption College,164562,No
 Atlanta Christian College,138868,No
-Atlantic Union College,164571,No
+Atlantic Union College,164571,#N/A
 Auburn University,100858,No
 Auburn University at Montgomery,100830,No
 Augsburg College,173045,No
-Augusta State University,138983,No
+Augusta State University,138983,#N/A
 Augustana College,143084,No
 Augustana College,219000,No
 Aurora University,143118,No
@@ -286,14 +286,14 @@ Denison University,202523,No
 DePaul University,144740,No
 DePauw University,150400,No
 DeSales University,210739,No
-DeVry College of New York,432199,No
-DeVry University-Arizona,104531,No
-DeVry University-California,113607,No
-DeVry University-Georgia,139533,No
-DeVry University-Illinois,144759,No
-DeVry University-Missouri,177162,No
-DeVry University-Ohio,202541,No
-DeVry University-Texas,224402,No
+DeVry College of New York,432199,#N/A
+DeVry University-Arizona,104531,#N/A
+DeVry University-California,113607,#N/A
+DeVry University-Georgia,139533,#N/A
+DeVry University-Illinois,144759,#N/A
+DeVry University-Missouri,177162,#N/A
+DeVry University-Ohio,202541,#N/A
+DeVry University-Texas,224402,#N/A
 Dickinson College,212009,No
 DigiPen Institute of Technology,443410,No
 Dillard University (HBCU),158802,Yes
@@ -523,7 +523,7 @@ Lake Forest College,146481,No
 Lake Superior State University,170639,No
 Lakeland College,238980,No
 Lamar University,226091,No
-Lambuth University,220589,No
+Lambuth University,220589,#N/A
 Lander University,218229,No
 Lane College (HBCU),220598,Yes
 Langston University (HBCU),207209,Yes
@@ -577,7 +577,7 @@ Lynn University,132657,No
 Lyon College,106342,No
 Macalester College,173902,No
 MacMurray College,146825,No
-Macon State College,140322,No
+Macon State College,140322,#N/A
 Madonna University,170806,No
 Maharishi University of Management,153861,No
 Maine Maritime Academy,161299,No
@@ -712,7 +712,7 @@ North Carolina Wesleyan College,199209,No
 North Central College,147660,No
 North Central University,174437,No
 North Dakota State University-Main Campus,200332,No
-North Georgia College & State University,140669,No
+North Georgia College & State University,140669,#N/A
 North Greenville University,218441,No
 North Park University,147679,No
 Northeastern Illinois University,147776,No
@@ -1021,7 +1021,7 @@ Texas A & M International University,226152,No
 Texas A & M University-College Station,228723,No
 Texas A & M University-Commerce,224554,No
 Texas A & M University-Corpus Christi,224147,No
-Texas A & M University-Galveston,228714,No
+Texas A & M University-Galveston,228714,#N/A
 Texas A & M University-Kingsville,228705,No
 Texas Christian University,228875,No
 Texas Lutheran University,228981,No
@@ -1137,6 +1137,7 @@ University of Hawaii at Manoa,141574,No
 University of Houston,225511,No
 University of Idaho,142285,No
 University of Illinois at Chicago,145600,No
+University of Illinois at Chicago (Honors),UICHonors,No
 University of Illinois at Springfield,148654,No
 University of Illinois at Urbana-Champaign,145637,No
 University of Indianapolis,151263,No

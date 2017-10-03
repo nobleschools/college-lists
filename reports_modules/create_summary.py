@@ -74,7 +74,7 @@ def push_column(columns, letters, label, formula, fmt,
     columns.append(new_col)
     return columns
 
-def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
+def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug, summary):
     '''Creates the Excel tab for students using cfg details'''
     # First initialize inputs
     if debug:
@@ -87,7 +87,7 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
     col_letters = make_excel_indices() # creates an index of excel headers
     # the summary_type field selects the right set of field details
     summary_fields = cfg_sum['summary_fields']
-    summary_field = summary_fields[cfg['summary_type']]
+    summary_field = summary_fields[summary]
     sum_name = summary_field['excel_name'] #named range in Students
     sum_label = summary_field['excel_label'] #how we should label this field
     sum_local = summary_field['tbl_name'] #field in roster table to sum by
@@ -95,9 +95,9 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug):
 
     # if the settings file specifies a custom list for the summary field,
     # populate that here:
-    if cfg['summary_type'] == 'Campus':
+    if summary == 'Campus':
         rows = cfg['all_campuses']
-    elif cfg['summary_type'] == 'Strategy':
+    elif summary == 'Strategy':
         rows = cfg['all_strategies']
 
     if debug:

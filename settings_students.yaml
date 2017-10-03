@@ -81,10 +81,34 @@ students_columns:
         head_format: bold_olive_underline
         label_format: bold_olive_center_wrap
         cond_format: dash_bottom
-    - ACT:
+    - 'Actual ACT':
         formula: tbl:ACT
         format: centered
-        width: 4.43
+        width: 5.57
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'Actual SAT':
+        formula: tbl:SAT
+        format: centered
+        width: 5.57
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'SAT in ACT terms':
+        formula: '=IF(ISNUMBER(%Actual SAT%),VLOOKUP(%Actual SAT%,SATtoACT,2,FALSE),"TBD")'
+        format: centered
+        width: 5.57
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'High "ACT"':
+        formula: '=IF(ISNUMBER(%Actual ACT%),IF(ISNUMBER(%SAT in ACT terms%),MAX(%Actual ACT%,%SAT in ACT terms%),%Actual ACT%),IF(ISNUMBER(%SAT in ACT terms%),%SAT in ACT terms%,"TBD"))'
+        format: centered
+        width: 6.00
         head_text: ''
         head_format: bold_olive_underline
         label_format: bold_olive_center_wrap
@@ -98,7 +122,7 @@ students_columns:
         label_format: bold_olive_center_wrap
         cond_format: dash_bottom
     - Stra-tegy:
-        formula: '=IF(AND(%GPA%<>0,%ACT%<>0),IF(ISNUMBER(VLOOKUP(TEXT(MAX(FLOOR(%GPA%*10,1)/10,1.5),"0.0")&":"&MAX(%ACT%,12),StrategyLookup,4,FALSE)),VLOOKUP(TEXT(MAX(FLOOR(%GPA%*10,1)/10,1.5),"0.0")&":"&MAX(%ACT%,12),StrategyLookup,4,FALSE),"TBD"),"TBD")'
+        formula: '=IF(AND(%GPA%<>0,%High "ACT"%<>0),IF(ISNUMBER(VLOOKUP(TEXT(MAX(FLOOR(%GPA%*10,1)/10,1.5),"0.0")&":"&MAX(%High "ACT"%,12),StrategyLookup,4,FALSE)),VLOOKUP(TEXT(MAX(FLOOR(%GPA%*10,1)/10,1.5),"0.0")&":"&MAX(%High "ACT"%,12),StrategyLookup,4,FALSE),"TBD"),"TBD")'
         format: centered
         width: 4.29
         head_text: ''
@@ -106,7 +130,7 @@ students_columns:
         label_format: bold_olive_center_wrap
         cond_format: dash_bottom
     - '=TargetGRLabel&" Grad Rate"':
-        formula: '=IF(ISNUMBER(%Stra-tegy%),VLOOKUP(IF(OR(%Stra-tegy%=4,%Stra-tegy%=5),%Stra-tegy%&IF(%GPA%>=3,"+","<"),%Stra-tegy%&""),TargetLookup,IF(%EFC%=-1,6,IF(OR(%Race / Eth%="W",%Race / Eth%="A"),4,2)),FALSE),"TBD")'
+        formula: '=IF(ISNUMBER(%Stra-tegy%),VLOOKUP(IF(OR(%Stra-tegy%=5,%Stra-tegy%=6),%Stra-tegy%&IF(%GPA%>=3,"+","<"),%Stra-tegy%&""),TargetLookup,IF(%EFC%=-1,6,IF(OR(%Race / Eth%="W",%Race / Eth%="A"),4,2)),FALSE),"TBD")'
         format: single_percent_centered
         width: 7.57
         head_text: ''
@@ -114,7 +138,7 @@ students_columns:
         label_format: bold_yellow_center_wrap
         cond_format: dash_bottom
     - '=IdealGRLabel&" Grad Rate"':
-        formula: '=IF(ISNUMBER(%Stra-tegy%),VLOOKUP(IF(OR(%Stra-tegy%=4,%Stra-tegy%=5),%Stra-tegy%&IF(%GPA%>=3,"+","<"),%Stra-tegy%&""),TargetLookup,IF(%EFC%=-1,7,IF(OR(%Race / Eth%="W",%Race / Eth%="A"),5,3)),FALSE),"TBD")'
+        formula: '=IF(ISNUMBER(%Stra-tegy%),VLOOKUP(IF(OR(%Stra-tegy%=5,%Stra-tegy%=6),%Stra-tegy%&IF(%GPA%>=3,"+","<"),%Stra-tegy%&""),TargetLookup,IF(%EFC%=-1,7,IF(OR(%Race / Eth%="W",%Race / Eth%="A"),5,3)),FALSE),"TBD")'
         format: single_percent_centered
         width: 7.57
         head_text: ''
@@ -153,6 +177,22 @@ students_columns:
         head_format: blue
         label_format: bold_blue_wrap
         cond_format: dash_bottom
+    - 'Money Target GR or better':
+        formula: '{=1-PRODUCT(IF(Students=%StudentID%,MGRMoneyMult,1))}'
+        format: single_percent_centered
+        width: 10.14 
+        head_text: 'Odds of at least one'
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: single_percent_centered_dash_bottom
+    - 'Money Ideal GR or better':
+        formula: '{=1-PRODUCT(IF(Students=%StudentID%,RGRMoneyMult,1))}'
+        format: single_percent_centered_right
+        width: 10.14 
+        head_text: ''
+        head_format: bold_olive_right
+        label_format: bold_olive_center_wrap_right
+        cond_format: single_percent_centered_right_dash_bottom
     - '# of acceptances':
         formula: '=COUNTIFS(Students,%StudentID%,Results,"Accepted!")+COUNTIFS(Students,%StudentID%,Results,"CHOICE!")'
         format: centered_integer_right
@@ -289,22 +329,6 @@ students_columns:
         head_format: bold_green_right
         label_format: bold_green_center_wrap_right
         cond_format: centered_integer_right_dash_bottom
-    - 'Money Target GR or better':
-        formula: '{=1-PRODUCT(IF(Students=%StudentID%,MGRMoneyMult,1))}'
-        format: single_percent_centered
-        width: 10.14 
-        head_text: 'Odds of at least one'
-        head_format: bold_olive_underline
-        label_format: bold_olive_center_wrap
-        cond_format: single_percent_centered_dash_bottom
-    - 'Money Ideal GR or better':
-        formula: '{=1-PRODUCT(IF(Students=%StudentID%,RGRMoneyMult,1))}'
-        format: single_percent_centered_right
-        width: 10.14 
-        head_text: ''
-        head_format: bold_olive_right
-        label_format: bold_olive_center_wrap_right
-        cond_format: single_percent_centered_right_dash_bottom
     - 'Ideal GR+ apps':
         formula: '=SUMIF(Students,%StudentID%,RGRcount)'
         format: centered_integer
@@ -535,7 +559,9 @@ student_names:
     KidLast: Last
     KidIDs: StudentID
     KidGPAs: GPA
-    KidACTs: ACT
+    ActualACT: 'Actual ACT'
+    ActualSAT: 'Actual SAT'
+    KidACTs: 'High "ACT"'
     KidRace: 'Race / Eth'
     Strats: Stra-tegy
     StudentTargets: '=TargetGRLabel&" Grad Rate"'
