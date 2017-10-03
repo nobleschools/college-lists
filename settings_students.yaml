@@ -481,8 +481,32 @@ students_columns:
         head_format: bold_green_underline
         label_format: bold_green_center_wrap
         cond_format: centered_integer_dash_bottom
+    - 'Money Ideal GR+ (incl Longshot)':
+        formula: '=SUMIFS(RGRcount,Students,%StudentID%,MoneyYesNo,1,Odds,">=10")'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_green_underline
+        label_format: bold_green_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Money Target GR (incl Longshot)':
+        formula: '=SUMIFS(MGRcount,Students,%StudentID%,MoneyYesNo,1,Odds,">=10")-%Money Ideal GR+ (incl Longshot)%'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_green_underline
+        label_format: bold_green_center_wrap
+        cond_format: centered_integer_dash_bottom
     - 'IL Public apps':
         formula: '=COUNTIFS(Students,%StudentID%,ILPublic,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_blue
+        label_format: bold_blue_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'IL Public, Match, Safety, Secure':
+        formula: '=COUNTIFS(Students,%StudentID%,ILPublic,1, Classes,"Match")+COUNTIFS(Students,%StudentID%,ILPublic,1, Classes,"Safety")+COUNTIFS(Students,%StudentID%,ILPublic,1, Classes,"Secure")'
         format: centered_integer
         width: 8.43
         head_text: ''
@@ -507,6 +531,8 @@ students_columns:
 student_names:
     Campus: Campus
     LastFirst: LastFirst
+    KidFirst: First
+    KidLast: Last
     KidIDs: StudentID
     KidGPAs: GPA
     KidACTs: ACT
@@ -514,6 +540,7 @@ student_names:
     Strats: Stra-tegy
     StudentTargets: '=TargetGRLabel&" Grad Rate"'
     ReachStudentTargets: '=IdealGRLabel&" Grad Rate"'
+    Cohort: Cohort
     Advisors: Advisor
     Counselor: Counselor
     AppsSubmitted: '# of apps submitted'
@@ -547,5 +574,8 @@ student_names:
     AllMoneyApps: 'All Money'
     MoneyRGROdds: 'Money Ideal GR+ apps'
     MoneyMGROdds: 'Money Target GR apps'
+    MoneyRGROddsLongshot: 'Money Ideal GR+ (incl Longshot)'
+    MoneyMGROddsLongshot: 'Money Target GR (incl Longshot)'
     ILPubApps: 'IL Public apps'
+    ILPubMSS: 'IL Public, Match, Safety, Secure'
     MoneyChicagoApps: 'Money Chicago apps'

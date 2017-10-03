@@ -38,12 +38,12 @@ def main(settings_file, settings_tabs, campus, counselor, debug=True):
             cfg_tabs['summary'], campus, debug)
     make_students_tab(out.writer, out.formats, out.dfs, cfg, 
             cfg_tabs['students'], campus, debug)
-    make_apps_tab(out.writer, out.formats, out.dfs, cfg,
-            cfg_tabs['applications'], debug)
     make_single_tab(out.writer, out.formats, out.dfs, cfg,
             cfg_tabs['ssv'], campus, debug, blank=False)
     make_single_tab(out.writer, out.formats, out.dfs, cfg,
             cfg_tabs['ssv'], campus, debug, blank=True)
+    make_apps_tab(out.writer, out.formats, out.dfs, cfg,
+            cfg_tabs['applications'], debug)
     create_static_tabs(out.writer, out.dfs, out.formats, cfg, campus, debug)
 
 

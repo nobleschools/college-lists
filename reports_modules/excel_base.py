@@ -102,6 +102,8 @@ def create_college_list_lookup_tab(writer, df, format_db):
     ws.set_column(0,0,40, format_db['left_normal_text'])
     wb.define_name('ExtraCollegeChoice',
             '='+sn+'!$A$2:$A$'+str(max_row))
+    wb.define_name('ExtraCollegeNCES',
+            '='+sn+'!$B$2:$B$'+str(max_row))
     wb.define_name('CollegeListLookup',
             '='+sn+'!$A$2:$B$'+str(max_row))
     ws.autofilter('A1:C1')
