@@ -85,7 +85,8 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
     safe_write(ws, 1, 5, 'ACT/SAT', f_db['ssv_act_title'])
     safe_write(ws, 2, 5, '=INDEX(ActualACT,MATCH(D3,KidIDs,0))&"/"&'+
             'INDEX(ActualSAT,MATCH(D3,KidIDs,0))', f_db['ssv_act'])
-    safe_write(ws, 3, 5, '', f_db['ssv_odds_title_b'])
+    safe_write(ws, 3, 5, '=INDEX(KidACTs,MATCH(D3,KidIDs,0))',
+            f_db['ssv_odds_title_b'])
     safe_write(ws, 5, 5, '', f_db['ssv_migr_label_b'])
 
     safe_write(ws, 1, 6, 'GPA', f_db['ssv_gpa_title'])
@@ -201,8 +202,8 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
                 ',AllCollegeNCES,0)))')
         safe_write(ws, r, 12,'=INDEX(AllCollegeACT25,MATCH(D'+r_excel+
                 ',AllCollegeNCES,0))')
-        safe_write(ws, r, 13,'=F3')
-        safe_write(ws, r, 14,'=G3')
+        safe_write(ws, r, 13,'=G3')
+        safe_write(ws, r, 14,'=F4')
         safe_write(ws, r, 15,'=INDEX(CustomWeightsGPA,MATCH($H3&":"&$D'+
                 r_excel+',CustomWeightsIndex,0))')
         safe_write(ws, r, 16,'=INDEX(CustomWeightsACT,MATCH($H3&":"&$D'+

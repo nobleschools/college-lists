@@ -63,8 +63,10 @@ def reduce_and_augment_apps(cfg, dfs, debug):
     # The below specifies target label, source label, n/a value
     roster_fields = [('local_gpa', 'GPA', np.nan),
                      ('local_act', 'ACT', np.nan),
+                     ('local_sat', 'SAT', np.nan),
                      ('local_race','Race/ Eth', 'TBD'),
                      ]
+    # NEED TO ADD LOCAL CALCULATED SAT->ACT CONVERSION
     for local_label, roster_label, na_val in roster_fields:
         df[local_label] = df['hs_student_id'].apply(lookup_source_field,
             args=(dfs['roster'],roster_label, na_val, 'TBD'))

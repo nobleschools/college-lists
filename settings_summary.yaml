@@ -131,7 +131,7 @@ summary_columns:
     - 'Predict-ion "Perfect"':
         formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,PredP)/%# Students%,"")'
         format: single_percent_centered
-        width: 8.43
+        width: 8.43h
         label_format: bold_red_center_wrap
         cond_format: single_percent_centered_solid_bottom
         sum_formula: '=SUMPRODUCT(|# Students|,|Predict-ion "Perfect"|)/@# Students@'
@@ -139,7 +139,7 @@ summary_columns:
     - 'Predict-ion "Minus 1"':
         formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,PredM1)/%# Students%,"")'
         format: single_percent_centered
-        width: 9.43
+        width: 9.43h
         label_format: bold_red_center_wrap
         cond_format: single_percent_centered_solid_bottom
         sum_formula: '=SUMPRODUCT(|# Students|,|Predict-ion "Minus 1"|)/@# Students@'
@@ -147,7 +147,7 @@ summary_columns:
     - 'Predict-ion "Some Pref"':
         formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,PredPref)/%# Students%,"")'
         format: single_percent_centered
-        width: 9.43
+        width: 9.43h
         label_format: bold_red_center_wrap
         cond_format: single_percent_centered_solid_bottom
         sum_formula: '=SUMPRODUCT(|# Students|,|Predict-ion "Some Pref"|)/@# Students@'
@@ -155,7 +155,7 @@ summary_columns:
     - 'Predict-ion "All Equal"':
         formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,PredEqual)/%# Students%,"")'
         format: single_percent_centered_right
-        width: 9.43
+        width: 9.43h
         label_format: bold_red_center_wrap
         cond_format: single_percent_centered_right_solid_bottom
         sum_formula: '=SUMPRODUCT(|# Students|,|Predict-ion "All Equal"|)/@# Students@'

@@ -41,6 +41,8 @@ all_campuses: # campuses to try if "all" selected
     - Hansberry
     - Baker
     - Butler
+    - Speer
+    - TNA
 
 all_strategies: # list all so summaries include those w/ no students
     - 1
@@ -499,6 +501,9 @@ excel_formats:
         top: 2
         left: 2
     ssv_odds_title_b:
+        bold: True
+        num_format: '#'
+        align: center
         bg_color: "#dce6f1"
         top: 2
     ssv_odds_title_c:

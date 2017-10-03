@@ -18,7 +18,8 @@ def main(settings_file, settings_tabs, campus, counselor, summary, debug=True):
     '''Creates the reports according to instructions in yaml files either
     for a single campus or "All"'''
     # Setup configuration--main settings file (includes Excel formats)
-    print('Report for {},{}.'.format(campus, counselor), flush=True)
+    if debug:
+        print('Report for {},{}.'.format(campus, counselor), flush=True)
     with open(settings_file, 'r') as ymlfile:
         cfg = yaml.load(ymlfile)
 
