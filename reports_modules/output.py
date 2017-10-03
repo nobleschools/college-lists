@@ -48,6 +48,8 @@ class Output():
                         'Adj6yrGrad_AA_Hisp':p2f})
             if self.debug:
                 print('(size {}).'.format(len(self.dfs[key])),flush=True)
+        elif key == 'chart':
+            self.chart = filename
         elif key == 'CollegeListLookup':
             self.dfs[key] = pd.read_csv(filename,index_col=0,encoding='cp1252',
                     converters={'UNITID':safe2int})

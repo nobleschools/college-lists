@@ -170,6 +170,15 @@ def create_labels_tab(writer, format_db, cfg, campus):
     ws.set_column(0,1,18)
     ws.hide()
 
+def create_chart_tab(writer, fn, debug):
+    if debug:
+        print('Writing chart tab',flush=True)
+    wb = writer.book
+    sn = 'Chart'
+    ws = wb.add_worksheet(sn)
+    ws.insert_image('A1',fn)
+    ws.set_zoom(75)
+
 def create_static_tabs(writer, dfs, formats, cfg, campus,debug):
     '''Places default data into hidden tabs'''
     if debug:

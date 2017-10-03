@@ -9,6 +9,7 @@ inputs:
     StudentTargets: inputs/targets_by_strategy.csv
     current_applications: current_applications.csv
     current_roster: current_students.csv
+    chart: inputs/strategy_chart.jpg
 
 # The output filename is a combination of these with campus and counselor
 # if chosen via the command line options

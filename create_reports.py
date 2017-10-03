@@ -7,7 +7,7 @@ tries to get roster info from the Naviance file)'''
 import yaml
 import argparse
 from reports_modules.output import Output
-from reports_modules.excel_base import create_static_tabs
+from reports_modules.excel_base import create_static_tabs, create_chart_tab
 from reports_modules.create_summary import make_summary_tab
 from reports_modules.create_students import reduce_roster, make_students_tab
 from reports_modules.create_students import add_student_calculations
@@ -34,6 +34,7 @@ def main(settings_file, settings_tabs, campus, counselor, debug=True):
     reduce_and_augment_apps(cfg, out.dfs, debug)
     add_student_calculations(cfg, out.dfs, debug)
 
+    create_chart_tab(out.writer, out.chart, debug)
     make_summary_tab(out.writer, out.formats, out.dfs, cfg,
             cfg_tabs['summary'], campus, debug)
     make_students_tab(out.writer, out.formats, out.dfs, cfg, 
