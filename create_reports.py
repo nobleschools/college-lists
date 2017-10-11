@@ -13,8 +13,10 @@ from reports_modules.create_students import reduce_roster, make_students_tab
 from reports_modules.create_students import add_student_calculations
 from reports_modules.create_apps import reduce_and_augment_apps, make_apps_tab
 from reports_modules.create_single_student import make_single_tab
+from reports_modules.create_pdf import make_pdf_report
 
-def main(settings_file, settings_tabs, campus, counselor, summary, debug=True):
+def main(settings_file, settings_tabs, campus, counselor, summary, debug,
+        do_pdf):
     '''Creates the reports according to instructions in yaml files either
     for a single campus or "All"'''
     # Setup configuration--main settings file (includes Excel formats)
@@ -30,23 +32,30 @@ def main(settings_file, settings_tabs, campus, counselor, summary, debug=True):
             cfg_tabs[tab] = yaml.load(ymlfile)
 
     # Create the base output file
-    out = Output(campus, counselor, cfg, cfg_tabs, debug)
+    out = Output(campus, counselor, cfg, cfg_tabs, debug, (do_pdf == 'only'))
     reduce_roster(campus, cfg, out.dfs, counselor,debug)
     reduce_and_augment_apps(cfg, out.dfs, debug)
     add_student_calculations(cfg, out.dfs, debug)
 
-    create_chart_tab(out.writer, out.chart, debug)
-    make_summary_tab(out.writer, out.formats, out.dfs, cfg,
-            cfg_tabs['summary'], campus, debug, summary)
-    make_students_tab(out.writer, out.formats, out.dfs, cfg, 
-            cfg_tabs['students'], campus, debug)
-    make_single_tab(out.writer, out.formats, out.dfs, cfg,
-            cfg_tabs['ssv'], campus, debug, blank=False)
-    make_single_tab(out.writer, out.formats, out.dfs, cfg,
-            cfg_tabs['ssv'], campus, debug, blank=True)
-    make_apps_tab(out.writer, out.formats, out.dfs, cfg,
-            cfg_tabs['applications'], debug)
-    create_static_tabs(out.writer, out.dfs, out.formats, cfg, campus, debug)
+    if not do_pdf == 'only':
+        create_chart_tab(out.writer, out.chart, debug)
+        make_summary_tab(out.writer, out.formats, out.dfs, cfg,
+                cfg_tabs['summary'], campus, debug, summary)
+        make_students_tab(out.writer, out.formats, out.dfs, cfg, 
+                cfg_tabs['students'], campus, debug)
+        make_single_tab(out.writer, out.formats, out.dfs, cfg,
+                cfg_tabs['ssv'], campus, debug, blank=False)
+        make_single_tab(out.writer, out.formats, out.dfs, cfg,
+                cfg_tabs['ssv'], campus, debug, blank=True)
+        make_apps_tab(out.writer, out.formats, out.dfs, cfg,
+                cfg_tabs['applications'], debug)
+        create_static_tabs(out.writer, out.dfs, out.formats,
+                cfg, campus, debug)
+
+    if do_pdf: #will either be True or 'only'
+        print('Creating PDF report')
+        make_pdf_report(out.ssv_fn, out.dfs, cfg, cfg_tabs['ssv'],
+                campus, debug)
 
 
 if __name__ == '__main__':
@@ -92,6 +101,14 @@ if __name__ == '__main__':
             help='Single counselor name (default "All")',
             default='All')
 
+    parser.add_argument('-pdf', '--pdf',
+            dest='make_pdf', action='store_true', default=False,
+            help='Create pdf single page per student reports')
+
+    parser.add_argument('-pdfonly', '--pdfonly',
+            dest='make_pdf_only', action='store_true', default=False,
+            help='Only create pdf single page per student reports')
+
     parser.add_argument('-q','--quiet',
             dest='debug', action='store_false', default=True,
             help='Suppress status messages during report creation')
@@ -103,5 +120,12 @@ if __name__ == '__main__':
             'applications': args.settings_applications_file,
             'ssv': args.settings_ssv_file,
             }
+    if args.make_pdf_only:
+        do_pdf = 'only'
+    elif args.make_pdf:
+        do_pdf = True
+    else:
+        do_pdf = False
+
     main(args.settings_file, settings_tabs, args.campus, args.counselor,
-            args.summary, args.debug)
+            args.summary, args.debug, do_pdf)

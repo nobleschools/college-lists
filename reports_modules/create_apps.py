@@ -58,6 +58,10 @@ def reduce_and_augment_apps(cfg, dfs, debug):
     id_list = set(dfs['roster'].index)
     df = df[df['hs_student_id'].isin(id_list)].copy()
 
+    if not len(df): # there are no apps for this set, bail out
+        dfs['apps'] = df
+        return
+
     # B. then add lookup columns
     # B.1. first from the student roster
     # The below specifies target label, source label, n/a value

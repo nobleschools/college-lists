@@ -36,7 +36,6 @@ for campus_case in [
     os.system(call_stem+' -q -ca '+campus_case)
     print('{:.2f} seconds'.format(time()-t0),flush=True)
 
-'''
 for c_case in [
         '"Caroline Ryden"',
         '"Jane Knoche"',
@@ -82,4 +81,3 @@ for c_case in [
     os.system(call_stem+' -q -ca UIC -co '+c_case)
     print('{:.2f} seconds'.format(time()-t0),flush=True)
 
-'''

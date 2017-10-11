@@ -50,6 +50,8 @@ class Output():
                 print('(size {}).'.format(len(self.dfs[key])),flush=True)
         elif key == 'chart':
             self.chart = filename
+            if self.debug:
+                print('',flush=True)
         elif key == 'CollegeListLookup':
             self.dfs[key] = pd.read_csv(filename,index_col=0,encoding='cp1252',
                     converters={'UNITID':safe2int})
@@ -85,25 +87,31 @@ class Output():
             if self.debug:
                 print(' (not actually read)',flush=True)
 
-    def __init__(self, campus, counselor, cfg, cfg_tabs, debug=False):
-        '''Instantiates object based on an expected yaml file'''
+    def __init__(self, campus, counselor, cfg, cfg_tabs, debug, no_excel):
+        '''Instantiates object based on an expected yaml file
+        if no_excel == True, there will be no Excel output'''
         self.debug=debug
         self.cfg = cfg
         self.cfg_tabs = cfg_tabs
         self.fn = self._get_filename(campus, counselor,
                 cfg['output_file']['root_name'],
                 cfg['output_file']['date_format'])
+        self.ssv_fn = self.fn[:-5]+' SSV.pdf'
         if self.debug:
-            print('Filename will be ({}).'.format(self.fn))
+            if no_excel:
+                print('Filename will be ({}).'.format(self.ssv_fn))
+            else:
+                print('Filename will be ({}).'.format(self.fn))
 
         self.dfs = {} # place to hold all dataframes
 
         for k, v in cfg['inputs'].items():
             self._read_inputs(k,v)
 
-        self.writer = pd.ExcelWriter(self.fn, engine='xlsxwriter')
-        self.wb = self.writer.book
-        self.formats = create_formats(self.wb, cfg['excel_formats'])
+        if not no_excel:
+            self.writer = pd.ExcelWriter(self.fn, engine='xlsxwriter')
+            self.wb = self.writer.book
+            self.formats = create_formats(self.wb, cfg['excel_formats'])
 
     def __del__(self):
         try:
