@@ -3,6 +3,7 @@ current_applications.csv
 current_students.csv
 *.xlsx
 old_reports
+*.pkl
 
 # Editing files
 *.swp
