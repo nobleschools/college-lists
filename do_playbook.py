@@ -1,8 +1,7 @@
 #!python3
-'''Master file for creating standard weekly reports either for a single
-campus or all campuses in a list; can work from just naviance applications
-file, but is designed to work with that plus a roster file (otherwise,
-tries to get roster info from the Naviance file)'''
+'''Master file for taking year-end college choices and a) creating an
+Excel workbook for inspecting choices and b) creating a targets file
+for use in the Bot and Weekly Reports'''
 
 import yaml
 import argparse
@@ -64,27 +63,27 @@ if __name__ == '__main__':
     parser.add_argument('-s','--settings',
             dest='settings_file', action='store',
             help='Name/path of yaml file with detailed settings',
-            default='settings/settings.yaml')
+            default='settings.yaml')
 
     parser.add_argument('-sm','--settings_summary',
             dest='settings_summary_file', action='store',
             help='Name/path of yaml file with summary settings',
-            default='settings/settings_summary.yaml')
+            default='settings_summary.yaml')
 
     parser.add_argument('-ss','--settings_students',
             dest='settings_students_file', action='store',
             help='Name/path of yaml file with students settings',
-            default='settings/settings_students.yaml')
+            default='settings_students.yaml')
 
     parser.add_argument('-sa','--settings_applications',
             dest='settings_applications_file', action='store',
             help='Name/path of yaml file with students settings',
-            default='settings/settings_applications.yaml')
+            default='settings_applications.yaml')
 
     parser.add_argument('-sv','--settings_ssv',
             dest='settings_ssv_file', action='store',
             help='Name/path of yaml file with single student report settings',
-            default='settings/settings_ssv.yaml')
+            default='settings_ssv.yaml')
 
     parser.add_argument('-sum','--summary_type',
             dest='summary', action='store',
