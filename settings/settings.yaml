@@ -66,6 +66,7 @@ all_strategies: # list all so summaries include those w/ no students
 # -------------
 
 # This allows individual campuses to customize the sorting behavior
+# (Standard Excel sorts by LastFirst, but this influences PDF output)
 sort_students:
     Standard: '=%Counselor%&%LastFirst%'
     Rauner: '=%Cohort%&%Counselor%&%LastFirst%'

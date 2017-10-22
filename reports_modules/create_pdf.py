@@ -50,6 +50,11 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
 
     # First create Class and process config settings
     local_cfg = {}
+    if campus in cfg['sort_students']:
+        sort_order = cfg['sort_students'][campus]
+    else:
+        sort_order = cfg['sort_students']['Standard']
+
     for label, ssv_name in [('orient', 'pdf_orientation'),
                             ('c_header', 'counselor_header'),
                             ('p_header', 'print_header'),
@@ -79,7 +84,13 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
     if debug:
         print(df.index)
         print(df.columns)
-    ##NEED A SORT HERE
+
+    # The sort string is pseudocode linking table columns surrounded by % with
+    # ampersands and preceded by an equals to map to an Excel formula. The
+    # next line reduces that to an ordered list of table names
+    sort_order = [x for x in sort_order.split(sep='%') if x not in ['=','&','']]
+    print(sort_order)
+    df.sort_values(by=sort_order, inplace=True)
 
     # start repeating here
     for i, stu_data in df.iterrows():
