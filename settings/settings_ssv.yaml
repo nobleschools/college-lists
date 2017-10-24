@@ -305,4 +305,5 @@ pdf_heights:
     - 0.21
     - 0.22 # end of header
     - 0.08 # small gap between header and school data
-    - 0.33 # guess (revisit)
+    - 0.33 # guess (revisit); Colleges header
+    - 0.21 # Height per college

@@ -3,9 +3,24 @@
    from the main report'''
 
 import warnings
+import numpy as np
 from datetime import date
 from collections import OrderedDict
 from fpdf import FPDF
+
+def notnan(value, nanstring, formatstring):
+    '''Returns a string from a numeric value formatting by formatstring
+    if not nan; otherwise returns the nanstring'''
+    if isinstance(value, str):
+        return value
+    try:
+        if np.isnan(value):
+            return nanstring
+        else:
+            return formatstring.format(value)
+    except:
+        print('Failed value: {}'.format(value))
+        raise
 
 def compute_excel(string, data_row):
     '''Takes a string encoded as an excel formula and returns a numeric
@@ -89,7 +104,8 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
     # ampersands and preceded by an equals to map to an Excel formula. The
     # next line reduces that to an ordered list of table names
     sort_order = [x for x in sort_order.split(sep='%') if x not in ['=','&','']]
-    print(sort_order)
+    if debug:
+        print(sort_order)
     df.sort_values(by=sort_order, inplace=True)
 
     # start repeating here
@@ -150,33 +166,37 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         pdf.cell(w=w[4], txt='IGR', # check for special names
                 h=h[1], border = 'B', ln = 0, align = 'C', fill = True)
 
-        pdf.cell(w=w[5], txt='74%',
+        txt = notnan(stu_data['local_ideal_gr'],'TBD','{:2.0%}')
+        pdf.cell(w=w[5], txt=txt,
                 h=h[1], border = 'B', ln = 1, align = 'C', fill = False)
 
         # Third row
         pdf.set_fill_color(r=253,g=233,b=217)
-        pdf.cell(w=w[0], txt='Last, First',
+        pdf.cell(w=w[0], txt=stu_data['LastFirst'],
                 h=h[2], border = 1, ln = 0, align = 'L', fill = True)
 
-        pdf.cell(w=w[1], txt='22/1120',
+        txt = (notnan(stu_data['ACT'],'TBD','{:d}')+'/'+
+               notnan(stu_data['SAT'],'TBD','{:d}')) 
+        pdf.cell(w=w[1], txt=txt,
                 h=h[2], border = 0, ln = 0, align = 'C', fill = False)
 
-        pdf.cell(w=w[2], txt='3.57',
+        pdf.cell(w=w[2], txt=notnan(stu_data['GPA'],'TBD','{:4.2f}'),
                 h=h[2], border = 0, ln = 0, align = 'C', fill = False)
 
-        pdf.cell(w=w[3], txt='H',
+        pdf.cell(w=w[3], txt=notnan(stu_data['Race/ Eth'],'TBD','{}'),
                 h=h[2], border = 1, ln = 0, align = 'C', fill = False)
 
         pdf.set_fill_color(r=220,g=230,b=241)
         pdf.cell(w=w[4], txt='TGR', # check for special names
                 h=h[2], border = 'T', ln = 0, align = 'C', fill = True)
 
-        pdf.cell(w=w[5], txt='68%',
+        txt = notnan(stu_data['local_target_gr'],'TBD','{:2.0%}')
+        pdf.cell(w=w[5], txt=txt,
                 h=h[2], border = 0, ln = 1, align = 'C', fill = False)
 
         # Fourth row
 
-        # Bold lines
+        # Bold rects then lines
         pdf.set_line_width(thick_line)
         pdf.rect(left_margin, top_margin+h[0], # around name
                 w[0], sum(h[1:3]))
@@ -193,13 +213,13 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         pdf.rect(left_margin+sum(w[:3]), top_margin+sum(h[:3]), # lower right
                 sum(w[3:]), sum(h[3:6]))
 
-        pdf.line(left_margin,top_margin,left_margin+sum(w[:4]),top_margin)
+        #pdf.line(left_margin,top_margin,left_margin+sum(w[:4]),top_margin)
 
-        # Skinny lines
+        # Skinny rects then lines
         pdf.set_line_width(line)
 
     # The font we use is missing an unusued glyph and so throws two warnings
-    # at save. The next two lines supress this, but probably good to
+    # at save. The next three lines supress this, but probably good to
     # occasionally uncomment them
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")

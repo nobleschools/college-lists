@@ -8,9 +8,33 @@ from reports_modules.excel_base import make_excel_indices
 DEFAULT_FROM_TARGET = 0.2 # default prediction below target grad rate
 MINUS1_CUT = 0.2 # minimum odds required to "toss" a college in minus1 pred
 
+def get_sat_translation(x, lookup_df):
+    '''Apply function for calculating equivalent ACT for SAT scores.
+    Lookup table has index of SAT with value of ACT'''
+    sat = x
+    if np.isreal(sat):
+        if sat in lookup_df.index: # it's an SAT value in the table
+            return lookup_df.loc[sat]
+    return np.nan # default if not in table or not a number
+
+def get_act_max(x):
+    ''' Returns the max of two values if both are numbers, otherwise
+    returns the numeric one or nan if neither is numeric'''
+    act, sat_in_act = x
+    if np.isreal(act):
+        if np.isreal(sat_in_act):
+            return max(act, sat_in_act)
+        else:
+            return act
+    else:
+        if np.isreal(sat_in_act):
+            return sat_in_act
+        else:
+            return np.nan
+
 def reduce_roster(campus, cfg, dfs, counselor,debug):
     '''Uses campus info and config file to reduce the active student list'''
-    df = dfs['full_roster']
+    df = dfs['full_roster'].copy()
     if debug:
         print('Starting roster of {} students'.format(len(df)),
                 flush=True,end='')
@@ -23,6 +47,14 @@ def reduce_roster(campus, cfg, dfs, counselor,debug):
         df = df[df['Counselor'].str.contains(counselor)]
     if debug:
         print('..ending at {} students.'.format(len(df)),flush=True)
+
+    # Two calculated columns need to be added for the application
+    # analyses
+    df['local_sat_in_act'] = df['SAT'].apply(get_sat_translation,
+            args=(dfs['SATtoACT'],))
+    df['local_act_max'] = df[['ACT','local_sat_in_act']].apply(
+            get_act_max, axis=1)
+
     dfs['roster'] = df
 
 def get_strategies(x,lookup_df):
@@ -181,8 +213,8 @@ def create_predictions(roster_df, app_df):
 def add_student_calculations(cfg, dfs, debug):
     '''Creates some calculated columns in the roster table'''
     df = dfs['roster'].copy()
-    df['local_strategy'] = df[['GPA','ACT']].apply(get_strategies, axis=1,
-            args=(dfs['Strategies'],))
+    df['local_strategy'] = df[['GPA','local_act_max']].apply(get_strategies,
+            axis=1, args=(dfs['Strategies'],))
     df['local_target_gr'] = df[
             ['local_strategy','GPA','EFC','Race/ Eth']].apply(
             get_gr_target, axis=1, args=(dfs['StudentTargets'],'target'))
