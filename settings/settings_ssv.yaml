@@ -15,6 +15,7 @@ counselor_header:
     UIC: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
     Rauner: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
     Johnson: '="("&TEXT(TODAY(),"m/d")&"): "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
+    PAS: '="Campus: "&INDEX(Campus,MATCH(D3,KidIDs,0))'
 
 print_header: # non-standard note on F1 about the print date
     Noble: '="Printed on: "&TEXT(TODAY(),"mm/dd")'

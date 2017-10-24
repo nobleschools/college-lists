@@ -41,11 +41,12 @@ for campus_case in [
         'Butler',
         'Speer',
         'TNA',
+        'PAS',
         ]:
     t0 = time()
     print('Generating {}...'.format(campus_case),flush=True,end='')
     if campus_case == 'Johnson':
-        os.system(call_stem+' -s settings_aa_only.yaml -q -ca '+campus_case)
+        os.system(call_stem+' -s settings/settings_aa_only.yaml -q -ca '+campus_case)
     else:
         os.system(call_stem+' -q -ca '+campus_case)
     print('{:.2f} seconds'.format(time()-t0),flush=True)

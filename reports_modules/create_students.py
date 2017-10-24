@@ -14,7 +14,7 @@ def get_sat_translation(x, lookup_df):
     sat = x
     if np.isreal(sat):
         if sat in lookup_df.index: # it's an SAT value in the table
-            return lookup_df.loc[sat]
+            return lookup_df.loc[sat,'ACT']
     return np.nan # default if not in table or not a number
 
 def get_act_max(x):
@@ -40,6 +40,8 @@ def reduce_roster(campus, cfg, dfs, counselor,debug):
                 flush=True,end='')
     if campus == 'All':
         df = df[df['Campus'].isin(cfg['all_campuses'])]
+    elif campus == 'PAS':
+        df = df[df['EFC'] == -1]
     else:
         df = df[df['Campus']==campus]
     if counselor != 'All':

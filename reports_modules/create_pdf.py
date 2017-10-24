@@ -41,6 +41,7 @@ def clean_excel(string, data_row):
             ['INDEX(Counselor,MATCH(D3,KidIDs,0))','tbl:Counselor'],
             ['INDEX(Advisors,MATCH(D3,KidIDs,0))','tbl:Advisor'],
             ['INDEX(Cohort,MATCH(D3,KidIDs,0))','tbl:Cohort'],
+            ['INDEX(Campus,MATCH(D3,KidIDs,0))','tbl:Campus'],
             ['&',''],
             ['=',''],
             ['"',''],

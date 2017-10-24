@@ -20,7 +20,7 @@ output_file:
 
 # This specifies the main summary field for the file
 #summary_type: Campus # the details for this are in settings_summary.yaml
-summary_type: Strategy # the details for this are in settings_summary.yaml
+#summary_type: Strategy # the details for this are in settings_summary.yaml
 #summary_type: Counselor # the details for this are in settings_summary.yaml
 
 # An explicit list of all campuses to be included in the default report.
@@ -72,6 +72,7 @@ sort_students:
     Rauner: '=%Cohort%&%Counselor%&%LastFirst%'
     UIC: '=%Counselor%&%Cohort%&%LastFirst%'
     RoweClark: '=%Advisor%&%LastFirst%'
+    PAS: '=%Campus%&%LastFirst%'
 
 # This allows individual schools to customize odds/class language
 category_labels:
