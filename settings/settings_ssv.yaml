@@ -7,7 +7,7 @@
 # Most of the Excel information is at the beginning and most of the PDF
 # info is at the end
 
-# This allows individual campuses to customize the sorting behavior
+# This allows individual campuses to customize the header at the top of the page
 counselor_header:
     Standard: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))'
     Comer: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
@@ -190,6 +190,41 @@ bottom_targets: # specification for specific campus goals
         - E:
             Label: '="3+ "&LOWER(IdealGRLabel)&" grad rate schools"'
             Eval: '=AE6'
+            Sign: '>='
+
+    Baker:
+        - E:
+            Label: '14- total applications'
+            Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
+            Sign: '<='
+            Goal: 14
+        - E:
+            Label: '8+ total applications'
+            Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
+            Sign: '>='
+        - E:
+            Label: '6+ money options (++/-, ++, or +++)'
+            Eval: '=INDEX(AllMoneyApps,MATCH(D3,KidIDs,0))'
+            Sign: '>='
+        - E:
+            Label: '="6+ "&LOWER(TargetGRLabel)&" grad rate or better schools"'
+            Eval: '=AD6'
+            Sign: '>='
+        - E:
+            Label: '="2+ "&LOWER(SafetyLabel)&" or "&LOWER(SecureLabel)&" schools"'
+            Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
+            Sign: '>='
+        - E:
+            Label: '2- freebie schools'
+            Eval: '=INDEX(FreebieApps,MATCH(D3,KidIDs,0))'
+            Sign: '<='
+        - E:
+            Label: '="3+ "&LOWER(MatchLabel)&" schools (recommended)"'
+            Eval: '=INDEX(MatchApps,MATCH(D3,KidIDs,0))'
+            Sign: '>='
+        - E:
+            Label: '="3+ "&LOWER(ReachLabel)&" schools (recommended)"'
+            Eval: '=INDEX(ReachApps,MATCH(D3,KidIDs,0))'
             Sign: '>='
 
     DRW:

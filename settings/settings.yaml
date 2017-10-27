@@ -18,11 +18,6 @@ output_file:
     root_name: Weekly Report
     date_format: '%m_%d_%Y' # for strftime function
 
-# This specifies the main summary field for the file
-#summary_type: Campus # the details for this are in settings_summary.yaml
-#summary_type: Strategy # the details for this are in settings_summary.yaml
-#summary_type: Counselor # the details for this are in settings_summary.yaml
-
 # An explicit list of all campuses to be included in the default report.
 # Listing explicitly allows for intentional groups specified by alternate yamls
 # these are Noble campuses--to be replaced with generic ones
@@ -93,12 +88,12 @@ category_labels:
         IdealGR: Ideal
         BelowTGR: Below Target
         FarBelowTGR: Far Below Target
-        SureThing: Sure Thingy
-        Secure: Securey
-        Safety: Safetyy
-        Match: Matchy
-        Reach: Reachy
-        Longshot: Longshoty
+        SureThing: Sure Thing
+        Secure: Secure
+        Safety: Safety
+        Match: Match
+        Reach: Reach
+        Longshot: Longshot
         HailMary: Almost 0
     Golder:
         TargetGR: Expected

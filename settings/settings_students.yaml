@@ -523,6 +523,14 @@ students_columns:
         head_format: bold_green_underline
         label_format: bold_green_center_wrap
         cond_format: centered_integer_dash_bottom
+    - 'Freebie apps':
+        formula: '=COUNTIFS(Students,%StudentID%,Freebie,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_blue
+        label_format: bold_blue_center_wrap
+        cond_format: centered_integer_dash_bottom
     - 'IL Public apps':
         formula: '=COUNTIFS(Students,%StudentID%,ILPublic,1)'
         format: centered_integer
@@ -607,3 +615,4 @@ student_names:
     ILPubApps: 'IL Public apps'
     ILPubMSS: 'IL Public, Match, Safety, Secure'
     MoneyChicagoApps: 'Money Chicago apps'
+    FreebieApps: 'Freebie apps'

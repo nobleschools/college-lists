@@ -205,6 +205,12 @@ applications_calculations: # definitions for calculated columns in order
     - MoneyChicago:
         formula: =IF(ISNUMBER(%6yr_AA/H%),INDEX(AllCollegeChicago, MATCH(%NCES%,AllCollegeNCES,0))*%MoneyYesNo%,0)
         format: bold_yellow
+    - MoneyCode:
+        formula: =IF(ISNUMBER(%6yr_AA/H%),INDEX(AllCollegeMoneyCode, MATCH(%NCES%,AllCollegeNCES,0)),"?")
+        format: bold_yellow
+    - Freebie:
+        formula: =IF(ISNUMBER(%6yr_AA/H%),IF(AND(OR(LEFT(%MoneyCode%,2)="--",LEFT(%MoneyCode%,3)="---"),%Odds%<20,%6yrAll/AAH_forSorting%<(%TargetGR%-0.1)),1,0),0)
+        format: bold_yellow
 
 
 # The specifications here cause the output code to create Excel named ranges
@@ -239,4 +245,6 @@ application_names:
     ReachUnderMoney: Reach-Money
     MatchUnderMoney: Match-Money
     SafetyUnderMoney: Safety-Money
+    MoneyCode: MoneyCode
     MoneyChicago: MoneyChicago
+    Freebie: Freebie
