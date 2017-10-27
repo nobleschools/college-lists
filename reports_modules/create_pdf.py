@@ -164,6 +164,7 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         pdf.cell(w=w[3], txt='Race/Eth',
                 h=h[1], border = 1, ln = 0, align = 'C', fill = True)
 
+        # CHECK FOR SPECIAL NAMES
         pdf.cell(w=w[4], txt='IGR', # check for special names
                 h=h[1], border = 'B', ln = 0, align = 'C', fill = True)
 
@@ -196,6 +197,33 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
                 h=h[2], border = 0, ln = 1, align = 'C', fill = False)
 
         # Fourth row
+        pdf.set_font('font_b', '', 11)
+        #pdf.set_fill_color(r=220,g=230,b=241)
+        pdf.cell(w=w[0], txt='Odds of 1 or more acceptances to:',
+                h=h[3], border = 0, ln = 0, align = 'L', fill = True)
+
+        txt = notnan(stu_data['local_act_max'],'TBD','{:d}')
+        pdf.cell(w=w[1], txt=txt, h=h[3], border=0, ln=0, align='C', fill=True)
+
+        pdf.cell(w=w[2], txt='', h=h[3], border=0, ln=0, align='C', fill=True)
+
+        pdf.cell(w=sum(w[3:]), txt='Goals for #s to the left:',
+                h=h[3], border=0, ln=1, align='L', fill=True)
+
+        # Fifth row
+        pdf.set_font('font_r', '', 11)
+        # NEED TO TAKE LABELS FROM CFG
+        pdf.cell(w=sum(w[:2]),
+            txt='"Money" Target grade rate (TGR) or better schools',
+            h=h[4], border=0, ln=0, align='L', fill=False)
+
+        txt = notnan(1.0, 'TBD','{:3.0%}')
+        pdf.cell(w=w[2], txt=txt,
+                h=h[4], border = 0, ln = 0, align = 'C', fill = False)
+
+        txt='<--Shoot for at least 90% for Money TGR'
+        pdf.cell(w=sum(w[3:]), txt=txt, h=h[4], border=0, ln=1,
+                align='L', fill=False)
 
         # Bold rects then lines
         pdf.set_line_width(thick_line)

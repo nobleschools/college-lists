@@ -34,6 +34,7 @@ class Output():
         cmp = cmp+' '+root+' '+datetime.now().strftime(date_string)+'.xlsx'
         if counselor != 'All':
             cmp = counselor + ' ' + cmp
+        cmp = cmp.replace(':','')
         return cmp
 
     def _read_inputs(self, key, filename):
