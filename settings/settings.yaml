@@ -88,6 +88,18 @@ category_labels:
         Reach: Reach
         Longshot: Longshot
         HailMary: Hail Mary
+    Baker:
+        TargetGR: Target
+        IdealGR: Ideal
+        BelowTGR: Below Target
+        FarBelowTGR: Far Below Target
+        SureThing: Sure Thingy
+        Secure: Securey
+        Safety: Safetyy
+        Match: Matchy
+        Reach: Reachy
+        Longshot: Longshoty
+        HailMary: Almost 0
     Golder:
         TargetGR: Expected
         IdealGR: Ideal

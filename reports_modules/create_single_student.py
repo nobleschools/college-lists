@@ -226,10 +226,10 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
                 '=1,U'+r_excel+'=1,V'+r_excel+'=1),100,100*EXP(X'+r_excel+
                 ')/(1+EXP(X'+r_excel+'))),"N/A")')
         safe_write(ws, r, 25,'=IF(ISNUMBER(Y'+r_excel+'),IF(Y'+r_excel+
-                '>=99,"Sure Thing",IF(Y'+r_excel+'>=95,"Secure",IF(Y'
-                +r_excel+'>=80,"Safety",IF(Y'+r_excel+'>=50,"Match",IF(Y'
-                +r_excel+'>=20,"Reach",IF(Y'+r_excel+
-                '>=10,"Longshot","Hail Mary")))))),"Other")')
+                '>=99,SureThingLabel,IF(Y'+r_excel+'>=95,SecureLabel,IF(Y'
+                +r_excel+'>=80,SafetyLabel,IF(Y'+r_excel+'>=50,MatchLabel,IF(Y'
+                +r_excel+'>=20,ReachLabel,IF(Y'+r_excel+
+                '>=10,LongshotLabel,HailMaryLabel)))))),"Other")')
         safe_write(ws, r, 26,'=IF($F'+r_excel+'>=J$3,1,0)')
         safe_write(ws, r, 27,'=IF($F'+r_excel+'>=J$2,1,0)')
         safe_write(ws, r, 28,'=IF(ISNUMBER(Y'+r_excel+'),1-Y'+r_excel+'/100,1)')
