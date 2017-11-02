@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from reports_modules.excel_base import safe_write, make_excel_indices
 
-def lookup_source_field(x,source_df,field,default='N/A', force_na=False):
+def _lookup_source_field(x,source_df,field,default='N/A', force_na=False):
     '''Utility function to map values from source df to a series
     in the apps table'''
     if pd.isnull(x):
@@ -16,15 +16,15 @@ def lookup_source_field(x,source_df,field,default='N/A', force_na=False):
         else:
             return return_value
 
-def round2(x):
+def _round2(x):
     '''Utility function to round to nearest hundreth'''
     return round(x, 2)
 
-def all_ones(x):
+def _all_ones(x):
     '''Utility function to check if all (3) elements all equal 1'''
     return all(n == 1 for n in x)
 
-def calc6yr(args):
+def _calc6yr(args):
     '''Calculates the final 6yr grad rate based on the baseline grad rate
     and whether the college gets a "bump" for being a partner, where
     bump is either 15% or half the distance to 100%, whichever smaller'''
@@ -37,9 +37,28 @@ def calc6yr(args):
         else:
             return round(gr, 2)
 
-def get_result(args):
-    '''Calculates a limited result code for use in generating predictions'''
-    result_code, attending = args
+def _get_class(odds, labels):
+    '''apply function that gets a text description for the pass odds'''
+    if np.isnan(odds):
+        return 'Other'
+    elif odds >= 99:
+        return labels['SureThing']
+    elif odds >=95:
+        return labels['Secure']
+    elif odds >=80:
+        return labels['Safety']
+    elif odds >=50:
+        return labels['Match']
+    elif odds >=20:
+        return labels['Reach']
+    elif odds >=10:
+        return labels['Longshot']
+    else:
+        return labels['HailMary']
+
+def _get_result(args):
+    '''Calculates a full result code for use in generating predictions'''
+    stage, app_type, result_code, attending, waitlisted, deferred = args
     if result_code == 'denied':
         return 'Denied'
     elif result_code in ['accepted', 'cond. accept', 'summer admit']:
@@ -47,10 +66,21 @@ def get_result(args):
             return 'CHOICE!'
         else:
             return 'Accepted!'
-    else:
+    elif waitlisted: # will be zero unless 1 or 1.0
+        return 'Waitlist'
+    elif deferred: # will be zero unless 1 or 1.0
+        return 'Deferred'
+    elif stage == 'pending':
         return 'Pending'
+    elif stage in ['initial materials submitted', 'mid-year submitted',
+                   'final submitted']:
+        return 'Submitted'
+    elif app_type == 'interest':
+        return 'Interest'
+    else:
+        return '?'
 
-def reduce_and_augment_apps(cfg, dfs, debug):
+def reduce_and_augment_apps(cfg, dfs, campus, debug):
     '''Restrict an applications table to those apps for students in roster
     then add lookup and calculated fields, finally sorting for output'''
     # A. first reduce
@@ -72,7 +102,7 @@ def reduce_and_augment_apps(cfg, dfs, debug):
                      ('local_race','Race/ Eth', 'TBD'),
                      ]
     for local_label, roster_label, na_val in roster_fields:
-        df[local_label] = df['hs_student_id'].apply(lookup_source_field,
+        df[local_label] = df['hs_student_id'].apply(_lookup_source_field,
             args=(dfs['roster'],roster_label, na_val, 'TBD'))
 
     # B.2. second from college table
@@ -82,9 +112,10 @@ def reduce_and_augment_apps(cfg, dfs, debug):
                       ('local_money', 'MoneyYesNo', 0),
                       ('local_6yr_all', 'Adj6yrGrad_All', np.nan),
                       ('local_6yr_aah', 'Adj6yrGrad_AA_Hisp', np.nan),
+                      ('local_money_code', 'MoneyCode', np.nan),
                       ]
     for local_label, college_label, na_val in college_fields:
-        df[local_label] = df['NCES'].apply(lookup_source_field,
+        df[local_label] = df['NCES'].apply(_lookup_source_field,
                 args=(dfs['AllColleges'], college_label, na_val))
     
     # B.3. third from the standard odds table
@@ -94,7 +125,7 @@ def reduce_and_augment_apps(cfg, dfs, debug):
                       ]
     coef_index = df['local_race'] + ':' + df['local_barrons']
     for local_label, coef_label in weights_fields:
-        df[local_label] = coef_index.apply(lookup_source_field,
+        df[local_label] = coef_index.apply(_lookup_source_field,
                 args=(dfs['StandardWeights'], coef_label, np.nan))
 
     cweights_fields = [('local_gpa_cb', 'GPAcoef'),
@@ -103,7 +134,7 @@ def reduce_and_augment_apps(cfg, dfs, debug):
                       ]
     coef_index = df['local_race'] + ':' + df['NCES'].apply(str)
     for local_label, coef_label in cweights_fields:
-        df[local_label] = coef_index.apply(lookup_source_field,
+        df[local_label] = coef_index.apply(_lookup_source_field,
                 args=(dfs['CustomWeights'], coef_label, np.nan))
 
 
@@ -125,11 +156,11 @@ def reduce_and_augment_apps(cfg, dfs, debug):
     # case, the odds should automatically be 100
     df['local_auto100'] = df[['local_gpa_ca',
                               'local_act_ca',
-                              'local_inta']].apply(all_ones, axis=1)
+                              'local_inta']].apply(_all_ones, axis=1)
     df['local_final_logit'] = df['local_logitb'].where(
             pd.notnull(df['local_logitb']), df['local_logita'])
     df['local_odds_calc'] = (100*np.exp(df['local_final_logit'])/(
-            1+np.exp(df['local_final_logit']))).apply(round2)
+            1+np.exp(df['local_final_logit']))).apply(_round2)
     # the next line assigns odds_calc unless auto100 is true
     df['local_odds'] = df['local_odds_calc'].where(
             ~df['local_auto100'], 100)
@@ -142,9 +173,16 @@ def reduce_and_augment_apps(cfg, dfs, debug):
     # gets a partner "bump" and then round
     df['local_partner_bump'] = df['comments'] == 'Posse'
     df['local_6yr_all_aah'] = df[['local_6yr_all_aah_temp',
-                          'local_partner_bump']].apply(calc6yr, axis=1)
+                          'local_partner_bump']].apply(_calc6yr, axis=1)
 
-    df['local_result']=df[['result_code','attending']].apply(get_result, axis=1)
+    df['local_result']=df[['stage','type','result_code','attending',
+                           'waitlisted','deferred']].apply(_get_result, axis=1)
+    if campus in cfg['category_labels']:
+        labels = cfg['category_labels'][campus]
+    else:
+        labels = cfg['category_labels']['Standard']
+
+    df['local_class']=df['local_odds'].apply(_get_class,args=(labels,))
 
     if debug:
         print(df.columns)
@@ -153,7 +191,7 @@ def reduce_and_augment_apps(cfg, dfs, debug):
     dfs['apps'] = df.sort_values(['Campus','hs_student_id',
         'local_6yr_all_aah'], ascending=[True, True, False])
 
-def push_column(columns, letters, label, formula, fmt=None):
+def _push_column(columns, letters, label, formula, fmt=None):
     '''Adds an item to a list of length 3 lists that define columns with
     col0=Excel header, col1=label, col2=formula; replaces %label% with
     the corresponding letter in Excel for that letter plus a _r_'''
@@ -196,7 +234,7 @@ def make_apps_tab(writer, f_db, dfs, cfg, cfg_app, debug):
         for column_name in app_column: # there's only one, but need to deref
             formula = app_column[column_name]['formula']
             fmt = app_column[column_name]['format']
-            push_column(master_cols, col_letters,
+            _push_column(master_cols, col_letters,
                     column_name, formula, fmt)
 
     # Now write the column headers:

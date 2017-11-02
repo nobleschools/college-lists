@@ -8,7 +8,7 @@ from reports_modules.excel_base import make_excel_indices
 DEFAULT_FROM_TARGET = 0.2 # default prediction below target grad rate
 MINUS1_CUT = 0.2 # minimum odds required to "toss" a college in minus1 pred
 
-def get_sat_translation(x, lookup_df):
+def _get_sat_translation(x, lookup_df):
     '''Apply function for calculating equivalent ACT for SAT scores.
     Lookup table has index of SAT with value of ACT'''
     sat = x
@@ -17,7 +17,7 @@ def get_sat_translation(x, lookup_df):
             return lookup_df.loc[sat,'ACT']
     return np.nan # default if not in table or not a number
 
-def get_act_max(x):
+def _get_act_max(x):
     ''' Returns the max of two values if both are numbers, otherwise
     returns the numeric one or nan if neither is numeric'''
     act, sat_in_act = x
@@ -52,14 +52,14 @@ def reduce_roster(campus, cfg, dfs, counselor,debug):
 
     # Two calculated columns need to be added for the application
     # analyses
-    df['local_sat_in_act'] = df['SAT'].apply(get_sat_translation,
+    df['local_sat_in_act'] = df['SAT'].apply(_get_sat_translation,
             args=(dfs['SATtoACT'],))
     df['local_act_max'] = df[['ACT','local_sat_in_act']].apply(
-            get_act_max, axis=1)
+            _get_act_max, axis=1)
 
     dfs['roster'] = df
 
-def get_strategies(x,lookup_df):
+def _get_strategies(x,lookup_df):
     '''Apply function for calculating strategies based on gpa and act using the
     lookup table (mirrors Excel equation for looking up strategy'''
     gpa, act = x
@@ -70,7 +70,7 @@ def get_strategies(x,lookup_df):
     else:
         return np.nan
 
-def get_gr_target(x, lookup_strat, goal_type):
+def _get_gr_target(x, lookup_strat, goal_type):
     '''Apply function to get the target or ideal grad rate for student'''
     strat, gpa, efc, race = x
     # 2 or 3 strategies are split by being above/below 3.0 GPA line
@@ -94,7 +94,7 @@ def get_gr_target(x, lookup_strat, goal_type):
     else:
         return np.nan
 
-def adjust_odds(x):
+def _adjust_odds(x):
     '''Apply function to adjust the odds within applications if the decision
     is already known. Also convert from 0-100 to 0-1'''
     odds, result = x
@@ -108,7 +108,7 @@ def adjust_odds(x):
         else:
             return odds/100.0
 
-def predict_perfect(grs, odds, default_gr, minus1=False):
+def _predict_perfect(grs, odds, default_gr, minus1=False):
     '''Calculates the "perfect prediction" by assuming students go to the
     highest grad rate school they get into. Can be used for "minus 1" by
     simply cutting the top school with odds > 20% (defined by constant)'''
@@ -132,7 +132,7 @@ def predict_perfect(grs, odds, default_gr, minus1=False):
             break
     return (expected_value_gr + odds_left * default_gr)
 
-def predict_preference(grs, odds, default_gr, high_multiplier=2.0):
+def _predict_preference(grs, odds, default_gr, high_multiplier=2.0):
     '''Calculates predictions assuming students factor in grad rate
     with the highest grad rate school "high_multiplier" times more
     likely to be picked than the lowest and with colleges linearly
@@ -143,39 +143,66 @@ def predict_preference(grs, odds, default_gr, high_multiplier=2.0):
         return max_grad_rate
     expected_value_gr =0.0 # will be built up cumulatively
     weighted_sum = 0.0 # will be used to normalize the above
+    odds_sum = 0.0 # used to track if we've gotten to 100
     for i in range(len(grs)):
         current_weight = odds.iloc[i] * ((grs.iloc[i] - min_grad_rate) / (
               max_grad_rate-min_grad_rate) * (high_multiplier - 1.0) + 1.0)
         weighted_sum += current_weight
+        odds_sum += odds.iloc[i]
         expected_value_gr += current_weight * grs.iloc[i]
-    if weighted_sum < 1.0:
-        expected_value_gr += (1.0 - weighted_sum) * default_gr
-        weigthed_sum = 1.0
+    if odds_sum < 1.0:
+        current_weight = (1.0 - odds_sum) * (default_gr - min_grad_rate)
+        weighted_sum += current_weight
+        expected_value_gr += current_weight * default_gr
     return (expected_value_gr / weighted_sum)
+
+def _calculate_mtgr_migr(tgr, igr, s_app_df):
+    '''for a given student, returns a two item tuple with odds of getting
+    into one or more money target grad rate and money ideal grad rate schools
+    (and doesn't factor in admissions results so far)'''
+    # Start with a clean list of schools:
+    s_app_clean = s_app_df[(s_app_df['local_money']==1) &
+                           (s_app_df['local_odds']>=0.0) &
+                           (s_app_df['local_6yr_all_aah']>=0.0)]
+    if len(s_app_clean): # only calculate if some exist
+        s_target = s_app_clean[s_app_clean['local_6yr_all_aah']>=tgr]
+        tgr = 1-(1-s_target['local_odds']/100.0).product()
+        s_ideal = s_app_clean[s_app_clean['local_6yr_all_aah']>=igr]
+        igr = 1-(1-s_ideal['local_odds']/100.0).product()
+        return (tgr, igr)
+    else:
+        return (0.0,0.0) # No applications and zero odds
 
 def create_predictions(roster_df, app_df):
     '''iterates through the applications for each student to create predictions
     of most likely grad rate over multiple scenarios'''
     # Headers of return DataFrame
     return_table = [['StudentID','pred_perfect', 'pred_minus1',
-                     'pred_some_pref', 'pred_all_equal']]
+                     'pred_some_pref', 'pred_all_equal',
+                     'local_oneplus_mtgr','local_oneplus_migr']]
 
     for student in roster_df.index:
         # get all applications for the specific student
         s_app_df = app_df[app_df['hs_student_id'] == student].copy()
         if len(s_app_df) == 0:
                 # No applications -> assume not going to college for now
-                return_table.append([student]+[0.0]*4)
+                return_table.append([student]+[0.0]*6)
                 continue
+
+        mtgr, migr = _calculate_mtgr_migr(
+                        roster_df.loc[student,'local_target_gr'],
+                        roster_df.loc[student,'local_ideal_gr'],
+                        s_app_df)
+
         choice_df = s_app_df[s_app_df['local_result']=='CHOICE!']
         if len(choice_df): # no need to predict if student has chosen
             choice_gr = choice_df['local_6yr_all_aah'].iloc[0]
-            return_table.append([student]+[choice_gr]*4)
+            return_table.append([student]+[choice_gr]*4+[mtgr]+[migr])
         else:
             # Now adjust the odds: 100% if accepted, 0% if denied
             s_app_df['local_odds_adj']=s_app_df[
                     ['local_odds','local_result']
-                    ].apply(adjust_odds, axis=1)
+                    ].apply(_adjust_odds, axis=1)
             # Now only look at the subset of applications that are money
             # have a grad rate and have odds
             s_app_clean = s_app_df[(s_app_df['local_money']==1) &
@@ -192,22 +219,24 @@ def create_predictions(roster_df, app_df):
                     default_gr = 0.0
                 else:
                     default_gr = max(0.0, default_gr - DEFAULT_FROM_TARGET)
-                prediction_perfect = predict_perfect(grs, odds, default_gr)
-                prediction_minus1 = predict_perfect(
+                prediction_perfect = _predict_perfect(grs, odds, default_gr)
+                prediction_minus1 = _predict_perfect(
                         grs, odds, default_gr, minus1=True)
-                prediction_somepref = predict_preference(
+                prediction_somepref = _predict_preference(
                         grs, odds, default_gr, 2.0)
-                prediction_allequal = predict_preference(
+                prediction_allequal = _predict_preference(
                         grs, odds, default_gr, 1.0)
 
                 return_table.append([student,
                     prediction_perfect,
                     prediction_minus1,
                     prediction_somepref, 
-                    prediction_allequal])
+                    prediction_allequal,
+                    mtgr,
+                    migr])
             else:
                 # No applications -> assume not going to college for now
-                return_table.append([student]+[0.0]*4)
+                return_table.append([student]+[0.0]*6)
 
     return pd.DataFrame(return_table[1:],
                              columns=return_table[0]).set_index('StudentID')
@@ -215,14 +244,14 @@ def create_predictions(roster_df, app_df):
 def add_student_calculations(cfg, dfs, debug):
     '''Creates some calculated columns in the roster table'''
     df = dfs['roster'].copy()
-    df['local_strategy'] = df[['GPA','local_act_max']].apply(get_strategies,
+    df['local_strategy'] = df[['GPA','local_act_max']].apply(_get_strategies,
             axis=1, args=(dfs['Strategies'],))
     df['local_target_gr'] = df[
             ['local_strategy','GPA','EFC','Race/ Eth']].apply(
-            get_gr_target, axis=1, args=(dfs['StudentTargets'],'target'))
+            _get_gr_target, axis=1, args=(dfs['StudentTargets'],'target'))
     df['local_ideal_gr'] = df[
             ['local_strategy','GPA','EFC','Race/ Eth']].apply(
-            get_gr_target, axis=1, args=(dfs['StudentTargets'],'ideal'))
+            _get_gr_target, axis=1, args=(dfs['StudentTargets'],'ideal'))
     
     #after we've got target_gr, get the predictions
     # the returned df below should have same index as roster df w/ 4 columns

@@ -49,7 +49,8 @@ def clean_excel(string, data_row):
     for old, new in translation.items():
         if old in string:
             if new.startswith('tbl:'):
-                string = string.replace(old, data_row[new[4:]])
+                string = string.replace(old, notnan(
+                    data_row[new[4:]],'N/A',{}))
             else:
                 string = string.replace(old, new)
     return string
@@ -86,6 +87,8 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
     right_margin = cfg_ssv['pdf_margins']['right']
     thick_line = cfg_ssv['pdf_lines']['thick']
     line = cfg_ssv['pdf_lines']['line']
+    goals_start = cfg_ssv['pdf_goals_start']
+    college_max = cfg_ssv['pdf_college_max']
 
     pdf = FPDF(orientation = local_cfg['orient'],
             unit = 'in', format = 'Letter')
@@ -97,6 +100,7 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
 
     # Get the student data and sort as appropriate
     df = dfs['roster'].copy()
+    app_df = dfs['apps'].copy()
     if debug:
         print(df.index)
         print(df.columns)
@@ -202,7 +206,7 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         pdf.cell(w=w[0], txt='Odds of 1 or more acceptances to:',
                 h=h[3], border = 0, ln = 0, align = 'L', fill = True)
 
-        txt = notnan(stu_data['local_act_max'],'TBD','{:d}')
+        txt = notnan(stu_data['local_act_max'],'TBD','{:1.0f}')
         pdf.cell(w=w[1], txt=txt, h=h[3], border=0, ln=0, align='C', fill=True)
 
         pdf.cell(w=w[2], txt='', h=h[3], border=0, ln=0, align='C', fill=True)
@@ -217,13 +221,108 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
             txt='"Money" Target grade rate (TGR) or better schools',
             h=h[4], border=0, ln=0, align='L', fill=False)
 
-        txt = notnan(1.0, 'TBD','{:3.0%}')
+        txt = notnan(stu_data['local_oneplus_mtgr'], 'TBD','{:3.0%}')
         pdf.cell(w=w[2], txt=txt,
                 h=h[4], border = 0, ln = 0, align = 'C', fill = False)
 
         txt='<--Shoot for at least 90% for Money TGR'
         pdf.cell(w=sum(w[3:]), txt=txt, h=h[4], border=0, ln=1,
                 align='L', fill=False)
+
+        # Sixth row
+        # NEED TO TAKE LABELS FROM CFG
+        pdf.cell(w=sum(w[:2]),
+            txt='"Money" Ideal grade rate (IGR) or better schools',
+            h=h[5], border=0, ln=0, align='L', fill=False)
+
+        txt = notnan(stu_data['local_oneplus_migr'], 'TBD','{:3.0%}')
+        pdf.cell(w=w[2], txt=txt,
+                h=h[5], border = 0, ln = 0, align = 'C', fill = False)
+
+        txt='<--Shoot for at least 50% for Money IGR'
+        pdf.cell(w=sum(w[3:]), txt=txt, h=h[5], border=0, ln=1,
+                align='L', fill=False)
+
+        # Seventh row is skinny/skip row
+        pdf.cell(w=w[0], txt='', h=h[6], border=0, ln=1, align='C', fill=False)
+
+        # Eighth row is header for college lists and is actually the first of
+        # two rows used for that purpose
+        pdf.set_font('font_b', '', 11)
+        pdf.cell(w=w[0],
+            txt='Schools currently apply to ("*" indicates',
+            h=h[7], border=0, ln=0, align='L', fill=True)
+
+        if ((stu_data['Race/ Eth'] == 'W') or
+            (stu_data['Race/ Eth'] == 'A')):
+            txt_race = '6 yr (all)'
+        else:
+            txt_race = '6 yr AA/H'
+
+        for w_this, txt_this, ln_this in [
+                (w[1], txt_race, 0),
+                (w[2], 'Odds of', 0),
+                (w[3], 'For you,', 0),
+                (w[4], '', 0),
+                (w[5], '', 1)
+                ]:
+            pdf.cell(w=w_this, h=h[7], txt=txt_this, ln=ln_this,
+                border=0, align='C', fill=True)
+
+        # Ninth row is continuation of college header
+        pdf.cell(w=w[0], txt='prospective):',
+            h=h[8], border=0, ln=0, align='L', fill=True)
+
+        for w_this, txt_this, ln_this in [
+                (w[1], 'Grad Rate', 0),
+                (w[2], 'Admit', 0),
+                (w[3], 'school is a', 0),
+                (w[4], 'App Status', 0),
+                (w[5], 'Award code', 1)
+                ]:
+            pdf.cell(w=w_this, h=h[8], txt=txt_this, ln=ln_this,
+                border=0, align='C', fill=True)
+
+        # From here on, we'll have a variable
+        stu_apps = app_df[app_df['hs_student_id'] == i]
+        num_apps = len(stu_apps)
+        pdf.set_font('font_r', '', 11)
+        tgr = stu_data['local_target_gr']
+        igr = stu_data['local_ideal_gr']
+        pdf.set_fill_color(r=220,g=230,b=241)
+        if num_apps:
+            for j, app_data in stu_apps.iterrows():
+                college_text = app_data['collegename']
+                shrink_cell(pdf=pdf, w=w[0], h=h[9], ln=0, txt=college_text,
+                        align='L', fill=False, border=0)
+
+                # This block is complicated because of grad rate highlighting
+                gr_this = app_data['local_6yr_all_aah']
+                gr_text = notnan(gr_this,'N/A','{:2.0%}')
+                if gr_this >= igr:
+                    pdf.set_text_color(r=0,g=32,b=96)
+                    pdf.set_font('font_b', '', 11)
+                if gr_this < tgr:
+                    pdf.set_text_color(r=255,g=0,b=0)
+                    pdf.set_fill_color(r=217,g=217,b=217)
+                gr_fill = gr_this < tgr
+                pdf.cell(w=w[1], h=h[9], ln=0, txt=gr_text,
+                        align='C', fill=gr_fill, border=0)
+
+                # Back to normal for last entries
+                pdf.set_text_color(r=0,g=0,b=0)
+                pdf.set_font('font_r', '', 11)
+
+                for w_, txt_, ln_ in [
+                     (w[2], notnan(app_data['local_odds']/100.0,
+                                   'N/A','{:2.0%}'), 0),
+                     (w[3], app_data['local_class'], 0),
+                     (w[4], app_data['local_result'], 0),
+                     (w[5], str(app_data['local_money_code']), 1)
+                ]:
+                    pdf.cell(w=w_, h=h[9], txt=txt_, align='C', fill=False,
+                            ln=ln_, border=0)
+
 
         # Bold rects then lines
         pdf.set_line_width(thick_line)
@@ -242,10 +341,11 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         pdf.rect(left_margin+sum(w[:3]), top_margin+sum(h[:3]), # lower right
                 sum(w[3:]), sum(h[3:6]))
 
-        #pdf.line(left_margin,top_margin,left_margin+sum(w[:4]),top_margin)
-
         # Skinny rects then lines
         pdf.set_line_width(line)
+        for x in [1, 2, 4, 5]:
+            pdf.line(left_margin+sum(w[:x]),top_margin+sum(h[:7]),
+                     left_margin+sum(w[:x]),top_margin+sum(h[:9])+num_apps*h[9])
 
     # The font we use is missing an unusued glyph and so throws two warnings
     # at save. The next three lines supress this, but probably good to

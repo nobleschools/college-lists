@@ -228,7 +228,7 @@ students_columns:
     - Perfect:
         formula: tbl:pred_perfect
         format: single_percent_centered_right
-        width: 8.43h
+        width: 8.43
         head_text: Predictions
         head_format: bold_red_underline
         label_format: bold_red_center_wrap_right
@@ -236,25 +236,23 @@ students_columns:
     - "Minus 1":
         formula: tbl:pred_minus1
         format: single_percent_centered_right
-        width: 8.43h
+        width: 8.43
         head_text: ''
         head_format: bold_red_underline
         label_format: bold_red_center_wrap_right
         cond_format: single_percent_centered_right_dash_bottom
     - "Some prefer-ence":
-        #formula: tbl:pred_some_pref
-        formula: '=0.0'
+        formula: tbl:pred_some_pref
         format: single_percent_centered_right
-        width: 8.43h
+        width: 8.43
         head_text: ''
         head_format: bold_red_underline
         label_format: bold_red_center_wrap_right
         cond_format: single_percent_centered_right_dash_bottom
     - "All equal":
-        #formula: tbl:pred_all_equal
-        formula: '=0.0'
+        formula: tbl:pred_all_equal
         format: single_percent_centered_right
-        width: 8.43h
+        width: 8.43
         head_text: ''
         head_format: bold_red_underline
         label_format: bold_red_center_wrap_right
@@ -363,6 +361,14 @@ students_columns:
         head_format: right
         label_format: bold_center_wrap_right
         cond_format: bold_centered_integer_right_dash_bottom
+    - 'Percent of apps submitted':
+        formula: '=IF(%Total apps%>0,%# of apps submitted%/%Total apps%,0)'
+        format: single_percent_centered
+        width: 9.86
+        head_text: ''
+        head_format: blue_right
+        label_format: bold_blue_center_wrap
+        cond_format: single_percent_centered_dash_bottom
     - 'Target GR or better':
         formula: '{=1-PRODUCT(IF(Students=%StudentID%,MGRMult,1))}'
         format: single_percent_centered

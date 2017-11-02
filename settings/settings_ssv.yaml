@@ -10,6 +10,7 @@
 # This allows individual campuses to customize the header at the top of the page
 counselor_header:
     Standard: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))'
+    #Standard: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     Comer: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     RoweClark: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     UIC: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
@@ -341,5 +342,11 @@ pdf_heights:
     - 0.21
     - 0.22 # end of header
     - 0.08 # small gap between header and school data
-    - 0.33 # guess (revisit); Colleges header
+    - 0.21 # Colleges header part 1
+    - 0.21 # Colleges header part 2
     - 0.21 # Height per college
+
+pdf_college_max: 25 # maximum number of colleges to list until stop
+
+pdf_goals_start: 7.0 # guess (revisit): location of goals box in y inches
+

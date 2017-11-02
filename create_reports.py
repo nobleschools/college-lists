@@ -34,7 +34,7 @@ def main(settings_file, settings_tabs, campus, counselor, summary, debug,
     # Create the base output file
     out = Output(campus, counselor, cfg, cfg_tabs, debug, (do_pdf == 'only'))
     reduce_roster(campus, cfg, out.dfs, counselor,debug)
-    reduce_and_augment_apps(cfg, out.dfs, debug)
+    reduce_and_augment_apps(cfg, out.dfs, campus, debug)
     add_student_calculations(cfg, out.dfs, debug)
 
     if not do_pdf == 'only':
