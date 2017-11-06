@@ -8,7 +8,7 @@ from datetime import date
 from collections import OrderedDict
 from fpdf import FPDF
 
-def notnan(value, nanstring, formatstring):
+def _notnan(value, nanstring, formatstring):
     '''Returns a string from a numeric value formatting by formatstring
     if not nan; otherwise returns the nanstring'''
     if isinstance(value, str):
@@ -22,13 +22,13 @@ def notnan(value, nanstring, formatstring):
         print('Failed value: {}'.format(value))
         raise
 
-def compute_excel(string, data_row):
+def _compute_excel(string, data_row):
     '''Takes a string encoded as an excel formula and returns a numeric
     (float) response. Data from the student roster table is provided
     in order to be replaced by Excel references'''
     return None
 
-def clean_excel(string, data_row):
+def _clean_excel(string, data_row):
     '''Takes a string encoded as an Excel formula and returns a plain
     text string for pdf printing. Data from the student roster table
     is provided in data_row and could be replace based on the an Excel
@@ -49,13 +49,13 @@ def clean_excel(string, data_row):
     for old, new in translation.items():
         if old in string:
             if new.startswith('tbl:'):
-                string = string.replace(old, notnan(
+                string = string.replace(old, _notnan(
                     data_row[new[4:]],'N/A',{}))
             else:
                 string = string.replace(old, new)
     return string
 
-def shrink_cell(pdf, w, txt, h, border, ln, align, fill):
+def _shrink_cell(pdf, w, txt, h, border, ln, align, fill):
     ''' writes a cell, but cuts off last characters if too long'''
     while w < pdf.get_string_width(txt):
         txt = txt[:-1]
@@ -67,10 +67,16 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
 
     # First create Class and process config settings
     local_cfg = {}
-    if campus in cfg['sort_students']:
-        sort_order = cfg['sort_students'][campus]
-    else:
-        sort_order = cfg['sort_students']['Standard']
+    for label, cfg_name in [('sort', 'sort_students'),
+                            ('labels', 'category_labels'),
+                            ]:
+        if campus in cfg[cfg_name]:
+            local_cfg[label] = cfg[cfg_name][campus]
+        else:
+            local_cfg[label] = cfg[cfg_name]['Standard']
+
+    tgr_label = local_cfg['labels']['TargetGR']
+    igr_label = local_cfg['labels']['IdealGR']
 
     for label, ssv_name in [('orient', 'pdf_orientation'),
                             ('c_header', 'counselor_header'),
@@ -101,16 +107,14 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
     # Get the student data and sort as appropriate
     df = dfs['roster'].copy()
     app_df = dfs['apps'].copy()
-    if debug:
-        print(df.index)
-        print(df.columns)
 
     # The sort string is pseudocode linking table columns surrounded by % with
     # ampersands and preceded by an equals to map to an Excel formula. The
     # next line reduces that to an ordered list of table names
-    sort_order = [x for x in sort_order.split(sep='%') if x not in ['=','&','']]
+    sort_order = [x for x
+            in local_cfg['sort'].split(sep='%') if x not in ['=','&','']]
     if debug:
-        print(sort_order)
+        print('Sort order for PDF: {}'.format(str(sort_order)))
     df.sort_values(by=sort_order, inplace=True)
 
     # start repeating here
@@ -126,7 +130,7 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         # First row
         name_text = ('College application odds report for '+
                 stu_data['First']+' '+stu_data['Last'])
-        c_text = clean_excel(local_cfg['c_header'],stu_data)
+        c_text = _clean_excel(local_cfg['c_header'],stu_data)
         pdf.set_font('font_b', '', 11)
         c_width = pdf.get_string_width(c_text)+0.05
 
@@ -134,23 +138,23 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
             # We're squeezing in one more entry, so stealing off the name
             # and the counselor header
             pdf.set_font('font_i', '', 11)
-            p_text = clean_excel(local_cfg['p_header'], stu_data)
+            p_text = _clean_excel(local_cfg['p_header'], stu_data)
             p_width = pdf.get_string_width(p_text)+0.05
             n_width = sum(w) - p_width - c_width - 0.05
         else:
             n_width = sum(w) - c_width - 0.05
 
         pdf.set_font('font_b', '', 14)
-        shrink_cell(pdf=pdf, w=n_width, txt=name_text,
+        _shrink_cell(pdf=pdf, w=n_width, txt=name_text,
                 h=h[0], border = 0, ln = 0, align = 'L', fill = False)
 
         if local_cfg['p_header']:
             pdf.set_font('font_i', '', 11)
-            shrink_cell(pdf=pdf, w=p_width, txt=p_text,
+            _shrink_cell(pdf=pdf, w=p_width, txt=p_text,
                     h=h[0], border = 0, ln = 0, align = 'L', fill = False)
 
         pdf.set_font('font_b', '', 11)
-        shrink_cell(pdf=pdf, w=c_width, txt=c_text,
+        _shrink_cell(pdf=pdf, w=c_width, txt=c_text,
                 h=h[0], border = 0, ln = 1, align = 'L', fill = False)
 
         # Second row
@@ -168,11 +172,11 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         pdf.cell(w=w[3], txt='Race/Eth',
                 h=h[1], border = 1, ln = 0, align = 'C', fill = True)
 
-        # CHECK FOR SPECIAL NAMES
-        pdf.cell(w=w[4], txt='IGR', # check for special names
+        txt = igr_label[0]+'GR'
+        pdf.cell(w=w[4], txt=txt,
                 h=h[1], border = 'B', ln = 0, align = 'C', fill = True)
 
-        txt = notnan(stu_data['local_ideal_gr'],'TBD','{:2.0%}')
+        txt = _notnan(stu_data['local_ideal_gr'],'TBD','{:2.0%}')
         pdf.cell(w=w[5], txt=txt,
                 h=h[1], border = 'B', ln = 1, align = 'C', fill = False)
 
@@ -181,32 +185,32 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         pdf.cell(w=w[0], txt=stu_data['LastFirst'],
                 h=h[2], border = 1, ln = 0, align = 'L', fill = True)
 
-        txt = (notnan(stu_data['ACT'],'TBD','{:d}')+'/'+
-               notnan(stu_data['SAT'],'TBD','{:d}')) 
+        txt = (_notnan(stu_data['ACT'],'TBD','{:d}')+'/'+
+               _notnan(stu_data['SAT'],'TBD','{:d}')) 
         pdf.cell(w=w[1], txt=txt,
                 h=h[2], border = 0, ln = 0, align = 'C', fill = False)
 
-        pdf.cell(w=w[2], txt=notnan(stu_data['GPA'],'TBD','{:4.2f}'),
+        pdf.cell(w=w[2], txt=_notnan(stu_data['GPA'],'TBD','{:4.2f}'),
                 h=h[2], border = 0, ln = 0, align = 'C', fill = False)
 
-        pdf.cell(w=w[3], txt=notnan(stu_data['Race/ Eth'],'TBD','{}'),
+        pdf.cell(w=w[3], txt=_notnan(stu_data['Race/ Eth'],'TBD','{}'),
                 h=h[2], border = 1, ln = 0, align = 'C', fill = False)
 
         pdf.set_fill_color(r=220,g=230,b=241)
-        pdf.cell(w=w[4], txt='TGR', # check for special names
+        txt = tgr_label[0]+'GR'
+        pdf.cell(w=w[4], txt=txt,
                 h=h[2], border = 'T', ln = 0, align = 'C', fill = True)
 
-        txt = notnan(stu_data['local_target_gr'],'TBD','{:2.0%}')
+        txt = _notnan(stu_data['local_target_gr'],'TBD','{:2.0%}')
         pdf.cell(w=w[5], txt=txt,
                 h=h[2], border = 0, ln = 1, align = 'C', fill = False)
 
         # Fourth row
         pdf.set_font('font_b', '', 11)
-        #pdf.set_fill_color(r=220,g=230,b=241)
         pdf.cell(w=w[0], txt='Odds of 1 or more acceptances to:',
                 h=h[3], border = 0, ln = 0, align = 'L', fill = True)
 
-        txt = notnan(stu_data['local_act_max'],'TBD','{:1.0f}')
+        txt = _notnan(stu_data['local_act_max'],'TBD','{:1.0f}')
         pdf.cell(w=w[1], txt=txt, h=h[3], border=0, ln=0, align='C', fill=True)
 
         pdf.cell(w=w[2], txt='', h=h[3], border=0, ln=0, align='C', fill=True)
@@ -216,30 +220,30 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
 
         # Fifth row
         pdf.set_font('font_r', '', 11)
-        # NEED TO TAKE LABELS FROM CFG
         pdf.cell(w=sum(w[:2]),
-            txt='"Money" Target grade rate (TGR) or better schools',
+            txt='"Money" '+tgr_label+' grade rate ('+tgr_label[0]+
+            'GR) or better schools',
             h=h[4], border=0, ln=0, align='L', fill=False)
 
-        txt = notnan(stu_data['local_oneplus_mtgr'], 'TBD','{:3.0%}')
+        txt = _notnan(stu_data['local_oneplus_mtgr'], 'TBD','{:3.0%}')
         pdf.cell(w=w[2], txt=txt,
                 h=h[4], border = 0, ln = 0, align = 'C', fill = False)
 
-        txt='<--Shoot for at least 90% for Money TGR'
+        txt='<--Shoot for at least 90% for Money '+tgr_label[0]+'GR'
         pdf.cell(w=sum(w[3:]), txt=txt, h=h[4], border=0, ln=1,
                 align='L', fill=False)
 
         # Sixth row
-        # NEED TO TAKE LABELS FROM CFG
         pdf.cell(w=sum(w[:2]),
-            txt='"Money" Ideal grade rate (IGR) or better schools',
+            txt='"Money" '+igr_label+' grade rate ('+igr_label[0]+
+            'GR) or better schools',
             h=h[5], border=0, ln=0, align='L', fill=False)
 
-        txt = notnan(stu_data['local_oneplus_migr'], 'TBD','{:3.0%}')
+        txt = _notnan(stu_data['local_oneplus_migr'], 'TBD','{:3.0%}')
         pdf.cell(w=w[2], txt=txt,
                 h=h[5], border = 0, ln = 0, align = 'C', fill = False)
 
-        txt='<--Shoot for at least 50% for Money IGR'
+        txt='<--Shoot for at least 50% for Money '+igr_label[0]+'GR'
         pdf.cell(w=sum(w[3:]), txt=txt, h=h[5], border=0, ln=1,
                 align='L', fill=False)
 
@@ -293,12 +297,12 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         if num_apps:
             for j, app_data in stu_apps.iterrows():
                 college_text = app_data['collegename']
-                shrink_cell(pdf=pdf, w=w[0], h=h[9], ln=0, txt=college_text,
+                _shrink_cell(pdf=pdf, w=w[0], h=h[9], ln=0, txt=college_text,
                         align='L', fill=False, border=0)
 
                 # This block is complicated because of grad rate highlighting
                 gr_this = app_data['local_6yr_all_aah']
-                gr_text = notnan(gr_this,'N/A','{:2.0%}')
+                gr_text = _notnan(gr_this,'N/A','{:2.0%}')
                 if gr_this >= igr:
                     pdf.set_text_color(r=0,g=32,b=96)
                     pdf.set_font('font_b', '', 11)
@@ -314,7 +318,7 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
                 pdf.set_font('font_r', '', 11)
 
                 for w_, txt_, ln_ in [
-                     (w[2], notnan(app_data['local_odds']/100.0,
+                     (w[2], _notnan(app_data['local_odds']/100.0,
                                    'N/A','{:2.0%}'), 0),
                      (w[3], app_data['local_class'], 0),
                      (w[4], app_data['local_result'], 0),
