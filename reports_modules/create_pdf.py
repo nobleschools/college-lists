@@ -254,7 +254,7 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         # two rows used for that purpose
         pdf.set_font('font_b', '', 11)
         pdf.cell(w=w[0],
-            txt='Schools currently apply to ("*" indicates',
+            txt='Schools currently applying to ("*" indicates',
             h=h[7], border=0, ln=0, align='L', fill=True)
 
         if ((stu_data['Race/ Eth'] == 'W') or

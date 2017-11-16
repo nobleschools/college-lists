@@ -56,6 +56,8 @@ for campus, names in [
         ['Pritzker',['"Caroline Ryden"', '"Jane Knoche"',
          '"Laura Edwards"', '"Mark Williams"', '"Sarah Kruger"']],
         ['Golder',['"Edith Flores"','"Julie Horning"','"Lauren Chelew"']],
+        ['Muchin',['"Paul Farrand"','"Emily Morgan"','"Emmanuel Jackson"',
+            '"Dominique Vega"']],
         ['TNA',['Bermudez','Boros','Paiz','Weingartner','Wilson']],
         ['UIC',['Ballard','Bowdy','Desgrosellier','MacCallum']],
         ]:
