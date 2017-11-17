@@ -129,22 +129,14 @@ students_columns:
         head_format: bold_olive_underline
         label_format: bold_olive_center_wrap
         cond_format: single_percent_centered_dash_bottom
-    - '6yr_all':
-        formula: 'tbl:local_6yr_all'
-        format: single_percent_centered
-        width: 6.00
+    - 'College Name':
+        formula: 'tbl:college_name'
+        format: left_normal_text
+        width: 25.00
         head_text: ''
         head_format: bold_olive_underline
         label_format: bold_olive_center_wrap
-        cond_format: single_percent_centered_dash_bottom
-    - '6yr_aah':
-        formula: 'tbl:local_6yr_aah'
-        format: single_percent_centered
-        width: 6.00
-        head_text: ''
-        head_format: bold_olive_underline
-        label_format: bold_olive_center_wrap
-        cond_format: single_percent_centered_dash_bottom
+        cond_format: dash_bottom
         
  
 # The specifications here cause the output code to create Excel named ranges
