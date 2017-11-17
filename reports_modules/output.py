@@ -71,6 +71,7 @@ class Output():
                     'ACT':safe2int,
                     'SAT':safe2int,
                     'GPA':safe2f,
+                    'NCES': safe2int,
                     'StudentID':safe2int})
             if self.debug:
                 print('(size {}).'.format(len(self.dfs['full_roster'])),

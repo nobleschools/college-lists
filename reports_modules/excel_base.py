@@ -185,23 +185,34 @@ def create_chart_tab(writer, fn, debug):
     ws.insert_image('A1',fn)
     ws.set_zoom(75)
 
-def create_static_tabs(writer, dfs, formats, cfg, campus,debug):
+def create_static_tabs(writer, dfs, formats, cfg, campus,debug,
+        playbook=False):
     '''Places default data into hidden tabs'''
     if debug:
         print('Writing static tabs...',flush=True,end='')
-    static_tabs_from_csv = [
-            (create_all_colleges_tab,'AllColleges'),
-            (create_college_list_lookup_tab,'CollegeListLookup'),
-            (create_custom_weights_tab,'CustomWeights'),
-            (create_standard_weights_tab,'StandardWeights'),
-            (create_sat_to_act_tab,'SATtoACT'),
-            (create_strategies_tab,'Strategies'),
-            (create_targets_tab,'StudentTargets'),
-            ]
+    if not playbook:
+        static_tabs_from_csv = [
+                (create_all_colleges_tab,'AllColleges'),
+                (create_college_list_lookup_tab,'CollegeListLookup'),
+                (create_custom_weights_tab,'CustomWeights'),
+                (create_standard_weights_tab,'StandardWeights'),
+                (create_sat_to_act_tab,'SATtoACT'),
+                (create_strategies_tab,'Strategies'),
+                (create_targets_tab,'StudentTargets'),
+                ]
+    else:
+        static_tabs_from_csv = [
+                (create_all_colleges_tab,'AllColleges'),
+                (create_sat_to_act_tab,'SATtoACT'),
+                (create_strategies_tab,'Strategies'),
+                (create_targets_tab,'StudentTargets'),
+                ]
+
     for runner, tab_name in static_tabs_from_csv:
         runner(writer, dfs[tab_name], formats)
 
-    create_labels_tab(writer, formats, cfg, campus)
+    if not playbook:
+        create_labels_tab(writer, formats, cfg, campus)
 
     if debug:
         print('Done!', flush=True)

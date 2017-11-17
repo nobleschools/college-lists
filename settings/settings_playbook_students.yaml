@@ -1,0 +1,164 @@
+###################################################
+# Students tab details
+# The below specifies the exact formatting and content for each column in the
+# order presented. Each column is assumed to have a 2 row header. format
+# species the format of data, while head_format and head_text specify value
+# and format of the first header row and label_format specifies the format of
+# the second header row (which has text equal to the column label.)
+#
+# The formula field follows one of four forms:
+# tbl:Label: drops in columns from the roster file (typically from 
+# current_students.csv)
+# =FORMULA: an Excel equation that can reference other columns in the same
+# row using the %Label% convention
+# cfg:Label: refers to a formula defined in the config (settings.yaml) file
+# and might have a provision for campus-specific formulas in addition to a
+# general standard one
+# <id>:Label: for debugging, just copy the label id into data rows
+#
+students_columns:
+    - Campus:
+        formula: tbl:Campus
+        format: left_normal_text
+        width: 15
+        head_text: ''
+        head_format: left_normal_text
+        label_format: bold_wrap
+        cond_format: dash_bottom
+    - EFC:
+        formula: tbl:EFC
+        format: left_normal_text
+        width: 6
+        head_text: ''
+        head_format: left_normal_text
+        label_format: bold_wrap
+        cond_format: dash_bottom
+    - StudentID:
+        formula: <id>
+        format: left_normal_text
+        width: 12
+        head_text: ''
+        head_format: left_normal_text
+        label_format: bold_wrap
+        cond_format: dash_bottom
+    - GPA:
+        formula: tbl:GPA
+        format: two_point_centered
+        width: 5.57
+        head_text: 'Student profile'
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'Actual ACT':
+        formula: tbl:ACT
+        format: centered
+        width: 5.57
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'Actual SAT':
+        formula: tbl:SAT
+        format: centered
+        width: 5.57
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'SAT in ACT terms':
+        formula: '=IF(ISNUMBER(%Actual SAT%),VLOOKUP(%Actual SAT%,SATtoACT,2,FALSE),"TBD")'
+        format: centered
+        width: 5.57
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'High "ACT"':
+        formula: '=IF(ISNUMBER(%Actual ACT%),IF(ISNUMBER(%SAT in ACT terms%),MAX(%Actual ACT%,%SAT in ACT terms%),%Actual ACT%),IF(ISNUMBER(%SAT in ACT terms%),%SAT in ACT terms%,"TBD"))'
+        format: centered
+        width: 6.00
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'Race / Eth':
+        formula: 'tbl:Race/ Eth'
+        format: centered
+        width: 4.86
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - Stra-tegy:
+        formula: '=IF(AND(%GPA%<>0,%High "ACT"%<>0),IF(ISNUMBER(VLOOKUP(TEXT(MAX(FLOOR(%GPA%*10,1)/10,1.5),"0.0")&":"&MAX(%High "ACT"%,12),StrategyLookup,4,FALSE)),VLOOKUP(TEXT(MAX(FLOOR(%GPA%*10,1)/10,1.5),"0.0")&":"&MAX(%High "ACT"%,12),StrategyLookup,4,FALSE),"TBD"),"TBD")'
+        format: centered
+        width: 4.29
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - local_act:
+        formula: 'tbl:local_act_max'
+        format: centered
+        width: 6.00
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - Bucket:
+        formula: 'tbl:local_bucket'
+        format: left_normal_text
+        width: 20.00
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - NCES:
+        formula: 'tbl:NCES'
+        format: left_normal_text
+        width: 8
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'Grad Rate':
+        formula: 'tbl:local_grad_rate'
+        format: single_percent_centered
+        width: 6.00
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: single_percent_centered_dash_bottom
+    - '6yr_all':
+        formula: 'tbl:local_6yr_all'
+        format: single_percent_centered
+        width: 6.00
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: single_percent_centered_dash_bottom
+    - '6yr_aah':
+        formula: 'tbl:local_6yr_aah'
+        format: single_percent_centered
+        width: 6.00
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: single_percent_centered_dash_bottom
+        
+ 
+# The specifications here cause the output code to create Excel named ranges
+# with the column specified. For example, the first entry will create a named
+# range with name 'LastFirst' that is a single column referenced wherever
+# the 'LastFirst' column ends up. Columns with quotes are the same as the
+# single word columns--quotes are just used to contain the spaces in the name
+#
+student_names:
+    Campus: Campus
+    KidIDs: StudentID
+    KidGPAs: GPA
+    ActualACT: 'Actual ACT'
+    ActualSAT: 'Actual SAT'
+    KidACTs: 'High "ACT"'
+    KidRace: 'Race / Eth'
+    Strats: Stra-tegy

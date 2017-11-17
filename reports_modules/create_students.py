@@ -39,7 +39,10 @@ def reduce_roster(campus, cfg, dfs, counselor,debug):
         print('Starting roster of {} students'.format(len(df)),
                 flush=True,end='')
     if campus == 'All':
-        df = df[df['Campus'].isin(cfg['all_campuses'])]
+        if 'all_campuses' in cfg:
+            df = df[df['Campus'].isin(cfg['all_campuses'])]
+        else:
+            pass # we're using the entire dataframe
     elif campus == 'PAS':
         df = df[df['EFC'] == -1]
     else:
@@ -69,6 +72,20 @@ def _get_strategies(x,lookup_df):
         return lookup_df['Strategy'].get(lookup,np.nan)
     else:
         return np.nan
+
+def _get_bucket(x, use_EFC=False):
+    '''Apply function to create a text field to "bucket" students'''
+    strat, gpa, efc, race = x
+    special_strats = [5, 6] # these are the ones split by 3.0 GPA
+    if pd.isnull(gpa) or pd.isnull(strat):
+        return 'TBD'
+    else:
+        # The overall format will be 'Strategy 05 w/ <3.0, race, EFC'
+        bucket = 'Strategy {:02d}'.format(int(strat))
+        if strat in special_strats:
+            bucket = bucket + (' w/ 3.0+' if gpa >= 3.0 else ' w/ <3.0')
+        return ('White/Asian, ' if race in ['W','A'] else 'AA/H, ')+bucket
+
 
 def _get_gr_target(x, lookup_strat, goal_type):
     '''Apply function to get the target or ideal grad rate for student'''
@@ -240,6 +257,41 @@ def create_predictions(roster_df, app_df):
 
     return pd.DataFrame(return_table[1:],
                              columns=return_table[0]).set_index('StudentID')
+
+def _lookup_source_field(x,source_df,field,default='N/A', force_na=False):
+    '''Utility function to map values from source df to a series
+    in the apps table'''
+    if pd.isnull(x):
+        return np.nan
+    else:
+        return_value = source_df[field].get(x,default)
+        if force_na:
+            return default if return_value == force_na else return_value
+        else:
+            return return_value
+
+def add_playbook_calculations(cfg, dfs, debug):
+    '''Parallel function for Playbook creation to "student calculations"""
+    Adds fields for Playbook student tab'''
+    df = dfs['roster'].copy()
+    df['local_strategy'] = df[['GPA','local_act_max']].apply(_get_strategies,
+            axis=1, args=(dfs['Strategies'],))
+    df['local_bucket'] = df[
+            ['local_strategy','GPA','EFC','Race/ Eth']].apply(
+            _get_bucket, axis=1)
+
+    college_fields = [('local_6yr_all', 'Adj6yrGrad_All', np.nan),
+                      ('local_6yr_aah', 'Adj6yrGrad_AA_Hisp', np.nan)]
+    for local_label, college_label, na_val in college_fields:
+        df[local_label] = df['NCES'].apply(_lookup_source_field,
+                args=(dfs['AllColleges'], college_label, na_val))
+    df['local_grad_rate'] = df['local_6yr_aah'].where(
+            df['Race/ Eth'].isin(['H','B']), df['local_6yr_all'])
+    df['local_grad_rate'] = df['local_grad_rate'].where(
+            ~np.isnan(df['local_grad_rate']), 0.0)
+
+    dfs['roster'] = df.sort_values(['local_bucket','local_grad_rate'],
+                                   ascending=[True,False])
 
 def add_student_calculations(cfg, dfs, debug):
     '''Creates some calculated columns in the roster table'''
