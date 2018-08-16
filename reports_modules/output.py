@@ -31,6 +31,8 @@ class Output():
     def _get_filename(self, campus, counselor, root, date_string):
         '''Returns the filename for this Excel object'''
         cmp = 'Network' if campus == 'All' else campus
+        if cmp.startswith('list'): # hack to load Name.csv with campus
+            cmp = cmp[4:-4]        # of listName.csv
         cmp = cmp+' '+root+' '+datetime.now().strftime(date_string)+'.xlsx'
         if counselor != 'All':
             cmp = counselor + ' ' + cmp
@@ -84,6 +86,11 @@ class Output():
             if self.debug:
                 print('(size {}).'.format(len(self.dfs['applications'])),
                         flush=True)
+
+        elif key == 'roster_list':
+            self.dfs['roster_list'] = pd.read_csv(filename,na_values=[''],
+                    encoding='cp1252',
+                    index_col=0)
         else:
             # only main input currently missing is current_applications
             if self.debug:
@@ -109,6 +116,13 @@ class Output():
 
         for k, v in cfg['inputs'].items():
             self._read_inputs(k,v)
+
+        if campus.startswith('list'): # campus name hack to read a csv
+                                      # for a list of unique ids to form the
+                                      # roster (ids in first column and
+                                      # the campus is 'listGROUP.csv' where
+                                      # filename is GROUP.csv
+            self._read_inputs('roster_list',campus[4:])
 
         if not no_excel:
             self.writer = pd.ExcelWriter(self.fn, engine='xlsxwriter')

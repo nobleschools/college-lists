@@ -24,6 +24,23 @@ t0 = time()
 os.system(call_stem+' -sum Campus')
 print('Network: {:.2f} seconds'.format(time()-t0),flush=True)
 
+# First do campus/counselor summary files
+for campus_case in [
+        'Butler',
+        'Bulls',
+        ]:
+    t0 = time()
+    before_files = os.listdir()
+    print("Generating {} (don't add to directory)...".format(campus_case),
+            flush=True,end='')
+    os.system(call_stem+' -q -sum Counselor -ca '+campus_case)
+    print('{:.2f} seconds'.format(time()-t0),flush=True)
+    after_files = os.listdir()
+    new_files = list(set(after_files)-set(before_files))
+    new_file = new_files[0]
+    os.rename(new_file, 'Counselor Summary '+new_file)
+
+# Now do campus reports
 for campus_case in [
         'Noble',
         'Pritzker',
@@ -42,11 +59,15 @@ for campus_case in [
         'Speer',
         'TNA',
         'PAS',
+        'listKIPP.csv',
+        'listGCMS.csv',
         ]:
     t0 = time()
     print('Generating {}...'.format(campus_case),flush=True,end='')
     if campus_case == 'Johnson':
         os.system(call_stem+' -s settings/settings_aa_only.yaml -q -ca '+campus_case)
+    elif campus_case == 'listKIPP.csv' or campus_case == 'listGCMS.csv':
+        os.system(call_stem+' -q -pdf -ca '+campus_case)
     else:
         os.system(call_stem+' -q -ca '+campus_case)
     print('{:.2f} seconds'.format(time()-t0),flush=True)

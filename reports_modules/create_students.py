@@ -43,8 +43,10 @@ def reduce_roster(campus, cfg, dfs, counselor,debug):
             df = df[df['Campus'].isin(cfg['all_campuses'])]
         else:
             pass # we're using the entire dataframe
-    elif campus == 'PAS':
+    elif campus == 'PAS': # special code for -1 EFC students
         df = df[df['EFC'] == -1]
+    elif campus.startswith('list'): # special code for a list from a csv
+        df = df[df.index.isin(dfs['roster_list'].index)]
     else:
         df = df[df['Campus']==campus]
     if counselor != 'All':
@@ -183,9 +185,15 @@ def _calculate_mtgr_migr(tgr, igr, s_app_df):
                            (s_app_df['local_6yr_all_aah']>=0.0)]
     if len(s_app_clean): # only calculate if some exist
         s_target = s_app_clean[s_app_clean['local_6yr_all_aah']>=tgr]
-        tgr = 1-(1-s_target['local_odds']/100.0).product()
+        if len(s_target): # there might not be any money target gr apps
+            tgr = 1-(1-s_target['local_odds']/100.0).product()
+        else:
+            tgr = 0.0
         s_ideal = s_app_clean[s_app_clean['local_6yr_all_aah']>=igr]
-        igr = 1-(1-s_ideal['local_odds']/100.0).product()
+        if len(s_ideal): # there might not be any money ideal gr apps
+            igr = 1-(1-s_ideal['local_odds']/100.0).product()
+        else:
+            igr = 0.0
         return (tgr, igr)
     else:
         return (0.0,0.0) # No applications and zero odds
