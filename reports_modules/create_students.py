@@ -32,7 +32,7 @@ def _get_act_max(x):
         else:
             return np.nan
 
-def reduce_roster(campus, cfg, dfs, counselor,debug):
+def reduce_roster(campus, cfg, dfs, counselor, debug, do_nonseminar):
     '''Uses campus info and config file to reduce the active student list'''
     df = dfs['full_roster'].copy()
     if debug:
@@ -52,6 +52,11 @@ def reduce_roster(campus, cfg, dfs, counselor,debug):
     if counselor != 'All':
         df = df.dropna(subset = ['Counselor'])
         df = df[df['Counselor'].str.contains(counselor)]
+    
+    if do_nonseminar:
+        df = df[df['SpEd'].str.endswith('NonS')]
+    else:
+        df = df[~df['SpEd'].str.endswith('NonS')]
     if debug:
         print('..ending at {} students.'.format(len(df)),flush=True)
 

@@ -12,6 +12,7 @@ counselor_header:
     Standard: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))'
     #Standard: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     Comer: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
+    Noble: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     RoweClark: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     UIC: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
     Rauner: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
@@ -38,7 +39,7 @@ row_info:
         blank_end: 10
         student_start: 12 #start of data row
         student_end: 36
-    Comer:
+    ComerOld:
         blank_start: 8
         blank_end: 10
         student_start: 12
@@ -65,9 +66,9 @@ bottom_targets: # specification for specific campus goals
             Label: '1+ Illinois public schools'
             Eval: '=INDEX(ILPubApps,MATCH(D3,KidIDs,0))'
             Sign: '>='
-    Noble:
+    Comer:
         - E:
-            Label: '="3+ money "&LOWER(IdealGRLabel)&" grad rate schools"'
+            Label: '="2+ money "&LOWER(IdealGRLabel)&" grad rate schools"'
             Eval: '=INDEX(MoneyRGROddsLongshot,MATCH(D3,KidIDs,0))'
             Sign: '>='
         - E:
@@ -79,8 +80,25 @@ bottom_targets: # specification for specific campus goals
             Eval: '=AE6'
             Sign: '>='
         - E:
-            Label: '="3+ "&LOWER(TargetGRLabel)&" grad rate schools"'
+            Label: '="4+ "&LOWER(TargetGRLabel)&" grad rate schools"'
             Eval: '=AD6-AE6'
+            Sign: '>='
+        - E:
+            Label: '3+ money safety schools'
+            Eval: '=INDEX(MoneySafetyApps,MATCH(D3,KidIDs,0))+INDEX(MoneySecureApps,MATCH(D3,KidIDs,0))+INDEX(MoneySureThingApps,MATCH(D3,KidIDs,0))'
+            Sign: '>='
+        - E:
+            Label: '1+ Illinois public schools'
+            Eval: '=INDEX(ILPubApps,MATCH(D3,KidIDs,0))'
+            Sign: '>='
+    Noble:
+        - E:
+            Label: '="3+ money "&LOWER(IdealGRLabel)&" grad rate schools"'
+            Eval: '=INDEX(MoneyRGROddsLongshot,MATCH(D3,KidIDs,0))'
+            Sign: '>='
+        - E:
+            Label: '="3+ money "&LOWER(TargetGRLabel)&" grad rate schools"'
+            Eval: '=INDEX(MoneyMGROddsLongshot,MATCH(D3,KidIDs,0))'
             Sign: '>='
         - E:
             Label: '1+ Illinois public schools'
