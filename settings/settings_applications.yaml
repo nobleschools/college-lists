@@ -52,6 +52,9 @@ applications_calculations: # definitions for calculated columns in order
     - Race:
         formula: =INDEX(KidRace,MATCH(%hs_student_id%,KidIDs,0))
         format: bold_blue
+    - FRace:
+        formula: =IF(OR(%Race%="M",%Race%="I"),"H",%Race%)
+        format: bold_blue
     - TargetGR:
         formula: =INDEX(StudentTargets,MATCH(%hs_student_id%,KidIDs,0))
         format: bold_blue
@@ -68,28 +71,28 @@ applications_calculations: # definitions for calculated columns in order
         formula: =IF(ISNUMBER(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))),ROUND(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))+%PartnerBump%*IF(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))>0.7,(1-INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0)))/2,0.15),2),INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0)))
         format: bold_orange
     - ACT25/50:
-        formula: =IF(OR(%Race%="H",%Race%="B"),INDEX(AllCollegeACT25, MATCH(%NCES%,AllCollegeNCES,0)),INDEX(AllCollegeACT50, MATCH(%NCES%,AllCollegeNCES,0)))
+        formula: =IF(OR(%FRace%="H",%FRace%="B"),INDEX(AllCollegeACT25, MATCH(%NCES%,AllCollegeNCES,0)),INDEX(AllCollegeACT50, MATCH(%NCES%,AllCollegeNCES,0)))
         format: bold_orange
     - GPAcoefB:
-        formula: =INDEX(CustomWeightsGPA,MATCH(%Race%&":"&%NCES%,CustomWeightsIndex,0))
+        formula: =INDEX(CustomWeightsGPA,MATCH(%FRace%&":"&%NCES%,CustomWeightsIndex,0))
         format: bold_yellow
     - ACTcoefB:
-        formula: =INDEX(CustomWeightsACT,MATCH(%Race%&":"&%NCES%,CustomWeightsIndex,0))
+        formula: =INDEX(CustomWeightsACT,MATCH(%FRace%&":"&%NCES%,CustomWeightsIndex,0))
         format: bold_yellow
     - InterceptB:
-        formula: =INDEX(CustomWeightsIntercept,MATCH(%Race%&":"&%NCES%,CustomWeightsIndex,0))
+        formula: =INDEX(CustomWeightsIntercept,MATCH(%FRace%&":"&%NCES%,CustomWeightsIndex,0))
         format: bold_yellow
     - LogitB:
         formula: =%GPAcoefB%*%GPA%+%ACTcoefB%*%ACT%+%InterceptB%
         format: bold_yellow
     - GPAcoefA:
-        formula: =INDEX(CoefficientsGPA,MATCH(%Race%&":"&%Barron's%,CoefficientsIndex,0))
+        formula: =INDEX(CoefficientsGPA,MATCH(%FRace%&":"&%Barron's%,CoefficientsIndex,0))
         format: bold_olive
     - ACTcoefA:
-        formula: =INDEX(CoefficientsACT,MATCH(%Race%&":"&%Barron's%,CoefficientsIndex,0))
+        formula: =INDEX(CoefficientsACT,MATCH(%FRace%&":"&%Barron's%,CoefficientsIndex,0))
         format: bold_olive
     - InterceptA:
-        formula: =INDEX(CoefficientsIntercept,MATCH(%Race%&":"&%Barron's%,CoefficientsIndex,0))
+        formula: =INDEX(CoefficientsIntercept,MATCH(%FRace%&":"&%Barron's%,CoefficientsIndex,0))
         format: bold_olive
     - LogitA:
         formula: =%GPAcoefA%*%GPA%+(%ACT%-%ACT25/50%)*%ACTcoefA%+%InterceptA%
@@ -113,14 +116,20 @@ applications_calculations: # definitions for calculated columns in order
     - MatchOrBetter:
         formula: =IF(OR(%ReachOrBetter%=1,%Class%=MatchLabel),1,0)
         format: bold_yellow
+    - MatchOrUnder:
+        formula: =IF(OR(%Class%=MatchLabel,%Class%=SafetyLabel,%Class%=SecureLabel,%Class%=SureThingLabel),1,0)
+        format: bold_yellow
     - 6yrAll/AAH_forSorting:
-        formula: =IF(OR(%Race%="H",%Race%="B"),IF(ISNUMBER(%6yr_AA/H%),ROUND(%6yr_AA/H%,2),0),IF(ISNUMBER(%6yr_all%),ROUND(%6yr_all%,2),0))
+        formula: =IF(OR(%FRace%="H",%FRace%="B"),IF(ISNUMBER(%6yr_AA/H%),ROUND(%6yr_AA/H%,2),0),IF(ISNUMBER(%6yr_all%),ROUND(%6yr_all%,2),0))
         format: bold_yellow
     - TGROrBetter:
         formula: =IF(%6yrAll/AAH_forSorting%>=%TargetGR%,1,0)
         format: bold_yellow
     - IGROrBetter:
         formula: =IF(%6yrAll/AAH_forSorting%>=%IdealGR%,1,0)
+        format: bold_yellow
+    - FarBelowTGRCount:
+        formula: =IF(%6yrAll/AAH_forSorting%<(%TargetGR%-0.10),1,0)
         format: bold_yellow
     - InverseOdds:
         formula: =1-%Odds%/100
@@ -145,9 +154,6 @@ applications_calculations: # definitions for calculated columns in order
         format: bold_yellow
     - IGRorBetterMoneyMult:
         formula: =IF(AND(%IGROrBetter%=1,ISNUMBER(%InverseOdds%),%MoneyYesNo%=1),$%InverseOdds%,1)
-        format: bold_yellow
-    - SGRMult:
-        formula: =IF(ISNUMBER(%TargetGR%),IF(AND(%6yrAll/AAH_forSorting%<%TargetGR%,%6yrAll/AAH_forSorting%>(%TargetGR%-0.08),ISNUMBER(%InverseOdds%)),%InverseOdds%,1),1)
         format: bold_yellow
     - ILPub:
         formula: =IF(ISNUMBER(%6yr_AA/H%),INDEX(AllCollegeILPub, MATCH(%NCES%,AllCollegeNCES,0)),0)
@@ -208,8 +214,11 @@ applications_calculations: # definitions for calculated columns in order
     - MoneyCode:
         formula: =IF(ISNUMBER(%6yr_AA/H%),INDEX(AllCollegeMoneyCode, MATCH(%NCES%,AllCollegeNCES,0)),"?")
         format: bold_yellow
-    - Freebie:
-        formula: =IF(ISNUMBER(%6yr_AA/H%),IF(OR(LEFT(%MoneyCode%,2)="--",LEFT(%MoneyCode%,3)="---",%Odds%<20,%6yrAll/AAH_forSorting%<(%TargetGR%-0.1)),1,0),0)
+    - BadMoney:
+        formula: =IF(OR(%MoneyCode%="---",%MoneyCode%="--",%MoneyCode%="+/--",%MoneyCode%="+/---"),1,0)
+        format: bold_yellow
+    - GoldenThree:
+        formula: =%MoneyYesNo%*%MatchOrUnder%*%TGROrBetter%
         format: bold_yellow
 
 
@@ -230,6 +239,7 @@ application_names:
     Results: Result
     MGRcount: TGROrBetter
     RGRcount: IGROrBetter
+    FarBelowTGRCount: FarBelowTGRCount
     MatchMult: MatchOrBetterMult
     ReachMult: ReachOrBetterMult
     MGRMult: TGRorBetterMult
@@ -237,14 +247,14 @@ application_names:
     MoneyYesNo: MoneyYesNo
     MGRMoneyMult: TGRorBetterMoneyMult
     RGRMoneyMult: IGRorBetterMoneyMult
-    SGRMult: SGRMult
     ILPublic: ILPub
     ReachUnder: Reach-
-    MatchUnder: Match-
+    MatchOrUnder: MatchOrUnder
     SafetyUnder: Safety-
     ReachUnderMoney: Reach-Money
     MatchUnderMoney: Match-Money
     SafetyUnderMoney: Safety-Money
     MoneyCode: MoneyCode
     MoneyChicago: MoneyChicago
-    Freebie: Freebie
+    BadMoney: BadMoney
+    GoldenThree: GoldenThree

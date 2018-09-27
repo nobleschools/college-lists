@@ -65,9 +65,13 @@ all_strategies: # list all so summaries include those w/ no students
 sort_students:
     Standard: '=%Counselor%&%LastFirst%'
     Rauner: '=%Cohort%&%Counselor%&%LastFirst%'
+    Bulls: '=%Cohort%&%Counselor%&%LastFirst%'
     UIC: '=%Counselor%&%Cohort%&%LastFirst%'
+    Comer: '=%Counselor%&%Cohort%&%LastFirst%'
+    DRW: '=%Counselor%&%Cohort%&%LastFirst%'
     RoweClark: '=%Advisor%&%LastFirst%'
     PAS: '=%Campus%&%LastFirst%'
+    Golder: '=%Cohort%&%LastFirst%'
 
 # This allows individual schools to customize odds/class language
 category_labels:

@@ -353,6 +353,14 @@ students_columns:
         head_format: bold_underline
         label_format: bold_center_wrap
         cond_format: centered_integer_dash_bottom
+    - 'Far Below Target GR apps':
+        formula: '=SUMIF(Students,%StudentID%,FarBelowTGRCount)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_underline
+        label_format: bold_center_wrap
+        cond_format: centered_integer_dash_bottom
     - 'Total apps':
         formula: '=COUNTIF(Students,%StudentID%)'
         format: bold_centered_integer_right
@@ -529,14 +537,6 @@ students_columns:
         head_format: bold_green_underline
         label_format: bold_green_center_wrap
         cond_format: centered_integer_dash_bottom
-    - 'Freebie apps':
-        formula: '=COUNTIFS(Students,%StudentID%,Freebie,1)'
-        format: centered_integer
-        width: 8.43
-        head_text: ''
-        head_format: bold_blue
-        label_format: bold_blue_center_wrap
-        cond_format: centered_integer_dash_bottom
     - 'IL Public apps':
         formula: '=COUNTIFS(Students,%StudentID%,ILPublic,1)'
         format: centered_integer
@@ -553,8 +553,48 @@ students_columns:
         head_format: bold_blue
         label_format: bold_blue_center_wrap
         cond_format: centered_integer_dash_bottom
+    - 'IL Public Secure':
+        formula: '=COUNTIFS(Students,%StudentID%,ILPublic,1, Classes,SecureLabel)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_blue
+        label_format: bold_blue_center_wrap
+        cond_format: centered_integer_dash_bottom
     - 'Money Chicago apps':
         formula: '=COUNTIFS(Students,%StudentID%,MoneyChicago,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_blue
+        label_format: bold_blue_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Match or under apps':
+        formula: '=COUNTIFS(Students,%StudentID%,MatchOrUnder,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_blue
+        label_format: bold_blue_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Target GR or better apps':
+        formula: '=SUMIF(Students,%StudentID%,MGRcount)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_underline
+        label_format: bold_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Bad Money apps':
+        formula: '=COUNTIFS(Students,%StudentID%,BadMoney,1)'
+        format: centered_integer
+        width: 8.43
+        head_text: ''
+        head_format: bold_blue
+        label_format: bold_blue_center_wrap
+        cond_format: centered_integer_dash_bottom
+    - 'Golden Three apps':
+        formula: '=COUNTIFS(Students,%StudentID%,GoldenThree,1)'
         format: centered_integer
         width: 8.43
         head_text: ''
@@ -600,11 +640,14 @@ student_names:
     MoneyRGRPlus: 'Money Ideal GR or better'
     ReachGRApps: 'Ideal GR+ apps'
     MatchGRApps: 'Target GR apps'
+    TGRorBetterApps: 'Target GR or better apps'
+    FarBelowTGRApps: 'Far Below Target GR apps'
     Apps: 'Total apps'
     HailMaryApps: 'Hail Mary'
     LongshotApps: Longshot
     ReachApps: Reach
     MatchApps: Match
+    MatchOrUnderApps: 'Match or under apps'
     SafetyApps: Safety
     SecureApps: Secure
     SureThingApps: 'Sure Thing'
@@ -620,5 +663,7 @@ student_names:
     MoneyMGROddsLongshot: 'Money Target GR (incl Longshot)'
     ILPubApps: 'IL Public apps'
     ILPubMSS: 'IL Public, Match, Safety, Secure'
+    ILPubSecure: 'IL Public Secure'
     MoneyChicagoApps: 'Money Chicago apps'
-    FreebieApps: 'Freebie apps'
+    BadMoneyApps: 'Bad Money apps'
+    GoldenThreeApps: 'Golden Three apps'

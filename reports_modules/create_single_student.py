@@ -3,10 +3,12 @@
 from reports_modules.excel_base import safe_write
 
 def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
-    '''Creates the Excel tab for single student report using cfg details
-    If blank, then doesn't use the applications from that table'''
-    '''As a whole, this tab is the most prescriptive about spacing and content
-    At some point there may be more opportunity to customize via yaml file'''
+    """
+    Creates the Excel tab for single student report using cfg details
+    If blank, then doesn't use the applications from that table.
+    As a whole, this tab is the most prescriptive about spacing and content
+    At some point there may be more opportunity to customize via yaml file
+    """
 
     # First initialize inputs
     if debug:
@@ -297,7 +299,9 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
                         '),INDEX('+t+',D'+r_excel+'),1)')
 
         # If present, do the custom formatting and goals box
-        if campus in cfg_ssv['bottom_targets']:
+        
+        #Trip quote here if using old way
+        if campus in cfg_ssv['school_goals']:
             safe_write(ws, s_end+1, 4, 'Your list compared to campus goals:',
                     f_db['ssv_goals_intro'])
             safe_write(ws, s_end+2, 4, 'Campus Goal',
@@ -309,39 +313,55 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
             g_start = s_end+3
             # Now loop through the goals, checking for size so we can
             # do special formating for the end goal
-            campus_goals = cfg_ssv['bottom_targets'][campus]
+            campus_goals = cfg_ssv['school_goals'][campus].copy()
             for i in range(len(campus_goals)):
                 r_excel = str(g_start+i+1)
-
-                if 'Goal' in campus_goals[i]['E']:
-                    safe_write(ws, g_start+i, 3, # hidden goal number
-                            campus_goals[i]['E']['Goal'])
-                else: # otherwise defaults to the leftmost digit (number)
-                    safe_write(ws, g_start+i, 3, # hidden goal number
-                        '=LEFT(E'+r_excel+',1)+0')
-                if i != (len(campus_goals) - 1): # not last row of goals
-                    safe_write(ws, g_start+i, 4, # goal text
-                            campus_goals[i]['E']['Label'],
-                            f_db['ssv_goal_text'])
-                    safe_write(ws, g_start+i, 5, # student comp
-                            campus_goals[i]['E']['Eval'],
-                            f_db['ssv_goal_eval'])
-                    ws.merge_range(g_start+i, 6, g_start+i, 7,
-                            '=IF(F'+r_excel+campus_goals[i]['E']['Sign']+
-                            'D'+r_excel+',"Yes!","No")',
-                            f_db['ssv_goal_result'])
-                else: # last row of goals
-                    safe_write(ws, g_start+i, 4, # goal text
-                            campus_goals[i]['E']['Label'],
-                            f_db['ssv_goal_text_end'])
-                    safe_write(ws, g_start+i, 5, # student comp
-                            campus_goals[i]['E']['Eval'],
-                            f_db['ssv_goal_eval_end'])
-                    ws.merge_range(g_start+i, 6, g_start+i, 7,
-                            '=IF(F'+r_excel+campus_goals[i]['E']['Sign']+
-                            'D'+r_excel+',"Yes!","No")',
-                            f_db['ssv_goal_result_end'])
-
+                label, amount = campus_goals[i].popitem()
+                
+                # Goals are usually integers, but there can be extra logic
+                if isinstance(amount, str):
+                    amount = eval(amount)
+                    detailed_goal = True
+                else:
+                    detailed_goal = False
+                
+                this_goal = cfg_ssv['goal_descriptions'][label]
+                
+                # First, do the hidden goal number in column D
+                if detailed_goal:
+                    # This will handle a list with some tuples and ending with
+                    # an integer. The tuples have Strategy->N structure and
+                    # are in descending order of strategy
+                    goal_formula = '=@'
+                    for x in amount:
+                        if isinstance(x, tuple):
+                            strat_limit, strat_goal = x
+                            goal_formula = goal_formula.replace('@',
+                                'IF(INDEX(Strats,MATCH(D3,KidIds,0))>='+
+                                str(strat_limit)+','+str(strat_goal)+',@)')
+                        else:
+                            goal_formula = goal_formula.replace('@',str(x))
+                    safe_write(ws, g_start+i, 3, goal_formula)
+                else:
+                    safe_write(ws, g_start+i, 3, amount)
+                
+                goal_fmt = ['ssv_goal_text','ssv_goal_eval','ssv_goal_result']
+                if i == (len(campus_goals) - 1):
+                    #special end formats for last row of goals
+                    goal_fmt = [goal+'_end' for goal in goal_fmt]
+                
+                safe_write(ws, g_start+i, 4, # goal text (Col E)
+                           this_goal['Label'].replace('@','"&D'+r_excel+'&"'),
+                           f_db[goal_fmt[0]])
+                safe_write(ws, g_start+i, 5, # student comp (Col F)
+                           this_goal['Eval'],
+                           f_db[goal_fmt[1]])
+                ws.merge_range(g_start+i, 6, g_start+i, 7, #assessment (Col G)
+                               '=IF(F'+r_excel+this_goal['Sign']+
+                               'D'+r_excel+',"Yes!","No")',
+                               f_db[goal_fmt[2]])
+             
+        # TODO: Maybe make this a strict if versus elif--check spacing
         elif campus in cfg_ssv['print_footer']: # only do this if spec'ed
             safe_write(ws, 37, 4, cfg_ssv['print_footer'][campus],
                     f_db['ssv_footer'])

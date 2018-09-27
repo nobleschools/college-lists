@@ -10,17 +10,20 @@
 # This allows individual campuses to customize the header at the top of the page
 counselor_header:
     Standard: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))'
+    Golder: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
     #Standard: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
-    Comer: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
+    Comer: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
     Noble: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     RoweClark: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     UIC: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
+    Bulls: '=INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&"), "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     Rauner: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
     Johnson: '="("&TEXT(TODAY(),"m/d")&"): "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
     PAS: '="Campus: "&INDEX(Campus,MATCH(D3,KidIDs,0))'
 
 print_header: # non-standard note on F1 about the print date
     Noble: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
+    Rauner: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
     Standard: ''
 
 print_footer: # non-standard text in E37 with a bar across E:J
@@ -47,287 +50,213 @@ row_info:
         aspect: landscape
 
 
-# This allows individual schools to customize odds/class language
-bottom_targets: # specification for specific campus goals
+# Generic descriptions of goals come first and then school specific ones
+goal_descriptions:
+    total:
+        Label: '="@+ total applications"'
+        Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    lt_total:
+        Label: '="@- total applications"'
+        Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
+        Sign: '<='
+    reach:
+        Descr: 'Schools with Reach Odds'
+        Label: '="@+ reach schools"'
+        Eval: '=INDEX(ReachApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    match:
+        Descr: 'Schools with Match Odds'
+        Label: '="@+ match schools"'
+        Eval: '=INDEX(MatchApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    match_plus:
+        Descr: 'Schools with Match or better Odds'
+        Label: '="@+ "&LOWER(MatchLabel)&" or better (50%+ odds)"'
+        Eval: '=INDEX(MatchOrUnderApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    safety:
+        Descr: 'Schools with Safety, Secure, or Sure Thing Odds'
+        Label: '="@+ safety schools"'
+        Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    lt_safety:
+        Descr: 'Maximum number of schools with Safety, Secure, or Sure Thing Odds'
+        Label: '="@- safety schools"'
+        Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
+        Sign: '<='
+    lt_longshot_under:
+        Descr: 'Maximum number of apps with Longshot or worse odds'
+        Label: '="@- ""Hail Mary"" or ""Longshot"""'
+        Eval: '=INDEX(HailMaryApps,MATCH(D3,KidIDs,0))+INDEX(LongshotApps,MATCH(D3,KidIDs,0))'
+        Sign: '<='
+    lt_bad_money:
+        Descr: 'Maximum number of apps with ---, --, +/--, or +/--- money codes'
+        Label: '="@- ""bad"" money options"'
+        Eval: '=INDEX(BadMoneyApps,MATCH(D3,KidIDs,0))'
+        Sign: '<='
+    money_safety:
+        Descr: 'Any money school with Safety, Secure, or Sure Thing Odds'
+        Label: '="@+ money safety schools"'
+        Eval: '=INDEX(MoneySafetyApps,MATCH(D3,KidIDs,0))+INDEX(MoneySecureApps,MATCH(D3,KidIDs,0))+INDEX(MoneySureThingApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    lt_far_below_tgr:
+        Descr: 'Maximum number of schools with grad rate 10% or more below Target'
+        Label: '="@- "&LOWER(FarBelowTGRLabel)&" grad rate schools"'
+        Eval: '=INDEX(FarBelowTGRApps,MATCH(D3,KidIDs,0))'
+        Sign: '<='
+    tgr_only:
+        Descr: 'Schools with Grad Rate at or above Target, but below Ideal'
+        Label: '="@+ "&LOWER(TargetGRLabel)&" grad rate schools"'
+        Eval: '=AD6-AE6'
+        Sign: '>='
+    tgr_plus:
+        Descr: 'Schools with Grad Rate at or above Target'
+        Label: '="@+ "&LOWER(TargetGRLabel)&" grad rate or better schools"'
+        Eval: '=INDEX(TGRorBetterApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    money_tgr_only_reach_plus:
+        Descr: 'Schools with Grad Rate at or above Target, but below Ideal, also money, also 20+% odds'
+        Label: '="@+ money "&LOWER(TargetGRLabel)&" grad rate schools"'
+        Eval: '=INDEX(MoneyMGROdds,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    money_tgr_only_longshot_plus:
+        Descr: 'Schools with Grad Rate at or above Target, but below Ideal, also money, also 10+% odds'
+        Label: '="@+ money "&LOWER(TargetGRLabel)&" grad rate schools"'
+        Eval: '=INDEX(MoneyMGROddsLongshot,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    igr:
+        Descr: 'Schools with Grad Rate at or above Ideal'
+        Label: '="@+ "&LOWER(IdealGRLabel)&" grad rate schools"'
+        Eval: '=AE6'
+        Sign: '>='
+    money_igr_reach_plus:
+        Descr: 'Schools with Grad Rate at or above Ideal, also money, also 20+% odds'
+        Label: '="@+ money "&LOWER(IdealGRLabel)&" grad rate schools"'
+        Eval: '=INDEX(MoneyRGROdds,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    money_igr_longshot_plus:
+        Descr: 'Schools with Grad Rate at or above Ideal, also money, also 10+% odds'
+        Label: '="@+ money "&LOWER(IdealGRLabel)&" grad rate schools"'
+        Eval: '=INDEX(MoneyRGROddsLongshot,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    il_public:
+        Descr: 'Illinois Public Schools'
+        Label: '="@+ Illinois public schools"'
+        Eval: '=INDEX(ILPubApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    il_match_plus:
+        Descr: 'Illinois Public with 50+% odds'
+        Label: '="@+ Illinois match, safety, or secure"'
+        Eval: '=INDEX(ILPubMSS,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    money:
+        Descr: 'Schools that are money based on the +/- code'
+        Label: '="@+ money options (++/-, ++, or +++)"'
+        Eval: '=INDEX(AllMoneyApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    money_chicago:
+        Descr: 'Money schools in the Chicago commute radius'
+        Label: '="@+ money Chicagoland schools"'
+        Eval: '=INDEX(MoneyChicagoApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+    golden_three:
+        Descr: 'Schools with grad rate at or above target, are money, and have 50+% odds'
+        Label: '="@+ meeting all 3 of the above"'
+        Eval: '=INDEX(GoldenThreeApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
+        
+school_goals:
     UIC:
-        - E:
-            Label: '3+ money safety schools'
-            Eval: '=INDEX(MoneySafetyApps,MATCH(D3,KidIDs,0))+INDEX(MoneySecureApps,MATCH(D3,KidIDs,0))+INDEX(MoneySureThingApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="3+ money "&LOWER(TargetGRLabel)&" grad rate schools"'
-            Eval: '=INDEX(MoneyMGROdds,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="3+ money "&LOWER(IdealGRLabel)&" grad rate schools"'
-            Eval: '=INDEX(MoneyRGROdds,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '1+ Illinois public schools'
-            Eval: '=INDEX(ILPubApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
+        - money_safety: 3
+        - money_tgr_only_reach_plus: 3
+        - money_igr_reach_plus: 3
+        - il_public: 1
     Comer:
-        - E:
-            Label: '="2+ money "&LOWER(IdealGRLabel)&" grad rate schools"'
-            Eval: '=INDEX(MoneyRGROddsLongshot,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="3+ money "&LOWER(TargetGRLabel)&" grad rate schools"'
-            Eval: '=INDEX(MoneyMGROddsLongshot,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="3+ "&LOWER(IdealGRLabel)&" grad rate schools"'
-            Eval: '=AE6'
-            Sign: '>='
-        - E:
-            Label: '="4+ "&LOWER(TargetGRLabel)&" grad rate schools"'
-            Eval: '=AD6-AE6'
-            Sign: '>='
-        - E:
-            Label: '3+ money safety schools'
-            Eval: '=INDEX(MoneySafetyApps,MATCH(D3,KidIDs,0))+INDEX(MoneySecureApps,MATCH(D3,KidIDs,0))+INDEX(MoneySureThingApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '1+ Illinois public schools'
-            Eval: '=INDEX(ILPubApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
+        - money_igr_longshot_plus: 1
+        - money_tgr_only_longshot_plus: 3
+        - igr: 2
+        - tgr_only: 3
+        - money_safety: 2
+        - il_public: 1
+    TNA:
+        - money_igr_longshot_plus: 3
+        - money_tgr_only_longshot_plus: 3
+        - money_safety: 3
+        - il_public: 1
     Noble:
-        - E:
-            Label: '="3+ money "&LOWER(IdealGRLabel)&" grad rate schools"'
-            Eval: '=INDEX(MoneyRGROddsLongshot,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="3+ money "&LOWER(TargetGRLabel)&" grad rate schools"'
-            Eval: '=INDEX(MoneyMGROddsLongshot,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '1+ Illinois public schools'
-            Eval: '=INDEX(ILPubApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '1+ money Chicagoland schools'
-            Eval: '=INDEX(MoneyChicagoApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
+        - money_igr_longshot_plus: 3
+        - money_tgr_only_longshot_plus: 3
+        - il_public: 1
+        - money_chicago: 1
     Golder:
-        - E:
-            Label: '="3+ "&LOWER(IdealGRLabel)&" grad rate schools"'
-            Eval: '=AE6'
-            Sign: '>='
-        - E:
-            Label: '="3+ "&LOWER(TargetGRLabel)&" grad rate schools"'
-            Eval: '=AD6-AE6'
-            Sign: '>='
-        - E:
-            Label: '="2- "&LOWER(BelowTGRLabel)&" grad rate schools"'
-            Eval: '=AH6'
-            Sign: '<='
-        - E:
-            Label: '3+ reach schools'
-            Eval: '=INDEX(ReachApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '3+ match schools'
-            Eval: '=INDEX(MatchApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '3- safety schools'
-            Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
-            Sign: '<='
-        - E:
-            Label: '2- "bad" money options'
-            Eval: '=COUNTIF(J13:J36,"---")+COUNTIF(J13:J36,"--")+COUNTIF(J13:J36,"+/--")+COUNTIF(J13:J36,"+/---")'
-            Sign: '<='
-        - E:
-            Label: '2- "Hail Mary" or "Longshot"'
-            Eval: '=INDEX(HailMaryApps,MATCH(D3,KidIDs,0))+INDEX(LongshotApps,MATCH(D3,KidIDs,0))'
-            Sign: '<='
+        - igr: 3
+        - tgr_only: 3
+        - lt_far_below_tgr: 2
+        - reach: 3
+        - match: 3
+        - lt_safety: 3
+        - lt_bad_money: 2
+        - lt_longshot_under: 2
     Speer:
-        - E:
-            Label: '3+ reach schools'
-            Eval: '=INDEX(ReachApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '4+ match schools'
-            Eval: '=INDEX(MatchApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '3+ safety schools'
-            Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '6+ money options (++/-, ++, or +++)'
-            Eval: '=INDEX(AllMoneyApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="4+ "&LOWER(TargetGRLabel)&" grad rate schools"'
-            Eval: '=AD6-AE6'
-            Sign: '>='
-        - E:
-            Label: '="3+ "&LOWER(IdealGRLabel)&" grad rate schools"'
-            Eval: '=AE6'
-            Sign: '>='
-        - E:
-            Label: '3+ Illinois public schools'
-            Eval: '=INDEX(ILPubApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-
+        - money_tgr_only_longshot_plus: 4
+        - igr: 3
+        - il_public: 1
+        - money_chicago: 1
     Pritzker:
-        - E:
-            Label: '3+ reach schools'
-            Eval: '=INDEX(ReachApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '4+ match schools'
-            Eval: '=INDEX(MatchApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '3+ safety schools'
-            Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '6+ money options (++/-, ++, or +++)'
-            Eval: '=INDEX(AllMoneyApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="4+ "&LOWER(TargetGRLabel)&" grad rate schools"'
-            Eval: '=AD6-AE6'
-            Sign: '>='
-        - E:
-            Label: '="3+ "&LOWER(IdealGRLabel)&" grad rate schools"'
-            Eval: '=AE6'
-            Sign: '>='
-
+        - reach: 3
+        - match: 4
+        - safety: 3
+        - money: 6
+        - tgr_only: 4
+        - igr: 3
+    Hansberry:
+        - tgr_plus: 5
+        - money: 5
+        - safety: 3
     Bulls:
-        - E:
-            Label: '6+ money options (++/-, ++, or +++)'
-            Eval: '=INDEX(AllMoneyApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="3+ "&LOWER(TargetGRLabel)&" grad rate schools"'
-            Eval: '=AD6-AE6'
-            Sign: '>='
-        - E:
-            Label: '="3+ "&LOWER(IdealGRLabel)&" grad rate schools"'
-            Eval: '=AE6'
-            Sign: '>='
-
+        - money: 6
+        - tgr_only: 3
+        - igr: 3
     Baker:
-        - E:
-            Label: '14- total applications'
-            Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
-            Sign: '<='
-            Goal: 14
-        - E:
-            Label: '8+ total applications'
-            Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '6+ money options (++/-, ++, or +++)'
-            Eval: '=INDEX(AllMoneyApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="6+ "&LOWER(TargetGRLabel)&" grad rate or better schools"'
-            Eval: '=AD6'
-            Sign: '>='
-        - E:
-            Label: '="2+ "&LOWER(SafetyLabel)&" or "&LOWER(SecureLabel)&" schools"'
-            Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '2- freebie schools'
-            Eval: '=INDEX(FreebieApps,MATCH(D3,KidIDs,0))'
-            Sign: '<='
-        - E:
-            Label: '="3+ "&LOWER(MatchLabel)&" schools (recommended)"'
-            Eval: '=INDEX(MatchApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="3+ "&LOWER(ReachLabel)&" schools (recommended)"'
-            Eval: '=INDEX(ReachApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-
+        - tgr_plus: 5
+        - money: 5
+        - match_plus: 5
+        - golden_three: 5
+        - lt_total: 14
     DRW:
-        - E:
-            Label: '10- total applications'
-            Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
-            Sign: '<='
-            Goal: 10
-        - E:
-            Label: '8+ schools w/ odds of accept. 20%+'
-            Eval: '=COUNTIF(G13:G37,">=.2")+COUNTIF(G9:G11,">=.2")'
-            Sign: '>='
-        - E:
-            Label: '5+ schools w/ odds of accept. 50%+'
-            Eval: '=COUNTIF(G13:G37,">=.5")+COUNTIF(G9:G11,">=.5")'
-            Sign: '>='
-        - E:
-            Label: '6+ money options (++/-, ++, or +++)'
-            Eval: '=INDEX(AllMoneyApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
+        - il_public: 2
+        - tgr_plus: 5
+        - money: 5
+        - match_plus: 5
+        - golden_three: 5
+    Muchin:
+        - money_igr_longshot_plus: 2
+        - money_tgr_only_longshot_plus: 3
+        - tgr_plus: 4
+        - money_safety: 3
     Rauner:
-        - E:
-            Label: '2+ reach schools'
-            Eval: '=INDEX(ReachApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '7+ match, safety, or secure schools'
-            Eval: '=COUNTIF(G13:G37,">=.5")+COUNTIF(G9:G11,">=.5")'
-            Sign: '>='
-        - E:
-            Label: '5+ money options (++/-, ++, or +++)'
-            Eval: '=INDEX(AllMoneyApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '1+ Illinois match, safety, or secure'
-            Eval: '=INDEX(ILPubMSS,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Label: '="5+ "&LOWER(TargetGRLabel)&" grad rate schools"'
-            Eval: '=AD6-AE6'
-            Sign: '>='
-
+        - reach: 2
+        - match: 3
+        - safety: 4
+        - money: 5
+        - il_match_plus: 1
+        - tgr_only: 5
     RoweClark:
-        - E:
-            Goal: '=IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=10,1,IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=5,2,3))'
-            Label: '=D40&"+ reach schools"'
-            Eval: '=INDEX(ReachApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Goal: '=IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=10,1,IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=5,4,4))'
-            Label: '=D41&"+ match schools"'
-            Eval: '=INDEX(MatchApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Goal: '=IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=10,2,IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=5,2,3))'
-            Label: '=D42&"+ safety schools"'
-            Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
-        - E:
-            Goal: '=IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=10,2,IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=5,4,4))'
-            Label: '=D43&"+ target grad rate schools"'
-            Eval: '=AD6-AE6'
-            Sign: '>='
-        - E:
-            Goal: '=IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=10,2,IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=5,3,4))'
-            Label: '=D44&"+ ideal grad rate schools"'
-            Eval: '=AE6'
-            Sign: '>='
-        - E:
-            Goal: '=IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=10,6,IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=5,10,12))'
-            Label: '=D45&"- total applications"'
-            Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
-            Sign: '<='
-        - E:
-            Goal: '=IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=10,4,IF(INDEX(Strats,MATCH(D3,KidIDs,0))>=5,8,10))'
-            Label: '=D46&"+ total applications"'
-            Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
-            Sign: '>='
+        - reach: '[(10,1),(5,2),3]'
+        - match: '[(10,1),4]'
+        - safety: '[(5,2),3]'
+        - tgr_only: '[(10,2),4]'
+        - igr: '[(10,2),(5,3),4]'
+        - lt_total: '[(10,6),(5,10),12]'
+        - total: '[(10,4),(5,8),10]'
 
 ############################################################################
 # PDF specific details start here
 pdf_orientation:
     Standard: P
-    Comer: L
+    Comer: P
+    ComerOld: L
 
 pdf_margins:
     top: 0.75
