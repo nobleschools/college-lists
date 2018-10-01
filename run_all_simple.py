@@ -31,6 +31,6 @@ for campus_case in [
         ]:
     t0 = time()
     print('Generating {}...'.format(campus_case),flush=True,end='')
-    os.system(call_stem+' -q -ca '+campus_case)
+    os.system(call_stem+' -q -pdf -ca '+campus_case)
     print('{:.2f} seconds'.format(time()-t0),flush=True)
 

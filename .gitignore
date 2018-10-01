@@ -101,3 +101,10 @@ ENV/
 GCMS.csv
 KIPP.csv
 past_students.csv
+all_junior_sat_scores.csv
+current_applications_old.csv
+ps_roster*.csv
+current_students_old.csv
+ps_*.csv
+inputs/all_colleges_aa_only_OLD.csv
+inputs/targets_by_strategy_aa_only_OLD.csv

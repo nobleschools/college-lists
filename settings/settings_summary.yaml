@@ -39,6 +39,7 @@ summary_fields: # one of these is picked by summary_type in main settings.yaml
 # |label| refers to a B2:B3 style reference of the entire column 'label'
 # @label@ refers to the summary row in the column 'label'
 # PERCENT_REPLACEMENT gets replaced with a % in order to avoid conflict
+# An 'h' after the column width will hide that column
 summary_columns:
     - summary_field: # this first column is special
         formula: tbl:sum_field # created based on summary_name

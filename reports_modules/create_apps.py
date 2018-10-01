@@ -66,9 +66,9 @@ def _get_result(args):
             return 'CHOICE!'
         else:
             return 'Accepted!'
-    elif waitlisted: # will be zero unless 1 or 1.0
+    elif (waitlisted == 1) | (waitlisted == '1'):
         return 'Waitlist'
-    elif deferred: # will be zero unless 1 or 1.0
+    elif (deferred == 1) | (deferred == '1'):
         return 'Deferred'
     elif stage == 'pending':
         return 'Pending'
@@ -113,6 +113,8 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
                       ('local_6yr_all', 'Adj6yrGrad_All', np.nan),
                       ('local_6yr_aah', 'Adj6yrGrad_AA_Hisp', np.nan),
                       ('local_money_code', 'MoneyCode', np.nan),
+                      ('local_ilpublic', 'IL Public', np.nan),
+                      ('local_chilocal', 'ChiLocal', np.nan),
                       ]
     for local_label, college_label, na_val in college_fields:
         df[local_label] = df['NCES'].apply(_lookup_source_field,
@@ -123,7 +125,9 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
                       ('local_act_ca', 'ACT-coef'),
                       ('local_inta', 'Intercept'),
                       ]
-    coef_index = df['local_race'] + ':' + df['local_barrons']
+    df['local_frace'] = df['local_race'].apply(
+                    lambda x: 'H' if x in ['M','I'] else x)
+    coef_index = df['local_frace'] + ':' + df['local_barrons']
     for local_label, coef_label in weights_fields:
         df[local_label] = coef_index.apply(_lookup_source_field,
                 args=(dfs['StandardWeights'], coef_label, np.nan))

@@ -5,6 +5,7 @@
 # species the format of data, while head_format and head_text specify value
 # and format of the first header row and label_format specifies the format of
 # the second header row (which has text equal to the column label.)
+# An h after the width will hide that column
 #
 # The formula field follows one of four forms:
 # tbl:Label: drops in columns from the roster file (typically from 

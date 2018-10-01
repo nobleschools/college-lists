@@ -53,21 +53,23 @@ row_info:
 # Generic descriptions of goals come first and then school specific ones
 goal_descriptions:
     total:
+        Descr: 'Total applications'
         Label: '="@+ total applications"'
         Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
         Sign: '>='
     lt_total:
+        Descr: 'Maximum number of total applications'
         Label: '="@- total applications"'
         Eval: '=INDEX(Apps,MATCH(D3,KidIDs,0))'
         Sign: '<='
     reach:
         Descr: 'Schools with Reach Odds'
-        Label: '="@+ reach schools"'
+        Label: '="@+ "&LOWER(ReachLabel)&" schools"'
         Eval: '=INDEX(ReachApps,MATCH(D3,KidIDs,0))'
         Sign: '>='
     match:
         Descr: 'Schools with Match Odds'
-        Label: '="@+ match schools"'
+        Label: '="@+ "&LOWER(MatchLabel)&" schools"'
         Eval: '=INDEX(MatchApps,MATCH(D3,KidIDs,0))'
         Sign: '>='
     match_plus:
@@ -77,17 +79,17 @@ goal_descriptions:
         Sign: '>='
     safety:
         Descr: 'Schools with Safety, Secure, or Sure Thing Odds'
-        Label: '="@+ safety schools"'
+        Label: '="@+ "&LOWER(SafetyLabel)&" schools"'
         Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
         Sign: '>='
     lt_safety:
         Descr: 'Maximum number of schools with Safety, Secure, or Sure Thing Odds'
-        Label: '="@- safety schools"'
+        Label: '="@- "&LOWER(SafetyLabel)&" schools"'
         Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
         Sign: '<='
     lt_longshot_under:
         Descr: 'Maximum number of apps with Longshot or worse odds'
-        Label: '="@- ""Hail Mary"" or ""Longshot"""'
+        Label: '="@- """&LOWER(HailMaryLabel)&""" or """&LOWER(LongshotLabel)&""""'
         Eval: '=INDEX(HailMaryApps,MATCH(D3,KidIDs,0))+INDEX(LongshotApps,MATCH(D3,KidIDs,0))'
         Sign: '<='
     lt_bad_money:
@@ -97,7 +99,7 @@ goal_descriptions:
         Sign: '<='
     money_safety:
         Descr: 'Any money school with Safety, Secure, or Sure Thing Odds'
-        Label: '="@+ money safety schools"'
+        Label: '="@+ money "&LOWER(SafetyLabel)&" schools"'
         Eval: '=INDEX(MoneySafetyApps,MATCH(D3,KidIDs,0))+INDEX(MoneySecureApps,MATCH(D3,KidIDs,0))+INDEX(MoneySureThingApps,MATCH(D3,KidIDs,0))'
         Sign: '>='
     lt_far_below_tgr:
@@ -292,8 +294,11 @@ pdf_heights:
     - 0.21 # Colleges header part 1
     - 0.21 # Colleges header part 2
     - 0.21 # Height per college
+    - 0.21 # Goals rows
+    - 0.21 # Footer row
 
 pdf_college_max: 25 # maximum number of colleges to list until stop
 
-pdf_goals_start: 7.0 # guess (revisit): location of goals box in y inches
+pdf_goals_start: 7.84 # location of goals box in y inches (after 25 col. rows)
+pdf_footer_start: 10.00 # location of single line footer in y inches
 

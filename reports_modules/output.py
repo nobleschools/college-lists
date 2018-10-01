@@ -28,7 +28,7 @@ class Output():
     '''Class to store core data and other Pandas tables along with references
     to the Excel output'''
 
-    def _get_filename(self, campus, counselor, root, date_string):
+    def _get_filename(self, campus, counselor, advisor, root, date_string):
         '''Returns the filename for this Excel object'''
         cmp = 'Network' if campus == 'All' else campus
         if cmp.startswith('list'): # hack to load Name.csv with campus
@@ -36,7 +36,9 @@ class Output():
         cmp = cmp+' '+root+' '+datetime.now().strftime(date_string)+'.xlsx'
         if counselor != 'All':
             cmp = counselor + ' ' + cmp
-        cmp = cmp.replace(':','')
+        if advisor != 'All':
+            cmp = 'adv_'+advisor + ' ' + cmp
+        cmp = cmp.replace(':','').replace('/','_')
         return cmp
 
     def _read_inputs(self, key, filename):
@@ -96,13 +98,14 @@ class Output():
             if self.debug:
                 print(' (not actually read)',flush=True)
 
-    def __init__(self, campus, counselor, cfg, cfg_tabs, debug, no_excel):
+    def __init__(self, campus, counselor, advisor, cfg, cfg_tabs, debug,
+                                                                no_excel):
         '''Instantiates object based on an expected yaml file
         if no_excel == True, there will be no Excel output'''
         self.debug=debug
         self.cfg = cfg
         self.cfg_tabs = cfg_tabs
-        self.fn = self._get_filename(campus, counselor,
+        self.fn = self._get_filename(campus, counselor, advisor,
                 cfg['output_file']['root_name'],
                 cfg['output_file']['date_format'])
         self.ssv_fn = self.fn[:-5]+' SSV.pdf'

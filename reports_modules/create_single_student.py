@@ -126,8 +126,9 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
     # Now write the blank rows--first the header row
     safe_write(ws, 7, 4, 'Schools you might apply to:',
             f_db['ssv_schools_blank_prompt'])
-    safe_write(ws, 7, 5, '=IF(OR(H3="H",H3="B"),"6 yr AA/H Grad Rate",'+
-            '"6 yr (all) Grad Rate")', f_db['ssv_blank_title'])
+    safe_write(ws, 7, 5, '=IF(OR(H3="H",H3="B",H3="M",H3="I"),'+
+            '"6 yr AA/H Grad Rate","6 yr (all) Grad Rate")',
+            f_db['ssv_blank_title'])
     safe_write(ws, 7, 6, 'Odds of Admit',
             f_db['ssv_blank_title'])
     safe_write(ws, 7, 7, 'For you, school is a',
@@ -299,8 +300,6 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
                         '),INDEX('+t+',D'+r_excel+'),1)')
 
         # If present, do the custom formatting and goals box
-        
-        #Trip quote here if using old way
         if campus in cfg_ssv['school_goals']:
             safe_write(ws, s_end+1, 4, 'Your list compared to campus goals:',
                     f_db['ssv_goals_intro'])
@@ -313,10 +312,10 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
             g_start = s_end+3
             # Now loop through the goals, checking for size so we can
             # do special formating for the end goal
-            campus_goals = cfg_ssv['school_goals'][campus].copy()
+            campus_goals = cfg_ssv['school_goals'][campus]
             for i in range(len(campus_goals)):
                 r_excel = str(g_start+i+1)
-                label, amount = campus_goals[i].popitem()
+                label, amount = list(campus_goals[i].items())[0]
                 
                 # Goals are usually integers, but there can be extra logic
                 if isinstance(amount, str):
@@ -362,11 +361,11 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
                                f_db[goal_fmt[2]])
              
         # TODO: Maybe make this a strict if versus elif--check spacing
-        elif campus in cfg_ssv['print_footer']: # only do this if spec'ed
-            safe_write(ws, 37, 4, cfg_ssv['print_footer'][campus],
+        if campus in cfg_ssv['print_footer']: # only do this if spec'ed
+            safe_write(ws, s_end+2, 4, cfg_ssv['print_footer'][campus],
                     f_db['ssv_footer'])
             for c in range(5,10):
-                safe_write(ws, 37, c, '', f_db['ssv_footer'])
+                safe_write(ws, s_end+2, c, '', f_db['ssv_footer'])
 
     # Finally, the rest of the tab's formatting (rows/columns)
     cond_ranges = [('$F$'+str(b_start+1)+':$F$'+str(b_end+1), str(b_start+1))]

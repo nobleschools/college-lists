@@ -15,16 +15,20 @@ from reports_modules.create_apps import reduce_and_augment_apps, make_apps_tab
 from reports_modules.create_single_student import make_single_tab
 from reports_modules.create_pdf import make_pdf_report
 
-def main(settings_file, settings_tabs, campus, counselor, summary, debug,
-        do_pdf, do_nonseminar):
+def main(settings_file, settings_tabs, campus, counselor, advisor, summary,
+         debug, do_pdf, do_nonseminar):
     '''Creates the reports according to instructions in yaml files either
     for a single campus or "All"'''
     # Setup configuration--main settings file (includes Excel formats)
     if debug:
-        print('Report for {},{}.'.format(campus, counselor), flush=True)
+        print('Report for {},{},{}.'.format(campus, counselor, advisor),
+                                                            flush=True)
     with open(settings_file, 'r') as ymlfile:
         cfg = yaml.load(ymlfile)
 
+    if advisor != "All": # Force LastFirst for advisor reports
+        cfg['sort_students'][campus] = '=%LastFirst%'
+    
     # Setup configuration--tab settings files (includes layout of tabs)
     cfg_tabs = {}
     for tab, filename in settings_tabs.items():
@@ -32,8 +36,10 @@ def main(settings_file, settings_tabs, campus, counselor, summary, debug,
             cfg_tabs[tab] = yaml.load(ymlfile)
 
     # Create the base output file
-    out = Output(campus, counselor, cfg, cfg_tabs, debug, (do_pdf == 'only'))
-    reduce_roster(campus, cfg, out.dfs, counselor, debug, do_nonseminar)
+    out = Output(campus, counselor, advisor,cfg, cfg_tabs, debug,
+                                                (do_pdf == 'only'))
+    reduce_roster(campus, cfg, out.dfs, counselor, advisor, debug,
+                                                     do_nonseminar)
     reduce_and_augment_apps(cfg, out.dfs, campus, debug)
     add_student_calculations(cfg, out.dfs, debug)
 
@@ -101,6 +107,11 @@ if __name__ == '__main__':
             help='Single counselor name (default "All")',
             default='All')
 
+    parser.add_argument('-adv','--advisor',
+            dest='advisor', action='store',
+            help='Single advisor name (default "All")',
+            default='All')
+
     parser.add_argument('-pdf', '--pdf',
             dest='make_pdf', action='store_true', default=False,
             help='Create pdf single page per student reports')
@@ -132,4 +143,5 @@ if __name__ == '__main__':
         do_pdf = False
 
     main(args.settings_file, settings_tabs, args.campus, args.counselor,
-            args.summary, args.debug, do_pdf, args.do_nonseminar)
+            args.advisor, args.summary, args.debug, do_pdf,
+            args.do_nonseminar)
