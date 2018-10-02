@@ -12,7 +12,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 100812,Athens State University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 100830,Auburn University at Montgomery,Competitive,23%,15%,19,21.5,?,0,No,0,0
 100858,Auburn University,Very Competitive,75%,67%,24,27,?,0,No,0,0
-100937,Birmingham Southern College,Very Competitive,64%,45%,23,25.5,---,0,No,0,0
+100937,Birmingham Southern College,Very Competitive,64%,45%,23,25.5,--- (CSS P),0,No,0,0
 101028,Chattahoochee Valley Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 101073,Concordia College Alabama (HBCU),Noncompetitive,3%,18%,N/A,N/A,---,0,Yes,0,0
 101116,South University-Montgomery,Noncompetitive,11%,8%,N/A,N/A,---,0,No,0,0
@@ -181,7 +181,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 110361,California Baptist University,Competitive,59%,47%,19,21.5,---,0,No,0,0
 110370,California College of the Arts,Not Available,57%,63%,N/A,N/A,---,0,No,0,0
 110398,University of California-Hastings College of Law,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-110404,California Institute of Technology,Most Competitive+,92%,81%,34,35,+++,1,No,0,0
+110404,California Institute of Technology,Most Competitive+,92%,81%,34,35,+++ (CSS P),1,No,0,0
 110413,California Lutheran University,Competitive,69%,65%,22,24.5,---,0,No,0,0
 110422,California Polytechnic State University-San Luis Obispo,Highly Competitive,80%,71%,26,28.5,?,0,No,0,0
 110468,Alliant International University-San Diego,Not available,N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -204,7 +204,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 110662,University of California-Los Angeles,Most Competitive+,91%,86%,28,30.5,?,0,No,0,0
 110671,University of California-Riverside,Competitive,73%,70%,21,24,?,0,No,0,0
 110680,University of California-San Diego,Most Competitive,87%,82%,27,30,?,0,No,0,0
-110699,University of California-San Francisco,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
+110699,University of California-San Francisco,Not available,N/A,N/A,N/A,N/A,? (CSS P),0,No,0,0
 110705,University of California-Santa Barbara,Highly Competitive,82%,79%,27,29.5,?,0,No,0,0
 110714,University of California-Santa Cruz,Competitive,77%,73%,25,27.5,?,0,No,0,0
 110778,Sofia University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -228,7 +228,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 112172,Citrus College (2 year),2 year (Noncompetitive),39%,35%,N/A,N/A,?,0,No,0,0
 112190,City College of San Francisco (2 year),2 year (Noncompetitive),38%,28%,N/A,N/A,?,0,No,0,0
 112251,Claremont Graduate University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-112260,Claremont McKenna College,Most Competitive+,93%,91%,31,32,++/-,1,No,0,0
+112260,Claremont McKenna College,Most Competitive+,93%,91%,31,32,++/- (CSS P),1,No,0,0
 112385,Coastline Community College (2 year),2 year (Noncompetitive),30%,26%,N/A,N/A,?,0,No,0,0
 112394,Cogswell College,Competitive,27%,33%,N/A,N/A,---,0,No,0,0
 112446,Coleman University,Noncompetitive,68%,68%,N/A,N/A,---,0,No,0,0
@@ -274,7 +274,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 115214,Graduate Theological Union,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 115296,Grossmont College (2 year),2 year (Noncompetitive),32%,27%,N/A,N/A,?,0,No,0,0
 115393,Hartnell College (2 year),2 year (Noncompetitive),32%,31%,N/A,N/A,?,0,No,0,0
-115409,Harvey Mudd College,Most Competitive+,92%,80%,32,33.5,--,0,No,0,0
+115409,Harvey Mudd College,Most Competitive+,92%,80%,32,33.5,-- (CSS P),0,No,0,0
 115728,Holy Names University,Less Competitive,45%,46%,16,17.5,---,0,No,0,0
 115746,Pacifica Graduate Institute,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 115755,Humboldt State University,Competitive,46%,38%,18,21,?,0,No,0,0
@@ -345,7 +345,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 119775,Newschool of Architecture and Design,Not available,34%,32%,N/A,N/A,---,0,No,0,0
 120078,North-West College-West Covina (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 120184,Notre Dame de Namur University,Less Competitive,49%,46%,17,19.5,---,0,No,0,0
-120254,Occidental College,Most Competitive,84%,87%,28,29.5,+++,1,No,0,0
+120254,Occidental College,Most Competitive,84%,87%,28,29.5,+++ (CSS P),1,No,0,0
 120290,Ohlone College (2 year),2 year (Noncompetitive),44%,35%,N/A,N/A,?,0,No,0,0
 120342,Orange Coast College (2 year),2 year (Noncompetitive),46%,37%,N/A,N/A,?,0,No,0,0
 120403,Otis College of Art and Design,Not Available,65%,62%,N/A,N/A,---,0,No,0,0
@@ -362,10 +362,10 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 120971,Palomar College (2 year),2 year (Noncompetitive),34%,26%,N/A,N/A,?,0,No,0,0
 121044,Pasadena City College (2 year),2 year (Noncompetitive),37%,23%,N/A,N/A,?,0,No,0,0
 121150,Pepperdine University,Highly Competitive,87%,88%,26,28.5,---,0,No,0,0
-121257,Pitzer College,Most Competitive+,87%,93%,N/A,N/A,--,0,No,0,0
+121257,Pitzer College,Most Competitive+,87%,93%,N/A,N/A,-- (CSS P),0,No,0,0
 121275,Platt College-San Diego,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
 121309,Point Loma Nazarene University,Competitive,73%,69%,23,25.5,---,0,No,0,0
-121345,Pomona College,Most Competitive+,97%,96%,31,32.5,+++,1,No,0,0
+121345,Pomona College,Most Competitive+,97%,96%,31,32.5,+++ (CSS P),1,No,0,0
 121363,Porterville College (2 year),2 year (Noncompetitive),30%,30%,N/A,N/A,?,0,No,0,0
 121619,Santa Ana College,Noncompetitive,25%,21%,N/A,N/A,?,0,No,0,0
 121628,Pardee RAND Graduate School,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -385,10 +385,10 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 122409,San Diego State University,Competitive,73%,69%,23,25.5,?,0,No,0,0
 122436,University of San Diego,Very Competitive,78%,77%,26,28,---,0,No,0,0
 122454,San Francisco Art Institute,Not Available,37%,45%,N/A,N/A,---,0,No,0,0
-122506,San Francisco Conservatory of Music,Not Available,62%,60%,N/A,N/A,---,0,No,0,0
+122506,San Francisco Conservatory of Music,Not Available,62%,60%,N/A,N/A,--- (CSS P),0,No,0,0
 122597,San Francisco State University,Less Competitive,53%,47%,18,21,?,0,No,0,0
 122603,San Francisco Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-122612,University of San Francisco,Very Competitive,72%,68%,23,25.5,---,0,No,0,0
+122612,University of San Francisco,Very Competitive,72%,68%,23,25.5,--- (CSS P),0,No,0,0
 122649,San Joaquin College of Law,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 122658,San Joaquin Delta College (2 year),2 year (Noncompetitive),31%,28%,N/A,N/A,?,0,No,0,0
 122685,San Joaquin Valley College-Visalia,Noncompetitive,53%,55%,N/A,N/A,---,0,No,0,0
@@ -399,11 +399,11 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 122834,Santa Barbara Business College-Bakersfield,Noncompetitive,N/A,N/A,N/A,N/A,--,0,No,0,0
 122852,Santa Barbara Business College-Santa Maria,Noncompetitive,N/A,N/A,N/A,N/A,--,0,No,0,0
 122889,Santa Barbara City College (2 year),2 year (Noncompetitive),36%,36%,N/A,N/A,?,0,No,0,0
-122931,Santa Clara University,Highly Competitive,89%,86%,28,30,++/-,1,No,0,0
+122931,Santa Clara University,Highly Competitive,89%,86%,28,30,++/- (CSS P),1,No,0,0
 122977,Santa Monica College,Noncompetitive,29%,16%,N/A,N/A,?,0,No,0,0
 123013,Santa Rosa Junior College (2 year),2 year (Noncompetitive),41%,35%,N/A,N/A,?,0,No,0,0
 123095,Saybrook University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-123165,Scripps College (Female only),Most Competitive,87%,92%,28,30,--,0,No,0,0
+123165,Scripps College (Female only),Most Competitive,87%,92%,28,30,-- (CSS P),0,No,0,0
 123217,College of the Sequoias (2 year),2 year (Noncompetitive),28%,25%,N/A,N/A,?,0,No,0,0
 123280,Shasta Bible College and Graduate School,Not available,52%,100%,N/A,N/A,---,0,No,0,0
 123299,Shasta College,Noncompetitive,22%,19%,N/A,N/A,?,0,No,0,0
@@ -424,9 +424,9 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 123800,Southwestern College (2 year),2 year (Noncompetitive),29%,27%,N/A,N/A,?,0,No,0,0
 123855,St John's Seminary (Male only),Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 123916,Starr King School for the Ministry,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-123943,Marshall B Ketchum University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
+123943,Marshall B Ketchum University,Not available,N/A,N/A,N/A,N/A,? (CSS P),0,No,0,0
 123952,Southern California Institute of Architecture,Noncompetitive,55%,30%,N/A,N/A,---,0,No,0,0
-123961,University of Southern California,Most Competitive+,92%,90%,30,31.5,++,1,No,0,0
+123961,University of Southern California,Most Competitive+,92%,90%,30,31.5,++ (CSS P),1,No,0,0
 123970,Southwestern Law School,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 124113,Taft College (2 year),2 year (Noncompetitive),32%,30%,N/A,N/A,?,0,No,0,0
 124283,Claremont School of Theology,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -463,7 +463,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 126605,"Spartan College of Aeronautics and Technology (Male only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 126614,University of Colorado Boulder,Very Competitive,70%,63%,25,27.5,?,0,No,0,0
 126669,Colorado Christian University,Very Competitive,47%,33%,N/A,N/A,---,0,No,0,0
-126678,Colorado College,Most Competitive+,87%,91%,N/A,N/A,+++,1,No,0,0
+126678,Colorado College,Most Competitive+,87%,91%,N/A,N/A,+++ (CSS P),1,No,0,0
 126687,Concorde Career College-Aurora (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 126702,The Art Institute of Colorado,Noncompetitive,23%,26%,N/A,N/A,---,0,No,0,0
 126711,Colorado Mountain College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -478,7 +478,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 126942,Community College of Denver,Noncompetitive,13%,10%,N/A,N/A,?,0,No,0,0
 126951,Lincoln College of Technology-Denver (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 126979,Denver Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-127060,University of Denver,Very Competitive,79%,78%,26,28.5,---,0,No,0,0
+127060,University of Denver,Very Competitive,79%,78%,26,28.5,--- (CSS P),0,No,0,0
 127185,Fort Lewis College,Competitive,41%,31%,19,21.5,?,0,No,0,0
 127200,Front Range Community College (2 year),2 year (Noncompetitive),24%,19%,N/A,N/A,?,0,No,0,0
 127219,Glenwood Beauty Academy (2 year),2 year (Noncompetitive),74%,60%,N/A,N/A,--,0,No,0,0
@@ -518,12 +518,12 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 128744,University of Bridgeport,Less Competitive,30%,27%,15,17,---,0,No,0,0
 128771,Central Connecticut State University,Competitive,54%,48%,16,19,?,0,No,0,0
 128780,Charter Oak State College,Less Competitive,N/A,N/A,N/A,N/A,?,0,No,0,0
-128902,Connecticut College,Most Competitive,83%,87%,N/A,N/A,++,1,No,0,0
+128902,Connecticut College,Most Competitive,83%,87%,N/A,N/A,++ (CSS P),1,No,0,0
 129020,University of Connecticut,Highly Competitive,82%,73%,26,28.5,?,0,No,0,0
 129154,Goodwin College,Noncompetitive,7%,4%,N/A,N/A,---,0,No,0,0
 129181,Lincoln Technical Institute-East Windsor (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 129215,Eastern Connecticut State University,Competitive,56%,45%,N/A,N/A,?,0,No,0,0
-129242,Fairfield University,Very Competitive,82%,84%,N/A,N/A,---,0,No,0,0
+129242,Fairfield University,Very Competitive,82%,84%,N/A,N/A,--- (CSS P),0,No,0,0
 129367,Capital Community College (2 year),2 year (Noncompetitive),17%,17%,N/A,N/A,?,0,No,0,0
 129428,Rensselaer at Hartford,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 129482,American Institute-West Hartford (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0
@@ -543,20 +543,20 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 130183,Post University,Competitive,30%,21%,N/A,N/A,---,0,No,0,0
 130217,Quinebaug Valley Community College (2 year),2 year (Noncompetitive),30%,25%,N/A,N/A,?,0,No,0,0
 130226,Quinnipiac University,Competitive,78%,62%,22,24.5,---,0,No,0,0
-130253,Sacred Heart University,Competitive,64%,59%,N/A,N/A,---,0,No,0,0
+130253,Sacred Heart University,Competitive,64%,59%,N/A,N/A,--- (CSS P),0,No,0,0
 130314,University of Saint Joseph,Competitive,57%,45%,15,18.5,---,0,No,0,0
 130396,Gateway Community College (2 year),2 year (Noncompetitive),22%,18%,N/A,N/A,?,0,No,0,0
 130448,St Vincent's College,Noncompetitive,N/A,N/A,12,13.5,---,0,No,0,0
 130493,Southern Connecticut State University,Less Competitive,51%,40%,15,17.5,?,0,No,0,0
 130509,"Stone Academy-West Haven (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 130581,Tri-State College of Acupuncture,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-130590,Trinity College,Highly Competitive,85%,89%,N/A,N/A,+++,1,No,0,0
+130590,Trinity College,Highly Competitive,85%,89%,N/A,N/A,+++ (CSS P),1,No,0,0
 130606,Tunxis Community College (2 year),2 year (Noncompetitive),24%,16%,N/A,N/A,?,0,No,0,0
 130624,United States Coast Guard Academy,Most Competitive,86%,79%,23,25.5,?,0,No,0,0
-130697,Wesleyan University,Most Competitive+,91%,88%,N/A,N/A,+++,1,No,0,0
+130697,Wesleyan University,Most Competitive+,91%,88%,N/A,N/A,+++ (CSS P),1,No,0,0
 130776,Western Connecticut State University,Less Competitive,46%,41%,N/A,N/A,?,0,No,0,0
 130785,Yale-New Haven Hospital Dietetic Internship,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-130794,Yale University,Most Competitive+,98%,99%,32,33.5,+++,1,No,0,0
+130794,Yale University,Most Competitive+,98%,99%,32,33.5,+++ (CSS P),1,No,0,0
 130837,Margaret H Rollins School of Nursing at Beebe Medical Center (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 130907,Delaware Technical Community College-Terry,Noncompetitive,14%,8%,N/A,N/A,?,0,No,0,0
 130934,Delaware State University (HBCU),Noncompetitive,43%,58%,14,16,?,0,Yes,0,0
@@ -564,13 +564,13 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 130989,Goldey-Beacom College,Competitive,52%,42%,N/A,N/A,---,0,No,0,0
 131098,Wesley College,Less Competitive,21%,16%,13,15,---,0,No,0,0
 131113,Wilmington University,Noncompetitive,28%,17%,N/A,N/A,--,0,No,0,0
-131159,American University,Highly Competitive,81%,78%,26,28.5,---,0,No,0,0
-131283,Catholic University of America,Very Competitive,70%,57%,N/A,N/A,---,0,No,0,0
+131159,American University,Highly Competitive,81%,78%,26,28.5,--- (CSS P),0,No,0,0
+131283,Catholic University of America,Very Competitive,70%,57%,N/A,N/A,--- (CSS P),0,No,0,0
 131399,University of the District of Columbia (HBCU),Less Competitive,22%,21%,N/A,N/A,?,0,Yes,0,0
 131405,Pontifical Faculty of the Immaculate Conception at the Dominican House of Studies,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 131450,Gallaudet University,Less Competitive,45%,31%,14,17,---,0,No,0,0
-131469,George Washington University,Most Competitive,84%,77%,27,29.5,++/-,1,No,0,0
-131496,Georgetown University,Most Competitive+,94%,94%,30,32,+++,1,No,0,0
+131469,George Washington University,Most Competitive,84%,77%,27,29.5,++/- (CSS P),1,No,0,0
+131496,Georgetown University,Most Competitive+,94%,94%,30,32,+++ (CSS P),1,No,0,0
 131520,Howard University (HBCU),Competitive,61%,76%,22,25,+/--,0,Yes,0,0
 131803,Strayer University-District of Columbia,Noncompetitive,29%,22%,N/A,N/A,---,0,No,0,0
 131830,National Conservatory of Dramatic Arts (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -643,7 +643,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 135610,Trinity International University-Florida,Noncompetitive,20%,20%,N/A,N/A,?,0,No,0,0
 135647,Miami Lakes Educational Center and Technical College (2 year),2 year (Noncompetitive),15%,17%,N/A,N/A,?,0,No,0,0
 135717,Miami Dade College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0
-135726,University of Miami,Most Competitive,82%,82%,28,30,--,0,No,0,0
+135726,University of Miami,Most Competitive,82%,82%,28,30,-- (CSS P),0,No,0,0
 135735,Orange Technical College-Mid Florida Campus (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 136066,Lincoln College of Technology-West Palm Beach,Not available,25%,17%,N/A,N/A,---,0,No,0,0
 136145,North Florida Community College,Noncompetitive,46%,32%,N/A,N/A,?,0,No,0,0
@@ -674,7 +674,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 137315,South Florida State College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0
 137351,University of South Florida-Main Campus,Very Competitive,67%,69%,24,26,?,0,No,0,0
 137476,St Thomas University,Less Competitive,38%,36%,17,19,---,0,No,0,0
-137546,Stetson University,Very Competitive,63%,56%,N/A,N/A,---,0,No,0,0
+137546,Stetson University,Very Competitive,63%,56%,N/A,N/A,--- (CSS P),0,No,0,0
 137564,Southeastern University,Competitive,41%,30%,18,21,---,0,No,0,0
 137713,RIVEROAK Technical College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 137759,Tallahassee Community College,Noncompetitive,35%,27%,N/A,N/A,?,0,No,0,0
@@ -710,7 +710,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 138947,Clark Atlanta University (HBCU),Less Competitive,38%,54%,18,19.5,---,0,Yes,0,0
 138956,Augusta Technical College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 139010,Bainbridge State College,Noncompetitive,9%,5%,N/A,N/A,?,0,No,0,0
-139144,Berry College,Competitive,64%,59%,24,26.5,---,0,No,0,0
+139144,Berry College,Competitive,64%,59%,24,26.5,--- (CSS P),0,No,0,0
 139153,Beulah Heights University,Noncompetitive,5%,8%,N/A,N/A,---,0,No,0,0
 139199,Brenau University,Less Competitive,47%,44%,19,21.5,---,0,No,0,0
 139205,Brewton-Parker College,Competitive,19%,18%,N/A,N/A,---,0,No,0,0
@@ -728,11 +728,11 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 139579,South University-Savannah,Less Competitive,9%,7%,N/A,N/A,---,0,No,0,0
 139621,East Georgia State College,Noncompetitive,25%,25%,N/A,N/A,?,0,No,0,0
 139630,Emmanuel College,Less Competitive,33%,22%,18,19.5,---,0,No,0,0
-139658,Emory University,Most Competitive,91%,84%,30,31.5,+++,1,No,0,0
+139658,Emory University,Most Competitive,91%,84%,30,31.5,+++ (CSS P),1,No,0,0
 139700,Georgia Highlands College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0
 139719,Fort Valley State University (HBCU),Very Competitive,25%,40%,10,14.5,?,0,Yes,0,0
 139746,Grady Health System Professional Schools (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
-139755,Georgia Institute of Technology-Main Campus,Most Competitive,86%,82%,30,32,?,0,No,0,0
+139755,Georgia Institute of Technology-Main Campus,Most Competitive,86%,82%,30,32,? (CSS P),0,No,0,0
 139764,Georgia Southwestern State University,Competitive,33%,29%,19,21,?,0,No,0,0
 139861,Georgia College & State University,Competitive,59%,56%,22,24,?,0,No,0,0
 139931,Georgia Southern University,Competitive,51%,48%,22,24,?,0,No,0,0
@@ -820,7 +820,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 143978,The Chicago School of Professional Psychology at Chicago,Not available,N/A,N/A,N/A,N/A,?,0,No,0,1
 144005,Chicago State University,Competitive,14%,13%,16,18,++,1,No,1,1
 144014,Chicago Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,1
-144050,University of Chicago,Most Competitive+,94%,88%,32,33.5,+++,1,No,0,1
+144050,University of Chicago,Most Competitive+,94%,88%,32,33.5,+++ (CSS P),1,No,0,1
 144157,City Colleges of Chicago-Kennedy-King College (2 year),2 year (Noncompetitive),33%,27%,N/A,N/A,+++,1,No,1,1
 144166,City Colleges of Chicago-Malcolm X College (2 year),2 year (Noncompetitive),20%,20%,N/A,N/A,+++,1,No,1,1
 144175,City Colleges of Chicago-Olive-Harvey College (2 year),2 year (Noncompetitive),22%,23%,N/A,N/A,+++,1,No,1,1
@@ -853,7 +853,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 145619,Benedictine University,Competitive,52%,36%,N/A,N/A,+/---,0,No,0,1
 145628,Illinois College of Optometry,Not available,N/A,N/A,N/A,N/A,?,0,No,0,1
 145637,University of Illinois at Urbana-Champaign,Highly Competitive,79%,75%,26,29,+++,1,No,1,0
-145646,Illinois Wesleyan University,Very Competitive,81%,64%,25,27,---,0,No,0,0
+145646,Illinois Wesleyan University,Very Competitive,81%,64%,25,27,--- (CSS P),0,No,0,0
 145682,Illinois Central College (2 year),2 year (Noncompetitive),38%,21%,N/A,N/A,+++,1,No,1,0
 145691,Illinois College,Very Competitive,71%,53%,N/A,N/A,++/-,1,No,0,0
 145707,Olney Central College (2 year),2 year (Noncompetitive),65%,51%,N/A,N/A,+++,1,No,1,0
@@ -909,13 +909,13 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 147697,Northern Baptist Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 147703,Northern Illinois University,Competitive,47%,32%,19,22,++/-,1,No,1,0
 147749,Northwestern College-Chicago Campus (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,---,0,No,0,1
-147767,Northwestern University,Most Competitive+,94%,92%,32,33,+++,1,No,0,1
+147767,Northwestern University,Most Competitive+,94%,92%,32,33,+++ (CSS P),1,No,0,1
 147776,Northeastern Illinois University,Less Competitive,24%,19%,16,18,++/-,1,No,1,1
 147800,Oakton Community College (2 year),2 year (Noncompetitive),36%,29%,N/A,N/A,+++,1,No,1,1
 147828,Olivet Nazarene University,Competitive,58%,30%,21,24,--,0,No,0,1
 147916,Parkland College (2 year),2 year (Noncompetitive),35%,25%,N/A,N/A,+++,1,No,1,0
 148007,Prairie State College (2 year),2 year (Noncompetitive),32%,29%,N/A,N/A,++,1,No,1,1
-148016,Principia College,Competitive,79%,60%,22,25,?,0,No,0,0
+148016,Principia College,Competitive,79%,60%,22,25,? (CSS P),0,No,0,0
 148131,Quincy University,Competitive,50%,35%,18,21,---,0,No,0,0
 148140,Vatterott College-Quincy (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 148177,The Illinois Institute of Art-Chicago,Noncompetitive,28%,29%,N/A,N/A,---,0,No,0,1
@@ -964,7 +964,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 150215,Christian Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 150251,"College of Court Reporting Inc (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,1
 150288,Concordia Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-150400,DePauw University,Highly Competitive,82%,79%,24,26.5,+/---,0,No,0,0
+150400,DePauw University,Highly Competitive,82%,79%,24,26.5,+/--- (CSS P),0,No,0,0
 150455,Earlham College,Highly Competitive,70%,66%,N/A,N/A,---,0,No,0,0
 150534,University of Evansville,Very Competitive,67%,52%,23,26,--,0,No,0,0
 150604,Franklin College,Competitive,62%,50%,19,22,--,0,No,0,0
@@ -1003,7 +1003,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 151944,Brown Mackie College-South Bend,Not available,14%,25%,N/A,N/A,---,0,No,0,0
 151962,Mid-America College of Funeral Service,Noncompetitive,100%,N/A,N/A,N/A,---,0,No,0,0
 152044,West Michigan College of Barbering and Beauty (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,++,1,No,0,0
-152080,University of Notre Dame,Most Competitive+,95%,93%,32,33.5,+++,1,No,0,0
+152080,University of Notre Dame,Most Competitive+,95%,93%,32,33.5,+++ (CSS P),1,No,0,0
 152099,Oakland City University,Noncompetitive,48%,22%,18,21,---,0,No,0,0
 152248,Purdue University-Calumet Campus,Competitive,31%,25%,18,21,--,0,No,0,1
 152266,Purdue University-North Central Campus,Competitive,22%,14%,19,21,?,0,No,0,1
@@ -1041,7 +1041,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 153339,"Faust Institute of Cosmetology-Storm Lake (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,++,1,No,0,0
 153366,Graceland University-Lamoni,Competitive,50%,38%,18,21,--,0,No,0,0
 153375,Grand View University,Competitive,47%,26%,18,20.5,---,0,No,0,0
-153384,Grinnell College,Most Competitive+,87%,76%,30,31.5,+++,1,No,0,0
+153384,Grinnell College,Most Competitive+,87%,76%,30,31.5,+++ (CSS P),1,No,0,0
 153409,Kaplan University-Mason City Campus,Noncompetitive,50%,N/A,N/A,N/A,---,0,No,0,0
 153418,Kaplan University-Cedar Rapids Campus,Noncompetitive,100%,N/A,N/A,N/A,---,0,No,0,0
 153427,Hamilton Technical College,Noncompetitive,100%,100%,N/A,N/A,---,0,No,0,0
@@ -1213,7 +1213,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 157678,"Empire Beauty School-Florence (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,++/-,1,No,0,0
 157711,Somerset Community College (2 year),2 year (Noncompetitive),29%,7%,N/A,N/A,?,0,No,0,0
 157739,Southeast Kentucky Community and Technical College (2 year),2 year (Noncompetitive),34%,26%,N/A,N/A,?,0,No,0,0
-157748,The Southern Baptist Theological Seminary,Noncompetitive,38%,29%,18,22,?,0,No,0,0
+157748,The Southern Baptist Theological Seminary,Noncompetitive,38%,29%,18,22,? (CSS P),0,No,0,0
 157757,Spalding University,Competitive,43%,29%,18,20.5,---,0,No,0,0
 157766,Spencerian College-Louisville,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
 157793,Sullivan University,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -1263,17 +1263,17 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 160649,"Southern University at Shreveport (HBCU, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,Yes,0,0
 160658,University of Louisiana at Lafayette,Competitive,45%,36%,21,23.5,?,0,No,0,0
 160667,Northshore Technical Community College (2 year),2 year (Noncompetitive),41%,36%,N/A,N/A,?,0,No,0,0
-160755,Tulane University of Louisiana,Highly Competitive,83%,75%,29,30.5,--,0,No,0,0
+160755,Tulane University of Louisiana,Highly Competitive,83%,75%,29,30.5,-- (CSS P),0,No,0,0
 160904,Xavier University of Louisiana (HBCU),Competitive,41%,57%,20,23,---,0,Yes,0,0
 160913,South Central Louisiana Technical College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 160940,Kaplan University-Maine Campus,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
 160959,College of the Atlantic,Highly Competitive,69%,60%,N/A,N/A,--,0,No,0,0
-160977,Bates College,Most Competitive+,88%,86%,N/A,N/A,++,1,No,0,0
+160977,Bates College,Most Competitive+,88%,86%,N/A,N/A,++ (CSS P),1,No,0,0
 160995,Beal College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0
-161004,Bowdoin College,Most Competitive+,94%,88%,N/A,N/A,+++,1,No,0,0
+161004,Bowdoin College,Most Competitive+,94%,88%,N/A,N/A,+++ (CSS P),1,No,0,0
 161022,Maine College of Health Professions (2 year),2 year (Competitive),N/A,N/A,15,16.5,---,0,No,0,0
 161077,Central Maine Community College (2 year),2 year (Noncompetitive),34%,24%,N/A,N/A,?,0,No,0,0
-161086,Colby College,Most Competitive+,89%,84%,30,31.5,+++,1,No,0,0
+161086,Colby College,Most Competitive+,89%,84%,30,31.5,+++ (CSS P),1,No,0,0
 161138,Eastern Maine Community College (2 year),2 year (Noncompetitive),34%,26%,N/A,N/A,?,0,No,0,0
 161192,Kennebec Valley Community College (2 year),2 year (Noncompetitive),38%,0%,N/A,N/A,?,0,No,0,0
 161208,The Landing School (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -1314,9 +1314,9 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 162706,Harford Community College (2 year),2 year (Noncompetitive),41%,26%,N/A,N/A,?,0,No,0,0
 162760,Hood College,Competitive,66%,55%,N/A,N/A,--,0,No,0,0
 162779,Howard Community College (2 year),2 year (Noncompetitive),24%,17%,N/A,N/A,?,0,No,0,0
-162928,Johns Hopkins University,Most Competitive+,92%,89%,32,33,+++,1,No,0,0
+162928,Johns Hopkins University,Most Competitive+,92%,89%,32,33,+++ (CSS P),1,No,0,0
 163028,Lincoln College of Technology-Columbia (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
-163046,Loyola University Maryland,Very Competitive,83%,77%,N/A,N/A,---,0,No,0,0
+163046,Loyola University Maryland,Very Competitive,83%,77%,N/A,N/A,--- (CSS P),0,No,0,0
 163204,University of Maryland-University College,Less Competitive,9%,6%,N/A,N/A,?,0,No,0,0
 163259,"University of Maryland, Baltimore",Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 163268,University of Maryland-Baltimore County,Very Competitive,64%,57%,24,26.5,?,0,No,0,0
@@ -1345,23 +1345,23 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 164368,Hult International Business School,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 164438,New England College of Business and Finance,Noncompetitive,29%,43%,N/A,N/A,---,0,No,0,0
 164447,American International College,Less Competitive,40%,32%,13,16,---,0,No,0,0
-164465,Amherst College,Most Competitive+,93%,90%,31,32.5,+++,1,No,0,0
+164465,Amherst College,Most Competitive+,93%,90%,31,32.5,+++ (CSS P),1,No,0,0
 164474,Andover Newton Theological School,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 164492,Anna Maria College,Competitive,37%,28%,N/A,N/A,---,0,No,0,0
 164562,Assumption College,Competitive,72%,63%,N/A,N/A,---,0,No,0,0
-164580,Babson College,Highly Competitive,91%,92%,27,29,---,0,No,0,0
+164580,Babson College,Highly Competitive,91%,92%,27,29,--- (CSS P),0,No,0,0
 164614,Boston Baptist College,Noncompetitive,35%,50%,13,16,---,0,No,0,0
 164632,Bay Path University,Competitive,59%,51%,15,18,---,0,No,0,0
 164641,Bay State College,Not available,31%,29%,N/A,N/A,---,0,No,0,0
 164720,Becker College,Competitive,31%,17%,17,20,---,0,No,0,0
-164739,Bentley University,Highly Competitive,89%,83%,25,27.5,---,0,No,0,0
-164748,Berklee College of Music,Competitive,58%,50%,N/A,N/A,---,0,No,0,0
+164739,Bentley University,Highly Competitive,89%,83%,25,27.5,--- (CSS P),0,No,0,0
+164748,Berklee College of Music,Competitive,58%,50%,N/A,N/A,--- (CSS P),0,No,0,0
 164775,Berkshire Community College (2 year),2 year (Noncompetitive),28%,19%,N/A,N/A,?,0,No,0,0
 164872,Boston Architectural College,Noncompetitive,8%,5%,N/A,N/A,---,0,No,0,0
 164915,Boston Graduate School of Psychoanalysis Inc,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-164924,Boston College,Most Competitive,93%,89%,30,31.5,++,1,No,0,0
-164988,Boston University,Most Competitive,87%,85%,28,30,+++,1,No,0,0
-165015,Brandeis University,Most Competitive,90%,83%,29,31,--,0,No,0,0
+164924,Boston College,Most Competitive,93%,89%,30,31.5,++ (CSS P),1,No,0,0
+164988,Boston University,Most Competitive,87%,85%,28,30,+++ (CSS P),1,No,0,0
+165015,Brandeis University,Most Competitive,90%,83%,29,31,-- (CSS P),0,No,0,0
 165024,Bridgewater State University,Competitive,59%,53%,16,18.5,?,0,No,0,0
 165033,Bristol Community College (2 year),2 year (Noncompetitive),28%,19%,N/A,N/A,?,0,No,0,0
 165060,Signature Healthcare Brockton Hospital School of Nursing (2 year),2 year (Competitive),60%,50%,N/A,N/A,---,0,No,0,0
@@ -1369,13 +1369,13 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 165167,Cambridge College,Noncompetitive,38%,33%,N/A,N/A,---,0,No,0,0
 165194,Cape Cod Community College (2 year),2 year (Noncompetitive),29%,24%,N/A,N/A,?,0,No,0,0
 165264,Laboure College,Not available,100%,N/A,N/A,N/A,---,0,No,0,0
-165334,Clark University,Highly Competitive,79%,74%,N/A,N/A,---,0,No,0,0
+165334,Clark University,Highly Competitive,79%,74%,N/A,N/A,--- (CSS P),0,No,0,0
 165495,Conway School of Landscape Design,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 165529,Curry College,Competitive,46%,31%,15,17.5,---,0,No,0,0
 165574,Dean College,Not available,42%,25%,N/A,N/A,---,0,No,0,0
 165635,"National Aviation Academy of New England (Male only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 165644,Eastern Nazarene College,Competitive,54%,50%,20,23,---,0,No,0,0
-165662,Emerson College,Highly Competitive,80%,77%,25,27.5,---,0,No,0,0
+165662,Emerson College,Highly Competitive,80%,77%,25,27.5,--- (CSS P),0,No,0,0
 165671,Emmanuel College,Competitive,65%,61%,20,22.5,---,0,No,0,0
 165699,Endicott College,Very Competitive,74%,62%,N/A,N/A,---,0,No,0,0
 165705,Episcopal Divinity School,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -1386,11 +1386,11 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 165936,Gordon College,Competitive,70%,64%,22,25.5,---,0,No,0,0
 165945,Gordon-Conwell Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 165981,Greenfield Community College (2 year),2 year (Noncompetitive),34%,25%,N/A,N/A,?,0,No,0,0
-166018,Hampshire College,Most Competitive,69%,74%,N/A,N/A,---,0,No,0,0
-166027,Harvard University,Most Competitive+,97%,95%,32,33.5,+++,1,No,0,0
+166018,Hampshire College,Most Competitive,69%,74%,N/A,N/A,--- (CSS P),0,No,0,0
+166027,Harvard University,Most Competitive+,97%,95%,32,33.5,+++ (CSS P),1,No,0,0
 166045,Hebrew College,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 166054,Hellenic College-Holy Cross Greek Orthodox School of Theology,Competitive,54%,50%,N/A,N/A,---,0,No,0,0
-166124,College of the Holy Cross,Most Competitive,92%,90%,N/A,N/A,++/-,1,No,0,0
+166124,College of the Holy Cross,Most Competitive,92%,90%,N/A,N/A,++/- (CSS P),1,No,0,0
 166133,Holyoke Community College (2 year),2 year (Noncompetitive),27%,17%,N/A,N/A,?,0,No,0,0
 166391,Lasell College,Competitive,53%,48%,15,18,---,0,No,0,0
 166407,Lawrence Memorial Hospital School of Nursing (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -1402,7 +1402,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 166647,Massachusetts Bay Community College (2 year),2 year (Noncompetitive),30%,26%,N/A,N/A,?,0,No,0,0
 166656,MCPHS University,Not Available,66%,59%,21,24,---,0,No,0,0
 166674,Massachusetts College of Art and Design,Not Available,71%,56%,18,21,?,0,No,0,0
-166683,Massachusetts Institute of Technology,Most Competitive+,93%,89%,33,34,++/-,1,No,0,0
+166683,Massachusetts Institute of Technology,Most Competitive+,93%,89%,33,34,++/- (CSS P),1,No,0,0
 166692,Massachusetts Maritime Academy,Competitive,72%,52%,17,20,?,0,No,0,0
 166708,University of Massachusetts Medical School Worcester,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 166717,William James College,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -1411,7 +1411,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 166869,MGH Institute of Health Professions,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 166887,Middlesex Community College (2 year),2 year (Noncompetitive),30%,24%,N/A,N/A,?,0,No,0,0
 166911,Montserrat College of Art,Not Available,52%,52%,N/A,N/A,---,0,No,0,0
-166939,Mount Holyoke College (Female only),Most Competitive,83%,78%,N/A,N/A,++/-,1,No,0,0
+166939,Mount Holyoke College (Female only),Most Competitive,83%,78%,N/A,N/A,++/- (CSS P),1,No,0,0
 166948,Mount Ida College,Competitive,41%,34%,N/A,N/A,---,0,No,0,0
 166957,Mount Wachusett Community College (2 year),2 year (Noncompetitive),28%,20%,N/A,N/A,?,0,No,0,0
 166984,School of the Museum of Fine Arts at Tufts University,Not available,57%,65%,N/A,N/A,---,0,No,0,0
@@ -1424,7 +1424,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 167297,North Bennet Street School (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 167312,North Shore Community College (2 year),2 year (Noncompetitive),27%,23%,N/A,N/A,?,0,No,0,0
 167321,The New England Institute of Art,Not available,34%,32%,N/A,N/A,---,0,No,0,0
-167358,Northeastern University,Most Competitive,86%,87%,31,32.5,++/-,1,No,0,0
+167358,Northeastern University,Most Competitive,86%,87%,31,32.5,++/- (CSS P),1,No,0,0
 167376,Northern Essex Community College (2 year),2 year (Noncompetitive),29%,21%,N/A,N/A,?,0,No,0,0
 167394,College of Our Lady of the Elms,Very Competitive,65%,54%,15,18,---,0,No,0,0
 167455,Pine Manor College,Less Competitive,30%,25%,N/A,N/A,---,0,No,0,0
@@ -1437,22 +1437,22 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 167729,Salem State University,Less Competitive,49%,45%,16,18.5,?,0,No,0,0
 167738,Salter College-West Boylston (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 167783,Simmons College,Very Competitive,71%,67%,24,26.5,---,0,No,0,0
-167792,Bard College at Simon's Rock,Most Competitive,N/A,N/A,N/A,N/A,---,0,No,0,0
-167835,Smith College (Female only),Most Competitive,89%,90%,N/A,N/A,+++,1,No,0,0
+167792,Bard College at Simon's Rock,Most Competitive,N/A,N/A,N/A,N/A,--- (CSS P),0,No,0,0
+167835,Smith College (Female only),Most Competitive,89%,90%,N/A,N/A,+++ (CSS P),1,No,0,0
 167899,Springfield College,Competitive,70%,50%,24,26,---,0,No,0,0
 167905,Springfield Technical Community College (2 year),2 year (Noncompetitive),27%,18%,N/A,N/A,?,0,No,0,0
 167987,University of Massachusetts-Dartmouth,Competitive,48%,45%,16,19.5,?,0,No,0,0
-167996,Stonehill College,Competitive,83%,73%,N/A,N/A,---,0,No,0,0
+167996,Stonehill College,Competitive,83%,73%,N/A,N/A,--- (CSS P),0,No,0,0
 168005,Suffolk University,Competitive,59%,59%,16,19,---,0,No,0,0
-168148,Tufts University,Most Competitive+,92%,85%,31,32.5,++,1,No,0,0
-168218,Wellesley College (Female only),Most Competitive,91%,90%,30,31.5,+++,1,No,0,0
+168148,Tufts University,Most Competitive+,92%,85%,31,32.5,++ (CSS P),1,No,0,0
+168218,Wellesley College (Female only),Most Competitive,91%,90%,30,31.5,+++ (CSS P),1,No,0,0
 168227,Wentworth Institute of Technology,Competitive,65%,57%,21,24.5,---,0,No,0,0
 168254,Western New England University,Competitive,58%,43%,19,21.5,---,0,No,0,0
 168263,Westfield State University,Competitive,64%,53%,16,18.5,?,0,No,0,0
-168281,Wheaton College,Very Competitive,78%,78%,N/A,N/A,---,0,No,0,0
+168281,Wheaton College,Very Competitive,78%,78%,N/A,N/A,--- (CSS P),0,No,0,0
 168290,Wheelock College,Competitive,60%,60%,15,18.5,---,0,No,0,0
-168342,Williams College,Most Competitive+,94%,93%,31,32.5,+++,1,No,0,0
-168421,Worcester Polytechnic Institute,Most Competitive,86%,75%,N/A,N/A,---,0,No,0,0
+168342,Williams College,Most Competitive+,94%,93%,31,32.5,+++ (CSS P),1,No,0,0
+168421,Worcester Polytechnic Institute,Most Competitive,86%,75%,N/A,N/A,--- (CSS P),0,No,0,0
 168430,Worcester State University,Competitive,53%,41%,16,19,?,0,No,0,0
 168528,Adrian College,Competitive,55%,46%,19,21.5,---,0,No,0,0
 168546,Albion College,Competitive,76%,54%,20,23,++/-,1,No,0,0
@@ -1505,7 +1505,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 170806,Madonna University,Competitive,57%,24%,18,20.5,--,0,No,0,0
 170842,Marygrove College,Noncompetitive,23%,19%,15,17.5,--,0,No,0,0
 170967,Rochester College,Less Competitive,32%,21%,18,21,--,0,No,0,0
-170976,University of Michigan-Ann Arbor,Most Competitive,91%,84%,29,31,++,1,No,0,0
+170976,University of Michigan-Ann Arbor,Most Competitive,91%,84%,29,31,++ (CSS P),1,No,0,0
 171012,Michigan Barber School Inc (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,++,1,No,0,0
 171100,Michigan State University,Very Competitive,78%,62%,24,26.5,---,0,No,0,0
 171128,Michigan Technological University,Very Competitive,65%,59%,25,27.5,---,0,No,0,0
@@ -1521,7 +1521,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 171492,Northwood University,Less Competitive,57%,35%,20,22,---,0,No,0,0
 171535,Oakland Community College (2 year),2 year (Noncompetitive),24%,24%,N/A,N/A,?,0,No,0,0
 171571,Oakland University,Competitive,47%,25%,20,23.5,?,0,No,0,0
-171599,Olivet College,Less Competitive,44%,26%,18,20.5,---,0,No,0,0
+171599,Olivet College,Less Competitive,44%,26%,18,20.5,--- (CSS P),0,No,0,0
 171881,Kuyper College,Competitive,57%,14%,19,23.5,--,0,No,0,0
 172033,Sacred Heart Major Seminary,Not available,100%,N/A,N/A,N/A,---,0,No,0,0
 172051,Saginaw Valley State University,Competitive,38%,21%,20,22.5,?,0,No,0,0
@@ -1551,7 +1551,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 173160,Bethel University,Very Competitive,75%,49%,21,24.5,---,0,No,0,0
 173179,Bethel Seminary-St Paul,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 173203,Central Lakes College-Brainerd (2 year),2 year (Noncompetitive),47%,38%,N/A,N/A,?,0,No,0,0
-173258,Carleton College,Most Competitive+,92%,89%,30,31.5,+++,1,No,0,0
+173258,Carleton College,Most Competitive+,92%,89%,30,31.5,+++ (CSS P),1,No,0,0
 173300,Concordia College at Moorhead,Competitive,73%,55%,N/A,N/A,---,0,No,0,0
 173328,Concordia University-Saint Paul,Competitive,48%,34%,N/A,N/A,---,0,No,0,0
 173416,Dakota County Technical College (2 year),2 year (Noncompetitive),42%,26%,N/A,N/A,?,0,No,0,0
@@ -1560,7 +1560,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 173489,Duluth Business University,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
 173559,Minnesota State Community and Technical College (2 year),2 year (Noncompetitive),44%,26%,N/A,N/A,?,0,No,0,0
 173638,Minnesota West Community and Technical College (2 year),2 year (Noncompetitive),53%,38%,N/A,N/A,?,0,No,0,0
-173647,Gustavus Adolphus College,Highly Competitive,82%,75%,N/A,N/A,--,0,No,0,0
+173647,Gustavus Adolphus College,Highly Competitive,82%,75%,N/A,N/A,-- (CSS P),0,No,0,0
 173665,Hamline University,Very Competitive,62%,44%,21,24,---,0,No,0,0
 173683,Hazelden Betty Ford Graduate School of Addiction Studies,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 173708,Hennepin Technical College (2 year),2 year (Noncompetitive),36%,25%,N/A,N/A,?,0,No,0,0
@@ -1569,7 +1569,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 173805,Itasca Community College (2 year),2 year (Noncompetitive),51%,48%,N/A,N/A,?,0,No,0,0
 173887,The Art Institutes International-Minnesota,Not available,31%,36%,N/A,N/A,---,0,No,0,0
 173896,Luther Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-173902,Macalester College,Most Competitive,88%,84%,29,31,++,1,No,0,0
+173902,Macalester College,Most Competitive,88%,84%,29,31,++ (CSS P),1,No,0,0
 173911,South Central College (2 year),2 year (Noncompetitive),35%,22%,N/A,N/A,?,0,No,0,0
 173920,Minnesota State University-Mankato,Competitive,50%,31%,20,22,?,0,No,0,0
 173957,Mayo Clinic School of Medicine,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -1603,7 +1603,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 174783,Saint Cloud State University,Competitive,44%,37%,18,21,?,0,No,0,0
 174792,Saint Johns University (Male only),Competitive,79%,68%,22,25,--,0,No,0,0
 174817,Saint Mary's University of Minnesota,Very Competitive,62%,43%,20,23,--,0,No,0,0
-174844,St Olaf College,Highly Competitive,88%,76%,26,28.5,++,1,No,0,0
+174844,St Olaf College,Highly Competitive,88%,76%,26,28.5,++ (CSS P),1,No,0,0
 174862,Crown College,Competitive,52%,27%,19,22,---,0,No,0,0
 174899,The College of Saint Scholastica,Competitive,66%,52%,21,23.5,---,0,No,0,0
 174914,University of St Thomas,Very Competitive,75%,73%,24,26.5,---,0,No,0,0
@@ -1738,10 +1738,10 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 179645,Three Rivers College (2 year),2 year (Noncompetitive),29%,22%,N/A,N/A,?,0,No,0,0
 179715,North Central Missouri College (2 year),2 year (Noncompetitive),41%,28%,N/A,N/A,?,0,No,0,0
 179812,Kansas City University of Medicine and Biosciences,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-179867,Washington University in St Louis,Most Competitive+,94%,94%,32,33,+++,1,No,0,0
+179867,Washington University in St Louis,Most Competitive+,94%,94%,32,33,+++ (CSS P),1,No,0,0
 179894,Webster University,Competitive,62%,49%,21,24,---,0,No,0,0
 179946,Westminster College,Competitive,65%,47%,21,23.5,---,0,No,0,0
-179955,William Jewell College,Competitive,62%,53%,22,25,---,0,No,0,0
+179955,William Jewell College,Competitive,62%,53%,22,25,--- (CSS P),0,No,0,0
 179964,William Woods University,Competitive,53%,38%,19,22,---,0,No,0,0
 179991,"Academy of Cosmetology (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,++/-,1,No,0,0
 180054,Blackfeet Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,++,1,No,0,0
@@ -1815,7 +1815,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 182500,Truckee Meadows Community College (2 year),2 year (Noncompetitive),37%,38%,N/A,N/A,?,0,No,0,0
 182564,Western Nevada College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0
 182634,Colby-Sawyer College,Competitive,53%,49%,N/A,N/A,---,0,No,0,0
-182670,Dartmouth College,Most Competitive+,97%,98%,30,32,+++,1,No,0,0
+182670,Dartmouth College,Most Competitive+,97%,98%,30,32,+++ (CSS P),1,No,0,0
 182795,Franklin Pierce University,Competitive,44%,25%,15,18,---,0,No,0,0
 182829,University of New Hampshire-School of Law,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 182917,Northeast Catholic College,Not available,60%,50%,N/A,N/A,--,0,No,0,0
@@ -1833,7 +1833,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 183141,Nashua Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 183150,Great Bay Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 183211,Rivier University,Very Competitive,49%,34%,N/A,N/A,---,0,No,0,0
-183239,Saint Anselm College,Competitive,73%,61%,20,22.5,---,0,No,0,0
+183239,Saint Anselm College,Competitive,73%,61%,20,22.5,--- (CSS P),0,No,0,0
 183248,St Joseph School of Nursing (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 183257,Granite State College,Not Available,18%,0%,N/A,N/A,?,0,No,0,0
 183275,Thomas More College of Liberal Arts,Competitive,60%,67%,N/A,N/A,--,0,No,0,0
@@ -1894,7 +1894,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 186584,Seton Hall University,Competitive,64%,51%,23,25,---,0,No,0,0
 186618,College of Saint Elizabeth,Less Competitive,49%,41%,12,14.5,--,0,No,0,0
 186645,Raritan Valley Community College (2 year),2 year (Noncompetitive),39%,30%,N/A,N/A,?,0,No,0,0
-186867,Stevens Institute of Technology,Most Competitive,82%,74%,29,31,---,0,No,0,0
+186867,Stevens Institute of Technology,Most Competitive,82%,74%,29,31,--- (CSS P),0,No,0,0
 186876,Stockton University,Not Available,70%,58%,18,21,?,0,No,0,0
 186900,Talmudical Academy-New Jersey (Male only),Not available,7%,N/A,N/A,N/A,++,1,No,0,0
 187000,"Teterboro School of Aeronautics (Male only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0
@@ -1947,8 +1947,8 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 188915,Arnot Ogden Medical Center (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 188942,"Associated Beth Rivkah Schools (Female only, 2 year)",2 year (Competitive),N/A,N/A,N/A,N/A,--,0,No,0,0
 189015,Bank Street College of Education,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-189088,Bard College,Highly Competitive,77%,68%,N/A,N/A,---,0,No,0,0
-189097,Barnard College (Female only),Most Competitive+,91%,90%,29,31,++/-,1,No,0,0
+189088,Bard College,Highly Competitive,77%,68%,N/A,N/A,--- (CSS P),0,No,0,0
+189097,Barnard College (Female only),Most Competitive+,91%,90%,29,31,++/- (CSS P),1,No,0,0
 189228,Berkeley College-New York,Less Competitive,29%,27%,N/A,N/A,---,0,No,0,0
 189264,Beth Hatalmud Rabbinical College (Male only),Not available,9%,N/A,N/A,N/A,+++,1,No,0,0
 189273,Beth Hamedrash Shaarei Yosher Institute (Male only),Not available,8%,N/A,N/A,N/A,?,0,No,0,0
@@ -1974,13 +1974,13 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 190053,Clinton Community College (2 year),2 year (Noncompetitive),39%,28%,N/A,N/A,?,0,No,0,0
 190071,Cochran School of Nursing (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 190080,Colgate Rochester Crozer Divinity School,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-190099,Colgate University,Most Competitive,90%,86%,30,31.5,+++,1,No,0,0
+190099,Colgate University,Most Competitive,90%,86%,30,31.5,+++ (CSS P),1,No,0,0
 190114,Metropolitan College of New York,Very Competitive,34%,33%,N/A,N/A,---,0,No,0,0
-190150,Columbia University in the City of New York,Most Competitive+,94%,91%,32,33.5,+++,1,No,0,0
+190150,Columbia University in the City of New York,Most Competitive+,94%,91%,32,33.5,+++ (CSS P),1,No,0,0
 190169,Columbia-Greene Community College (2 year),2 year (Noncompetitive),40%,28%,N/A,N/A,?,0,No,0,0
 190248,Concordia College-New York,Less Competitive,48%,37%,15,17,---,0,No,0,0
 190372,Cooper Union for the Advancement of Science and Art,Most Competitive,84%,73%,N/A,N/A,--,0,No,0,0
-190415,Cornell University,Most Competitive+,94%,92%,31,32.5,+++,1,No,0,0
+190415,Cornell University,Most Competitive+,94%,92%,31,32.5,+++ (CSS P),1,No,0,0
 190424,Weill Cornell Medical College,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 190442,Corning Community College (2 year),2 year (Noncompetitive),34%,27%,N/A,N/A,?,0,No,0,0
 190451,Pomeroy College of Nursing at Crouse Hospital (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -2017,23 +2017,23 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 191126,Fashion Institute of Technology,Not Available,N/A,N/A,N/A,N/A,?,0,No,0,0
 191199,Finger Lakes Community College (2 year),2 year (Noncompetitive),38%,35%,N/A,N/A,?,0,No,0,0
 191205,Five Towns College,Competitive,33%,25%,N/A,N/A,---,0,No,0,0
-191241,Fordham University,Most Competitive,80%,75%,27,29,---,0,No,0,0
+191241,Fordham University,Most Competitive,80%,75%,27,29,--- (CSS P),0,No,0,0
 191302,Fulton-Montgomery Community College (2 year),2 year (Noncompetitive),40%,33%,N/A,N/A,?,0,No,0,0
 191320,The General Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 191339,Genesee Community College (2 year),2 year (Noncompetitive),37%,33%,N/A,N/A,?,0,No,0,0
-191515,Hamilton College,Most Competitive,92%,84%,31,32,+++,1,No,0,0
+191515,Hamilton College,Most Competitive,92%,84%,31,32,+++ (CSS P),1,No,0,0
 191533,Hartwick College,Competitive,55%,46%,19,22,---,0,No,0,0
 191597,Helene Fuld College of Nursing,Not available,N/A,N/A,N/A,N/A,---,0,No,0,0
 191612,Herkimer County Community College (2 year),2 year (Noncompetitive),45%,39%,N/A,N/A,?,0,No,0,0
 191621,Hilbert College,Competitive,46%,29%,N/A,N/A,---,0,No,0,0
-191630,Hobart William Smith Colleges,Highly Competitive,79%,80%,26,28,---,0,No,0,0
+191630,Hobart William Smith Colleges,Highly Competitive,79%,80%,26,28,--- (CSS P),0,No,0,0
 191649,Hofstra University,Competitive,64%,45%,24,26.5,---,0,No,0,0
 191676,Houghton College,Competitive,73%,62%,21,24.5,---,0,No,0,0
 191719,Hudson Valley Community College (2 year),2 year (Noncompetitive),36%,28%,N/A,N/A,?,0,No,0,0
 191728,Hunter Business School (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0
 191931,Iona College,Competitive,64%,56%,16,19,---,0,No,0,0
 191959,Island Drafting and Technical Institute (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
-191968,Ithaca College,Very Competitive,75%,75%,N/A,N/A,---,0,No,0,0
+191968,Ithaca College,Very Competitive,75%,75%,N/A,N/A,--- (CSS P),0,No,0,0
 191986,Jamestown Community College (2 year),2 year (Noncompetitive),41%,29%,N/A,N/A,?,0,No,0,0
 192004,Jamestown Business College,Not available,N/A,N/A,N/A,N/A,++,1,No,0,0
 192022,Jefferson Community College (2 year),2 year (Noncompetitive),37%,40%,N/A,N/A,?,0,No,0,0
@@ -2051,7 +2051,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 192624,Machzikei Hadath Rabbinical College (Male only),Not available,31%,N/A,N/A,N/A,--,0,No,0,0
 192688,Mandl School-The College of Allied Health (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 192703,Manhattan College,Competitive,73%,67%,23,25.5,---,0,No,0,0
-192712,Manhattan School of Music,Not Available,100%,100%,N/A,N/A,---,0,No,0,0
+192712,Manhattan School of Music,Not Available,100%,100%,N/A,N/A,--- (CSS P),0,No,0,0
 192749,Manhattanville College,Competitive,56%,55%,N/A,N/A,---,0,No,0,0
 192785,Maria College of Albany,Not available,N/A,N/A,N/A,N/A,++,1,No,0,0
 192819,Marist College,Very Competitive,83%,79%,N/A,N/A,---,0,No,0,0
@@ -2081,7 +2081,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 193821,New York Law School,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 193830,New York Medical College,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 193894,New York Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-193900,New York University,Most Competitive,85%,85%,29,31,---,0,No,0,0
+193900,New York University,Most Competitive,85%,85%,29,31,--- (CSS P),0,No,0,0
 193946,Niagara County Community College (2 year),2 year (Noncompetitive),39%,29%,N/A,N/A,?,0,No,0,0
 193973,Niagara University,Competitive,64%,50%,21,23,--,0,No,0,0
 194028,North Country Community College (2 year),2 year (Noncompetitive),37%,35%,N/A,N/A,?,0,No,0,0
@@ -2102,10 +2102,10 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 194693,Rabbinical College Beth Shraga (Male only),Not available,50%,N/A,N/A,N/A,+++,1,No,0,0
 194736,Rabbinical College of Long Island (Male only),Not available,12%,N/A,N/A,N/A,++,1,No,0,0
 194763,Rabbinical Seminary of America (Male only),Not available,42%,N/A,N/A,N/A,++,1,No,0,0
-194824,Rensselaer Polytechnic Institute,Most Competitive,82%,72%,28,30,---,0,No,0,0
+194824,Rensselaer Polytechnic Institute,Most Competitive,82%,72%,28,30,--- (CSS P),0,No,0,0
 194958,Roberts Wesleyan College,Competitive,62%,46%,21,22.5,---,0,No,0,0
 195003,Rochester Institute of Technology,Highly Competitive,68%,56%,26,28.5,---,0,No,0,0
-195030,University of Rochester,Most Competitive,85%,78%,N/A,N/A,++/-,1,No,0,0
+195030,University of Rochester,Most Competitive,85%,78%,N/A,N/A,++/- (CSS P),1,No,0,0
 195049,Rockefeller University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 195058,Rockland Community College (2 year),2 year (Noncompetitive),36%,29%,N/A,N/A,?,0,No,0,0
 195128,The Sage Colleges,Competitive,59%,46%,N/A,N/A,--,0,No,0,0
@@ -2117,11 +2117,11 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 195234,The College of Saint Rose,Competitive,62%,53%,N/A,N/A,---,0,No,0,0
 195243,St. Thomas Aquinas College,Competitive,58%,48%,17,19.5,--,0,No,0,0
 195289,Samaritan Hospital School of Nursing (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,---,0,No,0,0
-195304,Sarah Lawrence College,Highly Competitive,80%,81%,27,29,---,0,No,0,0
+195304,Sarah Lawrence College,Highly Competitive,80%,81%,27,29,--- (CSS P),0,No,0,0
 195322,Schenectady County Community College (2 year),2 year (Noncompetitive),28%,15%,N/A,N/A,?,0,No,0,0
 195438,Sh'or Yoshuv Rabbinical College (Male only),Not available,56%,N/A,N/A,N/A,+++,1,No,0,0
 195474,Siena College,Competitive,77%,68%,N/A,N/A,---,0,No,0,0
-195526,Skidmore College,Highly Competitive,89%,87%,26,28,++/-,1,No,0,0
+195526,Skidmore College,Highly Competitive,89%,87%,26,28,++/- (CSS P),1,No,0,0
 195544,St. Joseph's College-New York,Less Competitive,69%,56%,20,22.5,--,0,No,0,0
 195562,St. Joseph's College-Long Island,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 195580,Saint Vladimirs Orthodox Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -2161,7 +2161,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 196291,SUNY Maritime College,Competitive,53%,38%,23,25,?,0,No,0,0
 196307,Upstate Medical University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 196389,Swedish Institute a College of Health Sciences (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
-196413,Syracuse University,Very Competitive,82%,80%,25,27,---,0,No,0,0
+196413,Syracuse University,Very Competitive,82%,80%,25,27,--- (CSS P),0,No,0,0
 196431,Talmudical Seminary Oholei Torah (Male only),Not available,20%,N/A,N/A,N/A,--,0,No,0,0
 196440,Talmudical Institute of Upstate New York (Male only),Not available,67%,N/A,N/A,N/A,?,0,No,0,0
 196468,Teachers College at Columbia University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -2172,13 +2172,13 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 196653,Trocaire College,Noncompetitive,N/A,N/A,N/A,N/A,++/-,1,No,0,0
 196680,Excelsior College,Not Available,N/A,N/A,N/A,N/A,?,0,No,0,0
 196699,Ulster County Community College (2 year),2 year (Noncompetitive),38%,27%,N/A,N/A,?,0,No,0,0
-196866,Union College,Most Competitive,87%,89%,N/A,N/A,++/-,1,No,0,0
+196866,Union College,Most Competitive,87%,89%,N/A,N/A,++/- (CSS P),1,No,0,0
 196884,Union Theological Seminary in the City of New York,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 197018,United Talmudical Seminary (Male only),Noncompetitive,50%,17%,N/A,N/A,++/-,1,No,0,0
 197027,United States Merchant Marine Academy,Highly Competitive,72%,53%,26,28,?,0,No,0,0
 197036,United States Military Academy,Highly Competitive,86%,78%,26,28.5,?,0,No,0,0
 197045,Utica College,Competitive,44%,32%,N/A,N/A,---,0,No,0,0
-197133,Vassar College,Most Competitive,91%,90%,30,31.5,++,1,No,0,0
+197133,Vassar College,Most Competitive,91%,90%,30,31.5,++ (CSS P),1,No,0,0
 197142,Villa Maria College,Not available,32%,16%,N/A,N/A,++/-,1,No,0,0
 197151,School of Visual Arts,Not Available,66%,57%,21,23.5,---,0,No,0,0
 197197,Wagner College,Competitive,66%,57%,N/A,N/A,---,0,No,0,0
@@ -2223,13 +2223,13 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 198330,Coastal Carolina Community College (2 year),2 year (Noncompetitive),33%,29%,N/A,N/A,?,0,No,0,0
 198367,Craven Community College (2 year),2 year (Noncompetitive),28%,23%,N/A,N/A,?,0,No,0,0
 198376,Davidson County Community College (2 year),2 year (Noncompetitive),38%,32%,N/A,N/A,?,0,No,0,0
-198385,Davidson College,Most Competitive+,95%,93%,28,30.5,++,1,No,0,0
-198419,Duke University,Most Competitive+,95%,96%,31,32.5,+++,1,No,0,0
+198385,Davidson College,Most Competitive+,95%,93%,28,30.5,++ (CSS P),1,No,0,0
+198419,Duke University,Most Competitive+,95%,96%,31,32.5,+++ (CSS P),1,No,0,0
 198455,Durham Technical Community College (2 year),2 year (Noncompetitive),24%,19%,N/A,N/A,?,0,No,0,0
 198464,East Carolina University,Competitive,61%,62%,20,22,?,0,No,0,0
 198491,Edgecombe Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 198507,Elizabeth City State University (HBCU),Competitive,37%,53%,17,19,++/-,1,Yes,0,0
-198516,Elon University,Very Competitive,82%,77%,25,27,---,0,No,0,0
+198516,Elon University,Very Competitive,82%,77%,25,27,--- (CSS P),0,No,0,0
 198534,Fayetteville Technical Community College (2 year),2 year (Noncompetitive),23%,19%,N/A,N/A,?,0,No,0,0
 198543,Fayetteville State University (HBCU),Competitive,32%,47%,17,19,?,0,Yes,0,0
 198552,Forsyth Technical Community College (2 year),2 year (Noncompetitive),26%,19%,N/A,N/A,?,0,No,0,0
@@ -2267,7 +2267,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 199087,Nash Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 199102,North Carolina A & T State University (HBCU),Less Competitive,43%,60%,18,20,---,0,Yes,0,0
 199111,University of North Carolina at Asheville,Very Competitive,62%,51%,23,25.5,?,0,No,0,0
-199120,University of North Carolina at Chapel Hill,Highly Competitive,91%,86%,28,30.5,++,1,No,0,0
+199120,University of North Carolina at Chapel Hill,Highly Competitive,91%,86%,28,30.5,++ (CSS P),1,No,0,0
 199139,University of North Carolina at Charlotte,Competitive,57%,55%,22,24,?,0,No,0,0
 199148,University of North Carolina at Greensboro,Competitive,54%,59%,21,23,?,0,No,0,0
 199157,North Carolina Central University (HBCU),Competitive,43%,59%,17,18,---,0,Yes,0,0
@@ -2303,7 +2303,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 199786,Alamance Community College (2 year),2 year (Noncompetitive),31%,25%,N/A,N/A,?,0,No,0,0
 199795,Tri-County Community College (2 year),2 year (Noncompetitive),31%,20%,N/A,N/A,?,0,No,0,0
 199838,Vance-Granville Community College (2 year),2 year (Noncompetitive),38%,30%,N/A,N/A,?,0,No,0,0
-199847,Wake Forest University,Most Competitive,88%,87%,N/A,N/A,--,0,No,0,0
+199847,Wake Forest University,Most Competitive,88%,87%,N/A,N/A,-- (CSS P),0,No,0,0
 199856,Wake Technical Community College (2 year),2 year (Noncompetitive),33%,27%,N/A,N/A,?,0,No,0,0
 199865,Warren Wilson College,Very Competitive,51%,62%,N/A,N/A,--,0,No,0,0
 199883,Watts School of Nursing (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -2360,7 +2360,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 201441,Bowling Green State University-Main Campus,Competitive,53%,38%,19,21.5,?,0,No,0,0
 201469,Bryant & Stratton College-Parma,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
 201548,Capital University,Competitive,60%,43%,22,25,---,0,No,0,0
-201645,Case Western Reserve University,Most Competitive,82%,72%,30,32,++/-,1,No,0,0
+201645,Case Western Reserve University,Most Competitive,82%,72%,30,32,++/- (CSS P),1,No,0,0
 201654,Cedarville University,Very Competitive,71%,66%,23,26,---,0,No,0,0
 201672,Central Ohio Technical College (2 year),2 year (Noncompetitive),22%,28%,N/A,N/A,?,0,No,0,0
 201690,Central State University (HBCU),Competitive,26%,41%,15,16.5,++/-,1,Yes,0,0
@@ -2386,7 +2386,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 202453,Dayton Barber College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0
 202480,University of Dayton,Competitive,75%,61%,24,26.5,---,0,No,0,0
 202514,Defiance College,Competitive,44%,28%,18,20.5,---,0,No,0,0
-202523,Denison University,Most Competitive,81%,74%,28,30,++/-,1,No,0,0
+202523,Denison University,Most Competitive,81%,74%,28,30,++/- (CSS P),1,No,0,0
 202648,Edison State Community College (2 year),2 year (Noncompetitive),30%,32%,N/A,N/A,?,0,No,0,0
 202657,EHOVE Career Center (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 202684,Bryant & Stratton College-Cleveland,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -2412,7 +2412,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 203492,Kent State University at Salem,Noncompetitive,16%,0%,N/A,N/A,?,0,No,0,0
 203517,Kent State University at Kent,Competitive,55%,38%,21,23,--,0,No,0,0
 203526,Kent State University at Geauga,Noncompetitive,21%,12%,N/A,N/A,?,0,No,0,0
-203535,Kenyon College,Most Competitive,89%,81%,29,31,+++,1,No,0,0
+203535,Kenyon College,Most Competitive,89%,81%,29,31,+++ (CSS P),1,No,0,0
 203544,Kettering College,Not available,42%,38%,N/A,N/A,---,0,No,0,0
 203580,Lake Erie College,Less Competitive,48%,23%,18,20,---,0,No,0,0
 203599,Lakeland Community College (2 year),2 year (Noncompetitive),29%,24%,N/A,N/A,?,0,No,0,0
@@ -2445,7 +2445,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 204468,Notre Dame College,Noncompetitive,36%,23%,18,20,---,0,No,0,0
 204477,Northeast Ohio Medical University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 204486,University of Northwestern Ohio,Noncompetitive,34%,13%,N/A,N/A,---,0,No,0,0
-204501,Oberlin College,Most Competitive,85%,79%,29,31,+++,1,No,0,0
+204501,Oberlin College,Most Competitive,85%,79%,29,31,+++ (CSS P),1,No,0,0
 204608,Ohio Technical College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 204617,Ohio Dominican University,Competitive,42%,25%,19,21.5,---,0,No,0,0
 204626,Brightwood College-Dayton (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -2512,7 +2512,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 206507,Wilmington College,Competitive,51%,32%,18,20.5,---,0,No,0,0
 206516,Winebrenner Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 206525,Wittenberg University,Competitive,67%,42%,N/A,N/A,---,0,No,0,0
-206589,The College of Wooster,Very Competitive,78%,69%,24,27,++/-,1,No,0,0
+206589,The College of Wooster,Very Competitive,78%,69%,24,27,++/- (CSS P),1,No,0,0
 206604,Wright State University-Main Campus,Competitive,35%,20%,18,21.5,?,0,No,0,0
 206613,Wright State University-Lake Campus,Noncompetitive,29%,6%,19,21.5,?,0,No,0,0
 206622,Xavier University,Competitive,72%,58%,23,25.5,+/---,0,No,0,0
@@ -2581,7 +2581,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 208859,Phagans Grants Pass College of Beauty (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,++/-,1,No,0,0
 208965,ITT Technical Institute-Portland,Not available,N/A,N/A,N/A,N/A,---,0,No,0,0
 209038,Lane Community College (2 year),2 year (Noncompetitive),22%,16%,N/A,N/A,?,0,No,0,0
-209056,Lewis & Clark College,Highly Competitive,77%,70%,27,29,---,0,No,0,0
+209056,Lewis & Clark College,Highly Competitive,77%,70%,27,29,--- (CSS P),0,No,0,0
 209065,Linfield College-McMinnville Campus,Competitive,68%,64%,20,22,---,0,No,0,0
 209074,Linn-Benton Community College (2 year),2 year (Noncompetitive),23%,19%,N/A,N/A,?,0,No,0,0
 209083,Northwest College-Beaverton (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -2608,7 +2608,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 209746,Portland Community College (2 year),2 year (Noncompetitive),25%,21%,N/A,N/A,?,0,No,0,0
 209807,Portland State University,Competitive,48%,44%,19,22,?,0,No,0,0
 209825,University of Portland,Very Competitive,82%,80%,21,24.5,---,0,No,0,0
-209922,Reed College,Most Competitive,80%,71%,29,31,--,0,No,0,0
+209922,Reed College,Most Competitive,80%,71%,29,31,-- (CSS P),0,No,0,0
 209940,Rogue Community College (2 year),2 year (Noncompetitive),21%,18%,N/A,N/A,?,0,No,0,0
 209986,"Roseburg Beauty College (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,++/-,1,No,0,0
 210076,Pioneer Pacific College,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -2647,15 +2647,15 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 211149,Bidwell Training Center Inc (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,+++,1,No,0,0
 211158,Bloomsburg University of Pennsylvania,Less Competitive,62%,40%,15,18,?,0,No,0,0
 211200,Bradford School (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0
-211273,Bryn Mawr College (Female only),Most Competitive,83%,84%,28,30,--,0,No,0,0
-211291,Bucknell University,Most Competitive,88%,86%,28,30,+/---,0,No,0,0
+211273,Bryn Mawr College (Female only),Most Competitive,83%,84%,28,30,-- (CSS P),0,No,0,0
+211291,Bucknell University,Most Competitive,88%,86%,28,30,+/--- (CSS P),0,No,0,0
 211307,Bucks County Community College (2 year),2 year (Noncompetitive),33%,26%,N/A,N/A,?,0,No,0,0
 211316,"Bucks County School of Beauty Culture Inc (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 211343,Butler County Community College (2 year),2 year (Noncompetitive),39%,34%,N/A,N/A,?,0,No,0,0
 211352,Cabrini University,Less Competitive,54%,40%,16,18,---,0,No,0,0
 211361,California University of Pennsylvania,Less Competitive,54%,45%,16,19,?,0,No,0,0
 211431,Carlow University,Less Competitive,55%,38%,19,21.5,--,0,No,0,0
-211440,Carnegie Mellon University,Most Competitive+,90%,82%,31,32.5,+++,1,No,0,0
+211440,Carnegie Mellon University,Most Competitive+,90%,82%,31,32.5,+++ (CSS P),1,No,0,0
 211468,Cedar Crest College,Competitive,62%,51%,16,18.5,---,0,No,0,0
 211477,Central Penn College,Noncompetitive,40%,26%,11,13.5,---,0,No,0,0
 211556,Chatham University,Competitive,55%,40%,N/A,N/A,---,0,No,0,0
@@ -2670,10 +2670,10 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 211909,"Dean Institute of Technology (Male only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 211927,Delaware County Community College (2 year),2 year (Noncompetitive),28%,24%,N/A,N/A,?,0,No,0,0
 211981,Delaware Valley University,Competitive,57%,31%,18,22,---,0,No,0,0
-212009,Dickinson College,Most Competitive,84%,80%,N/A,N/A,+++,1,No,0,0
+212009,Dickinson College,Most Competitive,84%,80%,N/A,N/A,+++ (CSS P),1,No,0,0
 212018,Pennsylvania State University-Dickinson Law,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 212045,Douglas Education Center (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
-212054,Drexel University,Very Competitive,70%,56%,25,27.5,---,0,No,0,0
+212054,Drexel University,Very Competitive,70%,56%,25,27.5,--- (CSS P),0,No,0,0
 212106,Duquesne University,Very Competitive,77%,64%,24,26.5,---,0,No,0,0
 212115,East Stroudsburg University of Pennsylvania,Competitive,57%,48%,19,21.5,?,0,No,0,0
 212133,Eastern University,Competitive,63%,49%,17,20,---,0,No,0,0
@@ -2683,16 +2683,16 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 212443,Evangelical Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 212452,Faith Theological Seminary,Not available,49%,50%,N/A,N/A,---,0,No,0,0
 212568,Aria Health School of Nursing (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,?,0,No,0,0
-212577,Franklin and Marshall College,Highly Competitive,87%,87%,N/A,N/A,++,1,No,0,0
+212577,Franklin and Marshall College,Highly Competitive,87%,87%,N/A,N/A,++ (CSS P),1,No,0,0
 212601,Gannon University,Competitive,65%,39%,20,23,---,0,No,0,0
 212656,Geneva College,Competitive,64%,29%,20,24.5,---,0,No,0,0
-212674,Gettysburg College,Highly Competitive,85%,83%,N/A,N/A,++,1,No,0,0
+212674,Gettysburg College,Highly Competitive,85%,83%,N/A,N/A,++ (CSS P),1,No,0,0
 212771,Gratz College,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 212805,Grove City College,Very Competitive,83%,80%,23,26,?,0,No,0,0
 212832,Gwynedd Mercy University,Less Competitive,54%,36%,16,19.5,---,0,No,0,0
 212869,Harcum College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 212878,Harrisburg Area Community College (2 year),2 year (Noncompetitive),19%,14%,N/A,N/A,?,0,No,0,0
-212911,Haverford College,Most Competitive+,91%,87%,31,32.5,+++,1,No,0,0
+212911,Haverford College,Most Competitive+,91%,87%,31,32.5,+++ (CSS P),1,No,0,0
 212975,Commonwealth Technical Institute (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 212984,Holy Family University,Less Competitive,57%,39%,15,17.5,--,0,No,0,0
 212993,Hussian College School of Art,Less Competitive,92%,100%,15,18.5,---,0,No,0,0
@@ -2709,14 +2709,14 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 213358,La Roche College,Less Competitive,47%,29%,17,20,---,0,No,0,0
 213367,La Salle University,Competitive,65%,52%,19,22,---,0,No,0,0
 213376,Lackawanna College,Noncompetitive,30%,17%,N/A,N/A,---,0,No,0,0
-213385,Lafayette College,Most Competitive,89%,86%,27,29,+++,1,No,0,0
+213385,Lafayette College,Most Competitive,89%,86%,27,29,+++ (CSS P),1,No,0,0
 213400,Lancaster Bible College,Competitive,65%,44%,19,22,---,0,No,0,0
 213446,Lancaster Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 213473,Lansdale School of Business (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 213507,Lebanon Valley College,Competitive,75%,59%,21,24.5,---,0,No,0,0
 213525,Lehigh Carbon Community College (2 year),2 year (Noncompetitive),28%,17%,N/A,N/A,?,0,No,0,0
 213534,Berks Technical Institute (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
-213543,Lehigh University,Most Competitive,89%,78%,29,30.5,+++,1,No,0,0
+213543,Lehigh University,Most Competitive,89%,78%,29,30.5,+++ (CSS P),1,No,0,0
 213570,Lincoln Technical Institute-Allentown (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 213589,Lincoln Technical Institute-Philadelphia (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 213598,Lincoln University (HBCU),Noncompetitive,43%,60%,13,15,---,0,Yes,0,0
@@ -2741,7 +2741,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 214148,Moore College of Art and Design (Female only),Not Available,60%,66%,N/A,N/A,---,0,No,0,0
 214157,Moravian College,Not Available,69%,64%,16,19,---,0,No,0,0
 214166,Mount Aloysius College,Competitive,37%,15%,18,19.5,---,0,No,0,0
-214175,Muhlenberg College,Very Competitive,85%,86%,26,28,--,0,No,0,0
+214175,Muhlenberg College,Very Competitive,85%,86%,26,28,-- (CSS P),0,No,0,0
 214254,Brightwood Career Institute-Philadelphia (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 214272,Neumann University,Less Competitive,53%,43%,14,16,---,0,No,0,0
 214290,"New Castle School of Trades (Male only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,++,1,No,0,0
@@ -2777,7 +2777,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 214971,Pennsylvania Academy of the Fine Arts,Not available,56%,46%,N/A,N/A,---,0,No,0,0
 215008,"Pennsylvania Gunsmith School (Male only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 215053,Pennsylvania College of Art and Design,Not available,43%,48%,N/A,N/A,---,0,No,0,0
-215062,University of Pennsylvania,Most Competitive+,95%,93%,32,33.5,+++,1,No,0,0
+215062,University of Pennsylvania,Most Competitive+,95%,93%,32,33.5,+++ (CSS P),1,No,0,0
 215099,Jefferson (Philadelphia University + Thomas Jefferson University),Competitive,63%,54%,20,23,---,0,No,0,0
 215105,The University of the Arts,Not Available,61%,55%,19,23,---,0,No,0,0
 215114,Cairn University-Langhorne,Competitive,60%,38%,16,20,---,0,No,0,0
@@ -2817,7 +2817,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 216047,Saint Charles Borromeo Seminary-Overbrook,Not available,71%,75%,N/A,N/A,---,0,No,0,0
 216083,South Hills School of Business & Technology (2 year),2 year (Noncompetitive),57%,47%,N/A,N/A,---,0,No,0,0
 216278,Susquehanna University,Very Competitive,74%,65%,N/A,N/A,---,0,No,0,0
-216287,Swarthmore College,Most Competitive+,94%,89%,30,32,+++,1,No,0,0
+216287,Swarthmore College,Most Competitive+,94%,89%,30,32,+++ (CSS P),1,No,0,0
 216296,Thaddeus Stevens College of Technology (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 216311,Talmudical Yeshiva of Philadelphia (Male only),Not available,49%,N/A,N/A,N/A,--,0,No,0,0
 216339,Temple University,Very Competitive,71%,64%,N/A,N/A,---,0,No,0,0
@@ -2833,7 +2833,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 216524,Ursinus College,Very Competitive,79%,74%,N/A,N/A,---,0,No,0,0
 216542,University of Valley Forge,Not available,45%,32%,N/A,N/A,---,0,No,0,0
 216551,Valley Forge Military College (2 year),2 year (Noncompetitive),62%,62%,18,21.5,---,0,No,0,0
-216597,Villanova University,Most Competitive,90%,92%,30,31,++/-,1,No,0,0
+216597,Villanova University,Most Competitive,90%,92%,30,31,++/- (CSS P),1,No,0,0
 216630,Washington Hospital School of Nursing (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 216649,Washington Hospital School of Radiologic Technology (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 216667,Washington & Jefferson College,Very Competitive,76%,71%,N/A,N/A,---,0,No,0,0
@@ -2850,15 +2850,15 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 217040,Yeshivath Beth Moshe (Male only),Not available,13%,N/A,N/A,N/A,?,0,No,0,0
 217059,York College of Pennsylvania,Competitive,60%,40%,20,22.5,---,0,No,0,0
 217077,YTI Career Institute-York (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,--,0,No,0,0
-217156,Brown University,Most Competitive+,96%,90%,31,32.5,+++,1,No,0,0
+217156,Brown University,Most Competitive+,96%,90%,31,32.5,+++ (CSS P),1,No,0,0
 217165,Bryant University,Very Competitive,78%,69%,N/A,N/A,---,0,No,0,0
 217235,Johnson & Wales University-Providence,Not available,58%,53%,N/A,N/A,---,0,No,0,0
 217305,New England Institute of Technology,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
-217402,Providence College,Very Competitive,83%,70%,23,25.5,---,0,No,0,0
+217402,Providence College,Very Competitive,83%,70%,23,25.5,--- (CSS P),0,No,0,0
 217420,Rhode Island College,Less Competitive,45%,38%,14,16.5,?,0,No,0,0
 217475,Community College of Rhode Island (2 year),2 year (Noncompetitive),26%,17%,N/A,N/A,?,0,No,0,0
 217484,University of Rhode Island,Competitive,63%,56%,22,24.5,?,0,No,0,0
-217493,Rhode Island School of Design,Not Available,90%,90%,24,27,---,0,No,0,0
+217493,Rhode Island School of Design,Not Available,90%,90%,24,27,--- (CSS P),0,No,0,0
 217518,Roger Williams University,Competitive,63%,62%,N/A,N/A,---,0,No,0,0
 217536,Salve Regina University,Competitive,69%,69%,N/A,N/A,--,0,No,0,0
 217572,St Joseph School of Nursing (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -2886,7 +2886,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 218025,Florence-Darlington Technical College (2 year),2 year (Noncompetitive),23%,17%,N/A,N/A,?,0,No,0,0
 218043,Forrest College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 218061,Francis Marion University,Less Competitive,41%,39%,17,19.5,?,0,No,0,0
-218070,Furman,Very Competitive,84%,73%,N/A,N/A,---,0,No,0,0
+218070,Furman,Very Competitive,84%,73%,N/A,N/A,--- (CSS P),0,No,0,0
 218113,Greenville Technical College (2 year),2 year (Noncompetitive),22%,20%,N/A,N/A,?,0,No,0,0
 218140,Horry-Georgetown Technical College (2 year),2 year (Noncompetitive),28%,23%,N/A,N/A,?,0,No,0,0
 218229,Lander University,Competitive,44%,37%,17,20,?,0,No,0,0
@@ -3008,13 +3008,13 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 221254,O'More College of Design,Less Competitive,61%,38%,18,20,---,0,No,0,0
 221281,Tennessee College of Applied Technology-Paris (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 221333,Tennessee College of Applied Technology-Pulaski (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
-221351,Rhodes College,Highly Competitive,81%,73%,27,29,++,1,No,0,0
+221351,Rhodes College,Highly Competitive,81%,73%,27,29,++ (CSS P),1,No,0,0
 221388,Tennessee College of Applied Technology-Ripley (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 221397,Roane State Community College (2 year),2 year (Noncompetitive),33%,29%,17,19.5,?,0,No,0,0
 221430,Tennessee College of Applied Technology-Crump (2 year),2 year (Noncompetitive),76%,67%,N/A,N/A,?,0,No,0,0
 221485,Southwest Tennessee Community College (2 year),2 year (Noncompetitive),15%,11%,N/A,N/A,?,0,No,0,0
 221494,Tennessee College of Applied Technology-Shelbyville (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
-221519,Sewanee-The University of the South,Most Competitive,80%,65%,N/A,N/A,++,1,No,0,0
+221519,Sewanee-The University of the South,Most Competitive,80%,65%,N/A,N/A,++ (CSS P),1,No,0,0
 221582,Tennessee College of Applied Technology-Oneida-Huntsville (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 221591,Tennessee College of Applied Technology-Crossville (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 221607,Tennessee College of Applied Technology-McMinnville (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -3035,7 +3035,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 221908,Northeast State Community College (2 year),2 year (Noncompetitive),23%,16%,N/A,N/A,?,0,No,0,0
 221953,Tusculum College,Competitive,38%,26%,18,20.5,--,0,No,0,0
 221971,Union University,Very Competitive,66%,37%,23,26.5,---,0,No,0,0
-221999,Vanderbilt University,Most Competitive+,92%,90%,32,33.5,+++,1,No,0,0
+221999,Vanderbilt University,Most Competitive+,92%,90%,32,33.5,+++ (CSS P),1,No,0,0
 222053,Volunteer State Community College (2 year),2 year (Noncompetitive),28%,21%,N/A,N/A,?,0,No,0,0
 222062,Walters State Community College (2 year),2 year (Noncompetitive),30%,17%,N/A,N/A,?,0,No,0,0
 222105,"William Moore College of Technology (Male only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,++/-,1,No,0,0
@@ -3054,7 +3054,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 223083,Baptist Health System School of Health Professions,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 223117,Baptist Missionary Association Theological Seminary,Not available,100%,N/A,N/A,N/A,?,0,No,0,0
 223223,Baylor College of Medicine,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-223232,Baylor University,Highly Competitive,74%,66%,26,28,---,0,No,0,0
+223232,Baylor University,Highly Competitive,74%,66%,26,28,--- (CSS P),0,No,0,0
 223320,Coastal Bend College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 223427,Blinn College (2 year),2 year (Noncompetitive),33%,30%,N/A,N/A,?,0,No,0,0
 223463,Remington College-Dallas Campus,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -3143,7 +3143,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 227526,Prairie View A & M University (HBCU),Less Competitive,31%,46%,15,17,--,0,Yes,0,0
 227687,Ranger College (2 year),2 year (Noncompetitive),34%,35%,N/A,N/A,?,0,No,0,0
 227748,Aviation Institute of Maintenance-Houston (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
-227757,Rice University,Most Competitive+,93%,89%,32,33.5,+++,1,No,0,0
+227757,Rice University,Most Competitive+,93%,89%,32,33.5,+++ (CSS P),1,No,0,0
 227766,Richland College (2 year),2 year (Noncompetitive),28%,26%,N/A,N/A,?,0,No,0,0
 227836,Brightwood College-McAllen (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 227845,Saint Edward's University,Very Competitive,64%,64%,22,24.5,---,0,No,0,0
@@ -3156,7 +3156,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 228149,St. Mary's University,Competitive,58%,56%,19,22,--,0,No,0,0
 228158,South Plains College (2 year),2 year (Noncompetitive),24%,21%,N/A,N/A,?,0,No,0,0
 228194,South Texas College of Law Houston,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-228246,Southern Methodist University,Most Competitive,79%,80%,28,30,---,0,No,0,0
+228246,Southern Methodist University,Most Competitive,79%,80%,28,30,--- (CSS P),0,No,0,0
 228316,Southwest Texas Junior College (2 year),2 year (Noncompetitive),32%,31%,N/A,N/A,?,0,No,0,0
 228325,Southwestern Assemblies of God University,Competitive,43%,34%,19,22,---,0,No,0,0
 228343,Southwestern University,Very Competitive,73%,69%,23,25.5,---,0,No,0,0
@@ -3180,7 +3180,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 228796,The University of Texas at El Paso,Noncompetitive,39%,37%,17,19.5,?,0,No,0,0
 228802,The University of Texas at Tyler,Competitive,42%,39%,20,22.5,?,0,No,0,0
 228866,Texas Chiropractic College Foundation Inc,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-228875,Texas Christian University,Highly Competitive,77%,71%,25,27.5,---,0,No,0,0
+228875,Texas Christian University,Highly Competitive,77%,71%,25,27.5,--- (CSS P),0,No,0,0
 228884,Texas College (HBCU),Noncompetitive,18%,33%,N/A,N/A,---,0,Yes,0,0
 228909,University of North Texas Health Science Center,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 228981,Texas Lutheran University,Competitive,48%,38%,18,20.5,---,0,No,0,0
@@ -3191,7 +3191,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 229115,Texas Tech University,Competitive,60%,52%,22,24.5,---,0,No,0,0
 229160,Texas Wesleyan University,Competitive,35%,33%,19,21,---,0,No,0,0
 229179,Texas Woman's University,Less Competitive,41%,36%,17,20,?,0,No,0,0
-229267,Trinity University,Highly Competitive,81%,75%,27,29,+/---,0,No,0,0
+229267,Trinity University,Highly Competitive,81%,75%,27,29,+/--- (CSS P),0,No,0,0
 229300,The University of Texas Health Science Center at Houston,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 229337,Texas Tech University Health Sciences Center,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 229355,Tyler Junior College,Noncompetitive,19%,15%,N/A,N/A,?,0,No,0,0
@@ -3225,7 +3225,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 230764,University of Utah,Very Competitive,65%,64%,21,24,?,0,No,0,0
 230782,Weber State University,Competitive,35%,25%,N/A,N/A,?,0,No,0,0
 230807,Westminster College,Competitive,61%,60%,22,24.5,---,0,No,0,0
-230816,Bennington College,Most Competitive,68%,52%,N/A,N/A,---,0,No,0,0
+230816,Bennington College,Most Competitive,68%,52%,N/A,N/A,--- (CSS P),0,No,0,0
 230834,Castleton University,Competitive,48%,56%,15,18,?,0,No,0,0
 230852,Champlain College,Competitive,59%,53%,22,25,---,0,No,0,0
 230861,Community College of Vermont (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -3234,7 +3234,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 230913,Johnson State College,Competitive,34%,30%,14,17.5,?,0,No,0,0
 230931,Lyndon State College,Competitive,37%,22%,15,18,?,0,No,0,0
 230940,Marlboro College,Very Competitive,61%,45%,N/A,N/A,---,0,No,0,0
-230959,Middlebury College,Most Competitive+,93%,86%,30,31.5,+++,1,No,0,0
+230959,Middlebury College,Most Competitive+,93%,86%,30,31.5,+++ (CSS P),1,No,0,0
 230977,New England Culinary Institute,Noncompetitive,57%,33%,N/A,N/A,---,0,No,0,0
 230995,Norwich University,Competitive,57%,38%,N/A,N/A,---,0,No,0,0
 231059,Saint Michael's College,Very Competitive,78%,61%,N/A,N/A,---,0,No,0,0
@@ -3250,7 +3250,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 231536,Blue Ridge Community College (2 year),2 year (Noncompetitive),37%,29%,N/A,N/A,?,0,No,0,0
 231554,Bluefield College,Competitive,39%,26%,17,19,---,0,No,0,0
 231581,Bridgewater College,Competitive,60%,49%,20,23,---,0,No,0,0
-231624,College of William and Mary,Most Competitive,91%,89%,28,30.5,?,0,No,0,0
+231624,College of William and Mary,Most Competitive,91%,89%,28,30.5,? (CSS P),0,No,0,0
 231651,Regent University,Less Competitive,39%,29%,17,20,---,0,No,0,0
 231697,Central Virginia Community College (2 year),2 year (Noncompetitive),35%,24%,N/A,N/A,?,0,No,0,0
 231712,Christopher Newport University,Very Competitive,75%,68%,23,25.5,?,0,No,0,0
@@ -3290,7 +3290,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 232937,Norfolk State University (HBCU),Less Competitive,37%,52%,16,18,---,0,Yes,0,0
 232946,Northern Virginia Community College (2 year),2 year (Noncompetitive),32%,26%,N/A,N/A,?,0,No,0,0
 232982,Old Dominion University,Competitive,51%,51%,18,21.5,?,0,No,0,0
-233019,Patrick Henry Community College (2 year),2 year (Noncompetitive),41%,32%,N/A,N/A,?,0,No,0,0
+233019,Patrick Henry Community College (2 year),2 year (Noncompetitive),41%,32%,N/A,N/A,? (CSS P),0,No,0,0
 233037,Paul D Camp Community College (2 year),2 year (Noncompetitive),27%,23%,N/A,N/A,?,0,No,0,0
 233082,Southside Regional Medical Center Professional Schools (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 233091,Miller-Motte Technical College-Lynchburg (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -3302,7 +3302,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 233329,Fortis College-Norfolk (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 233338,Richard Bland College of William and Mary (2 year),2 year (Competitive),50%,41%,N/A,N/A,?,0,No,0,0
 233356,Bon Secours Memorial College of Nursing,Not available,100%,N/A,N/A,N/A,?,0,No,0,0
-233374,University of Richmond,Most Competitive,88%,84%,29,30.5,+++,1,No,0,0
+233374,University of Richmond,Most Competitive,88%,84%,29,30.5,+++ (CSS P),1,No,0,0
 233408,Riverside College of Health Careers (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,--,0,No,0,0
 233426,Roanoke College,Very Competitive,64%,56%,21,24,---,0,No,0,0
 233480,Bon Secours St Mary's Hospital School of Medical Imaging (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -3320,13 +3320,13 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 233921,Virginia Polytechnic Institute and State University,Highly Competitive,84%,77%,22,25,?,0,No,0,0
 233949,Virginia Western Community College (2 year),2 year (Noncompetitive),32%,16%,N/A,N/A,?,0,No,0,0
 234030,Virginia Commonwealth University,Competitive,62%,60%,21,24,?,0,No,0,0
-234076,University of Virginia-Main Campus,Most Competitive,94%,92%,29,31,+++,1,No,0,0
+234076,University of Virginia-Main Campus,Most Competitive,94%,92%,29,31,+++ (CSS P),1,No,0,0
 234085,Virginia Military Institute,Competitive,74%,66%,23,25.5,?,0,No,0,0
 234137,Virginia University of Lynchburg (HBCU),Noncompetitive,32%,32%,N/A,N/A,---,0,Yes,0,0
 234155,Virginia State University (HBCU),Competitive,44%,60%,15,17,---,0,Yes,0,0
 234164,Virginia Union University (HBCU),Competitive,33%,48%,N/A,N/A,---,0,Yes,0,0
 234173,Virginia Wesleyan University,Less Competitive,46%,41%,17,20.5,---,0,No,0,0
-234207,Washington and Lee University,Most Competitive+,92%,100%,30,31.5,+++,1,No,0,0
+234207,Washington and Lee University,Most Competitive+,92%,100%,30,31.5,+++ (CSS P),1,No,0,0
 234377,Wytheville Community College (2 year),2 year (Noncompetitive),39%,28%,N/A,N/A,?,0,No,0,0
 234492,The Art Institute of Seattle,Noncompetitive,24%,18%,N/A,N/A,---,0,No,0,0
 234669,Bellevue College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -3383,7 +3383,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 236975,Wenatchee Valley College,Noncompetitive,31%,34%,N/A,N/A,?,0,No,0,0
 237011,Western Washington University,Competitive,69%,67%,23,25.5,?,0,No,0,0
 237039,Whatcom Community College,Noncompetitive,33%,27%,N/A,N/A,?,0,No,0,0
-237057,Whitman College,Most Competitive,87%,82%,28,30,---,0,No,0,0
+237057,Whitman College,Most Competitive,87%,82%,28,30,--- (CSS P),0,No,0,0
 237066,Whitworth University,Very Competitive,74%,65%,22,25.5,---,0,No,0,0
 237109,Yakima Valley College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0
 237118,Alderson Broaddus University,Competitive,43%,27%,18,20.5,--,0,No,0,0
@@ -3442,7 +3442,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 238892,ITT Technical Institute-Greenfield,Not available,67%,N/A,N/A,N/A,---,0,No,0,0
 238980,Lakeland University,Competitive,53%,42%,16,19,---,0,No,0,0
 239008,Lakeshore Technical College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
-239017,Lawrence University,Highly Competitive,78%,70%,26,28.5,--,0,No,0,0
+239017,Lawrence University,Highly Competitive,78%,70%,26,28.5,-- (CSS P),0,No,0,0
 239071,Maranatha Baptist University,Not available,46%,14%,N/A,N/A,---,0,No,0,0
 239080,Marian University,Less Competitive,47%,20%,17,20,---,0,No,0,0
 239105,Marquette University,Very Competitive,81%,68%,24,26.5,+/---,0,No,0,0
@@ -3565,7 +3565,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 243638,College of Micronesia-FSM (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 243647,Palau Community College (2 year),2 year (Noncompetitive),16%,0%,N/A,N/A,?,0,No,0,0
 243665,University of the Virgin Islands (HBCU),Noncompetitive,23%,37%,12,14,?,0,Yes,0,0
-243744,Stanford University,Most Competitive+,94%,93%,31,33,+++,1,No,0,0
+243744,Stanford University,Most Competitive+,94%,93%,31,33,+++ (CSS P),1,No,0,0
 243780,Purdue University-Main Campus,Most Competitive,77%,70%,25,28,---,0,No,0,0
 243823,Parker University,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
 243832,EDP University of Puerto Rico Inc-San Juan,Not available,34%,34%,N/A,N/A,++,1,No,0,0
@@ -3972,7 +3972,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 430704,Texas Health and Science University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 430795,Carver Career Center (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 430810,New Hampshire Institute of Art,Not available,48%,25%,N/A,N/A,---,0,No,0,0
-430935,Colegio de Cinematografía Artes y Television (2 year),2 year (Noncompetitive),44%,44%,N/A,N/A,+++,1,No,0,0
+430935,Colegio de Cinematograf?�a Artes y Television (2 year),2 year (Noncompetitive),44%,44%,N/A,N/A,+++,1,No,0,0
 431141,Institute of Technology (2 year),2 year (Noncompetitive),61%,60%,N/A,N/A,---,0,No,0,0
 431594,Massachusetts General Hospital Dietetic Internship (Female only),Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 431600,Mercy Hospital School of Nursing (2 year),2 year (Noncompetitive),N/A,N/A,18,19,?,0,No,0,0
@@ -4103,7 +4103,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 440323,Brightwood College-Beaumont (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 440332,Brightwood College-Laredo (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 440341,The Art Institute of Washington,Noncompetitive,24%,20%,N/A,N/A,---,0,No,0,0
-440396,New Saint Andrews College,Noncompetitive,55%,0%,23,25.5,?,0,No,0,0
+440396,New Saint Andrews College,Noncompetitive,55%,0%,23,25.5,? (CSS P),0,No,0,0
 440402,Arkansas State University-Newport (2 year),2 year (Noncompetitive),36%,22%,N/A,N/A,?,0,No,0,0
 440411,Marlboro College Graduate & Professional Studies,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
 440420,University of Phoenix-Massachusetts,Not available,8%,10%,N/A,N/A,---,0,No,0,0
@@ -4379,7 +4379,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 449092,College of Business and Technology-Hialeah (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 449117,Miller-Motte College-Cary (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 449126,Miami-Jacobs Career College-Springboro (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
-449135,Dewey University-Juana Díaz,Noncompetitive,16%,16%,N/A,N/A,++,1,No,0,0
+449135,Dewey University-Juana D?�az,Noncompetitive,16%,16%,N/A,N/A,++,1,No,0,0
 449144,Dewey University-Fajardo (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,++,1,No,0,0
 449250,The College of Health Care Professions-San Antonio (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 449302,Daymar College-Madisonville (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -4476,7 +4476,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 451981,ITT Technical Institute-Madison,Not available,N/A,N/A,N/A,N/A,---,0,No,0,0
 451990,ITT Technical Institute-High Point,Not available,9%,5%,N/A,N/A,---,0,No,0,0
 452009,"The Hair Academy (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0
-452018,The Art Institutes InternationalKansas City,Not available,19%,22%,N/A,N/A,---,0,No,0,0
+452018,The Art Institutes International??Kansas City,Not available,19%,22%,N/A,N/A,---,0,No,0,0
 452027,The Art Institute of Raleigh-Durham,Noncompetitive,19%,9%,N/A,N/A,---,0,No,0,0
 452036,Le Cordon Bleu College of Culinary Arts-Sacramento (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
 452045,Le Cordon Bleu College of Culinary Arts-Seattle (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0
@@ -4633,7 +4633,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 458690,Brightwood College-Arlington (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 458706,Brightwood College-Charlotte (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 458733,Globe University-Madison East,Not available,N/A,N/A,N/A,N/A,---,0,No,0,0
-458779,Globe UniversityWausau,Not available,33%,N/A,N/A,N/A,---,0,No,0,0
+458779,Globe University??Wausau,Not available,33%,N/A,N/A,N/A,---,0,No,0,0
 458885,Strayer University-Arkansas,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0
 458919,Strayer University-Georgia,Noncompetitive,21%,28%,N/A,N/A,---,0,No,0,0
 458955,Strayer University-Mississippi,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
@@ -4648,8 +4648,8 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 459204,Unitek College,Noncompetitive,N/A,N/A,N/A,N/A,---,0,No,0,0
 459213,Gurnick Academy of Medical Arts,Noncompetitive,59%,53%,N/A,N/A,---,0,No,0,0
 459222,Southern California University SOMA,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0
-459259,South UniversityRichmond,Noncompetitive,15%,13%,N/A,N/A,---,0,No,0,0
-459268,South UniversityVirginia Beach,Noncompetitive,17%,17%,N/A,N/A,---,0,No,0,0
+459259,South University??Richmond,Noncompetitive,15%,13%,N/A,N/A,---,0,No,0,0
+459268,South University??Virginia Beach,Noncompetitive,17%,17%,N/A,N/A,---,0,No,0,0
 459277,Aveda Institute-Denver (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0
 459286,Paul Mitchell the School-Colorado Springs (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 459295,"The Salon Professional Academy-Colorado Springs (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0
@@ -4790,7 +4790,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88%,80%,
 475042,Brown Mackie College-Oklahoma City,Not available,N/A,N/A,N/A,N/A,---,0,No,0,0
 475060,Miller-Motte Technical College-Macon (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 475079,"Miller-Motte Technical College-Gulfport (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
-475121,South UniversitySavannah Online,Noncompetitive,2%,2%,N/A,N/A,---,0,No,0,0
+475121,South University??Savannah Online,Noncompetitive,2%,2%,N/A,N/A,---,0,No,0,0
 475130,"Fortis College-Montgomery (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0
 475185,Rio Grande Bible Institute,Not available,52%,9%,N/A,N/A,?,0,No,0,0
 475194,Miller-Motte Technical College-Roanoke (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,---,0,No,0,0

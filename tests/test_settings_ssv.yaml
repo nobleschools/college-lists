@@ -10,24 +10,14 @@
 # This allows individual campuses to customize the header at the top of the page
 counselor_header:
     Standard: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))'
-    Golder: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
-    #Standard: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
-    Comer: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
-    Noble: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
-    RoweClark: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
-    UIC: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
-    Bulls: '=INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&"), "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
-    Rauner: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
-    Johnson: '="("&TEXT(TODAY(),"m/d")&"): "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
-    PAS: '="Campus: "&INDEX(Campus,MATCH(D3,KidIDs,0))'
-
+    Beta HS: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
+    
 print_header: # non-standard note on F1 about the print date
-    Noble: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
-    Rauner: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
+    Beta HS: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
     Standard: ''
 
 print_footer: # non-standard text in E37 with a bar across E:J
-    Johnson: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
+    Beta HS: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     Standard: ''
 
 # This tells the row index (0 reference) for each section
@@ -42,7 +32,7 @@ row_info:
         blank_end: 10
         student_start: 12 #start of data row
         student_end: 36
-    ComerOld:
+    Gamma HS:
         blank_start: 8
         blank_end: 10
         student_start: 12
@@ -169,96 +159,26 @@ goal_descriptions:
         Sign: '>='
         
 school_goals:
-    UIC:
-        - money_safety: 3
-        - money_tgr_only_reach_plus: 3
-        - money_igr_reach_plus: 3
-        - il_public: 1
-    Comer:
-        - money_igr_longshot_plus: 1
-        - money_tgr_only_longshot_plus: 3
-        - igr: 2
-        - tgr_only: 3
-        - money_safety: 2
-        - il_public: 1
-    TNA:
-        - money_igr_longshot_plus: 3
-        - money_tgr_only_longshot_plus: 3
-        - money_safety: 3
-        - il_public: 1
-    Noble:
+    Alpha HS:
         - money_igr_longshot_plus: 3
         - money_tgr_only_longshot_plus: 3
         - il_public: 1
         - money_chicago: 1
-    Golder:
+    Beta HS:
         - igr: 3
         - tgr_only: 3
         - lt_far_below_tgr: 2
-        - reach: 3
-        - match: 3
+        - reach: '[(10,1),(5,2),3]'
+        - match: '[(10,1),4]'
         - lt_safety: 3
         - lt_bad_money: 2
         - lt_longshot_under: 2
-    Speer:
-        - money_tgr_only_longshot_plus: 4
-        - igr: 3
-        - il_public: 1
-        - money_chicago: 1
-    Pritzker:
-        - reach: 3
-        - match: 4
-        - safety: 3
-        - money: 6
-        - tgr_only: 4
-        - igr: 3
-    Hansberry:
-        - tgr_plus: 5
-        - money: 5
-        - safety: 3
-    Bulls:
-        - money: 6
-        - tgr_only: 3
-        - igr: 3
-    Baker:
-        - tgr_plus: 5
-        - money: 5
-        - match_plus: 5
-        - golden_three: 5
-        - lt_total: 14
-    DRW:
-        - il_public: 2
-        - tgr_plus: 5
-        - money: 5
-        - match_plus: 5
-        - golden_three: 5
-    Muchin:
-        - money_igr_longshot_plus: 2
-        - money_tgr_only_longshot_plus: 3
-        - tgr_plus: 4
-        - money_safety: 3
-    Rauner:
-        - reach: '[(8,1),2]'
-        - match: '[(8,2),3]'
-        - safety: '[(8,3),4]'
-        - money: 5
-        - il_match_plus: 1
-        - tgr_only: '[(8,4),5]'
-    RoweClark:
-        - reach: '[(10,1),(5,2),3]'
-        - match: '[(10,1),4]'
-        - safety: '[(5,2),3]'
-        - tgr_only: '[(10,2),4]'
-        - igr: '[(10,2),(5,3),4]'
-        - lt_total: '[(10,6),(5,10),12]'
-        - total: '[(10,4),(5,8),10]'
 
 ############################################################################
 # PDF specific details start here
 pdf_orientation:
     Standard: P
-    Comer: P
-    ComerOld: L
+    Gamma HS: L
 
 pdf_margins:
     top: 0.75

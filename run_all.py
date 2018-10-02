@@ -95,6 +95,7 @@ for campus, names in [
     folder = datetime.datetime.now().strftime(campus+
             '_Counselor_Reports_%m_%d_%Y')
     os.mkdir(folder)
+    sleep(1)
     for x in new_files:
         os.rename(x, folder+'/'+x)
     compress(folder)
@@ -124,4 +125,4 @@ master_dir_after = os.listdir('.')
 new_files = [x for x in master_dir_after if x not in master_dir_before]
 for x in new_files:
     os.rename(x, os.path.join(OUTPUT_FOLDER,x))
-    
+  

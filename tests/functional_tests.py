@@ -8,13 +8,23 @@ import unittest
 import pandas as pd
 
 d = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-test_names = ['Network Weekly Report NOBLE_TEST.xlsx',
-              'Golder Weekly Report NOBLE_TEST.xlsx',
-              'Jeffie Troxler Golder Weekly Report NOBLE_TEST.xlsx']
+test_names = ['Network Weekly Report TEST.xlsx',
+              'Beta HS Weekly Report TEST.xlsx',
+              'Jeffie Troxler Beta HS Weekly Report TEST.xlsx',
+              'Network Weekly Report TEST SSV.pdf',
+              'Beta HS Weekly Report TEST SSV.pdf',
+              'Jeffie Troxler Beta HS Weekly Report TEST SSV.pdf']
 ref_names = ['tests/master_reference_file.xlsx',
-             'tests/golder_reference_file.xlsx',
-             'tests/troxler_reference_file.xlsx']
-sheet_names = ['Students',
+             'tests/beta_reference_file.xlsx',
+             'tests/troxler_reference_file.xlsx',
+             'tests/master_reference_file_ssv.pdf',
+             'tests/beta_reference_file_ssv.pdf',
+             'tests/troxler_reference_file_ssv.pdf',]
+sheet_names = [
+               'Summary',
+               'Students',
+               'SingleStudentView',
+               'SingleStudentViewBlank',
                'Applications',
                ]
 call_stem = 'python "'+os.path.join(d,'create_reports.py')+'"'
@@ -27,14 +37,18 @@ def compare_excel_sheets(file1, file2, sheet_name):
     df_diff = df1[df1!=df2]
     return bool(df_diff.any().any())
 
-class NobleSetupTest(unittest.TestCase):
+def compare_pdf_files(file1, file2):
+    """
+    Compares two PDF files; current just looks at size
+    """
+    return os.path.getsize(file1) == os.path.getsize(file2)
+
+class ListsSetupTest(unittest.TestCase):
     def setUp(self):
-        os.system(call_stem+
-                ' -q -s tests/noble_settings.yaml')
-        os.system(call_stem+
-                ' -q -s tests/noble_settings.yaml -ca Golder')
-        os.system(call_stem+
-            ' -q -s tests/noble_settings.yaml -ca Golder -co "Jeffie Troxler"')
+        base_settings = ' -q -pdf -s tests/test_settings.yaml -sv tests/test_settings_ssv.yaml'
+        os.system(call_stem+base_settings)
+        os.system(call_stem+base_settings+' -ca "Beta HS"')
+        os.system(call_stem+base_settings+' -ca "Beta HS" -co "Jeffie Troxler"')
     def tearDown(self):
         for test_name in test_names:
             try:
@@ -44,12 +58,15 @@ class NobleSetupTest(unittest.TestCase):
             os.rename(test_name, 'tests/'+test_name)
 
     def test_tabs_match_the_example_file(self):
-        for sheet in sheet_names:
-            for i in range(len(test_names)):
-                self.assertIs(compare_excel_sheets(test_names[i], 
-                        ref_names[i], sheet), False)
+        for i in range(len(test_names)):
+            if ref_names[i].endswith('.pdf'):
+                self.assertTrue(compare_pdf_files(test_names[i],ref_names[i]))
+            else:
+                for sheet in sheet_names:
+                    self.assertFalse(compare_excel_sheets(test_names[i], 
+                        ref_names[i], sheet))
 
-        self.fail('Finish the test!')
+        #self.fail('Finish the test!')
 
 
 if __name__ == '__main__':

@@ -59,7 +59,6 @@ def main(settings_file, settings_tabs, campus, counselor, advisor, summary,
                 cfg, campus, debug)
 
     if do_pdf: #will either be True or 'only'
-        print('Creating PDF report')
         make_pdf_report(out.ssv_fn, out.dfs, cfg, cfg_tabs['ssv'],
                 campus, debug)
 

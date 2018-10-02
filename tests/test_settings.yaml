@@ -7,22 +7,37 @@ inputs:
     StandardWeights: inputs/standard_weights.csv
     Strategies: inputs/strategy_definitions.csv
     StudentTargets: inputs/targets_by_strategy.csv
-    current_applications: tests/NOBLE_TEST_applications.csv
-    current_roster: tests/NOBLE_TEST_students.csv
+    SATtoACT: inputs/sat_to_act.csv
+    current_applications: tests/TEST_applications.csv
+    current_roster: tests/TEST_students.csv
+    chart: inputs/strategy_chart.jpg
 
 # The output filename is a combination of these with campus and counselor
 # if chosen via the command line options
 output_file:
     root_name: Weekly Report
-    date_format: 'NOBLE_TEST' # for strftime function
+    date_format: 'TEST' # for strftime function
 
 # An explicit list of all campuses to be included in the default report.
 # Listing explicitly allows for intentional groups specified by alternate yamls
 # these are Noble campuses--to be replaced with generic ones
 all_campuses: # campuses to try if "all" selected
-    - Noble
-    - Golder
-    - RoweClark
+    - Alpha HS
+    - Beta HS
+    - Gamma HS
+
+all_strategies: # list all so summaries include those w/ no students
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
 
 # -------------
 # Labelling convention:
@@ -33,17 +48,18 @@ all_campuses: # campuses to try if "all" selected
 # -------------
 
 # This allows individual campuses to customize the sorting behavior
+# (Standard Excel sorts by LastFirst, but this influences PDF output)
 sort_students:
     Standard: '=%Counselor%&%LastFirst%'
-    Golder: '=%Cohort%&%Counselor%&%LastFirst%'
+    Beta HS: '=%Cohort%&%Counselor%&%LastFirst%'
 
 # This allows individual schools to customize odds/class language
 category_labels:
     Standard:
         TargetGR: Target
         IdealGR: Ideal
-        BelowGR: Below Target
-        FarBelowGR: Far Below Target
+        BelowTGR: Below Target
+        FarBelowTGR: Far Below Target
         SureThing: Sure Thing
         Secure: Secure
         Safety: Safety
@@ -51,11 +67,11 @@ category_labels:
         Reach: Reach
         Longshot: Longshot
         HailMary: Hail Mary
-    Golder:
+    Beta HS:
         TargetGR: Expected
         IdealGR: Ideal
-        BelowGR: Below Expected
-        FarBelowGR: Far Below Expected
+        BelowTGR: Below Expected
+        FarBelowTGR: Far Below Expected
         SureThing: Sure Thing
         Secure: Secure
         Safety: Safety
@@ -63,7 +79,7 @@ category_labels:
         Reach: Reach
         Longshot: Longshot
         HailMary: Hail Mary
-    RoweClark:
+    Gamma HS:
         TargetGR: Average
         IdealGR: Ideal
         BelowGR: Minimum
@@ -95,6 +111,10 @@ excel_formats:
         num_format: 0%
         align: center
         bottom: 3
+    single_percent_centered_solid_bottom:
+        num_format: 0%
+        align: center
+        bottom: 1
     single_percent_centered_right:
         num_format: 0%
         align: center
@@ -104,6 +124,11 @@ excel_formats:
         align: center
         right: 1
         bottom: 3
+    single_percent_centered_right_solid_bottom:
+        num_format: 0%
+        align: center
+        right: 1
+        bottom: 1
     percent_bold_fmt:
         num_format: 0.0%
         bold: True
@@ -111,53 +136,96 @@ excel_formats:
         num_format: '0.00'
         align: center
     centered_integer:
-        num_format: 0
+        num_format: '#0'
         align: center
     centered_integer_dash_bottom:
-        num_format: 0
+        num_format: '#0'
         align: center
         bottom: 3
     centered_integer_right:
-        num_format: 0
+        num_format: '#0'
         align: center
         right: 1
+    centered_integer_right_solid_bottom:
+        num_format: '#0'
+        align: center
+        right: 1
+        bottom: 1
     bold_centered_integer_right:
-        num_format: 0
+        num_format: '#0'
         align: center
         right: 1
         bold: True
     centered_integer_right_dash_bottom:
-        num_format: 0
+        num_format: '#0'
         align: center
         right: 1
         bottom: 3
     bold_centered_integer_right_dash_bottom:
-        num_format: 0
+        num_format: '#0'
         align: center
         right: 1
         bottom: 3
         bold: True
 
+    centered_summary:
+        num_format: '#0'
+        align: center
+        top: 1
+        bottom: 6
+        bold: True
+    centered_summary_right:
+        num_format: '#0'
+        align: center
+        top: 1
+        bottom: 6
+        right: 1
+        bold: True
+    single_percent_centered_summary:
+        num_format: 0%
+        align: center
+        top: 1
+        bottom: 6
+        bold: True
+    single_percent_centered_summary_right:
+        num_format: 0%
+        align: center
+        top: 1
+        bottom: 6
+        right: 1
+        bold: True
+
+
     # non-colored non-number formats
     centered:
+        num_format: '#0'
         align: center
+    centered_right:
+        num_format: '#0'
+        align: center
+        right: 1
     right:
+        num_format: '#0'
         right: 1
     bold:
+        num_format: '#0'
         bold: True
         align: left
     bold_wrap:
+        num_format: '#0'
         bold: True
         align: left
         text_wrap: True
         bottom: 1
     bold_center_wrap:
+        num_format: '#0'
         bold: True
         align: center
         valign: top
         text_wrap: True
         bottom: 1
     bold_center_wrap_right:
+        num_format: '#0'
         bold: True
         align: center
         valign: top
@@ -173,6 +241,11 @@ excel_formats:
         bottom: 0
     dash_bottom:
         bottom: 3
+    solid_bottom:
+        bottom: 1
+    solid_bottom_right:
+        bottom: 1
+        right: 1
     dash_bottom_right:
         bottom: 3
         right: 1
@@ -358,11 +431,22 @@ excel_formats:
         bold: True
 
     # red
+    bold_red:
+        bold: True
+        bg_color: "#FF0000"
+
     bold_red_underline:
         bold: True
         bg_color: "#FF0000"
         align: left
         underline: True
+    bold_red_center_wrap:
+        bg_color: "#FF0000"
+        bold: True
+        align: center
+        valign: top
+        text_wrap: True
+        bottom: 1
     bold_red_center_wrap_right:
         bg_color: "#FF0000"
         bold: True
@@ -371,3 +455,229 @@ excel_formats:
         text_wrap: True
         bottom: 1
         right: 1
+
+    ### Formats specifically for single student view (may overlap
+    ### with the above, but wanted to keep these clear)
+    # for the hidden left section
+    ssv_yellow:
+        bg_color: "#FFFF00"
+    ssv_percent:
+        num_format: 0%
+    ssv_yellow_percent:
+        bg_color: "#FFFF00"
+        num_format: 0%
+    # for the header
+    ssv_title:
+        font_size: 14
+        bold: True
+    ssv_date:
+        italic: True
+        valign: vcenter
+    ssv_counselor_title:
+        bold: True
+        valign: vcenter
+    ssv_student_prompt:
+        bg_color: "#dce6f1"
+        bold: True
+        top: 2
+        left: 2
+        right: 2
+        bottom: 1
+    ssv_select_student:
+        bg_color: "#fde9d9"
+        top: 1
+        left: 2
+        right: 2
+        bottom: 2
+    ssv_odds_title:
+        bg_color: "#dce6f1"
+        bold: True
+        top: 2
+        left: 2
+    ssv_odds_title_b:
+        bold: True
+        num_format: '#'
+        align: center
+        bg_color: "#dce6f1"
+        top: 2
+    ssv_odds_title_c:
+        bg_color: "#dce6f1"
+        top: 2
+        right: 2
+    ssv_mtgr_label:
+        left: 2
+    ssv_migr_label:
+        left: 2
+        bottom: 2
+    ssv_migr_label_b:
+        bottom: 2
+    ssv_act:
+        num_format: '#'
+        align: center
+        left: 2
+        bottom: 2
+    ssv_gpa:
+        num_format: '0.00'
+        align: center
+        right: 2
+        bottom: 2
+    ssv_act_title:
+        bg_color: "#dce6f1"
+        top: 2
+        left: 2
+        bottom: 1
+        align: center
+    ssv_gpa_title:
+        bg_color: "#dce6f1"
+        top: 2
+        right: 2
+        bottom: 1
+        align: center
+    ssv_select_college:
+        bg_color: "#fde9d9"
+        top: 1
+        left: 1
+        right: 1
+        bottom: 1
+    ssv_mtgr:
+        num_format: '0%'
+        align: center
+        right: 2
+    ssv_migr:
+        num_format: '0%'
+        align: center
+        right: 2
+        bottom: 2
+    ssv_race_title:
+        bg_color: "#dce6f1"
+        align: center
+        top: 1
+        bottom: 1
+    ssv_race:
+        align: center
+    ssv_igr_title:
+        bg_color: "#dce6f1"
+        top: 2
+        left: 2
+        bottom: 1
+        align: center
+    ssv_tgr_title:
+        bg_color: "#dce6f1"
+        bottom: 2
+        left: 2
+        align: center
+    ssv_igr:
+        num_format: '0%'
+        align: center
+        top: 2
+        right: 2
+        bottom: 1
+    ssv_tgr:
+        num_format: '0%'
+        align: center
+        right: 2
+        bottom: 2
+
+    # for the blank section
+    ssv_schools_blank_prompt:
+        bg_color: "#dce6f1"
+        bold: True
+        text_wrap: True
+    ssv_blank_title:
+        bg_color: "#dce6f1"
+        bold: True
+        text_wrap: True
+        align: center
+    ssv_blank_title_small:
+        bg_color: "#dce6f1"
+        bold: True
+        text_wrap: True
+        align: center
+        font_size: 10
+    ssv_blank_title_right:
+        bg_color: "#dce6f1"
+        bold: True
+        text_wrap: True
+        align: center
+        right: 1
+    ssv_blank_title_small_right:
+        bg_color: "#dce6f1"
+        bold: True
+        text_wrap: True
+        align: center
+        font_size: 10
+        right: 1
+    ssv_color_1:
+        bg_color: '#92d050'
+    ssv_color_2:
+        bg_color: '#FFC000'
+    ssv_color_3:
+        bg_color: '#95b3d7'
+    ssv_color_4:
+        bg_color: 'yellow'
+    ssv_color_5:
+        bg_color: '#c4d79b'
+    ssv_color_6:
+        bg_color: '#fabf8f'
+    ssv_select_college:
+        bg_color: "#fde9d9"
+        top: 1
+        left: 1
+        right: 1
+        bottom: 1
+    ssv_gr:
+        num_format: '0%'
+        align: center
+    ssv_cond_blue_bold:
+        font_color: '#002060'
+        bold: True
+    ssv_cond_red_grey:
+        font_color: '#FF0000'
+        bg_color: '#D9D9D9'
+    ssv_cond_non_empty:
+        left: 1
+        right: 1
+    ssv_goals_intro:
+        bold: True
+        italic: True
+        underline: True
+    ssv_goals_t1:
+        bg_color: "#dce6f1"
+        bold: True
+        indent: 6
+        top: 2
+        left: 2
+    ssv_goals_t2:
+        bg_color: "#dce6f1"
+        bold: True
+        align: center
+        top: 2
+    ssv_goals_t3:
+        bg_color: "#dce6f1"
+        bold: True
+        align: center
+        top: 2
+        right: 2
+    ssv_goal_text:
+        indent: 7
+        left: 2
+    ssv_goal_text_end:
+        indent: 7
+        left: 2
+        bottom: 2
+    ssv_goal_eval:
+        align: center
+    ssv_goal_eval_end:
+        align: center
+        bottom: 2
+    ssv_goal_result:
+        align: center
+        right: 2
+    ssv_goal_result_end:
+        align: center
+        right: 2
+        bottom: 2
+    ssv_footer:
+        bold: True
+        italic: True
+        top: 1
