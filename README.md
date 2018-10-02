@@ -6,7 +6,7 @@ aid in the counseling of seniors on their college lists.
 
 In addition to the master Excel sheet with multiple tabs, it can
 also produce a PDF report with one page per student, analyzing
-their [./ssv_example.pdf](current college lists).
+their [current college lists](./ssv_example.pdf).
 
 ## It has two data inputs:
 - current_applications.csv: an applications file (formatted like a Naviance export)
