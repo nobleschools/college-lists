@@ -16,6 +16,7 @@ def compress(filefolder):
             myzip.write(file)
             os.remove(file)
     os.chdir('..')
+    sleep(1)
     os.rmdir(filefolder)
 
 # To begin the script, take a snapshot of the folder to move to final output
@@ -25,6 +26,7 @@ master_dir_before = os.listdir('.')
 call_stem = 'python create_reports.py'
 
 t0 = time()
+
 os.system(call_stem+' -sum Campus')
 print('Network: {:.2f} seconds'.format(time()-t0),flush=True)
 
@@ -64,8 +66,8 @@ for campus_case in [
         'Speer',
         'TNA',
         'PAS',
-        #'listKIPP.csv',
-        #'listGCMS.csv',
+        'listKIPP.csv',
+        'listGCMS.csv',
         ]:
     t0 = time()
     print('Generating {}...'.format(campus_case),flush=True,end='')
@@ -73,6 +75,7 @@ for campus_case in [
     print('{:.2f} seconds'.format(time()-t0),flush=True)
 
 # Now do counselor specific cases for a handful of campuses
+
 for campus, names in [
         ['Pritzker',['"Ashley McCaw"', '"Jane Knoche"',
          '"Mark Williams"', '"Sarah Kruger"']],
@@ -117,12 +120,13 @@ for campus, names in [
     this_dir_after = os.listdir('.')
     new_files = [x for x in this_dir_after if x not in this_dir_before]
     for new_file in new_files:
-        os.rename(new_file, new_file.replace(campus,campus[0]+'_Advisor'))
+        new_name = new_file.replace(campus,campus[0]+'_Advisor')
+        new_name = new_name.replace('Johnson','Johnsn')
+        os.rename(new_file, new_name)
 
 # After all reports are created, move them to the final destination folder
 sleep(3)
 master_dir_after = os.listdir('.')
 new_files = [x for x in master_dir_after if x not in master_dir_before]
 for x in new_files:
-    os.rename(x, os.path.join(OUTPUT_FOLDER,x))
-  
+    os.rename(x, os.path.join(OUTPUT_FOLDER,x))  

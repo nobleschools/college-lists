@@ -34,6 +34,7 @@ def _clean_excel(string, data_row, labels):
     translation = OrderedDict([
             ['TEXT(TODAY(),"mm/dd")', date.today().strftime('%m/%d')],
             ['TEXT(TODAY(),"m/d")', date.today().strftime('%m/%d')],
+            ['INDEX(EFC,MATCH(D3,KidIDs,0))','tbl:EFC'],
             ['INDEX(Counselor,MATCH(D3,KidIDs,0))','tbl:Counselor'],
             ['INDEX(Advisors,MATCH(D3,KidIDs,0))','tbl:Advisor'],
             ['INDEX(Cohort,MATCH(D3,KidIDs,0))','tbl:Cohort'],
@@ -54,7 +55,7 @@ def _clean_excel(string, data_row, labels):
         if old in string:
             if new.startswith('tbl:'):
                 string = string.replace(old, _notnan(
-                    data_row[new[4:]],'N/A',{}))
+                    data_row[new[4:]],'N/A','{}'))
             else:
                 string = string.replace(old, new)
     return string

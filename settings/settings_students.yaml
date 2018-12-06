@@ -611,6 +611,7 @@ students_columns:
 #
 student_names:
     Campus: Campus
+    EFC: EFC
     LastFirst: LastFirst
     KidFirst: First
     KidLast: Last

@@ -21,13 +21,15 @@ counselor_header:
     Johnson: '="("&TEXT(TODAY(),"m/d")&"): "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
     PAS: '="Campus: "&INDEX(Campus,MATCH(D3,KidIDs,0))'
 
-print_header: # non-standard note on F1 about the print date
+print_header: # non-standard note on F1 about the print date or other
     Noble: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
     Rauner: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
+    Pritzker: '="EFC: "&INDEX(EFC,MATCH(D3,KidIDs,0))'
     Standard: ''
 
 print_footer: # non-standard text in E37 with a bar across E:J
     Johnson: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
+    #Standard: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     Standard: ''
 
 # This tells the row index (0 reference) for each section
@@ -174,6 +176,14 @@ school_goals:
         - money_tgr_only_reach_plus: 3
         - money_igr_reach_plus: 3
         - il_public: 1
+    Johnson:
+        - reach: 2
+        - match: 3
+        - il_public: 2
+        - safety: 3
+        - money: 5
+        - tgr_only: 3
+        - igr: 2
     Comer:
         - money_igr_longshot_plus: 1
         - money_tgr_only_longshot_plus: 3
@@ -237,6 +247,7 @@ school_goals:
         - money_tgr_only_longshot_plus: 3
         - tgr_plus: 4
         - money_safety: 3
+    #For these lists, the structure is >=x then y, else (next...)
     Rauner:
         - reach: '[(8,1),2]'
         - match: '[(8,2),3]'
@@ -245,13 +256,13 @@ school_goals:
         - il_match_plus: 1
         - tgr_only: '[(8,4),5]'
     RoweClark:
-        - reach: '[(10,1),(5,2),3]'
-        - match: '[(10,1),4]'
+        - reach: '[(9,1),(5,2),3]'
+        - match: '[(9,1),4]'
         - safety: '[(5,2),3]'
-        - tgr_only: '[(10,2),4]'
-        - igr: '[(10,2),(5,3),4]'
-        - lt_total: '[(10,6),(5,10),12]'
-        - total: '[(10,4),(5,8),10]'
+        - tgr_only: '[(9,2),4]'
+        - igr: '[(9,3),(5,3),4]'
+        - lt_total: '[(9,6),(5,10),12]'
+        - total: '[(9,4),(5,8),10]'
 
 ############################################################################
 # PDF specific details start here

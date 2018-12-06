@@ -64,12 +64,13 @@ all_strategies: # list all so summaries include those w/ no students
 # (Standard Excel sorts by LastFirst, but this influences PDF output)
 sort_students:
     Standard: '=%Counselor%&%LastFirst%'
+    #Standard: '=%Advisor%&%LastFirst%'
     Rauner: '=%Cohort%&%Counselor%&%LastFirst%'
     Bulls: '=%Cohort%&%Counselor%&%LastFirst%'
     UIC: '=%Counselor%&%Cohort%&%LastFirst%'
-    Comer: '=%Counselor%&%Cohort%&%LastFirst%'
+    #Comer: '=%Counselor%&%Cohort%&%LastFirst%'
     DRW: '=%Counselor%&%Cohort%&%LastFirst%'
-    RoweClark: '=%Advisor%&%LastFirst%'
+    RoweClark: '=%Cohort%&%LastFirst%'
     PAS: '=%Campus%&%LastFirst%'
     Golder: '=%Cohort%&%LastFirst%'
 
