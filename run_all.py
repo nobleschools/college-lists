@@ -82,6 +82,7 @@ for campus, names in [
         ['Golder',['"Edith Flores"','"Julie Horning"','"Lauren Chelew"']],
         ['Muchin',['"Paul Farrand"','"Emily Morgan"','"Emmanuel Jackson"',
             '"Dominique Vega"']],
+        ['RoweClark',['Abreu','Uribe','Villa']],
         ['TNA',['"Daisy Bermudez"','"Sarah MacCallum"','"Courtney Wilson"']],
         ['UIC',['Camacho','Bowdy','Beene','Fraga']],
         ]:
