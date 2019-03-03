@@ -92,14 +92,14 @@ for campus, names in [
         print('Generating {}...'.format(campus+';'+name),flush=True,end='')
         os.system(call_stem+' -q -pdf -ca '+campus+' -co '+name)
         print('{:.2f} seconds'.format(time()-t0),flush=True)
-    sleep(1)
+    sleep(2)
     this_dir_after = os.listdir('.')
     new_files = [x for x in this_dir_after if x not in this_dir_before]
     print(new_files)
     folder = datetime.datetime.now().strftime(campus+
             '_Counselor_Reports_%m_%d_%Y')
     os.mkdir(folder)
-    sleep(1)
+    sleep(3)
     for x in new_files:
         os.rename(x, folder+'/'+x)
     compress(folder)
@@ -126,7 +126,7 @@ for campus, names in [
         os.rename(new_file, new_name)
 
 # After all reports are created, move them to the final destination folder
-sleep(3)
+sleep(6)
 master_dir_after = os.listdir('.')
 new_files = [x for x in master_dir_after if x not in master_dir_before]
 for x in new_files:

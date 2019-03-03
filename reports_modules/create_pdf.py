@@ -304,6 +304,8 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
                 (w[3], 'For you,', 0),
                 (w[4], '', 0),
                 (w[5], '', 1)
+                # (0.8,'Award',0), # Replace the above with these two for new "award" column
+                # (0.9,'Award letter',1)
                 ]:
             pdf.cell(w=w_this, h=h[7], txt=txt_this, ln=ln_this,
                 border=0, align='C', fill=True)
@@ -318,6 +320,8 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
                 (w[3], 'school is a', 0),
                 (w[4], 'App Status', 0),
                 (w[5], 'Award code', 1)
+                # (0.80, 'code', 0), # Replace the above with these two for new "award" column
+                # (0.9, 'received', 1)
                 ]:
             pdf.cell(w=w_this, h=h[8], txt=txt_this, ln=ln_this,
                 border=0, align='C', fill=True)
@@ -358,7 +362,7 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
                                    'N/A','{:2.0%}'), 0),
                      (w[3], app_data['local_class'], 0),
                      (w[4], app_data['local_result'], 0),
-                     (w[5], _notnan(app_data['local_money_code'],
+                     (w[5], _notnan(app_data['local_money_code'],#(0.8, _notnan(app_data['local_money_code'],
                                                             'N/A','{}'), 1)
                 ]:
                     pdf.cell(w=w_, h=h[9], txt=txt_, align='C', fill=False,
@@ -440,6 +444,8 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         for x in [1, 2, 4, 5]:
             pdf.line(left_margin+sum(w[:x]),line_top,
                      left_margin+sum(w[:x]),line_bottom)
+        #pdf.line(left_margin+sum(w[:x])+0.8,line_top,
+        #         left_margin+sum(w[:x])+0.8,line_bottom)
 
     # The font we use is missing an unusued glyph and so throws two warnings
     # at save. The next three lines supress this, but probably good to
