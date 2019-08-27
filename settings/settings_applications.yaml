@@ -107,7 +107,7 @@ applications_calculations: # definitions for calculated columns in order
         formula: =IF(ISNUMBER(%Odds%),IF(%Odds%>=99,IF(OR(%Strategy%=10,%Strategy%=11),MatchLabel,SureThingLabel),IF(%Odds%>=95,SecureLabel,IF(%Odds%>=80,SafetyLabel,IF(%Odds%>=50,MatchLabel,IF(%Odds%>=20,ReachLabel,IF(%Odds%>=10,LongshotLabel,HailMaryLabel)))))),"Other")
         format: bold_olive
     - Result:
-        formula: =IF(OR(%result_code%="accepted",%result_code%="cond. accept",%result_code%="summer admit"),IF(%attending%="yes","CHOICE!","Accepted!"),IF(%result_code%="denied","Denied",IF(%waitlisted%=1,"Waitlist",IF(%deferred%=1,"Deferred",IF(%stage%="pending","Pending",IF(OR(%stage%="initial materials submitted",%stage%="mid-year submitted",%stage%="final submitted"),"Submitted",IF(%type%="interest","Interest","?")))))))
+        formula: =IF(OR(%result_code%="accepted",%result_code%="cond. accept",%result_code%="summer admit"),IF(%attending%="yes","CHOICE!","Accepted!"),IF(%result_code%="guar. transfer","Guar. Xfer",IF(%result_code%="denied","Denied",IF(%waitlisted%=1,"Waitlist",IF(%deferred%=1,"Deferred",IF(%stage%="pending","Pending",IF(OR(%stage%="initial materials submitted",%stage%="mid-year submitted",%stage%="final submitted"),"Submitted",IF(%type%="interest","Interest","?"))))))))
         format: bold_olive
 
     - ReachOrBetter:

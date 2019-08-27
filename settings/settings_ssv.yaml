@@ -12,7 +12,7 @@ counselor_header:
     Standard: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))'
     Golder: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
     #Standard: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
-    Comer: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
+    Comer: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     Noble: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     RoweClark: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&", Advr: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     UIC: '="Cnslr: "&INDEX(Counselor,MATCH(D3,KidIDs,0))&" ("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'

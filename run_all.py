@@ -99,12 +99,13 @@ for campus, names in [
     folder = datetime.datetime.now().strftime(campus+
             '_Counselor_Reports_%m_%d_%Y')
     os.mkdir(folder)
-    sleep(3)
+    sleep(6)
     for x in new_files:
         os.rename(x, folder+'/'+x)
     compress(folder)
 
 # Finally, do advisor specific cases where requested
+"""
 for campus, names in [
         ['Muchin',['"Russ"','"Ramos/Gerber"','"Kimble"','"Johnson/Kennedy"',
                    '"Pak"','"Powers/Lin"','"Hercule/Reit"','"J Farrand/Lee"',
@@ -124,6 +125,7 @@ for campus, names in [
         new_name = new_file.replace(campus,campus[0]+'_Advisor')
         new_name = new_name.replace('Johnson','Johnsn')
         os.rename(new_file, new_name)
+"""
 
 # After all reports are created, move them to the final destination folder
 sleep(6)
