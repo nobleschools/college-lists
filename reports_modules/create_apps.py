@@ -100,7 +100,7 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
     roster_fields = [('local_gpa', 'GPA', np.nan),
                      # The next line is calculated from the SAT and ACT
                      # provided in the roster table
-                     ('local_act', 'local_act_max', np.nan),
+                     ('local_sat', 'local_sat_max', np.nan),
                      ('local_race','Race/ Eth', 'TBD'),
                      ]
     for local_label, roster_label, na_val in roster_fields:
@@ -109,8 +109,8 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
 
     # B.2. second from college table
     college_fields = [('local_barrons', 'SimpleBarrons', 'N/A'),
-                      ('local_act_25', 'AdjACT25', np.nan),
-                      ('local_act_50', 'AdjACT50', np.nan),
+                      ('local_sat_25', 'AdjSAT25', np.nan),
+                      ('local_sat_50', 'AdjSAT50', np.nan),
                       ('local_money', 'MoneyYesNo', 0),
                       ('local_6yr_all', 'Adj6yrGrad_All', np.nan),
                       ('local_6yr_aah', 'Adj6yrGrad_AA_Hisp', np.nan),
@@ -124,7 +124,7 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
     
     # B.3. third from the standard odds table
     weights_fields = [('local_gpa_ca', 'GPAcoef'),
-                      ('local_act_ca', 'ACT-coef'),
+                      ('local_sat_ca', 'SAT-coef'),
                       ('local_inta', 'Intercept'),
                       ]
     df['local_frace'] = df['local_race'].apply(
@@ -135,7 +135,7 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
                 args=(dfs['StandardWeights'], coef_label, np.nan))
 
     cweights_fields = [('local_gpa_cb', 'GPAcoef'),
-                      ('local_act_cb', 'ACTcoef'),
+                      ('local_sat_cb', 'SATcoef'),
                       ('local_intb', 'Intercept'),
                       ]
     coef_index = df['local_race'] + ':' + df['NCES'].apply(str)
@@ -146,22 +146,22 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
 
 
     # C. then add calculated columns (for use internal use, not publishing)
-    # the next row picks "act 25" if race is "H" or "B" and "act 50 otherwise
-    df['local_act_25_50'] = df['local_act_25'].where(
-            df['local_race'].isin(['H','B']), df['local_act_50'])
+    # the next row picks "sat 25" if race is "H" or "B" and "sat 50 otherwise
+    df['local_sat_25_50'] = df['local_sat_25'].where(
+            df['local_race'].isin(['H','B']), df['local_sat_50'])
     df['local_logita'] = (
             df['local_gpa_ca']*df['local_gpa']+
-            (df['local_act']-df['local_act_25_50'])*df['local_act_ca']+
+            (df['local_sat']-df['local_sat_25_50'])*df['local_sat_ca']+
             df['local_inta'])
     df['local_logitb'] = (
             df['local_gpa_cb']*df['local_gpa']+
-            df['local_act_cb']*df['local_act']+
+            df['local_sat_cb']*df['local_sat']+
             df['local_intb'])
     # For community colleges, the "a" method for logit has coefficients
     # equal to exactly 1 for all three coefficients. In this special
     # case, the odds should automatically be 100
     df['local_auto100'] = df[['local_gpa_ca',
-                              'local_act_ca',
+                              'local_sat_ca',
                               'local_inta']].apply(_all_ones, axis=1)
     df['local_final_logit'] = df['local_logitb'].where(
             pd.notnull(df['local_logitb']), df['local_logita'])

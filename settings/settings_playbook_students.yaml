@@ -97,8 +97,8 @@ students_columns:
         head_format: bold_olive_underline
         label_format: bold_olive_center_wrap
         cond_format: dash_bottom
-    - local_act:
-        formula: 'tbl:local_act_max'
+    - local_sat:
+        formula: 'tbl:local_sat_max'
         format: centered
         width: 6.00
         head_text: ''
@@ -151,6 +151,6 @@ student_names:
     KidGPAs: GPA
     ActualACT: 'Actual ACT'
     ActualSAT: 'Actual SAT'
-    KidACTs: 'High "ACT"'
+    KidSATs: 'High "SAT"'
     KidRace: 'Race / Eth'
     Strats: Stra-tegy

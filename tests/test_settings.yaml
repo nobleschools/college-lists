@@ -7,7 +7,7 @@ inputs:
     StandardWeights: inputs/standard_weights.csv
     Strategies: inputs/strategy_definitions.csv
     StudentTargets: inputs/targets_by_strategy.csv
-    SATtoACT: inputs/sat_to_act.csv
+    ACTtoSAT: inputs/act_to_sat.csv
     current_applications: tests/TEST_applications.csv
     current_roster: tests/TEST_students.csv
     chart: inputs/strategy_chart.jpg

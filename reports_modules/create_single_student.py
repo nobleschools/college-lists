@@ -87,7 +87,7 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
     safe_write(ws, 1, 5, 'ACT/SAT', f_db['ssv_act_title'])
     safe_write(ws, 2, 5, '=INDEX(ActualACT,MATCH(D3,KidIDs,0))&"/"&'+
             'INDEX(ActualSAT,MATCH(D3,KidIDs,0))', f_db['ssv_act'])
-    safe_write(ws, 3, 5, '=INDEX(KidACTs,MATCH(D3,KidIDs,0))',
+    safe_write(ws, 3, 5, '=INDEX(KidSATs,MATCH(D3,KidIDs,0))',
             f_db['ssv_odds_title_b'])
     safe_write(ws, 5, 5, '', f_db['ssv_migr_label_b'])
 
@@ -139,15 +139,15 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
             f_db['ssv_blank_title'])
     safe_write(ws, 7, 10, 'Comp tier', f_db['ssv_color_1'])
     safe_write(ws, 7, 11, 'MoneyYesNo', f_db['ssv_color_1'])
-    safe_write(ws, 7, 12, 'ACT25', f_db['ssv_color_2'])
+    safe_write(ws, 7, 12, 'SAT25', f_db['ssv_color_2'])
     safe_write(ws, 7, 13, 'GPA', f_db['ssv_color_3'])
-    safe_write(ws, 7, 14, 'ACT', f_db['ssv_color_3'])
+    safe_write(ws, 7, 14, 'SAT', f_db['ssv_color_3'])
     safe_write(ws, 7, 15, 'GPAcoefB', f_db['ssv_color_4'])
-    safe_write(ws, 7, 16, 'ACTcoefB', f_db['ssv_color_4'])
+    safe_write(ws, 7, 16, 'SATcoefB', f_db['ssv_color_4'])
     safe_write(ws, 7, 17, 'InterceptB', f_db['ssv_color_4'])
     safe_write(ws, 7, 18, 'LogitB', f_db['ssv_color_4'])
     safe_write(ws, 7, 19, 'GPAcoefA', f_db['ssv_color_5'])
-    safe_write(ws, 7, 20, 'ACTcoefA', f_db['ssv_color_5'])
+    safe_write(ws, 7, 20, 'SATcoefA', f_db['ssv_color_5'])
     safe_write(ws, 7, 21, 'InterceptA', f_db['ssv_color_5'])
     safe_write(ws, 7, 22, 'LogitA', f_db['ssv_color_5'])
     safe_write(ws, 7, 23, 'FinalLogit', f_db['ssv_color_5'])
@@ -203,13 +203,13 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
         safe_write(ws, r, 11,'=IF(ISERROR(D'+r_excel+
                 '),"",INDEX(AllCollegeMoney,MATCH(D'+r_excel+
                 ',AllCollegeNCES,0)))')
-        safe_write(ws, r, 12,'=INDEX(AllCollegeACT25,MATCH(D'+r_excel+
+        safe_write(ws, r, 12,'=INDEX(AllCollegeSAT25,MATCH(D'+r_excel+
                 ',AllCollegeNCES,0))')
         safe_write(ws, r, 13,'=G3')
         safe_write(ws, r, 14,'=F4')
         safe_write(ws, r, 15,'=INDEX(CustomWeightsGPA,MATCH($H3&":"&$D'+
                 r_excel+',CustomWeightsIndex,0))')
-        safe_write(ws, r, 16,'=INDEX(CustomWeightsACT,MATCH($H3&":"&$D'+
+        safe_write(ws, r, 16,'=INDEX(CustomWeightsSAT,MATCH($H3&":"&$D'+
                 r_excel+',CustomWeightsIndex,0))')
         safe_write(ws, r, 17,'=INDEX(CustomWeightsIntercept,MATCH($H3&":"&$D'+
                 r_excel+',CustomWeightsIndex,0))')
@@ -217,7 +217,7 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
                 '*O'+r_excel+'+R'+r_excel+'')
         safe_write(ws, r, 19,'=INDEX(CoefficientsGPA,MATCH($H3&":"&$K'+
                 r_excel+',CoefficientsIndex,0))')
-        safe_write(ws, r, 20,'=INDEX(CoefficientsACT,MATCH($H3&":"&$K'+
+        safe_write(ws, r, 20,'=INDEX(CoefficientsSAT,MATCH($H3&":"&$K'+
                 r_excel+',CoefficientsIndex,0))')
         safe_write(ws, r, 21,'=INDEX(CoefficientsIntercept,MATCH($H3&":"&$K'+
                 r_excel+',CoefficientsIndex,0))')

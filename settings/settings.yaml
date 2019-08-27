@@ -7,7 +7,7 @@ inputs:
     StandardWeights: inputs/standard_weights.csv
     Strategies: inputs/strategy_definitions.csv
     StudentTargets: inputs/targets_by_strategy.csv
-    SATtoACT: inputs/sat_to_act.csv
+    ACTtoSAT: inputs/act_to_sat.csv
     current_applications: current_applications.csv
     current_roster: current_students.csv
     chart: inputs/strategy_chart.jpg
@@ -38,6 +38,7 @@ all_campuses: # campuses to try if "all" selected
     - Butler
     - Speer
     - TNA
+    - Mansueto
 
 all_strategies: # list all so summaries include those w/ no students
     - 1

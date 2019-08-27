@@ -43,8 +43,8 @@ applications_calculations: # definitions for calculated columns in order
     - GPA:
         formula: =INDEX(KidGPAs,MATCH(%hs_student_id%,KidIDs,0))
         format: bold_blue
-    - ACT:
-        formula: =INDEX(KidACTs,MATCH(%hs_student_id%,KidIDs,0))
+    - SAT:
+        formula: =INDEX(KidSATs,MATCH(%hs_student_id%,KidIDs,0))
         format: bold_blue
     - Strategy:
         formula: =INDEX(Strats,MATCH(%hs_student_id%,KidIDs,0))
@@ -70,38 +70,38 @@ applications_calculations: # definitions for calculated columns in order
     - 6yr_AA/H:
         formula: =IF(ISNUMBER(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))),ROUND(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))+%PartnerBump%*IF(INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0))>0.7,(1-INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0)))/2,0.15),2),INDEX(AllCollegeAAHGR, MATCH(%NCES%,AllCollegeNCES,0)))
         format: bold_orange
-    - ACT25/50:
-        formula: =IF(OR(%FRace%="H",%FRace%="B"),INDEX(AllCollegeACT25, MATCH(%NCES%,AllCollegeNCES,0)),INDEX(AllCollegeACT50, MATCH(%NCES%,AllCollegeNCES,0)))
+    - SAT25/50:
+        formula: =IF(OR(%FRace%="H",%FRace%="B"),INDEX(AllCollegeSAT25, MATCH(%NCES%,AllCollegeNCES,0)),INDEX(AllCollegeSAT50, MATCH(%NCES%,AllCollegeNCES,0)))
         format: bold_orange
     - GPAcoefB:
         formula: =INDEX(CustomWeightsGPA,MATCH(%FRace%&":"&%NCES%,CustomWeightsIndex,0))
         format: bold_yellow
-    - ACTcoefB:
-        formula: =INDEX(CustomWeightsACT,MATCH(%FRace%&":"&%NCES%,CustomWeightsIndex,0))
+    - SATcoefB:
+        formula: =INDEX(CustomWeightsSAT,MATCH(%FRace%&":"&%NCES%,CustomWeightsIndex,0))
         format: bold_yellow
     - InterceptB:
         formula: =INDEX(CustomWeightsIntercept,MATCH(%FRace%&":"&%NCES%,CustomWeightsIndex,0))
         format: bold_yellow
     - LogitB:
-        formula: =%GPAcoefB%*%GPA%+%ACTcoefB%*%ACT%+%InterceptB%
+        formula: =%GPAcoefB%*%GPA%+%SATcoefB%*%SAT%+%InterceptB%
         format: bold_yellow
     - GPAcoefA:
         formula: =INDEX(CoefficientsGPA,MATCH(%FRace%&":"&%Barron's%,CoefficientsIndex,0))
         format: bold_olive
-    - ACTcoefA:
-        formula: =INDEX(CoefficientsACT,MATCH(%FRace%&":"&%Barron's%,CoefficientsIndex,0))
+    - SATcoefA:
+        formula: =INDEX(CoefficientsSAT,MATCH(%FRace%&":"&%Barron's%,CoefficientsIndex,0))
         format: bold_olive
     - InterceptA:
         formula: =INDEX(CoefficientsIntercept,MATCH(%FRace%&":"&%Barron's%,CoefficientsIndex,0))
         format: bold_olive
     - LogitA:
-        formula: =%GPAcoefA%*%GPA%+(%ACT%-%ACT25/50%)*%ACTcoefA%+%InterceptA%
+        formula: =%GPAcoefA%*%GPA%+(%SAT%-%SAT25/50%)*%SATcoefA%+%InterceptA%
         format: bold_olive
     - FinalLogit:
         formula: =IF(ISNUMBER(%LogitB%),%LogitB%,%LogitA%)
         format: bold_olive
     - Odds:
-        formula: =IF(ISNUMBER(%FinalLogit%),IF(ISNUMBER(%GPAcoefA%),IF(AND(%GPAcoefA%=1,%ACTcoefA%=1,%InterceptA%=1),100,ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2)),ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2)),IF(ISTEXT(%Barron's%),IF(LEFT(%Barron's%,1)="2",100,"N/A"),"N/A"))
+        formula: =IF(ISNUMBER(%FinalLogit%),IF(ISNUMBER(%GPAcoefA%),IF(AND(%GPAcoefA%=1,%SATcoefA%=1,%InterceptA%=1),100,ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2)),ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2)),IF(ISTEXT(%Barron's%),IF(LEFT(%Barron's%,1)="2",100,"N/A"),"N/A"))
         format: bold_olive
     - Class:
         formula: =IF(ISNUMBER(%Odds%),IF(%Odds%>=99,IF(OR(%Strategy%=10,%Strategy%=11),MatchLabel,SureThingLabel),IF(%Odds%>=95,SecureLabel,IF(%Odds%>=80,SafetyLabel,IF(%Odds%>=50,MatchLabel,IF(%Odds%>=20,ReachLabel,IF(%Odds%>=10,LongshotLabel,HailMaryLabel)))))),"Other")

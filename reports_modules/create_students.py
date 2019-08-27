@@ -8,27 +8,27 @@ from reports_modules.excel_base import make_excel_indices
 DEFAULT_FROM_TARGET = 0.2 # default prediction below target grad rate
 MINUS1_CUT = 0.2 # minimum odds required to "toss" a college in minus1 pred
 
-def _get_sat_translation(x, lookup_df):
-    '''Apply function for calculating equivalent ACT for SAT scores.
-    Lookup table has index of SAT with value of ACT'''
-    sat = x
-    if np.isreal(sat):
-        if sat in lookup_df.index: # it's an SAT value in the table
-            return lookup_df.loc[sat,'ACT']
+def _get_act_translation(x, lookup_df):
+    '''Apply function for calculating equivalent SAT for ACT scores.
+    Lookup table has index of ACT with value of SAT'''
+    act = x
+    if np.isreal(act):
+        if act in lookup_df.index: # it's an ACT value in the table
+            return lookup_df.loc[act,'SAT']
     return np.nan # default if not in table or not a number
 
-def _get_act_max(x):
+def _get_sat_max(x):
     ''' Returns the max of two values if both are numbers, otherwise
     returns the numeric one or nan if neither is numeric'''
-    act, sat_in_act = x
-    if np.isreal(act):
-        if np.isreal(sat_in_act):
-            return max(act, sat_in_act)
+    sat, act_in_sat = x
+    if np.isreal(sat):
+        if np.isreal(act_in_sat):
+            return max(sat, act_in_sat)
         else:
-            return act
+            return sat
     else:
-        if np.isreal(sat_in_act):
-            return sat_in_act
+        if np.isreal(act_in_sat):
+            return act_in_sat
         else:
             return np.nan
 
@@ -66,20 +66,20 @@ def reduce_roster(campus, cfg, dfs, counselor, advisor, debug, do_nonseminar):
 
     # Two calculated columns need to be added for the application
     # analyses
-    df['local_sat_in_act'] = df['SAT'].apply(_get_sat_translation,
-            args=(dfs['SATtoACT'],))
-    df['local_act_max'] = df[['ACT','local_sat_in_act']].apply(
-            _get_act_max, axis=1)
+    df['local_act_in_sat'] = df['ACT'].apply(_get_act_translation,
+            args=(dfs['ACTtoSAT'],))
+    df['local_sat_max'] = df[['SAT','local_act_in_sat']].apply(
+            _get_sat_max, axis=1)
 
     dfs['roster'] = df
 
 def _get_strategies(x,lookup_df):
-    '''Apply function for calculating strategies based on gpa and act using the
+    '''Apply function for calculating strategies based on gpa and sat using the
     lookup table (mirrors Excel equation for looking up strategy'''
-    gpa, act = x
-    if np.isreal(gpa) and np.isreal(act):
+    gpa, sat = x
+    if np.isreal(gpa) and np.isreal(sat):
         lookup = '{:.1f}:{:.0f}'.format(
-                max(np.floor(gpa*10)/10,1.5), max(act, 12))
+                max(np.floor(gpa*10)/10,1.5), max(sat, 710))
         return lookup_df['Strategy'].get(lookup,np.nan)
     else:
         return np.nan
@@ -291,7 +291,7 @@ def add_playbook_calculations(cfg, dfs, debug):
     '''Parallel function for Playbook creation to "student calculations"""
     Adds fields for Playbook student tab'''
     df = dfs['roster'].copy()
-    df['local_strategy'] = df[['GPA','local_act_max']].apply(_get_strategies,
+    df['local_strategy'] = df[['GPA','local_sat_max']].apply(_get_strategies,
             axis=1, args=(dfs['Strategies'],))
     df['local_bucket'] = df[
             ['local_strategy','GPA','EFC','Race/ Eth']].apply(
@@ -313,7 +313,7 @@ def add_playbook_calculations(cfg, dfs, debug):
 def add_student_calculations(cfg, dfs, debug):
     '''Creates some calculated columns in the roster table'''
     df = dfs['roster'].copy()
-    df['local_strategy'] = df[['GPA','local_act_max']].apply(_get_strategies,
+    df['local_strategy'] = df[['GPA','local_sat_max']].apply(_get_strategies,
             axis=1, args=(dfs['Strategies'],))
     df['local_target_gr'] = df[
             ['local_strategy','GPA','EFC','Race/ Eth']].apply(

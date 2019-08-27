@@ -54,10 +54,10 @@ def create_targets_tab(writer, df, format_db):
     wb.define_name('TargetLookup','='+sn+'!$A$2:$G$'+str(max_row))
     ws.hide()
 
-def create_sat_to_act_tab(writer, df, format_db):
-    '''Create SAT to ACT tab from static file'''
-    wb, ws, sn, max_row = _do_initial_output(writer, df, 'SATtoACT', 'N/A')
-    wb.define_name('SATtoACT','='+sn+'!$A$2:$B$'+str(max_row))
+def create_act_to_sat_tab(writer, df, format_db):
+    '''Create ACT to SAT tab from static file'''
+    wb, ws, sn, max_row = _do_initial_output(writer, df, 'ACTtoSAT', 'N/A')
+    wb.define_name('ACTtoSAT','='+sn+'!$A$2:$B$'+str(max_row))
     ws.hide()
 
 def create_strategies_tab(writer, df, format_db):
@@ -76,7 +76,7 @@ def create_standard_weights_tab(writer, df, format_db):
             'Index':'A',
             'MatchCode':'B',
             'GPA':'C',
-            'ACT':'D',
+            'SAT':'D',
             'Intercept':'E',
             }
     for name, col in names.items():
@@ -93,7 +93,7 @@ def create_custom_weights_tab(writer, df, format_db):
     names = {
             'Index':'A',
             'GPA':'B',
-            'ACT':'C',
+            'SAT':'C',
             'Intercept':'D',
             }
     for name, col in names.items():
@@ -129,8 +129,8 @@ def create_all_colleges_tab(writer, df, format_db):
             'Barrons':'C',
             'GR':'D',
             'AAHGR': 'E',
-            'ACT25': 'F',
-            'ACT50': 'G',
+            'SAT25': 'F',
+            'SAT50': 'G',
             'MoneyCode':'H',
             'Money':'I',
             'HBCU':'J',
@@ -196,14 +196,14 @@ def create_static_tabs(writer, dfs, formats, cfg, campus,debug,
                 (create_college_list_lookup_tab,'CollegeListLookup'),
                 (create_custom_weights_tab,'CustomWeights'),
                 (create_standard_weights_tab,'StandardWeights'),
-                (create_sat_to_act_tab,'SATtoACT'),
+                (create_act_to_sat_tab,'ACTtoSAT'),
                 (create_strategies_tab,'Strategies'),
                 (create_targets_tab,'StudentTargets'),
                 ]
     else:
         static_tabs_from_csv = [
                 (create_all_colleges_tab,'AllColleges'),
-                (create_sat_to_act_tab,'SATtoACT'),
+                (create_sat_to_act_tab,'ACTtoSAT'),
                 (create_strategies_tab,'Strategies'),
                 (create_targets_tab,'StudentTargets'),
                 ]

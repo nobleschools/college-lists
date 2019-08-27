@@ -245,7 +245,7 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         pdf.cell(w=w[0], txt='Odds of 1 or more acceptances to:',
                 h=h[3], border = 0, ln = 0, align = 'L', fill = True)
 
-        txt = _notnan(stu_data['local_act_max'],'TBD','{:1.0f}')
+        txt = _notnan(stu_data['local_sat_max'],'TBD','{:1.0f}')
         pdf.cell(w=w[1], txt=txt, h=h[3], border=0, ln=0, align='C', fill=True)
 
         pdf.cell(w=w[2], txt='', h=h[3], border=0, ln=0, align='C', fill=True)
