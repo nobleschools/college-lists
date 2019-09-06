@@ -84,7 +84,8 @@ class Output():
             self.dfs['applications'] = pd.read_csv(filename,na_values=[''],
                     encoding='cp1252',
                     usecols=self.cfg_tabs['applications']['app_fields'],
-                    converters={'NCES':safe2int})
+                    converters={'NCES':safe2int},
+                    dtype={'comments':str})
             if self.debug:
                 print('(size {}).'.format(len(self.dfs['applications'])),
                         flush=True)
