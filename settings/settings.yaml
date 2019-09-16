@@ -69,6 +69,7 @@ sort_students:
     Rauner: '=%Cohort%&%Counselor%&%LastFirst%'
     Bulls: '=%Cohort%&%Counselor%&%LastFirst%'
     UIC: '=%Counselor%&%Cohort%&%LastFirst%'
+    #UIC: '=%Cohort%&%LastFirst%'
     #Comer: '=%Counselor%&%Cohort%&%LastFirst%'
     DRW: '=%Counselor%&%Cohort%&%LastFirst%'
     RoweClark: '=%Cohort%&%LastFirst%'
