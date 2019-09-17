@@ -20,7 +20,7 @@ def compress(filefolder):
     os.rmdir(filefolder)
 
 # To begin the script, take a snapshot of the folder to move to final output
-OUTPUT_FOLDER='C:/Users/mniksch/Dropbox (NNoCS)/Documents/2019 Admissions'
+OUTPUT_FOLDER='C:/Users/mniksch/Dropbox (NNoCS)/Documents/2020 Admissions'
 
 master_dir_before = os.listdir('.')
 call_stem = 'python create_reports.py'
@@ -61,13 +61,14 @@ for campus_case in [
         'Johnson',
         'DRW',
         'Hansberry',
+        'Manseuto',
         'Baker',
         'Butler',
         'Speer',
         'TNA',
         'PAS',
-        'listKIPP.csv',
-        'listGCMS.csv',
+        #'listKIPP.csv',
+        #'listGCMS.csv',
         ]:
     t0 = time()
     print('Generating {}...'.format(campus_case),flush=True,end='')
@@ -77,14 +78,14 @@ for campus_case in [
 # Now do counselor specific cases for a handful of campuses
 
 for campus, names in [
-        ['Pritzker',['"Ashley McCaw"', '"Jane Knoche"',
-         '"Mark Williams"', '"Sarah Kruger"']],
-        ['Golder',['"Edith Flores"','"Julie Horning"','"Lauren Chelew"']],
+        ['Pritzker',['"McCaw"', '"Knoche"', '"Abreu"', '"Ryden"'
+         '"Williams"', '"Kruger"']],
+        ['Golder',['"Flores"','"Horning"','"Chelew"', '"Posadas"']],
         ['Muchin',['"Paul Farrand"','"Emily Morgan"','"Emmanuel Jackson"',
             '"Dominique Vega"']],
-        ['RoweClark',['Abreu','Uribe','Villa']],
-        ['TNA',['"Daisy Bermudez"','"Sarah MacCallum"','"Courtney Wilson"']],
-        ['UIC',['Camacho','Bowdy','Beene','Fraga']],
+        #['RoweClark',['Abreu','Uribe','Villa']],
+        #['TNA',['"Daisy Bermudez"','"Sarah MacCallum"','"Courtney Wilson"']],
+        ['UIC',['Camacho','Bowdy','Fraga']],
         ]:
     this_dir_before = os.listdir('.')
     for name in names:

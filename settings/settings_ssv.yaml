@@ -134,6 +134,11 @@ goal_descriptions:
         Label: '="@+ "&LOWER(IdealGRLabel)&" grad rate schools"'
         Eval: '=AE6'
         Sign: '>='
+    money_tgr_plus_match_plus:
+        Descr: 'Schools with Grad Rate at or above Target, also money, also 50+% odds'
+        Label: '="@+ money "&LOWER(TargetGRLabel)&" grad rate, w 50+% odds"'
+        Eval: '=INDEX(MoneyMGRPlusMatch,MATCH(D3,KidIDs,0))'
+        Sign: '>='
     money_igr_reach_plus:
         Descr: 'Schools with Grad Rate at or above Ideal, also money, also 20+% odds'
         Label: '="@+ money "&LOWER(IdealGRLabel)&" grad rate schools"'
@@ -169,6 +174,11 @@ goal_descriptions:
         Label: '="@+ meeting all 3 of the above"'
         Eval: '=INDEX(GoldenThreeApps,MATCH(D3,KidIDs,0))'
         Sign: '>='
+    counselor_choice:
+        Descr: 'School picked by counselor (has Counselor Choice in comments)'
+        Label: '="@+ Counselors Choice"'
+        Eval: '=INDEX(CounselorChoiceApps,MATCH(D3,KidIDs,0))'
+        Sign: '>='
         
 school_goals:
     UIC:
@@ -191,6 +201,11 @@ school_goals:
         - tgr_only: 3
         - money_safety: 2
         - il_public: 1
+    Mansueto:
+        - money_tgr_plus_match_plus: 3
+        - money_igr_reach_plus: 3
+        - money_safety: 3
+        - il_public: 1
     TNA:
         - money_igr_longshot_plus: 3
         - money_tgr_only_longshot_plus: 3
@@ -201,6 +216,7 @@ school_goals:
         - money_tgr_only_longshot_plus: 3
         - il_public: 1
         - money_chicago: 1
+        - counselor_choice: 1
     Golder:
         - igr: 3
         - tgr_only: 3
@@ -255,6 +271,7 @@ school_goals:
         - money: 5
         - il_match_plus: 1
         - tgr_only: '[(8,4),5]'
+        - money_tgr_plus_match_plus: 1
     RoweClark:
         - reach: '[(9,1),(5,2),3]'
         - match: '[(9,1),4]'

@@ -74,7 +74,7 @@ sort_students:
     DRW: '=%Counselor%&%Cohort%&%LastFirst%'
     RoweClark: '=%Cohort%&%LastFirst%'
     PAS: '=%Campus%&%LastFirst%'
-    Golder: '=%Cohort%&%LastFirst%'
+    Golder: '=%Cohort%&%Counselor%&%LastFirst%'
 
 # This allows individual schools to customize odds/class language
 category_labels:

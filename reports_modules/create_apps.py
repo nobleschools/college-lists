@@ -180,6 +180,9 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
     df['local_partner_bump'] = df['comments'] == 'Posse'
     df['local_6yr_all_aah'] = df[['local_6yr_all_aah_temp',
                           'local_partner_bump']].apply(_calc6yr, axis=1)
+    
+    # Special catch of "counselor choice" if the comments say that
+    df['local_counselor_choice'] = df['comments'] == 'Counselor Choice'
 
     df['local_result']=df[['stage','type','result_code','attending',
                            'waitlisted','deferred']].apply(_get_result, axis=1)

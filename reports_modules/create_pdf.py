@@ -521,6 +521,8 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
         return sum(stu_apps.local_odds >= 80)
     elif goal_name == 'lt_longshot_under':
         return sum(stu_apps.local_odds < 20)
+    elif goal_name == 'counselor_choice':
+        return sum(stu_apps.local_counselor_choice == True)
     elif goal_name == 'money':
         return sum(stu_apps.local_money == 1)
     elif goal_name == 'lt_bad_money':
@@ -531,6 +533,10 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
                    (stu_apps.local_odds >= 80))
     elif goal_name == 'tgr_plus':
         return sum(stu_apps.local_6yr_all_aah >= stu_data.local_target_gr)
+    elif goal_name == 'money_tgr_plus_match_plus':
+        return sum((stu_apps.local_6yr_all_aah >= stu_data.local_target_gr) &
+                   (stu_apps.local_odds >= 50) &
+                   (stu_apps.local_money == 1))
     elif goal_name == 'tgr_only':
         return sum((stu_apps.local_6yr_all_aah >= stu_data.local_target_gr) &
                    (stu_apps.local_6yr_all_aah < stu_data.local_ideal_gr))
