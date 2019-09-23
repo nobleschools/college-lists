@@ -220,9 +220,6 @@ applications_calculations: # definitions for calculated columns in order
     - GoldenThree:
         formula: =%MoneyYesNo%*%MatchOrUnder%*%TGROrBetter%
         format: bold_yellow
-    - CounselorChoice:
-        formula: =IF(%comments%="Counselor Choice",1,0)
-        format: bold_yellow
 
 
 # The specifications here cause the output code to create Excel named ranges
@@ -261,4 +258,3 @@ application_names:
     MoneyChicago: MoneyChicago
     BadMoney: BadMoney
     GoldenThree: GoldenThree
-    CounselorChoice: CounselorChoice
