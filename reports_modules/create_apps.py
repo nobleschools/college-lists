@@ -16,9 +16,9 @@ def _lookup_source_field(x,source_df,field,default='N/A', force_na=False):
         else:
             return return_value
 
-def _round2(x):
-    '''Utility function to round to nearest hundreth'''
-    return round(x, 2)
+def _round2_and_cap_at_99(x):
+    '''Utility function to round to nearest hundreth but caps odds to 99%'''
+    return min(99.0, round(x, 2))
 
 def _all_ones(x):
     '''Utility function to check if all (3) elements all equal 1'''
@@ -138,7 +138,7 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
                       ('local_sat_cb', 'SATcoef'),
                       ('local_intb', 'Intercept'),
                       ]
-    coef_index = df['local_race'] + ':' + df['NCES'].apply(str)
+    coef_index = df['local_frace'] + ':' + df['NCES'].apply(str)
     for local_label, coef_label in cweights_fields:
         df[local_label] = coef_index.apply(_lookup_source_field,
                 args=(dfs['CustomWeights'], coef_label, np.nan))
@@ -148,7 +148,7 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
     # C. then add calculated columns (for use internal use, not publishing)
     # the next row picks "sat 25" if race is "H" or "B" and "sat 50 otherwise
     df['local_sat_25_50'] = df['local_sat_25'].where(
-            df['local_race'].isin(['H','B']), df['local_sat_50'])
+            df['local_race'].isin(['H','B', 'M', 'I']), df['local_sat_50'])
     df['local_logita'] = (
             df['local_gpa_ca']*df['local_gpa']+
             (df['local_sat']-df['local_sat_25_50'])*df['local_sat_ca']+
@@ -166,7 +166,7 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
     df['local_final_logit'] = df['local_logitb'].where(
             pd.notnull(df['local_logitb']), df['local_logita'])
     df['local_odds_calc'] = (100*np.exp(df['local_final_logit'])/(
-            1+np.exp(df['local_final_logit']))).apply(_round2)
+            1+np.exp(df['local_final_logit']))).apply(_round2_and_cap_at_99)
     # the next line assigns odds_calc unless auto100 is true
     df['local_odds'] = df['local_odds_calc'].where(
             ~df['local_auto100'], 100)
@@ -174,7 +174,7 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
     # all of the above are for odds, but a handful of other columns need
     # to be calculated
     df['local_6yr_all_aah_temp'] = df['local_6yr_aah'].where(
-            df['local_race'].isin(['H','B']), df['local_6yr_all'])
+            df['local_race'].isin(['H','B','I','M']), df['local_6yr_all'])
     # before completing the above, we need to check whether the school
     # gets a partner "bump" and then round
     df['local_partner_bump'] = df['comments'] == 'Posse'

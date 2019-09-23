@@ -185,7 +185,7 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
         ws.data_validation(r,4, r,4, {'validate': 'list',
                              'source': '=ExtraCollegeChoice'})
         safe_write(ws, r, 5, '=IF(ISERROR(D'+r_excel+
-                '),"",INDEX(IF(OR(H3="H",H3="B"),AllCollegeAAHGR,'+
+                '),"",INDEX(IF(OR(H3="H",H3="B",H3="I",H3="M"),AllCollegeAAHGR,'+
                 'AllCollegeGR),MATCH(D'+r_excel+
                 ',AllCollegeNCES,0)))', f_db['ssv_gr'])
         safe_write(ws, r, 6, '=IF(ISERROR(D'+r_excel+
@@ -226,8 +226,8 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
         safe_write(ws, r, 23,'=IF(ISNUMBER(S'+r_excel+'),S'+r_excel+
                 ',W'+r_excel+')')
         safe_write(ws, r, 24,'=IF(ISNUMBER(X'+r_excel+'),IF(AND(T'+r_excel+
-                '=1,U'+r_excel+'=1,V'+r_excel+'=1),100,100*EXP(X'+r_excel+
-                ')/(1+EXP(X'+r_excel+'))),"N/A")')
+                '=1,U'+r_excel+'=1,V'+r_excel+'=1),100,MIN(99,100*EXP(X'+r_excel+
+                ')/(1+EXP(X'+r_excel+')))),"N/A")')
         safe_write(ws, r, 25,'=IF(ISNUMBER(Y'+r_excel+'),IF(Y'+r_excel+
                 '>=99,SureThingLabel,IF(Y'+r_excel+'>=95,SecureLabel,IF(Y'
                 +r_excel+'>=80,SafetyLabel,IF(Y'+r_excel+'>=50,MatchLabel,IF(Y'
@@ -248,7 +248,7 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
         r_excel = str(s_start)
         safe_write(ws, r, 4, 'Schools currently applying to ("*" indicates '+
                 'prospective):',f_db['ssv_schools_blank_prompt'])
-        safe_write(ws, r, 5, '=IF(OR(H3="H",H3="B"),"6 yr AA/H Grad Rate",'+
+        safe_write(ws, r, 5, '=IF(OR(H3="H",H3="B",H3="M",H3="I"),"6 yr AA/H Grad Rate",'+
             '"6 yr (all) Grad Rate")', f_db['ssv_blank_title_right'])
         safe_write(ws, r, 6, 'Odds of Admit',f_db['ssv_blank_title'])
         safe_write(ws, r, 7, 'For you, school is a',
@@ -280,7 +280,7 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
             safe_write(ws, r, 4, '=IF(ISNUMBER(D'+r_excel+
                     '),INDEX(CollegeNames,D'+r_excel+'),"")')
             safe_write(ws, r, 5, '=IF(ISNUMBER(D'+r_excel+
-                    '),INDEX(IF(OR(H3="H",H3="B"),GradRates,AllGradRates),D'
+                    '),INDEX(IF(OR(H3="H",H3="B",H3="I",H3="M"),GradRates,AllGradRates),D'
                     +r_excel+'),"")', f_db['ssv_gr'])
             safe_write(ws, r, 6, '=IF(ISNUMBER(D'+r_excel+
                     '),IF(ISNUMBER(INDEX(Odds,D'+r_excel+')),INDEX(Odds,D'

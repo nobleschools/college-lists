@@ -101,7 +101,7 @@ applications_calculations: # definitions for calculated columns in order
         formula: =IF(ISNUMBER(%LogitB%),%LogitB%,%LogitA%)
         format: bold_olive
     - Odds:
-        formula: =IF(ISNUMBER(%FinalLogit%),IF(ISNUMBER(%GPAcoefA%),IF(AND(%GPAcoefA%=1,%SATcoefA%=1,%InterceptA%=1),100,ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2)),ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2)),IF(ISTEXT(%Barron's%),IF(LEFT(%Barron's%,1)="2",100,"N/A"),"N/A"))
+        formula: =IF(ISNUMBER(%FinalLogit%),IF(ISNUMBER(%GPAcoefA%),IF(AND(%GPAcoefA%=1,%SATcoefA%=1,%InterceptA%=1),100,MIN(99,ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2))),MIN(99,ROUND(100*EXP(%FinalLogit%)/(1+EXP(%FinalLogit%)),2))),IF(ISTEXT(%Barron's%),IF(LEFT(%Barron's%,1)="2",100,"N/A"),"N/A"))
         format: bold_olive
     - Class:
         formula: =IF(ISNUMBER(%Odds%),IF(%Odds%>=99,IF(OR(%Strategy%=10,%Strategy%=11),MatchLabel,SureThingLabel),IF(%Odds%>=95,SecureLabel,IF(%Odds%>=80,SafetyLabel,IF(%Odds%>=50,MatchLabel,IF(%Odds%>=20,ReachLabel,IF(%Odds%>=10,LongshotLabel,HailMaryLabel)))))),"Other")
@@ -120,7 +120,7 @@ applications_calculations: # definitions for calculated columns in order
         formula: =IF(OR(%Class%=MatchLabel,%Class%=SafetyLabel,%Class%=SecureLabel,%Class%=SureThingLabel),1,0)
         format: bold_yellow
     - 6yrAll/AAH_forSorting:
-        formula: =IF(OR(%FRace%="H",%FRace%="B"),IF(ISNUMBER(%6yr_AA/H%),ROUND(%6yr_AA/H%,2),0),IF(ISNUMBER(%6yr_all%),ROUND(%6yr_all%,2),0))
+        formula: =IF(OR(%FRace%="H",%FRace%="B",%FRace%="I",%FRace%="M"),IF(ISNUMBER(%6yr_AA/H%),ROUND(%6yr_AA/H%,2),0),IF(ISNUMBER(%6yr_all%),ROUND(%6yr_all%,2),0))
         format: bold_yellow
     - TGROrBetter:
         formula: =IF(%6yrAll/AAH_forSorting%>=%TargetGR%,1,0)
