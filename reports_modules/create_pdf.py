@@ -483,8 +483,9 @@ def _get_student_goal_performance(pdf, w, school_goals, goal_descriptions,
         goal_text = goal_text.replace('@',str(amount))
         goal_value = _eval_pdf_goal(label, stu_data, stu_apps)
         goal_result = eval(str(goal_value)+this_goal['Sign']+str(amount))
-        goal_eval.append([goal_text, str(goal_value),
-                    ('Yes!' if goal_result else 'No')])
+        if amount != 0:  # This allows variable goals to be zeroed for some students
+            goal_eval.append([goal_text, str(goal_value),
+                        ('Yes!' if goal_result else 'No')])
     
         # Finally, figure out the padding
         max_width = max([pdf.get_string_width(x[0]) for x in goal_eval])
@@ -493,6 +494,7 @@ def _get_student_goal_performance(pdf, w, school_goals, goal_descriptions,
             padtest += ' '
         pads = len(padtest) - 1
     return (pads, goal_eval)
+
 
 def _eval_pdf_goal(goal_name, stu_data, stu_apps):
     """
@@ -521,8 +523,6 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
         return sum(stu_apps.local_odds >= 80)
     elif goal_name == 'lt_longshot_under':
         return sum(stu_apps.local_odds < 20)
-    elif goal_name == 'counselor_choice':
-        return sum(stu_apps.local_counselor_choice == True)
     elif goal_name == 'money':
         return sum(stu_apps.local_money == 1)
     elif goal_name == 'lt_bad_money':
@@ -561,6 +561,8 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
                    (stu_apps.local_odds >= odds_target))
     elif goal_name == 'lt_far_below_tgr':
         return sum(stu_apps.local_6yr_all_aah < (stu_data.local_target_gr - .1))
+    elif goal_name == 'national_louis':
+        return sum(stu_apps.NCES == 147536)
     elif goal_name == 'golden_three':
         return sum((stu_apps.local_6yr_all_aah >= stu_data.local_target_gr) &
                    (stu_apps.local_odds >= 50) &
