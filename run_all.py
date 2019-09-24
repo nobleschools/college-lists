@@ -61,7 +61,7 @@ for campus_case in [
         'Johnson',
         'DRW',
         'Hansberry',
-        'Manseuto',
+        'Mansueto',
         'Baker',
         'Butler',
         'Speer',
@@ -78,9 +78,9 @@ for campus_case in [
 # Now do counselor specific cases for a handful of campuses
 
 for campus, names in [
-        ['Pritzker',['"McCaw"', '"Knoche"', '"Abreu"', '"Ryden"'
+        ['Pritzker',['"McCaw"', '"Knoche"', '"Abreu"', '"Ryden"',
          '"Williams"', '"Kruger"']],
-        ['Golder',['"Flores"','"Horning"','"Chelew"', '"Posadas"']],
+        ['Golder',['"Flores"','"Horning"','"Chelew"']],
         ['Muchin',['"Paul Farrand"','"Emily Morgan"','"Emmanuel Jackson"',
             '"Dominique Vega"']],
         #['RoweClark',['Abreu','Uribe','Villa']],
