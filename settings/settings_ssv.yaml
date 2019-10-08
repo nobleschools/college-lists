@@ -23,12 +23,13 @@ counselor_header:
 
 print_header: # non-standard note on F1 about the print date or other
     Noble: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
-    Rauner: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
     Pritzker: '="EFC: "&INDEX(EFC,MATCH(D3,KidIDs,0))'
+    Rauner: '="Strategy "&INDEX(Strats,MATCH(D3,KidIDs,0))'
     Standard: ''
 
 print_footer: # non-standard text in E37 with a bar across E:J
     Johnson: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
+    Rauner: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
     #Standard: '="Advisor: "&INDEX(Advisors,MATCH(D3,KidIDs,0))'
     Standard: ''
 
@@ -230,18 +231,17 @@ school_goals:
         - money_tgr_only_longshot_plus: 4
         - igr: 3
         - il_public: 1
-        - money_chicago: 1
+        - money_safety: 2
     Pritzker:
-        - reach: 3
-        - match: 4
-        - safety: 3
-        - money: 6
-        - tgr_only: 4
-        - igr: 3
+        - money_igr_longshot_plus: 3
+        - money_tgr_only_longshot_plus: 4
+        - money_safety: 3
+        - il_match_plus: 1
     Hansberry:
         - tgr_plus: 5
         - money: 5
         - safety: 3
+        - il_public: 1
     Bulls:
         - money: 6
         - tgr_only: 3

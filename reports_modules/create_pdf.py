@@ -34,6 +34,7 @@ def _clean_excel(string, data_row, labels):
     translation = OrderedDict([
             ['TEXT(TODAY(),"mm/dd")', date.today().strftime('%m/%d')],
             ['TEXT(TODAY(),"m/d")', date.today().strftime('%m/%d')],
+            ['INDEX(Strats,MATCH(D3,KidIDs,0))','tbl:local_strategy'],
             ['INDEX(EFC,MATCH(D3,KidIDs,0))','tbl:EFC'],
             ['INDEX(Counselor,MATCH(D3,KidIDs,0))','tbl:Counselor'],
             ['INDEX(Advisors,MATCH(D3,KidIDs,0))','tbl:Advisor'],
