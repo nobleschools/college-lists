@@ -73,6 +73,24 @@ def reduce_roster(campus, cfg, dfs, counselor, advisor, debug, do_nonseminar):
 
     dfs['roster'] = df
 
+
+def _get_subgroup(x):
+    '''Apply function to return one of six unique subgroups'''
+    race, gender = x
+    if race == 'B':
+        subgroup = 'Black'
+    elif race == 'H':
+        subgroup = 'Latinx'
+    else:
+        subgroup = 'Other'
+    if gender == 'M':
+        return subgroup + ' Male'
+    elif gender == 'F':
+        return subgroup + ' Female'
+    else:
+        return subgroup + ' Other'
+
+
 def _get_strategies(x,lookup_df):
     '''Apply function for calculating strategies based on gpa and sat using the
     lookup table (mirrors Excel equation for looking up strategy'''
@@ -313,6 +331,8 @@ def add_playbook_calculations(cfg, dfs, debug):
 def add_student_calculations(cfg, dfs, debug):
     '''Creates some calculated columns in the roster table'''
     df = dfs['roster'].copy()
+    df['subgroup'] = df[['Race/ Eth', 'Gender']].apply(_get_subgroup,
+            axis=1)
     df['local_strategy'] = df[['GPA','local_sat_max']].apply(_get_strategies,
             axis=1, args=(dfs['Strategies'],))
     df['local_target_gr'] = df[

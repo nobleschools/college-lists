@@ -74,14 +74,14 @@ def push_column(columns, letters, label, formula, fmt,
     columns.append(new_col)
     return columns
 
-def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug, summary):
+def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug, summary,
+                     sn='Summary'):
     '''Creates the Excel tab for students using cfg details'''
     # First initialize inputs
     if debug:
         print('Writing summary tab...',flush=True,end='')
     df = dfs['roster']
     wb = writer.book
-    sn = 'Summary'
     ws = wb.add_worksheet(sn)
     master_cols = []
     col_letters = make_excel_indices() # creates an index of excel headers
@@ -92,6 +92,7 @@ def make_summary_tab(writer, f_db, dfs, cfg, cfg_sum, campus, debug, summary):
     sum_label = summary_field['excel_label'] #how we should label this field
     sum_local = summary_field['tbl_name'] #field in roster table to sum by
     rows = list(set(df[sum_local])) # A list of unique values in sum column
+    rows.sort()
 
     # if the settings file specifies a custom list for the summary field,
     # populate that here:

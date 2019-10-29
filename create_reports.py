@@ -45,8 +45,19 @@ def main(settings_file, settings_tabs, campus, counselor, advisor, summary,
 
     if not do_pdf == 'only':
         create_chart_tab(out.writer, out.chart, debug)
-        make_summary_tab(out.writer, out.formats, out.dfs, cfg,
-                cfg_tabs['summary'], campus, debug, summary)
+        if summary == 'All':
+            make_summary_tab(out.writer, out.formats, out.dfs, cfg,
+                    cfg_tabs['summary'], campus, debug, 'Strategy',
+                    sn='Strategy_Summary')
+            make_summary_tab(out.writer, out.formats, out.dfs, cfg,
+                    cfg_tabs['summary'], campus, debug, 'Counselor',
+                    sn='Counselor_Summary')
+            make_summary_tab(out.writer, out.formats, out.dfs, cfg,
+                    cfg_tabs['summary'], campus, debug, 'Subgroup',
+                    sn='Subgroup_Summary')
+        else:
+            make_summary_tab(out.writer, out.formats, out.dfs, cfg,
+                    cfg_tabs['summary'], campus, debug, summary)
         make_students_tab(out.writer, out.formats, out.dfs, cfg, 
                 cfg_tabs['students'], campus, debug)
         make_single_tab(out.writer, out.formats, out.dfs, cfg,

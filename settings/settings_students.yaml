@@ -122,6 +122,22 @@ students_columns:
         head_format: bold_olive_underline
         label_format: bold_olive_center_wrap
         cond_format: dash_bottom
+    - Gen-der:
+        formula: 'tbl:Gender'
+        format: centered
+        width: 4.86
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - Subgroup:
+        formula: 'tbl:subgroup'
+        format: centered
+        width: 11.5
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
     - Stra-tegy:
         formula: '=IF(AND(%GPA%<>0,%High "SAT"%<>0),IF(ISNUMBER(VLOOKUP(TEXT(MAX(FLOOR(%GPA%*10,1)/10,1.5),"0.0")&":"&MAX(%High "SAT"%,710),StrategyLookup,4,FALSE)),VLOOKUP(TEXT(MAX(FLOOR(%GPA%*10,1)/10,1.5),"0.0")&":"&MAX(%High "SAT"%,710),StrategyLookup,4,FALSE),"TBD"),"TBD")'
         format: centered
@@ -638,6 +654,7 @@ student_names:
     ActualSAT: 'Actual SAT'
     KidSATs: 'High "SAT"'
     KidRace: 'Race / Eth'
+    Subgroup: Subgroup
     Strats: Stra-tegy
     StudentTargets: '=TargetGRLabel&" Grad Rate"'
     ReachStudentTargets: '=IdealGRLabel&" Grad Rate"'
