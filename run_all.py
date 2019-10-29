@@ -30,6 +30,7 @@ t0 = time()
 os.system(call_stem+' -sum Campus')
 print('Network: {:.2f} seconds'.format(time()-t0),flush=True)
 
+''' # These are no longer required, now that all files have counselor summaries
 # First do campus/counselor summary files
 for campus_case in [
         'Butler',
@@ -46,6 +47,7 @@ for campus_case in [
     new_files = list(set(after_files)-set(before_files))
     new_file = new_files[0]
     os.rename(new_file, 'Counselor Summary '+new_file)
+'''
 
 # Now do campus reports
 for campus_case in [
@@ -72,7 +74,7 @@ for campus_case in [
         ]:
     t0 = time()
     print('Generating {}...'.format(campus_case),flush=True,end='')
-    os.system(call_stem+' -q -pdf -ca '+campus_case)
+    os.system(call_stem+' -q -pdf -sum All -ca '+campus_case)
     print('{:.2f} seconds'.format(time()-t0),flush=True)
 
 # Now do counselor specific cases for a handful of campuses
@@ -106,27 +108,26 @@ for campus, names in [
     compress(folder)
 
 # Finally, do advisor specific cases where requested
-"""
 for campus, names in [
-        ['Muchin',['"Russ"','"Ramos/Gerber"','"Kimble"','"Johnson/Kennedy"',
-                   '"Pak"','"Powers/Lin"','"Hercule/Reit"','"J Farrand/Lee"',
-                   '"Perteet"','"Santana"','"Smeeding"','"Anderson/M/Mason"',
-                   '"Rouse"','"Flannery"']]
+        ['Muchin',[
+            '"Morris"', '"Ochoa"', '"Park/Bernabe"', '"Bridgewaters / M. Gonzalez"',
+            '"Deal"', '"Mann"', '"Faruque"', '"Booker"', '"Jackson"',
+            '"D. Green / Diamond"', '"P. Farrand / Peterson"', '"Schmitt / Nunez"',
+            '"Underwood / Ware"', '"Filie"']]
         ]:
     this_dir_before = os.listdir('.')
     for name in names:
         t0 = time()
         print('Generating {}...'.format(campus+';'+name),flush=True,end='')
-        os.system(call_stem+' -q -pdf -ca '+campus+' -adv '+name)
+        os.system(call_stem+' -q -pdfonly -ca '+campus+' -adv '+name)
         print('{:.2f} seconds'.format(time()-t0),flush=True)
     sleep(1)
     this_dir_after = os.listdir('.')
     new_files = [x for x in this_dir_after if x not in this_dir_before]
     for new_file in new_files:
         new_name = new_file.replace(campus,campus[0]+'_Advisor')
-        new_name = new_name.replace('Johnson','Johnsn')
+        # new_name = new_name.replace('Johnson','Johnsn')
         os.rename(new_file, new_name)
-"""
 
 # After all reports are created, move them to the final destination folder
 sleep(6)
