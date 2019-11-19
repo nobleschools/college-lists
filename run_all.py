@@ -79,6 +79,7 @@ for campus_case in [
 
 # Now do counselor specific cases for a handful of campuses
 
+
 for campus, names in [
         ['Pritzker',['"McCaw"', '"Knoche"', '"Abreu"', '"Ryden"',
          '"Williams"', '"Kruger"']],

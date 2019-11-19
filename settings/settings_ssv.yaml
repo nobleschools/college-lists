@@ -25,6 +25,7 @@ print_header: # non-standard note on F1 about the print date or other
     Noble: '="Printed on: "&TEXT(TODAY(),"mm/dd")'
     Pritzker: '="EFC: "&INDEX(EFC,MATCH(D3,KidIDs,0))'
     Rauner: '="Strategy "&INDEX(Strats,MATCH(D3,KidIDs,0))'
+    RoweClark: '="("&INDEX(Cohort,MATCH(D3,KidIDs,0))&")"'
     Standard: ''
 
 print_footer: # non-standard text in E37 with a bar across E:J

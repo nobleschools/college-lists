@@ -18,7 +18,10 @@ def _lookup_source_field(x,source_df,field,default='N/A', force_na=False):
 
 def _round2_and_cap_at_99(x):
     '''Utility function to round to nearest hundreth but caps odds to 99%'''
-    return min(99.0, round(x, 2))
+    if np.isnan(x):
+        return np.nan
+    else:
+        return min(99.0, round(x, 2))
 
 def _all_ones(x):
     '''Utility function to check if all (3) elements all equal 1'''
