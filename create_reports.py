@@ -16,7 +16,7 @@ from reports_modules.create_single_student import make_single_tab
 from reports_modules.create_pdf import make_pdf_report
 
 def main(settings_file, settings_tabs, campus, counselor, advisor, summary,
-         debug, do_pdf, do_nonseminar):
+         debug, do_pdf, do_nonseminar, sort_override):
     '''Creates the reports according to instructions in yaml files either
     for a single campus or "All"'''
     # Setup configuration--main settings file (includes Excel formats)
@@ -27,7 +27,15 @@ def main(settings_file, settings_tabs, campus, counselor, advisor, summary,
         cfg = yaml.load(ymlfile)
 
     if advisor != "All": # Force LastFirst for advisor reports
-        cfg['sort_students'][campus] = '=%LastFirst%'
+        sort_override = "LastFirst"
+
+    if sort_override:
+        if sort_override == "LastFirst":
+            cfg['sort_students'][campus] = '=%LastFirst%'
+        elif sort_override == "Counselor":
+            cfg['sort_students'][campus] = '=%Counselor%&%LastFirst%'
+        elif sort_override == "Advisor":
+            cfg['sort_students'][campus] = '=%Advisor%&%LastFirst%'
     
     # Setup configuration--tab settings files (includes layout of tabs)
     cfg_tabs = {}
@@ -134,6 +142,11 @@ if __name__ == '__main__':
             dest='debug', action='store_false', default=True,
             help='Suppress status messages during report creation')
     
+    parser.add_argument('-st','--sort',
+            dest='sort', action='store',
+            help='Override sort order in settings [Advisor,Counselor,LastFirst]',
+            default=False)
+
     parser.add_argument('-ns','--nonseminar',
             dest='do_nonseminar', action='store_true', default=False,
             help='Create report only for non-seminar students')
@@ -154,4 +167,4 @@ if __name__ == '__main__':
 
     main(args.settings_file, settings_tabs, args.campus, args.counselor,
             args.advisor, args.summary, args.debug, do_pdf,
-            args.do_nonseminar)
+            args.do_nonseminar, args.sort)
