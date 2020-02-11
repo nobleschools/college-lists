@@ -53,7 +53,7 @@ applications_calculations: # definitions for calculated columns in order
         formula: =INDEX(KidRace,MATCH(%hs_student_id%,KidIDs,0))
         format: bold_blue
     - FRace:
-        formula: =IF(OR(%Race%="M",%Race%="I"),"H",%Race%)
+        formula: =IF(OR(%Race%="M",%Race%="I"),"H",IF(%Race%="P","A",%Race%))
         format: bold_blue
     - TargetGR:
         formula: =INDEX(StudentTargets,MATCH(%hs_student_id%,KidIDs,0))

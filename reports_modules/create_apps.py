@@ -131,7 +131,7 @@ def reduce_and_augment_apps(cfg, dfs, campus, debug):
                       ('local_inta', 'Intercept'),
                       ]
     df['local_frace'] = df['local_race'].apply(
-                    lambda x: 'H' if x in ['M','I'] else x)
+                    lambda x: 'H' if (x in ['M','I']) else ('A' if x in ['P',] else x))
     coef_index = df['local_frace'] + ':' + df['local_barrons']
     for local_label, coef_label in weights_fields:
         df[local_label] = coef_index.apply(_lookup_source_field,
