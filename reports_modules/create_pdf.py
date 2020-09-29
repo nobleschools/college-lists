@@ -518,6 +518,14 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
     elif goal_name == 'match':
         return sum((stu_apps.local_odds >= 50) &
                    (stu_apps.local_odds <  80))
+    elif goal_name == 'money_reach':
+        return sum((stu_apps.local_odds >= 20) &
+                   (stu_apps.local_odds <  50) &
+                   (stu_apps.local_money == 1))
+    elif goal_name == 'money_match':
+        return sum((stu_apps.local_odds >= 50) &
+                   (stu_apps.local_odds <  80) &
+                   (stu_apps.local_money == 1))
     elif goal_name == 'match_plus':
         return sum(stu_apps.local_odds >= 50)
     elif goal_name in ['safety', 'lt_safety']:
@@ -534,6 +542,9 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
                    (stu_apps.local_odds >= 80))
     elif goal_name == 'tgr_plus':
         return sum(stu_apps.local_6yr_all_aah >= stu_data.local_target_gr)
+    elif goal_name == 'money_tgr_plus':
+        return sum((stu_apps.local_6yr_all_aah >= stu_data.local_target_gr) &
+                   (stu_apps.local_money == 1))
     elif goal_name == 'money_tgr_plus_match_plus':
         return sum((stu_apps.local_6yr_all_aah >= stu_data.local_target_gr) &
                    (stu_apps.local_odds >= 50) &
