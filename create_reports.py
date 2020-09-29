@@ -24,7 +24,7 @@ def main(settings_file, settings_tabs, campus, counselor, advisor, summary,
         print('Report for {},{},{}.'.format(campus, counselor, advisor),
                                                             flush=True)
     with open(settings_file, 'r') as ymlfile:
-        cfg = yaml.load(ymlfile)
+        cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
 
     if advisor != "All": # Force LastFirst for advisor reports
         sort_override = "LastFirst"
@@ -41,7 +41,7 @@ def main(settings_file, settings_tabs, campus, counselor, advisor, summary,
     cfg_tabs = {}
     for tab, filename in settings_tabs.items():
         with open(filename, 'r') as ymlfile:
-            cfg_tabs[tab] = yaml.load(ymlfile)
+            cfg_tabs[tab] = yaml.load(ymlfile, Loader=yaml.FullLoader)
 
     # Create the base output file
     out = Output(campus, counselor, advisor,cfg, cfg_tabs, debug,

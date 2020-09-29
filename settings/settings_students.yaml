@@ -90,8 +90,32 @@ students_columns:
         head_format: bold_olive_underline
         label_format: bold_olive_center_wrap
         cond_format: dash_bottom
+    - 'SAT guess from GPA':
+        formula: '=IF(ISNUMBER(%GPA%),ROUND(427.913068576+185.298880075*%GPA%,-1),"TBD")'
+        format: centered
+        width: 8.91
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - '11.3 Interim (Feb 2020)':
+        formula: tbl:InterimSAT
+        format: centered
+        width: 8.91
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
     - 'Actual SAT':
         formula: tbl:SAT
+        format: centered
+        width: 5.57
+        head_text: ''
+        head_format: bold_olive_underline
+        label_format: bold_olive_center_wrap
+        cond_format: dash_bottom
+    - 'SAT value used':
+        formula: '=IF(ISNUMBER(%Actual SAT%),%Actual SAT%,IF(ISNUMBER(%11.3 Interim (Feb 2020)%),%11.3 Interim (Feb 2020)%,IF(ISNUMBER(%SAT guess from GPA%),%SAT guess from GPA%,"TBD")))'
         format: centered
         width: 5.57
         head_text: ''
@@ -107,7 +131,7 @@ students_columns:
         label_format: bold_olive_center_wrap
         cond_format: dash_bottom
     - 'High "SAT"':
-        formula: '=IF(ISNUMBER(%Actual SAT%),IF(ISNUMBER(%ACT in SAT terms%),MAX(%Actual SAT%,%ACT in SAT terms%),%Actual SAT%),IF(ISNUMBER(%ACT in SAT terms%),%ACT in SAT terms%,"TBD"))'
+        formula: '=IF(ISNUMBER(%SAT value used%),IF(ISNUMBER(%ACT in SAT terms%),MAX(%SAT value used%,%ACT in SAT terms%),%SAT value used%),IF(ISNUMBER(%ACT in SAT terms%),%ACT in SAT terms%,"TBD"))'
         format: centered
         width: 6.00
         head_text: ''

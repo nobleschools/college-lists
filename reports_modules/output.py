@@ -74,6 +74,7 @@ class Output():
                     'EFC':safe2int,
                     'ACT':safe2int,
                     'SAT':safe2int,
+                    'InterimSAT':safe2int,
                     'GPA':safe2f,
                     'NCES': safe2int,
                     'StudentID':safe2int})

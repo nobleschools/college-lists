@@ -17,6 +17,31 @@ def _get_act_translation(x, lookup_df):
             return lookup_df.loc[act,'SAT']
     return np.nan # default if not in table or not a number
 
+
+def _get_sat_guess(x):
+    ''' Returns a GPA guess based on regression constants from the
+    prior year. nan if GPA isn't a number'''
+    gpa = x
+    if np.isreal(gpa):
+        guess = 427.913068576+185.298880075*gpa
+        return np.round(guess/10.0)*10.0
+    else:
+        return np.nan
+
+
+def _pick_sat_for_use(x):
+    ''' Returns the SAT we'll use in practice'''
+    sat_guess, interim, actual_sat = x
+    if np.isreal(actual_sat):
+        return actual_sat
+    elif np.isreal(interim):
+        return interim
+    elif np.isreal(sat_guess):
+        return sat_guess
+    else:
+        return np.nan
+
+
 def _get_sat_max(x):
     ''' Returns the max of two values if both are numbers, otherwise
     returns the numeric one or nan if neither is numeric'''
@@ -68,7 +93,10 @@ def reduce_roster(campus, cfg, dfs, counselor, advisor, debug, do_nonseminar):
     # analyses
     df['local_act_in_sat'] = df['ACT'].apply(_get_act_translation,
             args=(dfs['ACTtoSAT'],))
-    df['local_sat_max'] = df[['SAT','local_act_in_sat']].apply(
+    df['local_sat_guess'] = df['GPA'].apply(_get_sat_guess)
+    df['local_sat_used'] = df[['local_sat_guess','InterimSAT','SAT']].apply(
+        _pick_sat_for_use, axis=1)
+    df['local_sat_max'] = df[['local_sat_used','local_act_in_sat']].apply(
             _get_sat_max, axis=1)
 
     dfs['roster'] = df
