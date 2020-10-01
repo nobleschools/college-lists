@@ -262,7 +262,7 @@ school_goals:
     Bulls:
         - money: 6
         - tgr_only: 3
-        - igr: 3
+        - igr: 2
         - il_public: 1
     Baker:
         - money_igr_longshot_plus: '[(8,2),3]'

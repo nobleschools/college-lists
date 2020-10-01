@@ -48,16 +48,17 @@ for campus_case in [
     new_file = new_files[0]
     os.rename(new_file, 'Counselor Summary '+new_file)
 '''
-# Do a special Comer advisor sort pdf
-t0 = time()
-before_files = os.listdir()
-os.system(call_stem+' -q -pdfonly -st Advisor -ca Comer')
-print('{:.2f} seconds'.format(time()-t0),flush=True)
-sleep(1)
-after_files = os.listdir()
-new_files = list(set(after_files)-set(before_files))
-new_file = new_files[0]
-os.rename(new_file, 'Advisor Sort '+new_file)
+# Do a special advisor sort pdf
+for campus_case in ['Comer', 'Bulls']:
+    t0 = time()
+    before_files = os.listdir()
+    os.system(call_stem+' -q -pdfonly -st Advisor -ca '+campus_case)
+    print('{:.2f} seconds'.format(time()-t0),flush=True)
+    sleep(1)
+    after_files = os.listdir()
+    new_files = list(set(after_files)-set(before_files))
+    new_file = new_files[0]
+    os.rename(new_file, 'Advisor Sort '+new_file)
 
 # Now do campus reports
 for campus_case in [
@@ -80,7 +81,7 @@ for campus_case in [
         'TNA',
         'PAS',
         #'listKIPP.csv',
-        'listGCMS.csv',
+        #'listGCMS.csv',
         ]:
     t0 = time()
     print('Generating {}...'.format(campus_case),flush=True,end='')
@@ -90,6 +91,7 @@ for campus_case in [
 # Now do counselor specific cases for a handful of campuses
 
 
+"""
 for campus, names in [
         ['Pritzker',['"McCaw"', '"Knoche"', '"Abreu"', '"Ryden"',
          '"Williams"', '"Kruger"']],
@@ -117,7 +119,6 @@ for campus, names in [
     for x in new_files:
         os.rename(x, folder+'/'+x)
     compress(folder)
-"""
 # Finally, do advisor specific cases where requested
 for campus, names in [
         ['Muchin',[
