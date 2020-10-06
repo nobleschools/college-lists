@@ -87,6 +87,10 @@ for campus_case in [
     print('Generating {}...'.format(campus_case),flush=True,end='')
     os.system(call_stem+' -q -pdf -sum All -ca '+campus_case)
     print('{:.2f} seconds'.format(time()-t0),flush=True)
+    t0 = time()
+    print('Generating {} single pagers...'.format(campus_case),flush=True,end='')
+    os.system(call_stem+' -q -pdfsolo -ca '+campus_case)
+    print('{:.2f} seconds'.format(time()-t0),flush=True)
 
 # Now do counselor specific cases for a handful of campuses
 

@@ -45,13 +45,13 @@ def main(settings_file, settings_tabs, campus, counselor, advisor, summary,
 
     # Create the base output file
     out = Output(campus, counselor, advisor,cfg, cfg_tabs, debug,
-                                                (do_pdf == 'only'))
+                                                (do_pdf == 'only' or do_pdf == 'only_solo'))
     reduce_roster(campus, cfg, out.dfs, counselor, advisor, debug,
                                                      do_nonseminar)
     reduce_and_augment_apps(cfg, out.dfs, campus, debug)
     add_student_calculations(cfg, out.dfs, debug)
 
-    if not do_pdf == 'only':
+    if not (do_pdf == 'only' or do_pdf == 'only_solo'):
         create_chart_tab(out.writer, out.chart, debug)
         if summary == 'All':
             make_summary_tab(out.writer, out.formats, out.dfs, cfg,
@@ -77,9 +77,9 @@ def main(settings_file, settings_tabs, campus, counselor, advisor, summary,
         create_static_tabs(out.writer, out.dfs, out.formats,
                 cfg, campus, debug)
 
-    if do_pdf: #will either be True or 'only'
+    if do_pdf: #will either be True or 'only' or 'only_solo'
         make_pdf_report(out.ssv_fn, out.dfs, cfg, cfg_tabs['ssv'],
-                campus, debug)
+                campus, debug, (do_pdf == 'pdf_solo'))
 
 
 if __name__ == '__main__':
@@ -138,6 +138,10 @@ if __name__ == '__main__':
             dest='make_pdf_only', action='store_true', default=False,
             help='Only create pdf single page per student reports')
 
+    parser.add_argument('-pdfsolo', '--pdfsolo',
+            dest='make_pdf_solo', action='store_true', default=False,
+            help='Only create pdf single page per student reports, one file per student')
+
     parser.add_argument('-q','--quiet',
             dest='debug', action='store_false', default=True,
             help='Suppress status messages during report creation')
@@ -160,6 +164,8 @@ if __name__ == '__main__':
             }
     if args.make_pdf_only:
         do_pdf = 'only'
+    elif args.make_pdf_solo:
+        do_pdf = 'pdf_solo'
     elif args.make_pdf:
         do_pdf = True
     else:

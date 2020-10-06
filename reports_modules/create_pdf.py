@@ -4,9 +4,22 @@
 
 import warnings
 import numpy as np
+import os
+import zipfile
 from datetime import date
 from collections import OrderedDict
 from fpdf import FPDF
+
+def create_folder_if_necessary(location):
+    """
+    Checks for existence of folder and creates if not there.
+    Location is a list and this function runs recursively
+    """
+    for i in range(len(location)):
+        this_location = os.path.join(*location[:(i+1)])
+        if not os.path.exists(this_location):
+            os.makedirs(this_location)
+
 
 def _notnan(value, nanstring, formatstring):
     '''Returns a string from a numeric value formatting by formatstring
@@ -88,8 +101,9 @@ def _set_color_name(pdf, name, type='fill'):
         raise(RuntimeError('PDF color not specified: '+name))
 
 
-def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
-    '''Master function for creating the pdf reports'''
+def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug, do_solo):
+    '''Master function for creating the pdf reports
+    do_solo will be true if we want a single file per student'''
 
     # First create Class and process config settings
     local_cfg = {}
@@ -131,13 +145,17 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
     footer_start = cfg_ssv['pdf_footer_start']
     college_max = cfg_ssv['pdf_college_max']
 
-    pdf = FPDF(orientation = local_cfg['orient'],
-            unit = 'in', format = 'Letter')
+    if not do_solo:
+        pdf = FPDF(orientation = local_cfg['orient'],
+                unit = 'in', format = 'Letter')
 
-    for font_name, filename in cfg_ssv['pdf_fonts'].items():
-        pdf.add_font(font_name, '', filename, uni=True)
-    pdf.set_line_width(line)
-    pdf.set_margins(left=left_margin, top=top_margin, right=right_margin)
+        for font_name, filename in cfg_ssv['pdf_fonts'].items():
+            pdf.add_font(font_name, '', filename, uni=True)
+        pdf.set_line_width(line)
+        pdf.set_margins(left=left_margin, top=top_margin, right=right_margin)
+    else:
+        create_folder_if_necessary(["Reports", campus])
+        filenames = []
 
     # Get the student data and sort as appropriate
     df = dfs['roster'].copy()
@@ -155,6 +173,24 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
     ####################################
     # start repeating here for each page
     for i, stu_data in df.iterrows():
+        if do_solo:
+            student_fn = (
+                campus
+                + "_"
+                + stu_data["LastFirst"].replace(" ", "_")
+                + "_"
+                + str(i)
+                + date.today().strftime("_on_%m_%d_%Y")
+                + ".pdf"
+            )
+            pdf = FPDF(orientation = local_cfg['orient'],
+                    unit = 'in', format = 'Letter')
+
+            for font_name, filename in cfg_ssv['pdf_fonts'].items():
+                pdf.add_font(font_name, '', filename, uni=True)
+            pdf.set_line_width(line)
+            pdf.set_margins(left=left_margin, top=top_margin, right=right_margin)
+
         pdf.add_page()
 
         pdf.set_y(top_margin)
@@ -448,12 +484,35 @@ def make_pdf_report(fn, dfs, cfg, cfg_ssv, campus, debug):
         #pdf.line(left_margin+sum(w[:x])+0.8,line_top,
         #         left_margin+sum(w[:x])+0.8,line_bottom)
 
+        if do_solo:
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                this_file = os.path.join("Reports", campus, student_fn)
+                pdf.output(this_file, 'F')
+                filenames.append(this_file)
+
+
     # The font we use is missing an unusued glyph and so throws two warnings
     # at save. The next three lines supress this, but probably good to
     # occasionally uncomment them
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        pdf.output(fn, 'F')
+    if not do_solo:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            pdf.output(fn, 'F')
+    else:
+        # Create a zip file of all of the single files
+        campus_fn = (
+            campus
+            + "_single_file_SSVs"
+            + date.today().strftime("_%m_%d_%Y")
+            + ".zip"
+        )
+        with zipfile.ZipFile(
+            campus_fn, "w", zipfile.ZIP_DEFLATED
+        ) as myzip:
+            for file in filenames:
+                myzip.write(file)
+
 
 def _get_student_goal_performance(pdf, w, school_goals, goal_descriptions,
                                      stu_data, stu_apps, labels):
@@ -502,6 +561,8 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
     Lookup based function that returns analysis based on local student and
     apps tables, using a key from the settings file
     """
+    if len(stu_apps) == 0:
+        return 0
     if goal_name == 'il_public':
         return sum(stu_apps.local_ilpublic == 1)
     elif goal_name == 'il_match_plus':
