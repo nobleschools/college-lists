@@ -199,9 +199,9 @@ goal_descriptions:
         
 school_goals:
     UIC:
-        - money_safety: 2
-        - money_tgr_only_reach_plus: 3
-        - money_igr_reach_plus: 1
+        - money_safety: 3
+        - money_tgr_plus: 3
+        - tgr_plus: 5
         - il_public: 1
     #For these lists, the structure is >=x then y, else (next...)
     # Also, a 0 means wipe out the whole goal
@@ -228,8 +228,9 @@ school_goals:
     TNA:
         - money_igr_longshot_plus: 3
         - money_tgr_only_longshot_plus: 3
+        - money_match: 3
         - money_safety: 3
-        - il_public: 1
+        - il_match_plus: 1
     Noble:
         - money_igr_longshot_plus: 2
         - money_tgr_only_longshot_plus: 2

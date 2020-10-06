@@ -133,6 +133,10 @@ H:139658,5.996394,0.014649,-41.5231,1,Emory University
 H:127060,6.254857,0.0154,-39.0458,1,University of Denver
 H:131520,11.87561,0.01408,-57.152,1,Howard University (HBCU)
 H:153144,7.359731,0.021306,-42.7329,1,Coe College
+H:Arrupe,1.923477,0.000977,-5.49744,1,Arrupe College (Loyola)
+H:145691,6.398918,0.011342,-28.132,1,Illinois College
+H:146481,5.62774,0.01482,-34.4036,1,Lake Forest College
+H:144740,6.748706344,0.013854782,-35.19017123,1,DePaul University
 B:243780,1.192112,0.000369,-4.40463,1,Purdue University-Main Campus
 B:234076,6.723469,0.007081,-33.6388,1,University of Virginia-Main Campus
 B:169080,5.000916,0.020435,-33.3557,1,Calvin College
@@ -242,6 +246,7 @@ B:174844,3.979243,0.009727,-24.3141,1,St Olaf College
 B:127060,4.485492,0.014827,-32.2444,1,University of Denver
 B:Arrupe,1.923477,0.000977,-5.49744,1,Arrupe College (Loyola)
 B:153144,6.194953,0.024407,-41.5364,1,Coe College
+B:144740,5.171876551,0.015106569,-31.44391318,1,DePaul University
 W:147767,4.246258,0.016088,-39.0551,1,Northwestern University
 W:170532,10.41933,0.01434,-52.8827,1,Kalamazoo College
 W:145600,6.198887,0.024224,-41.4489,1,University of Illinois at Chicago
@@ -251,6 +256,10 @@ W:170976,3.294652,0.007483,-22.1325,1,University of Michigan-Ann Arbor
 W:202523,3.222983,0.007552,-20.2343,1,Denison University
 W:145637,9.385111,0.019134,-52.9706,1,University of Illinois at Urbana-Champaign
 W:174844,1.937776,0.014584,-24.538,1,St Olaf College
+W:Arrupe,1.923477,0.000977,-5.49744,1,Arrupe College (Loyola)
+W:145691,6.398918,0.011342,-28.132,1,Illinois College
+W:146481,5.62774,0.01482,-34.4036,1,Lake Forest College
+W:144740,5.171876551,0.015106569,-31.44391318,1,DePaul University
 A:147767,4.246258,0.016088,-39.0551,1,Northwestern University
 A:170532,10.41933,0.01434,-52.8827,1,Kalamazoo College
 A:145600,6.198887,0.024224,-41.4489,1,University of Illinois at Chicago
@@ -260,3 +269,7 @@ A:170976,3.294652,0.007483,-22.1325,1,University of Michigan-Ann Arbor
 A:202523,3.222983,0.007552,-20.2343,1,Denison University
 A:145637,9.385111,0.019134,-52.9706,1,University of Illinois at Urbana-Champaign
 A:174844,1.937776,0.014584,-24.538,1,St Olaf College
+A:Arrupe,1.923477,0.000977,-5.49744,1,Arrupe College (Loyola)
+A:145691,6.398918,0.011342,-28.132,1,Illinois College
+A:146481,5.62774,0.01482,-34.4036,1,Lake Forest College
+A:144740,5.171876551,0.015106569,-31.44391318,1,DePaul University
