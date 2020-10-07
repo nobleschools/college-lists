@@ -5,6 +5,7 @@ current_students.csv
 *.pdf
 old_reports
 *.pkl
+.vscode/settings.json
 
 # Editing files
 *.swp
