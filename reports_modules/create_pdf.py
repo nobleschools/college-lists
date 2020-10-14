@@ -813,6 +813,8 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
         return sum(stu_apps.local_6yr_all_aah < (stu_data.local_target_gr - 0.1))
     elif goal_name == "national_louis":
         return sum(stu_apps.NCES == 147536)
+    elif goal_name == "city_college":
+        return sum(stu_apps.NCES.isin([144157, 144166, 144175, 144184, 144193, 144209, 144218])) 
     elif goal_name == "golden_three":
         return sum(
             (stu_apps.local_6yr_all_aah >= stu_data.local_target_gr)

@@ -196,11 +196,42 @@ goal_descriptions:
         Label: '="@ app to National-Louis University"'
         Eval: '=INDEX(NLUApps,MATCH(D3,KidIds,0))'
         Sign: '>='
+    city_college:
+        Descr: 'An application to City Colleges of Chicago'
+        Label: '="@ app to City Colleges"'
+        Eval: '=INDEX(CityCollegesApps,MATCH(D3,KidIds,0))'
+        Sign: '>='
         
 school_goals:
     UIC:
+        - lt_total: '[(9,6),(5,10),12]'
+        - total: '[(9,3),(5,6),8]'
+        - money_safety: '[(9,0),3]'
+        - money_match: '[(9,2),3]'
+        - money_tgr_only_longshot_plus: '[(9,2),3]'
+        - money_igr_longshot_plus: '[(5,1),2]'
+        - il_public: '[(9,0),(5,2),1]'
+        - national_louis: '[(9,1),0]'
+        - city_college: '[(9,1),0]'
+    Muchin:
+        - money_igr_longshot_plus: 2
+        - money_tgr_only_longshot_plus: 3
         - money_safety: 3
+    Rauner:
+        - reach: '[(8,1),2]'
+        - match: '[(8,2),3]'
+        - safety: '[(8,3),4]'
+        - money: 5
+        - il_match_plus: 1
+        - tgr_only: '[(8,4),5]'
+    RoweClark:
         - money_tgr_plus: 3
+        - il_public: '[(8,2),1]'
+        - money_safety: '[(8,0),3]'
+        - money_match: '[(8,0),3]'
+        - lt_bad_money: 2
+        - national_louis: '[(9,1),0]'
+
         - tgr_plus: 5
         - il_public: 1
     #For these lists, the structure is >=x then y, else (next...)
