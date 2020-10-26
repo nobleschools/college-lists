@@ -107,12 +107,14 @@ def reduce_roster(campus, cfg, dfs, counselor, advisor, debug, do_nonseminar):
 
 
 def _get_subgroup(x):
-    """Apply function to return one of six unique subgroups"""
+    """Apply function to return one of eight unique subgroups"""
     race, gender = x
     if race == "B":
         subgroup = "Black"
     elif race == "H":
         subgroup = "Latinx"
+    elif race == "A" or race == "P":
+        subgroup = "Asian"
     else:
         subgroup = "Other"
     if gender == "M":
