@@ -134,6 +134,14 @@ summary_columns:
         cond_format: centered_integer_right_solid_bottom
         sum_formula: '=SUM(AppsSubmitted)/@# Students@'
         sum_format: centered_summary_right
+    - '% of planned apps submitted':
+        formula: '=IF(%Avg # of apps (planned)%>0,%Avg # of apps (subm.)%/%Avg # of apps (planned)%,"")'
+        format: single_percent_centered_right
+        width: 11.64
+        label_format: bold_blue_center_wrap_right
+        cond_format: single_percent_centered_right_solid_bottom
+        sum_formula: '=IF(@Avg # of apps (planned)@>0,@Avg # of apps (subm.)@/@Avg # of apps (planned)@,"")'
+        sum_format: single_percent_centered_summary_right
     - 'Predict-ion "Perfect"':
         formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,PredP)/%# Students%,"")'
         format: single_percent_centered
