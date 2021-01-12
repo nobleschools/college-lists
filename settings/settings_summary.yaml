@@ -31,6 +31,10 @@ summary_fields: # one of these is picked by summary_type in main settings.yaml
         excel_name: Counselor # named range being referenced on Students
         excel_label: Counselor # label for the column in this tab
         tbl_name: Counselor # reference for the students table to summarize
+    Cohort:
+        excel_name: Cohort # named range being referenced on Students
+        excel_label: Cohort # label for the column in this tab
+        tbl_name: Cohort # reference for the students table to summarize
     Subgroup:
         excel_name: Subgroup # named range being referenced on Students
         excel_label: Subgroup # label for the column in this tab

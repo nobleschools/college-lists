@@ -658,11 +658,15 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
 
         # TODO: Maybe make this a strict if versus elif--check spacing
         if campus in cfg_ssv["print_footer"]:  # only do this if spec'ed
+            if campus in cfg_ssv["school_goals"]:
+                foot_row = s_end + 2 + len(campus_goals)
+            else:
+                foot_row = s_end + 2
             safe_write(
-                ws, s_end + 2, 4, cfg_ssv["print_footer"][campus], f_db["ssv_footer"]
+                ws, foot_row, 4, cfg_ssv["print_footer"][campus], f_db["ssv_footer"]
             )
             for c in range(5, 10):
-                safe_write(ws, s_end + 2, c, "", f_db["ssv_footer"])
+                safe_write(ws, foot_row, c, "", f_db["ssv_footer"])
 
     # Finally, the rest of the tab's formatting (rows/columns)
     cond_ranges = [

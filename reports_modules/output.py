@@ -89,7 +89,7 @@ class Output:
         elif key == "current_roster":
             self.dfs["full_roster"] = pd.read_csv(
                 filename,
-                index_col=4,
+                index_col="StudentID",
                 na_values=["N/A", ""],
                 encoding="cp1252",
                 converters={

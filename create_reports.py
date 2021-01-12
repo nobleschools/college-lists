@@ -70,39 +70,18 @@ def main(
     if not (do_pdf == "only" or do_pdf == "only_solo"):
         create_chart_tab(out.writer, out.chart, debug)
         if summary == "All":
-            make_summary_tab(
-                out.writer,
-                out.formats,
-                out.dfs,
-                cfg,
-                cfg_tabs["summary"],
-                campus,
-                debug,
-                "Strategy",
-                sn="Strategy_Summary",
-            )
-            make_summary_tab(
-                out.writer,
-                out.formats,
-                out.dfs,
-                cfg,
-                cfg_tabs["summary"],
-                campus,
-                debug,
-                "Counselor",
-                sn="Counselor_Summary",
-            )
-            make_summary_tab(
-                out.writer,
-                out.formats,
-                out.dfs,
-                cfg,
-                cfg_tabs["summary"],
-                campus,
-                debug,
-                "Subgroup",
-                sn="Subgroup_Summary",
-            )
+            for sum_type in ["Strategy", "Counselor", "Subgroup", "Cohort"]:
+                make_summary_tab(
+                    out.writer,
+                    out.formats,
+                    out.dfs,
+                    cfg,
+                    cfg_tabs["summary"],
+                    campus,
+                    debug,
+                    sum_type,
+                    sn=sum_type + "_Summary",
+                )
         else:
             make_summary_tab(
                 out.writer,

@@ -95,8 +95,6 @@ def make_summary_tab(
     if debug:
         print("Writing summary tab...", flush=True, end="")
     df = dfs["roster"]
-    wb = writer.book
-    ws = wb.add_worksheet(sn)
     master_cols = []
     col_letters = make_excel_indices()  # creates an index of excel headers
     # the summary_type field selects the right set of field details
@@ -107,6 +105,11 @@ def make_summary_tab(
     sum_local = summary_field["tbl_name"]  # field in roster table to sum by
     rows = list(set(df[sum_local]))  # A list of unique values in sum column
     rows.sort()
+
+    if len(rows) <= 1:
+        if debug:
+            print(f"Not summarizing by {summary}, not enough values ({rows})")
+        return
 
     # if the settings file specifies a custom list for the summary field,
     # populate that here:
@@ -150,7 +153,9 @@ def make_summary_tab(
     # After everything is defined, overwrite the label to the first column:
     master_cols[0][1] = sum_label
 
-    # Now write the column headers:
+    # Now create the sheet and write the column headers:
+    wb = writer.book
+    ws = wb.add_worksheet(sn)
     for i in range(len(master_cols)):
         col = master_cols[i]
         safe_write(ws, 0, i, col[1], f_db[col[5]])
