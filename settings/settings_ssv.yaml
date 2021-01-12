@@ -96,6 +96,11 @@ goal_descriptions:
         Label: '="@+ "&LOWER(SafetyLabel)&" schools"'
         Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
         Sign: '>='
+    safety_no_goal:
+        Descr: 'Schools with Safety, Secure, or Sure Thing Odds'
+        Label: '=LOWER(SafetyLabel)&" schools"'
+        Eval: '=INDEX(SafetyApps,MATCH(D3,KidIDs,0))+INDEX(SecureApps,MATCH(D3,KidIDs,0))+INDEX(SureThingApps,MATCH(D3,KidIDs,0))'
+        Sign: 'N/A'
     lt_safety:
         Descr: 'Maximum number of schools with Safety, Secure, or Sure Thing Odds'
         Label: '="@- "&LOWER(SafetyLabel)&" schools"'
@@ -131,6 +136,11 @@ goal_descriptions:
         Label: '="@+ "&LOWER(TargetGRLabel)&" grad rate or better schools"'
         Eval: '=INDEX(TGRorBetterApps,MATCH(D3,KidIDs,0))'
         Sign: '>='
+    tgr_plus_no_goal:
+        Descr: 'Schools with Grad Rate at or above Target'
+        Label: '=LOWER(TargetGRLabel)&" grad rate or better schools"'
+        Eval: '=INDEX(TGRorBetterApps,MATCH(D3,KidIDs,0))'
+        Sign: 'N/A'
     money_tgr_plus:
         Descr: 'Schools with Grad Rate at or above Target, also money'
         Label: '="@+ money "&LOWER(TargetGRLabel)&" grad rate schools"'
@@ -171,6 +181,11 @@ goal_descriptions:
         Label: '="@+ Illinois public schools"'
         Eval: '=INDEX(ILPubApps,MATCH(D3,KidIDs,0))'
         Sign: '>='
+    il_public_no_goal:
+        Descr: 'Illinois Public Schools'
+        Label: '="Illinois public schools"'
+        Eval: '=INDEX(ILPubApps,MATCH(D3,KidIDs,0))'
+        Sign: 'N/A'
     il_match_plus:
         Descr: 'Illinois Public with 50+% odds'
         Label: '="@+ Illinois match, safety, or secure"'
@@ -181,6 +196,11 @@ goal_descriptions:
         Label: '="@+ money options (++/-, ++, or +++)"'
         Eval: '=INDEX(AllMoneyApps,MATCH(D3,KidIDs,0))'
         Sign: '>='
+    money_no_goal:
+        Descr: 'Schools that are money based on the +/- code'
+        Label: '="money options (++/-, ++, or +++)"'
+        Eval: '=INDEX(AllMoneyApps,MATCH(D3,KidIDs,0))'
+        Sign: 'N/A'
     money_chicago:
         Descr: 'Money schools in the Chicago commute radius'
         Label: '="@+ money Chicagoland schools"'
@@ -287,10 +307,10 @@ school_goals:
         - money_safety: 3
         - il_match_plus: 1
     Hansberry:
-        - tgr_plus: 5
-        - money: 5
-        - safety: 3
-        - il_public: 1
+        - tgr_plus_no_goal: 1
+        - money_no_goal: 1
+        - safety_no_goal: 1
+        - il_public_no_goal: 1
     Bulls:
         - money: 6
         - tgr_only: 3

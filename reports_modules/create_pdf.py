@@ -710,11 +710,17 @@ def _get_student_goal_performance(
         goal_text = _clean_excel(this_goal["Label"], stu_data, labels)
         goal_text = goal_text.replace("@", str(amount))
         goal_value = _eval_pdf_goal(label, stu_data, stu_apps)
-        goal_result = eval(str(goal_value) + this_goal["Sign"] + str(amount))
-        if amount != 0:  # This allows variable goals to be zeroed for some students
-            goal_eval.append(
-                [goal_text, str(goal_value), ("Yes!" if goal_result else "No")]
+        goal_result = (
+            "N/A"
+            if (this_goal["Sign"] == "N/A")
+            else (
+                "Yes!"
+                if eval(str(goal_value) + this_goal["Sign"] + str(amount))
+                else "No"
             )
+        )
+        if amount != 0:  # This allows variable goals to be zeroed for some students
+            goal_eval.append([goal_text, str(goal_value), goal_result])
 
         # Finally, figure out the padding
         max_width = max([pdf.get_string_width(x[0]) for x in goal_eval])
@@ -732,7 +738,7 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
     """
     if len(stu_apps) == 0:
         return 0
-    if goal_name == "il_public":
+    if goal_name in ["il_public", "il_public_no_goal"]:
         return sum(stu_apps.local_ilpublic == 1)
     elif goal_name == "il_match_plus":
         return sum((stu_apps.local_odds >= 50) & (stu_apps.local_ilpublic == 1))
@@ -758,17 +764,17 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
         )
     elif goal_name == "match_plus":
         return sum(stu_apps.local_odds >= 50)
-    elif goal_name in ["safety", "lt_safety"]:
+    elif goal_name in ["safety", "lt_safety", "safety_no_goal"]:
         return sum(stu_apps.local_odds >= 80)
     elif goal_name == "lt_longshot_under":
         return sum(stu_apps.local_odds < 20)
-    elif goal_name == "money":
+    elif goal_name in ["money", "money_no_goal"]:
         return sum(stu_apps.local_money == 1)
     elif goal_name == "lt_bad_money":
         return sum(stu_apps.local_money_code.isin(["---", "--", "+/--", "+/---"]))
     elif goal_name == "money_safety":
         return sum((stu_apps.local_money == 1) & (stu_apps.local_odds >= 80))
-    elif goal_name == "tgr_plus":
+    elif goal_name in ["tgr_plus", "tgr_plus_no_goal"]:
         return sum(stu_apps.local_6yr_all_aah >= stu_data.local_target_gr)
     elif goal_name == "money_tgr_plus":
         return sum(
@@ -814,7 +820,9 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
     elif goal_name == "national_louis":
         return sum(stu_apps.NCES == 147536)
     elif goal_name == "city_college":
-        return sum(stu_apps.NCES.isin([144157, 144166, 144175, 144184, 144193, 144209, 144218])) 
+        return sum(
+            stu_apps.NCES.isin([144157, 144166, 144175, 144184, 144193, 144209, 144218])
+        )
     elif goal_name == "golden_three":
         return sum(
             (stu_apps.local_6yr_all_aah >= stu_data.local_target_gr)

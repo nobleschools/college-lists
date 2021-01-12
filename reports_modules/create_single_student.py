@@ -647,12 +647,16 @@ def make_single_tab(writer, f_db, dfs, cfg, cfg_ssv, campus, debug, blank=True):
                     6,
                     g_start + i,
                     7,  # assessment (Col G)
-                    "=IF(F"
-                    + r_excel
-                    + this_goal["Sign"]
-                    + "D"
-                    + r_excel
-                    + ',"Yes!","No")',
+                    "N/A"
+                    if this_goal["Sign"] == "N/A"
+                    else (
+                        "=IF(F"
+                        + r_excel
+                        + this_goal["Sign"]
+                        + "D"
+                        + r_excel
+                        + ',"Yes!","No")'
+                    ),
                     f_db[goal_fmt[2]],
                 )
 
