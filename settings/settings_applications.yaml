@@ -37,6 +37,9 @@ app_format_catch: # formats to add back to the Naviance application data
     NCES: bold_orange
 
 applications_calculations: # definitions for calculated columns in order
+    - Counselor:
+        formula: =INDEX(Counselor,MATCH(%hs_student_id%,KidIDs,0))
+        format: bold_blue
     - Barron's:
         formula: =INDEX(AllCollegeBarrons,MATCH(%NCES%,AllCollegeNCES,0))
         format: bold_orange
