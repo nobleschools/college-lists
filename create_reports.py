@@ -70,7 +70,7 @@ def main(
     if not (do_pdf == "only" or do_pdf == "only_solo"):
         create_chart_tab(out.writer, out.chart, debug)
         if summary == "All":
-            for sum_type in ["Strategy", "Counselor", "Subgroup", "Cohort"]:
+            for sum_type in ["Strategy", "Counselor", "Subgroup", "Cohort", "Advisor"]:
                 make_summary_tab(
                     out.writer,
                     out.formats,
