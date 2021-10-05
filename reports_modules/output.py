@@ -63,6 +63,7 @@ class Output:
             )
             if self.debug:
                 print("(size {}).".format(len(self.dfs[key])), flush=True)
+                print(self.dfs[key].head())
         elif key == "chart":
             self.chart = filename
             if self.debug:

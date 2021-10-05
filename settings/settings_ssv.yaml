@@ -187,7 +187,7 @@ goal_descriptions:
         Eval: '=INDEX(ILPubApps,MATCH(D3,KidIDs,0))'
         Sign: 'N/A'
     il_match_plus:
-        Descr: 'Illinois Public with 50+% odds'
+        Descr: 'Illinois Public with 50+% odds, also money'
         Label: '="@+ Illinois match, safety, or secure"'
         Eval: '=INDEX(ILPubMSS,MATCH(D3,KidIDs,0))'
         Sign: '>='
@@ -235,8 +235,8 @@ school_goals:
         - city_college: '[(9,1),0]'
     Muchin:
         - money_igr_longshot_plus: 2
-        - money_tgr_only_longshot_plus: 3
-        - money_safety: 3
+        - money_tgr_only_longshot_plus: 2
+        - money_safety: 2
     Rauner:
         - reach: '[(8,1),2]'
         - match: '[(8,2),3]'
@@ -257,11 +257,9 @@ school_goals:
     #For these lists, the structure is >=x then y, else (next...)
     # Also, a 0 means wipe out the whole goal
     Johnson:
-        - lt_total: '[(9,6),(5,10),12]'
-        - total: '[(9,4),(5,8),10]'
-        - tgr_only: '[(9,2),(5,3),4]'
-        - igr: '[(9,1),3]'
-        - money: '[(9,3),6]'
+        - money_safety: '[(8,0),3]'
+        - money_match: '[(8,0),3]'
+        - money_tgr_plus: 3
         - il_public: 2
     Comer:
         - money_tgr_only_longshot_plus: 3
@@ -270,12 +268,10 @@ school_goals:
         - money_safety: 2
         - il_public: 2
     Mansueto:
-        - money_safety: '[(8,1),3]'
-        - money_match: '[(8,2),3]'
-        - money_reach: '[(8,1),2]'
-        - money_tgr_plus: 3
-        - il_match_plus: '[(8,2),1]'
-        - lt_bad_money: 2
+        - money_safety: 3
+        - money_match: 3
+        - money_reach: 2
+        - il_match_plus: 2
     TNA:
         - money_igr_longshot_plus: 3
         - money_tgr_only_longshot_plus: 3

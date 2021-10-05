@@ -1,39 +1,39 @@
-Competitiveness,MatchCode,GPAcoef,SAT-coef,Intercept
-H:Most Competitive+,7,2.150405,0.007811,-8.88295
-H:Most Competitive,6,2.600827,0.004505,-8.81263
-H:Highly Competitive,5,2.670901,0.00298,-7.94059
-H:Very Competitive,4,1.864994,0.010788,-3.69804
-H:Competitive,3,3.404478,0.00991,-7.13531
-H:Less Competitive,2,6.522376,0.009211,-13.7498
-H:Noncompetitive,1,1.853546097,0.014133621,-3.183712632
+﻿Competitiveness,MatchCode,GPAcoef,SAT-coef,Intercept
+H:Most Competitive+,7,1.54218841,0.00589296,-5.5587764
+H:Most Competitive,6,1.50986289,0.00054397,-4.4139201
+H:Highly Competitive,5,3.6808066,0.00318887,-11.047401
+H:Very Competitive,4,4.26670614,0.00325634,-10.745466
+H:Competitive,3,2.70954246,0.00274208,-4.8958016
+H:Less Competitive,2,3.62255721,0.00219868,-7.7192801
+H:Noncompetitive,1,8.73931762,0.00154196,-26.499792
 H:2 year (Noncompetitive),1,1,1,1
 H:Not Available,N/A,,,
 H:2 year (Competitive),2,1,1,1
-B:Most Competitive+,7,1.146811,0.012543,-3.55403
-B:Most Competitive,6,1.140704,0.005292,-3.50976
-B:Highly Competitive,5,2.338719,0.006838,-6.0031
-B:Very Competitive,4,2.173828,0.01381,-4.28742
+B:Most Competitive+,7,2.38097064,0.00400885,-9.1788477
+B:Most Competitive,6,1.77520725,0.00044394,-5.4640945
+B:Highly Competitive,5,3.13988017,0.00348045,-9.3940126
+B:Very Competitive,4,2.96172932,0.0014787,-6.4478617
 B:Competitive,3,1.424998,0.011048,-1.29258
-B:Less Competitive,2,1.685214,0.007177,-2.21178
+B:Less Competitive,2,2.93222055,0.00354935,-5.6079939
 B:Noncompetitive,1,0.873923,0.028857,4.004532
 B:2 year (Noncompetitive),1,1,1,1
 B:Not Available,N/A,,,
 B:2 year (Competitive),2,1,1,1
 W:Most Competitive+,7,3.22934457,0.006932088,-14.30949583
-W:Most Competitive,6,2.559806,0.004553,-9.07701
-W:Highly Competitive,5,4.318342,0.006869,-13.0438
-W:Very Competitive,4,1.720308,0.011176,-2.82127
-W:Competitive,3,2.185566,0.00787,-3.78311
+W:Most Competitive,6,2.68514904,0.00366786,-9.6359577
+W:Highly Competitive,5,4.19608358,0.00636246,-12.67745
+W:Very Competitive,4,2.13597049,0.00854449,-4.2988797
+W:Competitive,3,2.32138165,0.00612051,-4.1674615
 W:Less Competitive,2,8.794515319,0.017564284,-21.04631336
 W:Noncompetitive,1,1.853546097,0.014133621,-3.183712632
 W:2 year (Noncompetitive),1,1,1,1
 W:Not Available,N/A,,,
 W:2 year (Competitive),2,1,1,1
 A:Most Competitive+,7,3.22934457,0.006932088,-14.30949583
-A:Most Competitive,6,2.559806,0.004553,-9.07701
-A:Highly Competitive,5,4.318342,0.006869,-13.0438
-A:Very Competitive,4,1.720308,0.011176,-2.82127
-A:Competitive,3,2.185566,0.00787,-3.78311
+A:Most Competitive,6,2.68514904,0.00366786,-9.6359577
+A:Highly Competitive,5,4.19608358,0.00636246,-12.67745
+A:Very Competitive,4,2.13597049,0.00854449,-4.2988797
+A:Competitive,3,2.32138165,0.00612051,-4.1674615
 A:Less Competitive,2,8.794515319,0.017564284,-21.04631336
 A:Noncompetitive,1,1.853546097,0.014133621,-3.183712632
 A:2 year (Noncompetitive),1,1,1,1

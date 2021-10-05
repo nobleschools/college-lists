@@ -1,4 +1,4 @@
-INSTNM,UNITID,HBCU
+﻿INSTNM,UNITID,HBCU
 ,,
 Abilene Christian University,222178,No
 Adams State College,126182,No
@@ -20,7 +20,6 @@ Allegheny College,210669,No
 Alma College,168591,No
 Alvernia University,210775,No
 Alverno College,238193,No
-American Indian College of the Assemblies of God Inc,103787,No
 American International College,164447,No
 American Jewish University,116846,No
 American University,131159,No
@@ -36,18 +35,15 @@ Arizona Christian University,105899,No
 Arizona State University,104151,No
 Arkansas State University-Main Campus,106458,No
 Arkansas Tech University,106467,No
-Armstrong Atlantic State University,138789,No
 Arrupe College (Loyola),Arrupe,No
 Asbury University,156213,No
 Ashford University,154022,No
 Ashland University,201104,No
 Assumption College,164562,No
 Atlanta Christian College,138868,No
-Atlantic Union College,164571,#N/A
 Auburn University,100858,No
 Auburn University at Montgomery,100830,No
 Augsburg College,173045,No
-Augusta State University,138983,#N/A
 Augustana College,143084,No
 Augustana College,219000,No
 Aurora University,143118,No
@@ -204,7 +200,6 @@ Clarke University,153126,No
 Clarkson College,180832,No
 Clarkson University,190044,No
 Clayton  State University,139311,No
-Clearwater Christian College,133085,No
 Cleary University,169327,No
 Clemson University,217882,No
 Coastal Carolina University,218724,No
@@ -273,7 +268,6 @@ Daemen College,190725,No
 Dakota State University,219082,No
 Dakota Wesleyan University,219091,No
 Dallas Baptist University,224226,No
-Daniel Webster College,182661,No
 Dartmouth College,182670,No
 Davidson College,198385,No
 Davis & Elkins College,237358,No
@@ -286,14 +280,6 @@ Denison University,202523,No
 DePaul University,144740,No
 DePauw University,150400,No
 DeSales University,210739,No
-DeVry College of New York,432199,#N/A
-DeVry University-Arizona,104531,#N/A
-DeVry University-California,113607,#N/A
-DeVry University-Georgia,139533,#N/A
-DeVry University-Illinois,144759,#N/A
-DeVry University-Missouri,177162,#N/A
-DeVry University-Ohio,202541,#N/A
-DeVry University-Texas,224402,#N/A
 Dickinson College,212009,No
 DigiPen Institute of Technology,443410,No
 Dillard University (HBCU),158802,Yes
@@ -302,7 +288,6 @@ Dominican College of Blauvelt,190761,No
 Dominican University,148496,No
 Dominican University of California,113698,No
 Dordt College,153250,No
-Dowling College,190770,No
 Drake University,153269,No
 Drew University,184348,No
 Drexel University,212054,No
@@ -408,7 +393,6 @@ Gordon College,165936,No
 Goshen College,150668,No
 Goucher College,162654,No
 Grace College and Theological Seminary,150677,No
-Grace University,181093,No
 Graceland University-Lamoni,153366,No
 Grand Canyon University,104717,No
 Grand Valley State University,170082,No
@@ -458,7 +442,6 @@ Howard University (HBCU),131520,Yes
 Humboldt State University,115755,No
 Huntingdon College,101435,No
 Huntington University,150941,No
-Husson University,161165,No
 Huston-Tillotson University (HBCU),225575,Yes
 Idaho State University,142276,No
 Illinois College,145691,No
@@ -499,7 +482,6 @@ Kansas State University,155399,No
 Kansas Wesleyan University,155414,No
 Kean University,185262,No
 Keene State College,183062,No
-Kennesaw State University,140164,No
 Kent State University at Kent,203517,No
 Kentucky Christian University,157100,No
 Kentucky State University (HBCU),157058,Yes
@@ -523,7 +505,6 @@ Lake Forest College,146481,No
 Lake Superior State University,170639,No
 Lakeland College,238980,No
 Lamar University,226091,No
-Lambuth University,220589,#N/A
 Lander University,218229,No
 Lane College (HBCU),220598,Yes
 Langston University (HBCU),207209,Yes
@@ -541,7 +522,6 @@ LeTourneau University,226231,No
 Lewis & Clark College,209056,No
 Lewis University,146612,No
 Lewis-Clark State College,142328,No
-Lexington College,146621,No
 Liberty University,232557,No
 Life University,140252,No
 LIM College,192271,No
@@ -555,7 +535,6 @@ Linfield College,209065,No
 Lipscomb University,219976,No
 Livingstone College (HBCU),198862,Yes
 Lock Haven University,213613,No
-Long Island University-Brooklyn Campus,192439,No
 Long Island University-C W Post Campus,192448,No
 Longwood University,232566,No
 Loras College,153825,No
@@ -570,14 +549,11 @@ Loyola University-New Orleans,159656,No
 Lubbock Christian University,226383,No
 Luther College,153834,No
 Lycoming College,213668,No
-Lyme Academy College of Fine Arts,129686,No
 Lynchburg College,232609,No
-Lyndon State College,230931,No
 Lynn University,132657,No
 Lyon College,106342,No
 Macalester College,173902,No
 MacMurray College,146825,No
-Macon State College,140322,#N/A
 Madonna University,170806,No
 Maharishi University of Management,153861,No
 Maine Maritime Academy,161299,No
@@ -633,7 +609,6 @@ Midland University,181330,No
 Midway College,157377,No
 Midwestern State University,226833,No
 Millersville University of Pennsylvania,214041,No
-Milligan College,221014,No
 Millikin University,147244,No
 Mills College,118888,No
 Millsaps College,175980,No
@@ -671,7 +646,6 @@ Morrisville State College,196051,No
 Mount Aloysius College,214166,No
 Mount Carmel College of Nursing,204176,No
 Mount Holyoke College,166939,No
-Mount Ida College,166948,No
 Mount Marty College,219198,No
 Mount Mary College,239390,No
 Mount Mercy University,154013,No
@@ -712,7 +686,6 @@ North Carolina Wesleyan College,199209,No
 North Central College,147660,No
 North Central University,174437,No
 North Dakota State University-Main Campus,200332,No
-North Georgia College & State University,140669,#N/A
 North Greenville University,218441,No
 North Park University,147679,No
 Northeastern Illinois University,147776,No
@@ -730,9 +703,7 @@ Northwestern College,154101,No
 Northwestern College,174491,No
 Northwestern State University of Louisiana,160038,No
 Northwestern University,147767,No
-Northwood University-Florida,136206,No
 Northwood University-Michigan,171492,No
-Northwood University-Texas,227243,No
 Norwich University,230995,No
 Notre Dame College,204468,No
 Notre Dame de Namur University,120184,No
@@ -761,7 +732,6 @@ Oklahoma Wesleyan University,206835,No
 Old Dominion University,232982,No
 Olivet College,171599,No
 Olivet Nazarene University,147828,No
-O'More College of Design,221254,No
 Oral Roberts University,207582,No
 Oregon Institute of Technology,209506,No
 Oregon State University,209542,No
@@ -800,7 +770,6 @@ Pennsylvania State University-Penn State York,214829,No
 Pepperdine University,121150,No
 Pfeiffer University,199306,No
 Philadelphia Biblical University-Langhorne,215114,No
-Philadelphia University,215099,No
 Philander Smith College (HBCU),107600,Yes
 Piedmont College,140818,No
 Pine Manor College,167455,No
@@ -809,7 +778,6 @@ Pitzer College,121257,No
 Plymouth State University,183080,No
 Point Loma Nazarene University,121309,No
 Point Park University,215442,No
-Polytechnic Institute of New York University,194541,No
 Pomona College,121345,No
 Portland State University,209807,No
 Post University,130183,No
@@ -819,9 +787,7 @@ Presentation College,219295,No
 Princeton University,186131,No
 Principia College,148016,No
 Providence College,217402,No
-Purdue University-Calumet Campus,152248,No
 Purdue University-Main Campus,243780,No
-Purdue University-North Central Campus,152266,No
 Queens University of Charlotte,199412,No
 Quincy University,148131,No
 Quinnipiac University,130226,No
@@ -871,7 +837,6 @@ Saint Francis University,215743,No
 Saint John Fisher College,195720,No
 Saint Johns University,174792,No
 Saint Joseph College,130314,No
-Saint Josephs College,152363,No
 Saint Joseph's College of Maine,161518,No
 Saint Joseph's College-New York,195544,No
 Saint Joseph's University,215770,No
@@ -901,7 +866,6 @@ San Diego State University,122409,No
 San Francisco State University,122597,No
 San Jose State University,122755,No
 Santa Clara University,122931,No
-Santa Fe University of Art and Design,188146,No
 Sarah Lawrence College,195304,No
 Savannah State University (HBCU),140960,Yes
 Schreiner University,228042,No
@@ -914,7 +878,6 @@ Sewanee-The University of the South,221519,No
 Shaw University (HBCU),199643,Yes
 Shenandoah University,233541,No
 Shepherd University,237792,No
-Shimer College,148849,No
 Shippensburg University of Pennsylvania,216010,No
 Shorter University,140988,No
 Siena College,195474,No
@@ -925,7 +888,6 @@ Simpson University,123457,No
 Skidmore College,195526,No
 Slippery Rock University of Pennsylvania,216038,No
 Smith College,167835,No
-Sojourner-Douglass College,163921,No
 Soka University of America,399911,No
 Sonoma State University,123572,No
 South Carolina State University (HBCU),218733,Yes
@@ -944,7 +906,6 @@ Southern Illinois University Edwardsville,149231,No
 Southern Methodist University,228246,No
 Southern New Hampshire University,183026,No
 Southern Oregon University,210146,No
-Southern Polytechnic State University,141097,No
 Southern University and A & M College (HBCU),160621,Yes
 Southern Utah University,230603,No
 Southern Vermont College,231086,No
@@ -1021,7 +982,6 @@ Texas A & M International University,226152,No
 Texas A & M University-College Station,228723,No
 Texas A & M University-Commerce,224554,No
 Texas A & M University-Corpus Christi,224147,No
-Texas A & M University-Galveston,228714,#N/A
 Texas A & M University-Kingsville,228705,No
 Texas Christian University,228875,No
 Texas Lutheran University,228981,No
@@ -1036,7 +996,7 @@ The College of Saint Rose,195234,No
 The College of Saint Scholastica,174899,No
 The College of Wooster,206589,No
 The Evergreen State College,235167,No
-The King�s College,454184,No
+The King’s College,454184,No
 The Master's College and Seminary,117751,No
 The New School,193654,No
 The Richard Stockton College of New Jersey,186876,No
@@ -1275,10 +1235,8 @@ Valparaiso University,152600,No
 Vanderbilt University,221999,No
 Vanguard University of Southern California,123651,No
 Vassar College,197133,No
-Victory University,220941,No
 Villanova University,216597,No
 Virginia Commonwealth University,234030,No
-Virginia Intermont College,233912,No
 Virginia Military Institute,234085,No
 Virginia Polytechnic Institute and State University,233921,No
 Virginia State University (HBCU),234155,Yes
@@ -1328,6 +1286,48 @@ Western Oregon University,210429,No
 Western State College of Colorado,128391,No
 Western Washington University,237011,No
 Westfield State University,168263,No
+Westminster College,179946,No
+Westminster College,216807,No
+Westminster College,230807,No
+Westmont College,125727,No
+Wheaton College,149781,No
+Wheaton College,168281,No
+Wheeling Jesuit University,238078,No
+Whitman College,237057,No
+Whittier College,125763,No
+Whitworth University,237066,No
+Wichita State University,156125,No
+Widener University-Main Campus,216852,No
+Wilberforce University (HBCU),206491,Yes
+Wiley College (HBCU),229887,Yes
+Wilkes University,216931,No
+Willamette University,210401,No
+William Carey University,176479,No
+William Jewell College,179955,No
+William Paterson University of New Jersey,187444,No
+William Penn University,154590,No
+William Woods University,179964,No
+Williams Baptist College,107877,No
+Williams College,168342,No
+Wilmington College,206507,No
+Wilson College,217013,No
+Wingate University,199962,No
+Winona State University,175272,No
+Winston-Salem State University (HBCU),199999,Yes
+Winthrop University,218964,No
+Wisconsin Lutheran College,240338,No
+Wittenberg University,206525,No
+Wofford College,218973,No
+Woodbury University,125897,No
+Worcester Polytechnic Institute,168421,No
+Worcester State University,168430,No
+Wright State University-Main Campus,206604,No
+Xavier University,206622,No
+Xavier University of Louisiana (HBCU),160904,Yes
+Yale University,130794,No
+Yeshiva University,197708,No
+York College,181853,No
+York College Pennsylvania,217059,No
 Westminster College,179946,No
 Westminster College,216807,No
 Westminster College,230807,No

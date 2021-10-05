@@ -22,7 +22,8 @@ def compress(filefolder):
 
 
 # To begin the script, take a snapshot of the folder to move to final output
-OUTPUT_FOLDER = "C:/Users/mniksch/Dropbox (NNoCS)/Documents/2021 Admissions"
+#OUTPUT_FOLDER = "C:/Users/mniksch/Dropbox (NNoCS)/Documents/2021 Admissions"
+OUTPUT_FOLDER = "/mnt/c/Users/mniksch/Dropbox (NNoCS)/Documents/2022 Admissions"
 
 master_dir_before = os.listdir(".")
 call_stem = "python create_reports.py"

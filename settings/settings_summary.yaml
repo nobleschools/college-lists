@@ -89,7 +89,7 @@ summary_columns:
     - '=IdealGRLabel&" Grad Rate"':
         formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,ReachStudentTargets)/%# Students%,"")'
         format: single_percent_centered_right
-        width: 6.57
+        width: 6.57h
         label_format: bold_yellow_center_wrap_right
         cond_format: single_percent_centered_right_solid_bottom
         sum_formula: '=SUMPRODUCT(|# Students|,|=IdealGRLabel&" Grad Rate"|)/@# Students@'
@@ -105,7 +105,7 @@ summary_columns:
     - '="Odds of 1+ Money "&IdealGRLabel&" GR or better"':
         formula: '=IF(%# Students%>0,SUMIF(%*%,%summary_field%,MoneyRGRPlus)/%# Students%,"")'
         format: single_percent_centered_right
-        width: 14.00
+        width: 14.00h
         label_format: bold_green_center_wrap_right
         cond_format: single_percent_centered_right_solid_bottom
         sum_formula: '=SUMPRODUCT(|# Students|,|="Odds of 1+ Money "&IdealGRLabel&" GR or better"|)/@# Students@'
@@ -121,7 +121,7 @@ summary_columns:
     - '="% of kids w/ low money "&LOWER(IdealGRLabel)&" gr+ odds"':
         formula: '=IF(%# Students%>0,COUNTIFS(%*%,%summary_field%,MoneyRGRPlus,"<0.5")/%# Students%,"")'
         format: single_percent_centered_right
-        width: 14.00
+        width: 14.00h
         label_format: bold_green_center_wrap_right
         cond_format: single_percent_centered_right_solid_bottom
         sum_formula: '=SUMPRODUCT(|# Students|,|="PERCENT_REPLACEMENT of kids w/ low money "&LOWER(IdealGRLabel)&" gr+ odds"|)/@# Students@'

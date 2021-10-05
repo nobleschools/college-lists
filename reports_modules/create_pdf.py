@@ -723,7 +723,10 @@ def _get_student_goal_performance(
             goal_eval.append([goal_text, str(goal_value), goal_result])
 
         # Finally, figure out the padding
-        max_width = max([pdf.get_string_width(x[0]) for x in goal_eval])
+        if goal_eval:
+            max_width = max([pdf.get_string_width(x[0]) for x in goal_eval])
+        else:
+            max_width = 0
         padtest = " "
         while (max_width + pdf.get_string_width(padtest)) < w:
             padtest += " "
@@ -741,7 +744,11 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
     if goal_name in ["il_public", "il_public_no_goal"]:
         return sum(stu_apps.local_ilpublic == 1)
     elif goal_name == "il_match_plus":
-        return sum((stu_apps.local_odds >= 50) & (stu_apps.local_ilpublic == 1))
+        return sum(
+            (stu_apps.local_odds >= 50)
+            & (stu_apps.local_ilpublic == 1)
+            & (stu_apps.local_money == 1)
+        )
     elif goal_name == "money_chicago":
         return sum((stu_apps.local_money == 1) & (stu_apps.local_chilocal == 1))
     elif goal_name in ["total", "lt_total"]:

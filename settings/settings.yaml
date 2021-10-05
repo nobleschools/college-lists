@@ -72,6 +72,7 @@ sort_students:
     Comer: '=%Counselor%&%Cohort%&%LastFirst%'
     Johnson: '=%Counselor%&%Cohort%&%LastFirst%'
     DRW: '=%Counselor%&%Cohort%&%LastFirst%'
+    Mansueto: '=%Counselor%&%Cohort%&%LastFirst%'
     Muchin: '=%Counselor%&%Cohort%&%LastFirst%'
     TNA: '=%Counselor%&%Cohort%&%LastFirst%'
     Noble: '=%Counselor%&%Cohort%&%LastFirst%'

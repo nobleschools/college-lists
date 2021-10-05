@@ -74,6 +74,14 @@ students_columns:
         head_format: blue_right
         label_format: bold_blue_wrap_right
         cond_format: dash_bottom_right
+    - Email:
+        formula: tbl:Email
+        format: right
+        width: 12h
+        head_text: ''
+        head_format: blue_right
+        label_format: bold_blue_wrap_right
+        cond_format: dash_bottom_right
     - GPA:
         formula: tbl:GPA
         format: two_point_centered
@@ -595,7 +603,7 @@ students_columns:
         label_format: bold_blue_center_wrap
         cond_format: centered_integer_dash_bottom
     - 'IL Public, Match, Safety, Secure':
-        formula: '=COUNTIFS(Students,%StudentID%,ILPublic,1, Classes,MatchLabel)+COUNTIFS(Students,%StudentID%,ILPublic,1, Classes,SafetyLabel)+COUNTIFS(Students,%StudentID%,ILPublic,1, Classes,SecureLabel)'
+        formula: '=COUNTIFS(Students,%StudentID%,ILPublic,1,MoneyYesNo,1,Classes,MatchLabel)+COUNTIFS(Students,%StudentID%,ILPublic,1,MoneyYesNo,1,Classes,SafetyLabel)+COUNTIFS(Students,%StudentID%,ILPublic,1,MoneyYesNo,1,Classes,SecureLabel)+COUNTIFS(Students,%StudentID%,ILPublic,1,MoneyYesNo,1,Classes,SureThingLabel)'
         format: centered_integer
         width: 8.43
         head_text: ''
