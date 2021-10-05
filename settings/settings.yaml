@@ -68,7 +68,7 @@ sort_students:
     #Standard: '=%Advisor%&%LastFirst%'
     Rauner: '=%Cohort%&%Counselor%&%LastFirst%'
     #Bulls: '=%Cohort%&%Counselor%&%LastFirst%'
-    UIC: '=%Counselor%&%LastFirst%'
+    UIC: '=%Counselor%&%Cohort%&%LastFirst%'
     Comer: '=%Counselor%&%Cohort%&%LastFirst%'
     Johnson: '=%Counselor%&%Cohort%&%LastFirst%'
     DRW: '=%Counselor%&%Cohort%&%LastFirst%'

@@ -837,4 +837,4 @@ def _eval_pdf_goal(goal_name, stu_data, stu_apps):
             & (stu_apps.local_money == 1)
         )
     else:
-        raise (RuntimeError("No code to evaluate goal label: " + name))
+        raise (RuntimeError("No code to evaluate goal label: " + goal_name))
