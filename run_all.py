@@ -52,7 +52,7 @@ for campus_case in [
     os.rename(new_file, 'Counselor Summary '+new_file)
 """
 # Do a special advisor sort pdf
-for campus_case in ["Comer", "Bulls"]:
+for campus_case in ["Comer", "Bulls", "Rauner"]:
     t0 = time()
     before_files = os.listdir()
     os.system(call_stem + " -q -pdfonly -st Advisor -ca " + campus_case)
@@ -62,6 +62,18 @@ for campus_case in ["Comer", "Bulls"]:
     new_files = list(set(after_files) - set(before_files))
     new_file = new_files[0]
     os.rename(new_file, "Advisor Sort " + new_file)
+
+# Do a special cohort/class sort pdf
+for campus_case in ["Bulls"]:
+    t0 = time()
+    before_files = os.listdir()
+    os.system(call_stem + " -q -pdfonly -st Cohort -ca " + campus_case)
+    print("{:.2f} seconds".format(time() - t0), flush=True)
+    sleep(1)
+    after_files = os.listdir()
+    new_files = list(set(after_files) - set(before_files))
+    new_file = new_files[0]
+    os.rename(new_file, "Cohort Sort " + new_file)
 
 # Now do campus reports
 for campus_case in [

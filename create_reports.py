@@ -46,6 +46,8 @@ def main(
             cfg["sort_students"][campus] = "=%Counselor%&%LastFirst%"
         elif sort_override == "Advisor":
             cfg["sort_students"][campus] = "=%Advisor%&%LastFirst%"
+        elif sort_override == "Cohort":
+            cfg["sort_students"][campus] = "=%Cohort%&%LastFirst%"
 
     # Setup configuration--tab settings files (includes layout of tabs)
     cfg_tabs = {}
