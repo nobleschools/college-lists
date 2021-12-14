@@ -127,12 +127,12 @@ UNITID,INSTNM,SimpleBarrons,Adj6yrGrad_All,Adj6yrGrad_AA_Hisp,AdjSAT25,AdjSAT50,
 240736,American Samoa Community College,Noncompetitive,33.00%,N/A,N/A,N/A,?,0,No,0,0,Campus
 460738,American Sentinel University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 461573,"American Trade School (Male only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
-131159,American University,Highly Competitive,79.00%,77.00%,1210,1300,?,0,No,0,0,Campus
+131159,American University,Highly Competitive,79.00%,77.00%,1210,1300,? (CSS),0,No,0,0,Campus
 433004,American University of Health Sciences,Noncompetitive,43.00%,0.00%,N/A,N/A,?,0,No,0,0,Campus
 241100,American University of Puerto Rico,Not Available,37.00%,37.00%,N/A,N/A,++/-,1,No,0,0,Campus
 241128,American University of Puerto Rico,Noncompetitive,38.00%,38.00%,N/A,N/A,++/-,1,No,0,0,Campus
 447263,AmeriTech College-Draper,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-164465,Amherst College,Highly Competitive,95.00%,97.00%,1310,1415,++,1,No,0,0,Campus
+164465,Amherst College,Highly Competitive,95.00%,97.00%,1310,1415,++ (CSS),1,No,0,0,Campus
 100690,Amridge University,Noncompetitive,29.00%,14.00%,N/A,N/A,++/-,1,No,0,0,Campus
 151865,Anabaptist Mennonite Biblical Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 150048,Ancilla College (2 year),2 year (Competitive),42.00%,37.00%,860,950,?,0,No,0,0,Campus
@@ -277,7 +277,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 447847,Aviator College of Aeronautical Science and Technology (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 176628,Avila University,Competitive,50.00%,38.00%,1010,1075,--,0,No,0,0,Campus
 109785,Azusa Pacific University,Competitive,68.00%,66.00%,1030,1145,?,0,No,0,0,Campus
-164580,Babson College,Highly Competitive,93.00%,93.00%,1270,1360,?,0,No,0,0,Campus
+164580,Babson College,Highly Competitive,93.00%,93.00%,1270,1360,? (CSS),0,No,0,0,Campus
 206817,Bacone College,Noncompetitive,14.00%,17.00%,760,865,?,0,No,0,0,Campus
 128586,Bais Binyomin Academy (Male only),Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 476601,Bais HaMedrash and Mesivta of Baltimore (Male only),Not available,40.00%,50.00%,N/A,N/A,--,0,No,0,0,Campus
@@ -300,16 +300,16 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 366793,Baptist Theological Seminary at Richmond,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 444398,Baptist University of the Americas,Noncompetitive,27.00%,24.00%,N/A,N/A,++,1,No,0,0,Campus
 155070,Barclay College,Not available,42.00%,17.00%,N/A,N/A,?,0,No,0,0,Campus
-189088,Bard College,Highly Competitive,75.00%,74.00%,N/A,N/A,?,0,No,0,0,Campus
+189088,Bard College,Highly Competitive,75.00%,74.00%,N/A,N/A,? (CSS),0,No,0,0,Campus
 167792,Bard College at Simon's Rock,Most Competitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-189097,Barnard College (Female only),Most Competitive+,92.00%,92.00%,1340,1430,--,0,No,0,0,Campus
+189097,Barnard College (Female only),Most Competitive+,92.00%,92.00%,1340,1430,-- (CSS),0,No,0,0,Campus
 177719,Barnes-Jewish College Goldfarb School of Nursing,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 132471,Barry University,Competitive,35.00%,34.00%,930,1005,++/-,1,No,0,0,Campus
 109907,Barstow Community College (2 year),2 year (Noncompetitive),29.00%,29.00%,N/A,N/A,?,0,No,0,0,Campus
 197911,Barton College,Less Competitive,53.00%,35.00%,940,1035,?,0,No,0,0,Campus
 154697,Barton County Community College (2 year),2 year (Noncompetitive),47.00%,52.00%,N/A,N/A,?,0,No,0,0,Campus
 235547,Bastyr University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-160977,Bates College,Most Competitive+,91.00%,91.00%,N/A,N/A,+++,1,No,0,0,Campus
+160977,Bates College,Most Competitive+,91.00%,91.00%,N/A,N/A,+++ (CSS),1,No,0,0,Campus
 235671,Bates Technical College (2 year),2 year (Noncompetitive),51.00%,44.00%,N/A,N/A,?,0,No,0,0,Campus
 437103,Baton Rouge Community College (2 year),2 year (Noncompetitive),32.00%,25.00%,N/A,N/A,?,0,No,0,0,Campus
 158325,Baton Rouge General Medical Center-School of Nursing (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -319,7 +319,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 164632,Bay Path University,Competitive,57.00%,44.00%,960,1065,?,0,No,0,0,Campus
 164641,Bay State College,Not available,34.00%,42.00%,N/A,N/A,?,0,No,0,0,Campus
 223223,Baylor College of Medicine,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-223232,Baylor University,Highly Competitive,78.00%,70.00%,1200,1290,?,0,No,0,0,Campus
+223232,Baylor University,Highly Competitive,78.00%,70.00%,1200,1290,? (CSS),0,No,0,0,Campus
 476717,Be'er Yaakov Talmudic Seminary (Male only),Noncompetitive,47.00%,N/A,N/A,N/A,+++,1,No,0,0,Campus
 384254,Beacon College,Competitive,64.00%,68.00%,N/A,N/A,?,0,No,0,0,Campus
 160995,Beal College,Noncompetitive,37.00%,0.00%,N/A,N/A,?,0,No,0,0,N/A
@@ -348,7 +348,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 145619,Benedictine University,Competitive,47.00%,33.00%,990,1075,++,1,No,0,1,Campus
 165884,Benjamin Franklin Institute of Technology,Competitive,N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 197993,"Bennett College (HBCU, Female only)",Noncompetitive,63.00%,87.00%,N/A,N/A,?,0,Yes,0,0,Campus
-230816,Bennington College,Most Competitive,72.00%,60.00%,N/A,N/A,?,0,No,0,0,Campus
+230816,Bennington College,Most Competitive,72.00%,60.00%,N/A,N/A,? (CSS),0,No,0,0,Campus
 164739,Bentley University,Highly Competitive,90.00%,88.00%,1230,1320,?,0,No,0,0,Campus
 156295,Berea College,Very Competitive,66.00%,62.00%,1140,1210,++,1,No,0,0,Campus
 183743,Bergen Community College (2 year),2 year (Noncompetitive),31.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -356,7 +356,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 125170,Berkeley City College (2 year),2 year (Noncompetitive),38.00%,28.00%,N/A,N/A,?,0,No,0,0,Campus
 189228,Berkeley College-New York,Less Competitive,34.00%,30.00%,N/A,N/A,?,0,No,0,0,Campus
 183789,Berkeley College-Woodland Park,Noncompetitive,34.00%,30.00%,N/A,N/A,--,0,No,0,0,Campus
-164748,Berklee College of Music,Competitive,65.00%,50.00%,N/A,N/A,?,0,No,0,0,Campus
+164748,Berklee College of Music,Competitive,65.00%,50.00%,N/A,N/A,? (CSS),0,No,0,0,Campus
 164775,Berkshire Community College (2 year),2 year (Noncompetitive),30.00%,28.00%,N/A,N/A,?,0,No,0,0,Campus
 139144,Berry College,Competitive,67.00%,62.00%,1090,1205,?,0,No,0,0,Campus
 461865,Best Care College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -436,16 +436,16 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 158431,Bossier Parish Community College (2 year),2 year (Noncompetitive),22.00%,18.00%,N/A,N/A,?,0,No,0,0,Campus
 164872,Boston Architectural College,Noncompetitive,14.00%,6.00%,N/A,N/A,?,0,No,0,0,Campus
 164614,Boston Baptist College,Noncompetitive,56.00%,33.00%,890,1000,?,0,No,0,0,Campus
-164924,Boston College,Most Competitive,94.00%,93.00%,1340,1420,++,1,No,0,0,Campus
+164924,Boston College,Most Competitive,94.00%,93.00%,1340,1420,++ (CSS),1,No,0,0,Campus
 164915,Boston Graduate School of Psychoanalysis Inc,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-164988,Boston University,Most Competitive+,88.00%,88.00%,1340,1425,+++,1,No,0,0,Campus
-161004,Bowdoin College,Most Competitive+,95.00%,90.00%,N/A,N/A,++,1,No,0,0,Campus
+164988,Boston University,Most Competitive+,88.00%,88.00%,1340,1425,+++ (CSS),1,No,0,0,Campus
+161004,Bowdoin College,Most Competitive+,95.00%,90.00%,N/A,N/A,++ (CSS),1,No,0,0,Campus
 162007,Bowie State University (HBCU),Less Competitive,43.00%,59.00%,860,945,?,0,Yes,0,0,Campus
 201432,Bowling Green State University-Firelands,Noncompetitive,23.00%,14.00%,N/A,N/A,?,0,No,0,0,Campus
 201441,Bowling Green State University-Main Campus,Competitive,60.00%,46.00%,880,990,?,0,No,0,0,Campus
 202161,Bradford School (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 143358,Bradley University,Very Competitive,77.00%,69.00%,1070,1170,--,0,No,0,0,Campus
-165015,Brandeis University,Most Competitive,87.00%,84.00%,1350,1435,--,0,No,0,0,Campus
+165015,Brandeis University,Most Competitive,87.00%,84.00%,1350,1435,-- (CSS),0,No,0,0,Campus
 262086,Brandman University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 223506,Brazosport College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 139199,Brenau University,Less Competitive,46.00%,47.00%,920,1030,?,0,No,0,0,Campus
@@ -475,7 +475,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 441645,"Brown Aveda Institute-Mentor (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 450395,"Brown Aveda Institute-Strongsville (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 139214,"Brown College of Court Reporting (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-217156,Brown University,Most Competitive+,96.00%,94.00%,1440,1505,+++,1,No,0,0,Campus
+217156,Brown University,Most Competitive+,96.00%,94.00%,1440,1505,+++ (CSS),1,No,0,0,Campus
 198084,Brunswick Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 180878,Bryan College of Health Sciences,Competitive,68.00%,100.00%,1010,1095,?,0,No,0,0,Campus
 219790,Bryan College-Dayton,Competitive,47.00%,33.00%,N/A,N/A,--,0,No,0,0,Campus
@@ -503,8 +503,8 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 451750,Bryant & Stratton College-Wauwatosa,Noncompetitive,50.00%,0.00%,N/A,N/A,--,0,No,0,0,Campus
 217165,Bryant University,Very Competitive,81.00%,72.00%,N/A,N/A,?,0,No,0,0,Campus
 210492,Bryn Athyn College of the New Church,Competitive,54.00%,48.00%,940,1025,--,0,No,0,0,Campus
-211273,Bryn Mawr College (Female only),Most Competitive,85.00%,87.00%,N/A,N/A,--,0,No,0,0,Campus
-211291,Bucknell University,Most Competitive,90.00%,86.00%,1260,1345,++,1,No,0,0,Campus
+211273,Bryn Mawr College (Female only),Most Competitive,85.00%,87.00%,N/A,N/A,-- (CSS),0,No,0,0,Campus
+211291,Bucknell University,Most Competitive,90.00%,86.00%,1260,1345,++ (CSS),1,No,0,0,Campus
 211307,Bucks County Community College (2 year),2 year (Noncompetitive),34.00%,25.00%,N/A,N/A,?,0,No,0,0,Campus
 153001,Buena Vista University,Competitive,58.00%,49.00%,1010,1110,--,0,No,0,0,Campus
 165112,Bunker Hill Community College (2 year),2 year (Noncompetitive),30.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -532,7 +532,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 487649,California Institute of Advanced Management,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 490285,California Institute of Arts & Technology (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 110316,California Institute of Integral Studies,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-110404,California Institute of Technology,Most Competitive+,92.00%,83.00%,1530,1545,++,1,No,0,0,Campus
+110404,California Institute of Technology,Most Competitive+,92.00%,83.00%,1530,1545,++ (CSS),1,No,0,0,Campus
 111081,California Institute of the Arts,Not Available,61.00%,61.00%,N/A,N/A,?,0,No,0,0,Campus
 485546,California Intercontinental University,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 483586,California International Business University,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -603,12 +603,12 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 491941,"Caris College (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 206923,Carl Albert State College (2 year),2 year (Noncompetitive),46.00%,39.00%,N/A,N/A,?,0,No,0,0,Campus
 143613,Carl Sandburg College (2 year),2 year (Noncompetitive),46.00%,45.00%,N/A,N/A,+++,1,No,1,0,Campus
-173258,Carleton College,Most Competitive+,92.00%,90.00%,1360,1450,++/-,1,No,0,0,Campus
+173258,Carleton College,Most Competitive+,92.00%,90.00%,1360,1450,++/- (CSS),1,No,0,0,Campus
 132842,Carlos Albizu University-Miami,Less Competitive,57.00%,53.00%,N/A,N/A,--,0,No,0,0,Campus
 241331,Carlos Albizu University-San Juan,Not available,N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 211431,Carlow University,Less Competitive,56.00%,40.00%,980,1065,?,0,No,0,0,Campus
 169187,Carnegie Institute (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-211440,Carnegie Mellon University,Most Competitive+,90.00%,81.00%,1460,1510,--,0,No,0,0,Campus
+211440,Carnegie Mellon University,Most Competitive+,90.00%,81.00%,1460,1510,-- (CSS),0,No,0,0,Campus
 199971,Carolina Christian College,Noncompetitive,100.00%,100.00%,N/A,N/A,--,0,No,0,0,N/A
 461032,Carolina College of Biblical Studies,Noncompetitive,67.00%,67.00%,N/A,N/A,?,0,No,0,0,Campus
 433174,Carolinas College of Health Sciences,Competitive,50.00%,N/A,970,1110,?,0,No,0,0,Campus
@@ -640,7 +640,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 203438,"Casal Aveda Institute (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 455211,"Casal Institute of Nevada (Female only, 2 year)",2 year (Competitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 439190,Cascadia College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-201645,Case Western Reserve University,Most Competitive,84.00%,74.00%,1340,1425,++,1,No,0,0,Campus
+201645,Case Western Reserve University,Most Competitive,84.00%,74.00%,1340,1425,++ (CSS),1,No,0,0,Campus
 240505,Casper College (2 year),2 year (Noncompetitive),45.00%,39.00%,N/A,N/A,?,0,No,0,0,Campus
 230834,Castleton University,Competitive,53.00%,41.00%,920,1020,?,0,No,0,0,Campus
 198215,Catawba College,Competitive,47.00%,33.00%,930,1025,?,0,No,0,0,Campus
@@ -797,14 +797,14 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 217873,Claflin University (HBCU),Less Competitive,51.00%,66.00%,830,940,?,0,Yes,0,0,Both
 112251,Claremont Graduate University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Home
 488387,Claremont Lincoln University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-112260,Claremont McKenna College,Most Competitive+,91.00%,89.00%,1360,1435,++,1,No,0,0,Campus
+112260,Claremont McKenna College,Most Competitive+,91.00%,89.00%,1360,1435,++ (CSS),1,No,0,0,Campus
 124283,Claremont School of Theology,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 223922,Clarendon College (2 year),2 year (Noncompetitive),47.00%,30.00%,N/A,N/A,?,0,No,0,0,Campus
 211644,Clarion University of Pennsylvania,Less Competitive,54.00%,37.00%,940,1035,?,0,No,0,0,Campus
 138947,Clark Atlanta University (HBCU),Less Competitive,44.00%,59.00%,940,1010,?,0,Yes,0,0,Both
 234933,Clark College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 201973,Clark State Community College,Noncompetitive,31.00%,25.00%,N/A,N/A,?,0,No,0,0,Campus
-165334,Clark University,Highly Competitive,79.00%,74.00%,N/A,N/A,?,0,No,0,0,Home
+165334,Clark University,Highly Competitive,79.00%,74.00%,N/A,N/A,? (CSS),0,No,0,0,Home
 153126,Clarke University,Competitive,63.00%,47.00%,940,1030,?,0,No,0,0,Campus
 211024,Clarks Summit University,Not available,63.00%,67.00%,N/A,N/A,?,0,No,0,0,Home
 237321,"Clarksburg Beauty Academy and School of Massage Therapy (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,++/-,1,No,0,0,Campus
@@ -842,13 +842,13 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 154925,Coffeyville Community College (2 year),2 year (Noncompetitive),55.00%,52.00%,N/A,N/A,?,0,No,0,0,Home
 112394,Cogswell College,Competitive,45.00%,29.00%,N/A,N/A,?,0,No,0,0,Campus
 217907,Coker University,Less Competitive,40.00%,38.00%,900,1065,--,0,No,0,0,Home
-161086,Colby College,Most Competitive+,89.00%,90.00%,1380,1450,+++,1,No,0,0,Campus
+161086,Colby College,Most Competitive+,89.00%,90.00%,1380,1450,+++ (CSS),1,No,0,0,Campus
 154934,Colby Community College (2 year),2 year (Noncompetitive),56.00%,48.00%,N/A,N/A,?,0,No,0,0,Home
 182634,Colby-Sawyer College,Competitive,59.00%,55.00%,N/A,N/A,?,0,No,0,0,Home
 430935,Colegio de CinematografÃ­a Artes y Television (2 year),2 year (Noncompetitive),56.00%,56.00%,N/A,N/A,+++,1,No,0,0,Both
 241720,Colegio Universitario de San Juan,Not available,23.00%,23.00%,N/A,N/A,?,0,No,0,0,Both
 190080,Colgate Rochester Crozer Divinity School,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-190099,Colgate University,Most Competitive+,91.00%,90.00%,1330,1415,+++,1,No,0,0,Campus
+190099,Colgate University,Most Competitive+,91.00%,90.00%,1330,1415,+++ (CSS),1,No,0,0,Campus
 169442,College for Creative Studies,Not Available,64.00%,46.00%,N/A,N/A,?,0,No,0,0,Campus
 108667,College of Alameda (2 year),2 year (Noncompetitive),32.00%,22.00%,N/A,N/A,?,0,No,0,0,Both
 439613,College of Biblical Studies,Noncompetitive,25.00%,33.00%,N/A,N/A,--,0,No,0,0,Home
@@ -887,7 +887,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 160959,College of the Atlantic,Highly Competitive,61.00%,11.00%,N/A,N/A,--,0,No,0,0,Both
 111461,College of the Canyons (2 year),2 year (Noncompetitive),44.00%,38.00%,N/A,N/A,?,0,No,0,0,Both
 113573,College of the Desert (2 year),2 year (Noncompetitive),30.00%,29.00%,N/A,N/A,?,0,No,0,0,Home
-166124,College of the Holy Cross,Most Competitive,90.00%,89.00%,1260,1345,?,0,No,0,0,Home
+166124,College of the Holy Cross,Most Competitive,90.00%,89.00%,1260,1345,? (CSS),0,No,0,0,Home
 226408,College of the Mainland (2 year),2 year (Noncompetitive),34.00%,35.00%,N/A,N/A,?,0,No,0,0,Home
 376695,College of the Marshall Islands,Noncompetitive,5.00%,N/A,N/A,N/A,?,0,No,0,0,Home
 480967,College of the Muscogee Nation (2 year),2 year (Noncompetitive),30.00%,0.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -905,7 +905,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 247834,Collin County Community College District,Noncompetitive,33.00%,29.00%,N/A,N/A,?,0,No,0,0,Campus
 461953,"Colorado Academy of Veterinary Technology (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 126669,Colorado Christian University,Very Competitive,52.00%,33.00%,N/A,N/A,?,0,No,0,0,Campus
-126678,Colorado College,Most Competitive+,87.00%,88.00%,N/A,N/A,++,1,No,0,0,Campus
+126678,Colorado College,Most Competitive+,87.00%,88.00%,N/A,N/A,++ (CSS),1,No,0,0,Campus
 127556,Colorado Mesa University,Less Competitive,43.00%,36.00%,930,1050,?,0,No,0,0,Campus
 126711,Colorado Mountain College,Noncompetitive,14.00%,0.00%,N/A,N/A,?,0,No,0,0,Campus
 126748,Colorado Northwestern Community College (2 year),2 year (Noncompetitive),53.00%,43.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -932,7 +932,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 450933,Columbia Southern University,Noncompetitive,17.00%,11.00%,N/A,N/A,--,0,No,0,0,Campus
 219888,Columbia State Community College (2 year),2 year (Noncompetitive),33.00%,31.00%,N/A,N/A,?,0,No,0,0,Campus
 139348,Columbia Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-190150,Columbia University in the City of New York,Most Competitive+,95.00%,95.00%,1440,1505,+++,1,No,0,0,Campus
+190150,Columbia University in the City of New York,Most Competitive+,95.00%,95.00%,1440,1505,+++ (CSS),1,No,0,0,Campus
 190169,Columbia-Greene Community College (2 year),2 year (Noncompetitive),43.00%,33.00%,N/A,N/A,?,0,No,0,0,Campus
 202170,Columbus College of Art and Design,Competitive,63.00%,50.00%,970,1075,?,0,No,0,0,Campus
 202222,Columbus State Community College (2 year),2 year (Noncompetitive),36.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -983,7 +983,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 173328,Concordia University-Saint Paul,Competitive,55.00%,37.00%,N/A,N/A,--,0,No,0,0,Campus
 238616,Concordia University-Wisconsin,Competitive,59.00%,35.00%,1080,1160,?,0,No,0,0,Campus
 493600,Congregation Talmidei Mesivta Tiferes Shmiel Aleksander (Male only),Noncompetitive,N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
-128902,Connecticut College,Most Competitive,83.00%,86.00%,1310,1380,++,1,No,0,0,Campus
+128902,Connecticut College,Most Competitive,83.00%,86.00%,1310,1380,++ (CSS),1,No,0,0,Campus
 206996,Connors State College (2 year),2 year (Noncompetitive),30.00%,19.00%,N/A,N/A,?,0,No,0,0,Campus
 241766,Conservatory of Music of Puerto Rico,Not Available,62.00%,63.00%,N/A,N/A,?,0,No,0,0,Campus
 112826,Contra Costa College (2 year),2 year (Noncompetitive),29.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -996,7 +996,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 162283,Coppin State University (HBCU),Very Competitive,25.00%,40.00%,820,895,?,0,Yes,0,0,Campus
 210331,Corban University,Competitive,59.00%,45.00%,1010,1125,?,0,No,0,0,Campus
 153162,Cornell College,Very Competitive,71.00%,71.00%,1100,1220,--,0,No,0,0,Campus
-190415,Cornell University,Most Competitive+,95.00%,91.00%,1400,1480,++,1,No,0,0,Campus
+190415,Cornell University,Most Competitive+,95.00%,91.00%,1400,1480,++ (CSS),1,No,0,0,Campus
 170037,Cornerstone University,Competitive,58.00%,37.00%,950,1070,?,0,No,0,0,Campus
 235024,Cornish College of the Arts,Not Available,55.00%,55.00%,N/A,N/A,?,0,No,0,0,Campus
 420103,Cortiva Institute-Miami (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -1070,9 +1070,9 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 144564,Danville Area Community College (2 year),2 year (Noncompetitive),47.00%,31.00%,N/A,N/A,+++,1,No,1,0,Campus
 231882,Danville Community College (2 year),2 year (Noncompetitive),36.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
 455178,Daoist Traditions College of Chinese Medical Arts,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-182670,Dartmouth College,Most Competitive+,95.00%,94.00%,1440,1500,--,0,No,0,0,Campus
+182670,Dartmouth College,Most Competitive+,95.00%,94.00%,1440,1500,-- (CSS),0,No,0,0,Campus
 169479,Davenport University,Less Competitive,50.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
-198385,Davidson College,Most Competitive+,91.00%,94.00%,1310,1395,++,1,No,0,0,Campus
+198385,Davidson College,Most Competitive+,91.00%,94.00%,1310,1395,++ (CSS),1,No,0,0,Campus
 198376,Davidson County Community College (2 year),2 year (Noncompetitive),43.00%,32.00%,N/A,N/A,?,0,No,0,0,Campus
 237358,Davis & Elkins College,Less Competitive,42.00%,35.00%,920,1030,?,0,No,0,0,Campus
 194569,Davis College,Not available,56.00%,33.00%,N/A,N/A,--,0,No,0,0,Campus
@@ -1097,7 +1097,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 169521,Delta College (2 year),2 year (Noncompetitive),28.00%,15.00%,N/A,N/A,?,0,No,0,0,Campus
 366270,Delta College of Arts & Technology (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 175616,Delta State University,Competitive,39.00%,27.00%,970,1075,?,0,No,0,0,Campus
-202523,Denison University,Most Competitive,84.00%,84.00%,1200,1305,++,1,No,0,0,Campus
+202523,Denison University,Most Competitive,84.00%,84.00%,1200,1305,++ (CSS),1,No,0,0,Campus
 217989,"Denmark Technical College (HBCU, 2 year)",2 year (Noncompetitive),27.00%,43.00%,N/A,N/A,?,0,Yes,0,0,Campus
 454856,Denver College of Nursing,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 126979,Denver Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -1130,7 +1130,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 449135,Dewey University-Juana DÃ­az,Noncompetitive,17.00%,17.00%,N/A,N/A,+++,1,No,0,0,Campus
 469416,Dewey University-Manati,Noncompetitive,40.00%,40.00%,N/A,N/A,++,1,No,0,0,Campus
 113634,Diablo Valley College (2 year),2 year (Noncompetitive),53.00%,40.00%,N/A,N/A,?,0,No,0,0,Campus
-212009,Dickinson College,Most Competitive,83.00%,86.00%,N/A,N/A,+++,1,No,0,0,Campus
+212009,Dickinson College,Most Competitive,83.00%,86.00%,N/A,N/A,+++ (CSS),1,No,0,0,Campus
 200059,Dickinson State University,Less Competitive,33.00%,30.00%,970,1055,?,0,No,0,0,Campus
 443410,DigiPen Institute of Technology,Highly Competitive,49.00%,62.00%,1130,1265,?,0,No,0,0,Campus
 490498,Digital Media Institute at InterTech (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -1155,10 +1155,10 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 449481,Dragon Rises College of Oriental Medicine,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 153269,Drake University,Highly Competitive,78.00%,66.00%,1100,1235,?,0,No,0,0,Campus
 184348,Drew University,Very Competitive,64.00%,59.00%,N/A,N/A,?,0,No,0,0,Campus
-212054,Drexel University,Very Competitive,69.00%,54.00%,1190,1290,?,0,No,0,0,Campus
+212054,Drexel University,Very Competitive,69.00%,54.00%,1190,1290,? (CSS),0,No,0,0,Campus
 177214,Drury University,Very Competitive,58.00%,57.00%,1110,1210,--,0,No,0,0,Campus
 492801,Drury University-College of Continuing Professional Studies,Noncompetitive,17.00%,17.00%,N/A,N/A,--,0,No,0,0,Campus
-198419,Duke University,Most Competitive+,95.00%,94.00%,1480,1525,+++,1,No,0,0,Campus
+198419,Duke University,Most Competitive+,95.00%,94.00%,1480,1525,+++ (CSS),1,No,0,0,Campus
 175227,Dunwoody College of Technology,Not available,50.00%,N/A,N/A,N/A,?,0,No,0,0,Campus
 212106,Duquesne University,Very Competitive,80.00%,66.00%,1130,1215,?,0,No,0,0,Campus
 198455,Durham Technical Community College (2 year),2 year (Noncompetitive),31.00%,22.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -1251,17 +1251,17 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 144962,Elmhurst College,Competitive,66.00%,49.00%,990,1100,+/---,0,No,0,1,Campus
 190974,Elmira Business Institute (2 year),2 year (Noncompetitive),26.00%,25.00%,N/A,N/A,?,0,No,0,0,Campus
 190983,Elmira College,Competitive,65.00%,60.00%,1020,1120,?,0,No,0,0,Campus
-198516,Elon University,Very Competitive,85.00%,88.00%,1160,1240,?,0,No,0,0,Campus
+198516,Elon University,Very Competitive,85.00%,88.00%,1160,1240,? (CSS),0,No,0,0,Campus
 490346,"Elyon College (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 133553,Embry-Riddle Aeronautical University-Daytona Beach,Very Competitive,60.00%,50.00%,N/A,N/A,?,0,No,0,0,Campus
 104586,Embry-Riddle Aeronautical University-Prescott,Very Competitive,65.00%,58.00%,N/A,N/A,?,0,No,0,0,Campus
 426314,Embry-Riddle Aeronautical University-Worldwide,Not available,23.00%,17.00%,N/A,N/A,?,0,No,0,0,Campus
-165662,Emerson College,Highly Competitive,82.00%,73.00%,1200,1305,?,0,No,0,0,Campus
+165662,Emerson College,Highly Competitive,82.00%,73.00%,1200,1305,? (CSS),0,No,0,0,Campus
 139630,Emmanuel College,Less Competitive,42.00%,37.00%,920,1020,?,0,No,0,0,Campus
 165671,Emmanuel College,Competitive,66.00%,56.00%,1090,1170,?,0,No,0,0,Campus
 153302,Emmaus Bible College,Noncompetitive,44.00%,43.00%,910,1105,--,0,No,0,0,Campus
 232025,Emory & Henry College,Competitive,55.00%,47.00%,960,1065,--,0,No,0,0,Campus
-139658,Emory University,Most Competitive+,90.00%,92.00%,1360,1445,++,1,No,0,0,Campus
+139658,Emory University,Most Competitive+,90.00%,92.00%,1360,1445,++ (CSS),1,No,0,0,Campus
 487092,Emory University-Oxford College (2 year),2 year (Competitive),N/A,N/A,1360,1440,--,0,No,0,0,Campus
 114114,Emperor's College of Traditional Oriental Medicine,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 114123,Empire College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -1292,7 +1292,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 114266,Evergreen Valley College (2 year),2 year (Noncompetitive),34.00%,27.00%,N/A,N/A,?,0,No,0,0,Campus
 196680,Excelsior College,Not Available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 460376,Fairfax University of America,Not available,15.00%,N/A,N/A,N/A,?,0,No,0,0,Campus
-129242,Fairfield University,Very Competitive,83.00%,85.00%,1210,1280,?,0,No,0,0,Campus
+129242,Fairfield University,Very Competitive,83.00%,85.00%,1210,1280,? (CSS),0,No,0,0,Campus
 184694,Fairleigh Dickinson University-Florham Campus,Competitive,57.00%,48.00%,N/A,N/A,--,0,No,0,0,Campus
 184603,Fairleigh Dickinson University-Metropolitan Campus,Competitive,51.00%,45.00%,N/A,N/A,--,0,No,0,0,Campus
 237367,Fairmont State University,Competitive,38.00%,21.00%,910,1010,?,0,No,0,0,Campus
@@ -1374,7 +1374,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 380368,Fond du Lac Tribal and Community College (2 year),2 year (Noncompetitive),38.00%,29.00%,N/A,N/A,?,0,No,0,0,Campus
 177418,Fontbonne University,Competitive,56.00%,48.00%,970,1055,--,0,No,0,0,Campus
 114716,Foothill College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-191241,Fordham University,Most Competitive,83.00%,85.00%,1240,1345,?,0,No,0,0,Campus
+191241,Fordham University,Most Competitive,83.00%,85.00%,1240,1345,? (CSS),0,No,0,0,Campus
 218043,Forrest College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 198552,Forsyth Technical Community College (2 year),2 year (Noncompetitive),29.00%,21.00%,N/A,N/A,?,0,No,0,0,Campus
 155061,Fort Hays State University,Competitive,43.00%,31.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -1421,7 +1421,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 114734,Franciscan School of Theology,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 205957,Franciscan University of Steubenville,Very Competitive,77.00%,68.00%,1090,1195,?,0,No,0,0,Campus
 224891,Frank Phillips College (2 year),2 year (Noncompetitive),42.00%,38.00%,N/A,N/A,?,0,No,0,0,Campus
-212577,Franklin and Marshall College,Highly Competitive,85.00%,86.00%,N/A,N/A,++/-,1,No,0,0,Campus
+212577,Franklin and Marshall College,Highly Competitive,85.00%,86.00%,N/A,N/A,++/- (CSS),1,No,0,0,Campus
 150604,Franklin College,Competitive,63.00%,51.00%,970,1075,?,0,No,0,0,Campus
 182795,Franklin Pierce University,Competitive,49.00%,47.00%,N/A,N/A,?,0,No,0,0,Campus
 202806,Franklin University,Not Available,24.00%,7.00%,N/A,N/A,--,0,No,0,0,Campus
@@ -1442,7 +1442,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 114840,Fuller Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 114859,Fullerton College (2 year),2 year (Noncompetitive),38.00%,33.00%,N/A,N/A,?,0,No,0,0,Campus
 191302,Fulton-Montgomery Community College (2 year),2 year (Noncompetitive),43.00%,37.00%,N/A,N/A,?,0,No,0,0,Campus
-218070,Furman University,Very Competitive,83.00%,83.00%,1240,1330,?,0,No,0,0,Campus
+218070,Furman University,Very Competitive,83.00%,83.00%,1240,1330,? (CSS),0,No,0,0,Campus
 481030,Future Generations University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 459310,Future-Tech Institute (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 101240,"Gadsden State Community College (HBCU, 2 year)",2 year (Noncompetitive),31.00%,39.00%,N/A,N/A,?,0,Yes,0,0,Campus
@@ -1478,13 +1478,13 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 232186,George Mason University,Very Competitive,71.00%,71.00%,1110,1215,?,0,No,0,0,Campus
 134291,George Stone Technical College (2 year),2 year (Noncompetitive),56.00%,51.00%,N/A,N/A,?,0,No,0,0,Campus
 134307,George T Baker Aviation Technical College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-131469,George Washington University,Most Competitive,82.00%,74.00%,1280,1375,++/-,1,No,0,0,Campus
+131469,George Washington University,Most Competitive,82.00%,74.00%,1280,1375,++/- (CSS),1,No,0,0,Campus
 156745,Georgetown College,Competitive,52.00%,34.00%,1080,1180,--,0,No,0,0,Campus
-131496,Georgetown University,Most Competitive+,95.00%,91.00%,1380,1465,++,1,No,0,0,Campus
+131496,Georgetown University,Most Competitive+,95.00%,91.00%,1380,1465,++ (CSS),1,No,0,0,Campus
 139861,Georgia College & State University,Competitive,64.00%,60.00%,1110,1185,?,0,No,0,0,Campus
 447689,Georgia Gwinnett College,Noncompetitive,21.00%,18.00%,910,1005,?,0,No,0,0,Campus
 139700,Georgia Highlands College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-139755,Georgia Institute of Technology-Main Campus,Most Competitive+,90.00%,84.00%,1300,1405,?,0,No,0,0,Campus
+139755,Georgia Institute of Technology-Main Campus,Most Competitive+,90.00%,84.00%,1300,1405,? (CSS),0,No,0,0,Campus
 485111,Georgia Military College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 139384,Georgia Northwestern Technical College (2 year),2 year (Noncompetitive),44.00%,39.00%,N/A,N/A,?,0,No,0,0,Campus
 244446,Georgia Piedmont Technical College (2 year),2 year (Noncompetitive),49.00%,48.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -1494,7 +1494,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 244437,Georgia State University-Perimeter College (2 year),2 year (Competitive),32.00%,29.00%,N/A,N/A,?,0,No,0,0,Campus
 184773,Georgian Court University,Less Competitive,52.00%,38.00%,960,1060,--,0,No,0,0,Campus
 232195,Germanna Community College (2 year),2 year (Noncompetitive),39.00%,33.00%,N/A,N/A,?,0,No,0,0,Campus
-212674,Gettysburg College,Highly Competitive,82.00%,78.00%,N/A,N/A,++,1,No,0,0,Campus
+212674,Gettysburg College,Highly Competitive,82.00%,78.00%,N/A,N/A,++ (CSS),1,No,0,0,Campus
 494551,Glasgow Caledonian New York College,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 169974,Glen Oaks Community College (2 year),2 year (Noncompetitive),42.00%,38.00%,N/A,N/A,?,0,No,0,0,Campus
 115010,Glendale Career College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -1551,7 +1551,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 198598,Greensboro College,Less Competitive,29.00%,19.00%,900,1000,?,0,No,0,0,Campus
 218113,Greenville Technical College,Noncompetitive,24.00%,19.00%,N/A,N/A,?,0,No,0,0,Campus
 145372,Greenville University,Competitive,52.00%,30.00%,950,1065,?,0,No,0,0,Campus
-153384,Grinnell College,Most Competitive+,87.00%,80.00%,1370,1450,--,0,No,0,0,Campus
+153384,Grinnell College,Most Competitive+,87.00%,80.00%,1370,1450,-- (CSS),0,No,0,0,Campus
 115296,Grossmont College (2 year),2 year (Noncompetitive),36.00%,32.00%,N/A,N/A,?,0,No,0,0,Campus
 212805,Grove City College,Very Competitive,83.00%,76.00%,1130,1255,?,0,No,0,0,Campus
 240745,Guam Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -1573,11 +1573,11 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 162690,Hagerstown Community College (2 year),2 year (Noncompetitive),43.00%,36.00%,N/A,N/A,?,0,No,0,0,Campus
 198640,Halifax Community College (2 year),2 year (Noncompetitive),37.00%,37.00%,N/A,N/A,?,0,No,0,0,Campus
 225201,Hallmark University,Not available,40.00%,44.00%,N/A,N/A,--,0,No,0,0,Campus
-191515,Hamilton College,Most Competitive+,93.00%,90.00%,1370,1445,++,1,No,0,0,Campus
+191515,Hamilton College,Most Competitive+,93.00%,90.00%,1370,1445,++ (CSS),1,No,0,0,Campus
 153427,Hamilton Technical College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 173665,Hamline University,Very Competitive,67.00%,49.00%,1010,1125,?,0,No,0,0,Campus
 232256,Hampden-Sydney College (Male only),Competitive,66.00%,53.00%,1060,1190,?,0,No,0,0,Campus
-166018,Hampshire College,Most Competitive+,64.00%,59.00%,N/A,N/A,?,0,No,0,0,Campus
+166018,Hampshire College,Most Competitive+,64.00%,59.00%,N/A,N/A,? (CSS),0,No,0,0,Campus
 232265,Hampton University (HBCU),Less Competitive,62.00%,77.00%,N/A,N/A,?,0,Yes,0,0,Campus
 177542,Hannibal-LaGrange University,Competitive,45.00%,13.00%,970,1090,?,0,No,0,0,Campus
 150756,Hanover College,Competitive,71.00%,59.00%,1030,1135,?,0,No,0,0,Campus
@@ -1591,11 +1591,11 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 129491,Hartford Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 115393,Hartnell College (2 year),2 year (Noncompetitive),37.00%,36.00%,N/A,N/A,?,0,No,0,0,Campus
 191533,Hartwick College,Competitive,59.00%,47.00%,1030,1120,?,0,No,0,0,Campus
-166027,Harvard University,Most Competitive+,97.00%,96.00%,1460,1515,+++,1,No,0,0,Campus
-115409,Harvey Mudd College,Most Competitive+,93.00%,91.00%,1490,1530,?,0,No,0,0,Campus
+166027,Harvard University,Most Competitive+,97.00%,96.00%,1460,1515,+++ (CSS),1,No,0,0,Campus
+115409,Harvey Mudd College,Most Competitive+,93.00%,91.00%,1490,1530,? (CSS),0,No,0,0,Campus
 155140,Haskell Indian Nations University,Noncompetitive,N/A,N/A,850,930,?,0,No,0,0,Campus
 181127,Hastings College,Competitive,56.00%,40.00%,940,1055,?,0,No,0,0,Campus
-212911,Haverford College,Most Competitive+,92.00%,88.00%,1380,1460,+++,1,No,0,0,Campus
+212911,Haverford College,Most Competitive+,92.00%,88.00%,1380,1460,+++ (CSS),1,No,0,0,Campus
 383190,Hawaii Community College (2 year),2 year (Noncompetitive),30.00%,24.00%,N/A,N/A,?,0,No,0,0,Campus
 460756,Hawaii Medical College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 141644,Hawaii Pacific University,Competitive,45.00%,35.00%,990,1100,?,0,No,0,0,Campus
@@ -1654,7 +1654,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 175786,Hinds Community College (2 year),2 year (Noncompetitive),41.00%,41.00%,N/A,N/A,?,0,No,0,0,Campus
 203128,Hiram College,Competitive,56.00%,40.00%,860,1005,?,0,No,0,0,Campus
 220312,Hiwassee College,Not available,50.00%,67.00%,N/A,N/A,?,0,No,0,0,Campus
-191630,Hobart William Smith Colleges,Highly Competitive,79.00%,77.00%,1180,1270,--,0,No,0,0,Campus
+191630,Hobart William Smith Colleges,Highly Competitive,79.00%,77.00%,1180,1270,-- (CSS),0,No,0,0,Campus
 134510,Hobe Sound Bible College,Noncompetitive,44.00%,0.00%,N/A,N/A,++/-,1,No,0,0,Campus
 203155,Hocking College (2 year),2 year (Noncompetitive),40.00%,32.00%,N/A,N/A,?,0,No,0,0,Campus
 367884,Hodges University,Less Competitive,14.00%,16.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -1824,7 +1824,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 198710,Isothermal Community College (2 year),2 year (Noncompetitive),40.00%,33.00%,N/A,N/A,?,0,No,0,0,Campus
 173805,Itasca Community College (2 year),2 year (Noncompetitive),50.00%,39.00%,N/A,N/A,?,0,No,0,0,Campus
 175829,Itawamba Community College (2 year),2 year (Noncompetitive),54.00%,45.00%,N/A,N/A,?,0,No,0,0,Campus
-191968,Ithaca College,Very Competitive,74.00%,63.00%,N/A,N/A,?,0,No,0,0,Campus
+191968,Ithaca College,Very Competitive,74.00%,63.00%,N/A,N/A,? (CSS),0,No,0,0,Campus
 159197,ITI Technical College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 150987,Ivy Tech Community College (2 year),2 year (Noncompetitive),32.00%,25.00%,N/A,N/A,?,0,No,0,0,Campus
 437237,IYRS School of Technology & Trades (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -1864,7 +1864,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 462354,John Paul the Great Catholic University,Competitive,61.00%,60.00%,1020,1120,?,0,No,0,0,Campus
 232450,John Tyler Community College (2 year),2 year (Noncompetitive),32.00%,28.00%,N/A,N/A,?,0,No,0,0,Campus
 146278,John Wood Community College (2 year),2 year (Noncompetitive),50.00%,42.00%,N/A,N/A,++,1,No,1,0,Campus
-162928,Johns Hopkins University,Most Competitive+,93.00%,90.00%,1460,1510,--,0,No,0,0,Campus
+162928,Johns Hopkins University,Most Competitive+,93.00%,90.00%,1460,1510,-- (CSS),0,No,0,0,Campus
 445708,Johnson & Wales University-Charlotte,Not available,47.00%,40.00%,N/A,N/A,?,0,No,0,0,Campus
 439288,Johnson & Wales University-Denver,Not available,51.00%,44.00%,N/A,N/A,?,0,No,0,0,Campus
 414823,Johnson & Wales University-North Miami,Not available,45.00%,42.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -1923,7 +1923,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 157030,Kentucky Mountain Bible College,Less Competitive,41.00%,0.00%,970,1055,++/-,1,No,0,0,Campus
 157058,Kentucky State University (HBCU),Competitive,26.00%,40.00%,890,975,?,0,Yes,0,0,Campus
 157076,Kentucky Wesleyan College,Competitive,39.00%,27.00%,1040,1140,?,0,No,0,0,Campus
-203535,Kenyon College,Most Competitive,90.00%,91.00%,1270,1365,+++,1,No,0,0,Campus
+203535,Kenyon College,Most Competitive,90.00%,91.00%,1270,1365,+++ (CSS),1,No,0,0,Campus
 461847,Keser Torah-Mayan Hatalmud (Male only),Not available,N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 203544,Kettering College,Competitive,41.00%,40.00%,1040,1125,--,0,No,0,0,Campus
 169983,Kettering University,Highly Competitive,63.00%,50.00%,1190,1275,?,0,No,0,0,Campus
@@ -1955,7 +1955,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 165264,Laboure College,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 260372,Lac Courte Oreilles Ojibwe College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 213376,Lackawanna College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-213385,Lafayette College,Most Competitive,88.00%,85.00%,1250,1345,+++,1,No,0,0,N/A
+213385,Lafayette College,Most Competitive,88.00%,85.00%,1250,1345,+++ (CSS),1,No,0,0,N/A
 140234,LaGrange College,Competitive,42.00%,32.00%,1000,1075,?,0,No,0,0,Campus
 117168,Laguna College of Art and Design,Less Competitive,56.00%,64.00%,N/A,N/A,?,0,No,0,0,Campus
 219143,Lake Area Technical College (2 year),2 year (Noncompetitive),74.00%,56.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -2005,7 +2005,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 454786,Laurus College,Noncompetitive,79.00%,78.00%,N/A,N/A,--,0,No,0,0,Campus
 166407,Lawrence Memorial Hospital School of Nursing (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 170675,Lawrence Technological University,Very Competitive,57.00%,23.00%,1020,1145,?,0,No,0,0,Campus
-239017,Lawrence University,Highly Competitive,80.00%,75.00%,1200,1315,--,0,No,0,0,Campus
+239017,Lawrence University,Highly Competitive,80.00%,75.00%,1200,1315,-- (CSS),0,No,0,0,Campus
 101569,"Lawson State Community College (HBCU, 2 year)",2 year (Noncompetitive),32.00%,45.00%,N/A,N/A,?,0,Yes,0,0,Campus
 230418,LDS Business College (2 year),2 year (Noncompetitive),45.00%,39.00%,N/A,N/A,++,1,No,0,0,Campus
 192323,Le Moyne College,Competitive,74.00%,66.00%,1070,1175,?,0,No,0,0,Campus
@@ -2018,12 +2018,12 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 198808,Lees-McRae College,Competitive,39.00%,35.00%,N/A,N/A,?,0,No,0,0,Campus
 141811,Leeward Community College (2 year),2 year (Noncompetitive),29.00%,31.00%,N/A,N/A,?,0,No,0,0,Campus
 213525,Lehigh Carbon Community College (2 year),2 year (Noncompetitive),29.00%,20.00%,N/A,N/A,?,0,No,0,0,Campus
-213543,Lehigh University,Most Competitive,90.00%,84.00%,1280,1365,++,1,No,0,0,Campus
+213543,Lehigh University,Most Competitive,90.00%,84.00%,1280,1365,++ (CSS),1,No,0,0,Campus
 198817,Lenoir Community College (2 year),2 year (Noncompetitive),33.00%,24.00%,N/A,N/A,?,0,No,0,0,Campus
 198835,Lenoir-Rhyne University,Competitive,48.00%,43.00%,970,1070,?,0,No,0,0,Campus
 166452,Lesley University,Competitive,60.00%,56.00%,1000,1105,?,0,No,0,0,Campus
 226231,LeTourneau University,Very Competitive,61.00%,48.00%,1090,1200,?,0,No,0,0,Campus
-209056,Lewis & Clark College,Highly Competitive,77.00%,74.00%,1220,1310,?,0,No,0,0,Campus
+209056,Lewis & Clark College,Highly Competitive,77.00%,74.00%,1220,1310,? (CSS),0,No,0,0,Campus
 146603,Lewis and Clark Community College (2 year),2 year (Noncompetitive),49.00%,39.00%,N/A,N/A,+++,1,No,1,0,Campus
 146612,Lewis University,Competitive,66.00%,58.00%,1010,1105,+/---,0,No,0,1,Campus
 142328,Lewis-Clark State College,Competitive,29.00%,27.00%,870,990,?,0,No,0,0,Campus
@@ -2113,7 +2113,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 235750,Lower Columbia College,Noncompetitive,28.00%,40.00%,N/A,N/A,?,0,No,0,0,Campus
 117946,Loyola Marymount University,Highly Competitive,80.00%,80.00%,1230,1320,?,0,No,0,0,Campus
 146719,Loyola University Chicago,Very Competitive,74.00%,66.00%,1130,1225,---,0,No,0,1,Campus
-163046,Loyola University Maryland,Very Competitive,83.00%,82.00%,N/A,N/A,?,0,No,0,0,Campus
+163046,Loyola University Maryland,Very Competitive,83.00%,82.00%,N/A,N/A,? (CSS),0,No,0,0,Campus
 159656,Loyola University New Orleans,Very Competitive,60.00%,57.00%,1050,1155,?,0,No,0,0,Campus
 226383,Lubbock Christian University,Competitive,48.00%,30.00%,960,1065,?,0,No,0,0,Campus
 363633,Luna Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -2127,7 +2127,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 213668,Lycoming College,Competitive,82.00%,65.00%,1040,1130,+++,1,No,0,0,Campus
 132657,Lynn University,Less Competitive,52.00%,51.00%,980,1075,?,0,No,0,0,Campus
 106342,Lyon College,Competitive,52.00%,43.00%,1080,1160,?,0,No,0,0,Campus
-173902,Macalester College,Most Competitive,91.00%,91.00%,1320,1415,++,1,No,0,0,Campus
+173902,Macalester College,Most Competitive,91.00%,91.00%,1320,1415,++ (CSS),1,No,0,0,Campus
 146816,MacCormac College (2 year),2 year (Noncompetitive),26.00%,26.00%,N/A,N/A,?,0,No,0,1,Campus
 192624,Machzikei Hadath Rabbinical College (Male only),Not available,30.00%,N/A,N/A,N/A,--,0,No,0,0,Campus
 146825,MacMurray College,Competitive,43.00%,28.00%,940,1015,?,0,No,0,0,Campus
@@ -2193,7 +2193,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 166647,Massachusetts Bay Community College (2 year),2 year (Noncompetitive),31.00%,25.00%,N/A,N/A,?,0,No,0,0,Campus
 166674,Massachusetts College of Art and Design,Not Available,69.00%,64.00%,N/A,N/A,?,0,No,0,0,Campus
 167288,Massachusetts College of Liberal Arts,Competitive,57.00%,50.00%,960,1065,?,0,No,0,0,Campus
-166683,Massachusetts Institute of Technology,Most Competitive+,95.00%,93.00%,1510,1540,+++,1,No,0,0,Campus
+166683,Massachusetts Institute of Technology,Most Competitive+,95.00%,93.00%,1510,1540,+++ (CSS),1,No,0,0,Campus
 166692,Massachusetts Maritime Academy,Competitive,75.00%,68.00%,1020,1100,?,0,No,0,0,Campus
 369002,Massachusetts School of Law,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 166823,Massasoit Community College (2 year),2 year (Noncompetitive),29.00%,21.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -2302,7 +2302,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 482158,Middle Georgia State University,Noncompetitive,27.00%,23.00%,880,985,?,0,No,0,0,Campus
 220996,Middle Tennessee School of Anesthesia Inc,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 220978,Middle Tennessee State University,Competitive,47.00%,42.00%,1040,1140,?,0,No,0,0,Campus
-230959,Middlebury College,Most Competitive+,93.00%,93.00%,1360,1445,++,1,No,0,0,Campus
+230959,Middlebury College,Most Competitive+,93.00%,93.00%,1360,1445,++ (CSS),1,No,0,0,Campus
 119058,Middlebury Institute of International Studies at Monterey,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 129756,Middlesex Community College (2 year),2 year (Noncompetitive),30.00%,25.00%,N/A,N/A,?,0,No,0,0,Campus
 166887,Middlesex Community College (2 year),2 year (Noncompetitive),32.00%,24.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -2421,7 +2421,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 214166,Mount Aloysius College,Competitive,40.00%,19.00%,N/A,N/A,?,0,No,0,0,Campus
 209241,Mount Angel Seminary (Male only),Not available,47.00%,44.00%,N/A,N/A,?,0,No,0,0,Campus
 204176,Mount Carmel College of Nursing,Less Competitive,71.00%,61.00%,970,1040,--,0,No,0,0,Campus
-166939,Mount Holyoke College (Female only),Most Competitive,84.00%,80.00%,N/A,N/A,--,0,No,0,0,Campus
+166939,Mount Holyoke College (Female only),Most Competitive,84.00%,80.00%,N/A,N/A,-- (CSS),0,No,0,0,Campus
 219198,Mount Marty College,Competitive,55.00%,41.00%,970,1075,?,0,No,0,0,Campus
 239390,Mount Mary University (Female only),Less Competitive,51.00%,43.00%,890,985,?,0,No,0,0,Campus
 154013,Mount Mercy University,Competitive,65.00%,58.00%,970,1075,--,0,No,0,0,Campus
@@ -2561,7 +2561,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 194116,New York School of Interior Design,Not available,75.00%,33.00%,N/A,N/A,?,0,No,0,0,Campus
 493798,"New York Seminary (Female only, 2 year)",2 year (Competitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 193894,New York Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-193900,New York University,Most Competitive+,85.00%,82.00%,1350,1440,+++,1,No,0,0,Campus
+193900,New York University,Most Competitive+,85.00%,82.00%,1350,1440,+++ (CSS),1,No,0,0,Campus
 218414,Newberry College,Competitive,52.00%,49.00%,870,985,?,0,No,0,0,Campus
 167251,Newbury College,Competitive,32.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
 155335,Newman University,Competitive,53.00%,36.00%,970,1090,?,0,No,0,0,Campus
@@ -2626,7 +2626,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 439817,Northeastern Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 207263,Northeastern State University,Very Competitive,33.00%,26.00%,970,1075,?,0,No,0,0,Campus
 217837,Northeastern Technical College (2 year),2 year (Noncompetitive),25.00%,17.00%,N/A,N/A,?,0,No,0,0,Campus
-167358,Northeastern University,Most Competitive+,89.00%,87.00%,1390,1465,--,0,No,0,0,Campus
+167358,Northeastern University,Most Competitive+,89.00%,87.00%,1390,1465,-- (CSS),0,No,0,0,Campus
 482705,Northeastern University Lifelong Learning Network,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 105330,Northern Arizona University,Very Competitive,57.00%,48.00%,N/A,N/A,?,0,No,0,0,Campus
 147697,Northern Baptist Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -2682,7 +2682,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 207306,Northwestern Oklahoma State University,Noncompetitive,28.00%,20.00%,930,1020,?,0,No,0,0,Campus
 120166,Northwestern Polytechnic University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 160038,Northwestern State University of Louisiana,Competitive,42.00%,37.00%,1010,1095,?,0,No,0,0,Campus
-147767,Northwestern University,Most Competitive+,94.00%,89.00%,1440,1495,+++,1,No,0,1,Campus
+147767,Northwestern University,Most Competitive+,94.00%,89.00%,1440,1495,+++ (CSS),1,No,0,1,Campus
 171492,Northwood University,Less Competitive,52.00%,27.00%,960,1075,--,0,No,0,0,Campus
 130004,Norwalk Community College (2 year),2 year (Noncompetitive),24.00%,20.00%,N/A,N/A,?,0,No,0,0,Campus
 230995,Norwich University,Competitive,61.00%,51.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -2702,9 +2702,9 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 171571,Oakland University,Competitive,57.00%,35.00%,1020,1125,?,0,No,0,0,Campus
 147800,Oakton Community College (2 year),2 year (Noncompetitive),39.00%,34.00%,N/A,N/A,++,1,No,1,1,Campus
 101912,Oakwood University (HBCU),Competitive,50.00%,65.00%,850,980,?,0,Yes,0,0,Campus
-204501,Oberlin College,Most Competitive,86.00%,85.00%,1280,1380,+++,1,No,0,0,Campus
+204501,Oberlin College,Most Competitive,86.00%,85.00%,1280,1380,+++ (CSS),1,No,0,0,Campus
 227289,Oblate School of Theology,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-120254,Occidental College,Most Competitive,86.00%,87.00%,1300,1390,--,0,No,0,0,Campus
+120254,Occidental College,Most Competitive,86.00%,87.00%,1300,1390,-- (CSS),0,No,0,0,Campus
 185873,Ocean County College (2 year),2 year (Noncompetitive),45.00%,37.00%,N/A,N/A,?,0,No,0,0,Campus
 420431,Oconee Fall Line Technical College (2 year),2 year (Noncompetitive),43.00%,40.00%,N/A,N/A,?,0,No,0,0,Campus
 227304,Odessa College (2 year),2 year (Noncompetitive),35.00%,34.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -2947,7 +2947,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 215390,Pittsburgh Institute of Mortuary Science Inc (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 215415,Pittsburgh Technical College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 215424,Pittsburgh Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-121257,Pitzer College,Most Competitive+,84.00%,86.00%,N/A,N/A,++,1,No,0,0,Campus
+121257,Pitzer College,Most Competitive+,84.00%,86.00%,N/A,N/A,++ (CSS),1,No,0,0,Campus
 156754,PJ's College of Cosmetology-Glasgow (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 245962,Platt College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 490878,Platt College-Anaheim,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -2982,7 +2982,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 456481,Polytechnic University of Puerto Rico-Miami,Noncompetitive,50.00%,50.00%,N/A,N/A,?,0,No,0,0,Campus
 456490,Polytechnic University of Puerto Rico-Orlando,Noncompetitive,50.00%,50.00%,N/A,N/A,--,0,No,0,0,Campus
 190451,Pomeroy College of Nursing at Crouse Hospital (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-121345,Pomona College,Most Competitive+,93.00%,93.00%,1390,1465,++,1,No,0,0,Campus
+121345,Pomona College,Most Competitive+,93.00%,93.00%,1390,1465,++ (CSS),1,No,0,0,Campus
 243081,Ponce Health Sciences University,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 492704,Ponce Health Sciences University-Centro Universitario de San Juan,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 494807,Ponce Health Sciences University-East,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -3015,12 +3015,12 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 163657,Prince George's Community College (2 year),2 year (Noncompetitive),24.00%,22.00%,N/A,N/A,?,0,No,0,0,Campus
 186122,Princeton Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 186131,Princeton University,Most Competitive+,98.00%,97.00%,1460,1515,+++,1,No,0,0,Campus
-148016,Principia College,Competitive,80.00%,61.00%,1010,1115,?,0,No,0,0,Campus
+148016,Principia College,Competitive,80.00%,61.00%,1010,1115,? (CSS),0,No,0,0,Campus
 437750,Professional Golfers Career College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 454908,Professional Hands Institute (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 205054,Professional Skills Institute (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 455770,Providence Christian College,Not available,42.00%,0.00%,1010,1110,--,0,No,0,0,Campus
-217402,Providence College,Very Competitive,87.00%,85.00%,1210,1280,?,0,No,0,0,Campus
+217402,Providence College,Very Competitive,87.00%,85.00%,1210,1280,? (CSS),0,No,0,0,Campus
 380438,Provo College,Noncompetitive,75.00%,69.00%,N/A,N/A,?,0,No,0,0,Campus
 127884,Pueblo Community College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 493673,Puerto Rico School of Nurse Anesthetists,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -3087,7 +3087,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 491844,Red Lake Nation College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 127909,Red Rocks Community College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 207069,Redlands Community College (2 year),2 year (Noncompetitive),37.00%,28.00%,N/A,N/A,?,0,No,0,0,Campus
-209922,Reed College,Most Competitive,79.00%,79.00%,1320,1420,--,0,No,0,0,Campus
+209922,Reed College,Most Competitive,79.00%,79.00%,1320,1420,-- (CSS),0,No,0,0,Campus
 117052,Reedley College (2 year),2 year (Noncompetitive),31.00%,28.00%,N/A,N/A,?,0,No,0,0,Campus
 215628,Reformed Presbyterian Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 490230,Reformed University,Noncompetitive,N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
@@ -3116,14 +3116,14 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 451866,Remington College-Shreveport Campus,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 148256,Rend Lake College (2 year),2 year (Noncompetitive),64.00%,40.00%,N/A,N/A,+++,1,No,1,0,Campus
 129428,Rensselaer at Hartford,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-194824,Rensselaer Polytechnic Institute,Most Competitive,85.00%,80.00%,1290,1390,?,0,No,0,0,Campus
+194824,Rensselaer Polytechnic Institute,Most Competitive,85.00%,80.00%,1290,1390,? (CSS),0,No,0,0,Campus
 236382,Renton Technical College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 178989,Research College of Nursing,Not Available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 149763,Resurrection University,Not available,25.00%,25.00%,N/A,N/A,?,0,No,0,1,N/A
 217420,Rhode Island College,Less Competitive,49.00%,37.00%,880,980,?,0,No,0,0,Campus
 217493,Rhode Island School of Design,Not Available,90.00%,84.00%,1230,1350,?,0,No,0,0,Campus
-221351,Rhodes College,Highly Competitive,83.00%,80.00%,1220,1325,?,0,No,0,0,Campus
-227757,Rice University,Most Competitive+,93.00%,88.00%,1470,1520,+++,1,No,0,0,Campus
+221351,Rhodes College,Highly Competitive,83.00%,80.00%,1220,1325,? (CSS),0,No,0,0,Campus
+227757,Rice University,Most Competitive+,93.00%,88.00%,1470,1520,+++ (CSS),1,No,0,0,Campus
 233338,Richard Bland College (2 year),2 year (Competitive),47.00%,39.00%,N/A,N/A,?,0,No,0,0,Campus
 227766,Richland College (2 year),2 year (Noncompetitive),31.00%,27.00%,N/A,N/A,?,0,No,0,0,Campus
 148292,Richland Community College (2 year),2 year (Noncompetitive),49.00%,31.00%,N/A,N/A,+++,1,No,1,0,Campus
@@ -3305,13 +3305,13 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 122834,Santa Barbara Business College-Bakersfield,Noncompetitive,100.00%,100.00%,N/A,N/A,--,0,No,0,0,Campus
 122852,Santa Barbara Business College-Santa Maria,Noncompetitive,50.00%,50.00%,N/A,N/A,--,0,No,0,0,Campus
 122889,Santa Barbara City College (2 year),2 year (Noncompetitive),48.00%,48.00%,N/A,N/A,?,0,No,0,0,Campus
-122931,Santa Clara University,Highly Competitive,91.00%,89.00%,1280,1360,?,0,No,0,0,Campus
+122931,Santa Clara University,Highly Competitive,91.00%,89.00%,1280,1360,? (CSS),0,No,0,0,Campus
 137096,Santa Fe College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 188137,Santa Fe Community College (2 year),2 year (Noncompetitive),30.00%,29.00%,N/A,N/A,?,0,No,0,0,Campus
 122977,Santa Monica College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 123013,Santa Rosa Junior College (2 year),2 year (Noncompetitive),41.00%,36.00%,N/A,N/A,?,0,No,0,0,Campus
 399212,Santiago Canyon College (2 year),2 year (Noncompetitive),44.00%,38.00%,N/A,N/A,?,0,No,0,0,Campus
-195304,Sarah Lawrence College,Highly Competitive,77.00%,75.00%,1240,1330,?,0,No,0,0,Campus
+195304,Sarah Lawrence College,Highly Competitive,77.00%,75.00%,1240,1330,? (CSS),0,No,0,0,Campus
 148672,Sauk Valley Community College (2 year),2 year (Noncompetitive),53.00%,48.00%,N/A,N/A,++,1,No,1,0,Campus
 140951,Savannah College of Art and Design,Competitive,70.00%,65.00%,1050,1145,?,0,No,0,0,Campus
 480301,Savannah Law School,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -3330,7 +3330,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 228042,Schreiner University,Less Competitive,46.00%,42.00%,920,1015,?,0,No,0,0,Campus
 201982,"Scott College of Cosmetology (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,++,1,No,0,0,Campus
 105747,Scottsdale Community College (2 year),2 year (Noncompetitive),38.00%,34.00%,N/A,N/A,?,0,No,0,0,Campus
-123165,Scripps College (Female only),Most Competitive,89.00%,91.00%,1330,1410,--,0,No,0,0,Campus
+123165,Scripps College (Female only),Most Competitive,89.00%,91.00%,1330,1410,-- (CSS),0,No,0,0,Campus
 236513,Seattle Central College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 488448,Seattle Film Institute,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 439914,Seattle Institute of East Asian Medicine,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -3381,10 +3381,10 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 231068,SIT Graduate Institute,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 200466,Sitting Bull College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 236638,Skagit Valley College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-195526,Skidmore College,Highly Competitive,88.00%,84.00%,1220,1310,++/-,1,No,0,0,Campus
+195526,Skidmore College,Highly Competitive,88.00%,84.00%,1220,1310,++/- (CSS),1,No,0,0,Campus
 123509,Skyline College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 216038,Slippery Rock University of Pennsylvania,Competitive,68.00%,52.00%,1000,1085,?,0,No,0,0,Campus
-167835,Smith College (Female only),Most Competitive,89.00%,89.00%,N/A,N/A,++,1,No,0,0,Campus
+167835,Smith College (Female only),Most Competitive,89.00%,89.00%,N/A,N/A,++ (CSS),1,No,0,0,Campus
 102076,Snead State Community College (2 year),2 year (Noncompetitive),53.00%,41.00%,N/A,N/A,?,0,No,0,0,Campus
 230597,Snow College,Noncompetitive,64.00%,N/A,N/A,N/A,?,0,No,0,0,Campus
 110778,Sofia University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -3463,7 +3463,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 149222,Southern Illinois University-Carbondale,Competitive,48.00%,32.00%,1030,1140,--,0,No,1,0,Campus
 149231,Southern Illinois University-Edwardsville,Competitive,49.00%,35.00%,1020,1120,++,1,No,1,0,Campus
 161545,Southern Maine Community College (2 year),2 year (Noncompetitive),31.00%,25.00%,N/A,N/A,?,0,No,0,0,Campus
-228246,Southern Methodist University,Most Competitive,81.00%,77.00%,1300,1390,?,0,No,0,0,Campus
+228246,Southern Methodist University,Most Competitive,81.00%,77.00%,1300,1390,? (CSS),0,No,0,0,Campus
 206862,Southern Nazarene University,Noncompetitive,48.00%,28.00%,N/A,N/A,?,0,No,0,0,Campus
 183026,Southern New Hampshire University,Competitive,48.00%,30.00%,N/A,N/A,?,0,No,0,0,Campus
 210146,Southern Oregon University,Competitive,41.00%,34.00%,980,1090,?,0,No,0,0,Campus
@@ -3552,7 +3552,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 442426,St Louis College of Health Careers-Fenton,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 179511,"St Louis College of Health Careers-St Louis (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 154262,St Luke's College,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-174844,St Olaf College,Highly Competitive,87.00%,82.00%,1190,1310,++/-,1,No,0,0,Campus
+174844,St Olaf College,Highly Competitive,87.00%,82.00%,1190,1310,++/- (CSS),1,No,0,0,Campus
 189811,St Paul's School of Nursing-Queens (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 195784,St Paul's School of Nursing-Staten Island (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 137078,St Petersburg College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -3575,7 +3575,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 446561,Stanbridge University,Not available,80.00%,100.00%,N/A,N/A,?,0,No,0,0,Campus
 493318,Stanbridge University-Los Angeles (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 483814,Standard Healthcare Services-College of Nursing (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-243744,Stanford University,Most Competitive+,94.00%,93.00%,1440,1505,+++,1,No,0,0,Campus
+243744,Stanford University,Most Competitive+,94.00%,93.00%,1440,1505,+++ (CSS),1,No,0,0,Campus
 199740,Stanly Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 205841,Stark State College (2 year),2 year (Noncompetitive),26.00%,15.00%,N/A,N/A,?,0,No,0,0,Campus
 123916,Starr King School for the Ministry,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -3590,8 +3590,8 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 179548,Stephens College,Competitive,52.00%,31.00%,1000,1120,?,0,No,0,0,Campus
 155937,Sterling College,Competitive,49.00%,48.00%,920,985,?,0,No,0,0,Campus
 231095,Sterling College,Very Competitive,53.00%,29.00%,N/A,N/A,?,0,No,0,0,Campus
-137546,Stetson University,Very Competitive,63.00%,60.00%,N/A,N/A,?,0,No,0,0,Campus
-186867,Stevens Institute of Technology,Most Competitive,85.00%,78.00%,1340,1420,?,0,No,0,0,Campus
+137546,Stetson University,Very Competitive,63.00%,60.00%,N/A,N/A,? (CSS),0,No,0,0,Campus
+186867,Stevens Institute of Technology,Most Competitive,85.00%,78.00%,1340,1420,? (CSS),0,No,0,0,Campus
 230621,Stevens-Henager College,Noncompetitive,18.00%,7.00%,N/A,N/A,?,0,No,0,0,Campus
 230630,Stevens-Henager College,Noncompetitive,33.00%,33.00%,N/A,N/A,?,0,No,0,0,Home
 438151,Stevens-Henager College,Noncompetitive,15.00%,11.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -3608,7 +3608,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 413778,Stone Academy-Waterbury (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,N/A
 130509,Stone Academy-West Haven (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 366340,Stone Child College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-167996,Stonehill College,Competitive,80.00%,64.00%,N/A,N/A,?,0,No,0,0,Campus
+167996,Stonehill College,Competitive,80.00%,64.00%,N/A,N/A,? (CSS),0,No,0,0,Campus
 196097,Stony Brook University,Most Competitive,76.00%,73.00%,1230,1335,?,0,No,0,0,Campus
 417275,Stratford School for Aviation Maintenance Technicians (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 438498,Stratford University,Noncompetitive,27.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -3672,10 +3672,10 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 199768,Surry Community College (2 year),2 year (Noncompetitive),42.00%,36.00%,N/A,N/A,?,0,No,0,0,Campus
 216278,Susquehanna University,Very Competitive,71.00%,62.00%,N/A,N/A,?,0,No,0,0,Campus
 247603,Sussex County Community College (2 year),2 year (Noncompetitive),43.00%,24.00%,N/A,N/A,?,0,No,0,0,Campus
-216287,Swarthmore College,Most Competitive+,94.00%,91.00%,1380,1460,++,1,No,0,0,Campus
+216287,Swarthmore College,Most Competitive+,94.00%,91.00%,1380,1460,++ (CSS),1,No,0,0,Campus
 196389,Swedish Institute a College of Health Sciences (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 233718,Sweet Briar College (Female only),Not Available,44.00%,29.00%,1010,1110,?,0,No,0,0,Campus
-196413,Syracuse University,Highly Competitive,83.00%,80.00%,1180,1280,?,0,No,0,0,Campus
+196413,Syracuse University,Highly Competitive,83.00%,80.00%,1180,1280,? (CSS),0,No,0,0,Campus
 155973,Tabor College,Competitive,41.00%,19.00%,930,1045,?,0,No,0,0,Campus
 236753,Tacoma Community College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 124113,Taft College (2 year),2 year (Noncompetitive),40.00%,39.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -3740,7 +3740,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 459949,Texas A&M University-San Antonio,Less Competitive,N/A,N/A,930,1030,?,0,No,0,0,Campus
 224545,Texas A&M University-Texarkana,Noncompetitive,30.00%,25.00%,970,1060,?,0,No,0,0,Campus
 228866,Texas Chiropractic College Foundation Inc,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-228875,Texas Christian University,Highly Competitive,83.00%,77.00%,1150,1250,?,0,No,0,0,Home
+228875,Texas Christian University,Highly Competitive,83.00%,77.00%,1150,1250,? (CSS),0,No,0,0,Home
 228884,Texas College (HBCU),Noncompetitive,12.00%,27.00%,N/A,N/A,--,0,Yes,0,0,Campus
 441487,Texas County Technical College (2 year),2 year (Competitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 430704,Texas Health and Science University,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -3840,7 +3840,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 229018,The University of Texas of the Permian Basin,Noncompetitive,41.00%,41.00%,940,1035,?,0,No,0,0,Campus
 227368,The University of Texas Rio Grande Valley,Noncompetitive,46.00%,46.00%,950,1040,?,0,No,0,0,Campus
 215105,The University of the Arts,Not Available,62.00%,59.00%,N/A,N/A,?,0,No,0,0,Campus
-221519,The University of the South,Most Competitive,80.00%,77.00%,1150,1245,?,0,No,0,0,Campus
+221519,The University of the South,Most Competitive,80.00%,77.00%,1150,1245,? (CSS),0,No,0,0,Campus
 233897,The University of Virginia's College at Wise,Less Competitive,46.00%,41.00%,970,1065,?,0,No,0,0,Campus
 138354,The University of West Florida,Competitive,46.00%,41.00%,1080,1170,?,0,No,0,0,Campus
 485360,The Vocational Nursing Institute Inc (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -3897,7 +3897,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 137953,Trinity Baptist College,Less Competitive,33.00%,22.00%,880,970,--,0,No,0,0,Campus
 200484,Trinity Bible College and Graduate School,Noncompetitive,47.00%,27.00%,930,1020,?,0,No,0,0,Campus
 149505,Trinity Christian College,Competitive,66.00%,42.00%,970,1060,++/-,1,No,0,1,Campus
-130590,Trinity College,Highly Competitive,83.00%,85.00%,1300,1375,++,1,No,0,0,Campus
+130590,Trinity College,Highly Competitive,83.00%,85.00%,1300,1375,++ (CSS),1,No,0,0,Campus
 137962,Trinity College of Florida,Noncompetitive,25.00%,16.00%,840,925,--,0,No,0,0,Campus
 146755,Trinity College of Nursing & Health Sciences,Not Available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 431929,Trinity College of Puerto Rico (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,++,1,No,0,0,Campus
@@ -3906,7 +3906,7 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 135610,Trinity International University-Florida,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 149514,Trinity International University-Illinois,Very Competitive,53.00%,28.00%,930,1045,?,0,No,0,1,Campus
 123448,Trinity Law School,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-229267,Trinity University,Highly Competitive,78.00%,72.00%,1290,1370,--,0,No,0,0,Campus
+229267,Trinity University,Highly Competitive,78.00%,72.00%,1290,1370,-- (CSS),0,No,0,0,Campus
 225308,Trinity Valley Community College (2 year),2 year (Noncompetitive),28.00%,33.00%,N/A,N/A,?,0,No,0,0,Campus
 131876,Trinity Washington University,Competitive,34.00%,35.00%,N/A,N/A,--,0,No,0,0,Campus
 149532,Triton College (2 year),2 year (Noncompetitive),30.00%,27.00%,N/A,N/A,+++,1,No,1,1,Campus
@@ -3915,8 +3915,8 @@ Arrupe,Arrupe College (Loyola),Noncompetitive,51.00%,46.00%,N/A,N/A,+++,1,No,0,1
 182500,Truckee Meadows Community College,Noncompetitive,28.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
 141237,Truett McConnell University,Noncompetitive,40.00%,19.00%,930,1040,?,0,No,0,0,Campus
 178615,Truman State University,Highly Competitive,74.00%,70.00%,1180,1290,++/-,1,No,0,0,Campus
-168148,Tufts University,Most Competitive+,94.00%,92.00%,1390,1465,++,1,No,0,0,Campus
-160755,Tulane University of Louisiana,Highly Competitive,86.00%,82.00%,1360,1440,?,0,No,0,0,Campus
+168148,Tufts University,Most Competitive+,94.00%,92.00%,1390,1465,++ (CSS),1,No,0,0,Campus
+160755,Tulane University of Louisiana,Highly Competitive,86.00%,82.00%,1360,1440,? (CSS),0,No,0,0,Campus
 207935,Tulsa Community College (2 year),2 year (Noncompetitive),30.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
 488934,Tulsa Technology Center (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 207962,Tulsa Welding School-Tulsa (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -4040,7 +4040,7 @@ Naval Prep,United States Naval Academy Prep School,Very Competitive,62.00%,61.00
 224323,University of Dallas,Very Competitive,68.00%,60.00%,1130,1245,?,0,No,0,0,Campus
 202480,University of Dayton,Competitive,82.00%,71.00%,1120,1220,?,0,No,0,0,Campus
 130943,University of Delaware,Very Competitive,82.00%,72.00%,1160,1255,?,0,No,0,0,Campus
-127060,University of Denver,Highly Competitive,77.00%,78.00%,1170,1260,?,0,No,0,0,Campus
+127060,University of Denver,Highly Competitive,77.00%,78.00%,1170,1260,? (CSS),0,No,0,0,Campus
 169716,University of Detroit Mercy,Competitive,65.00%,43.00%,1060,1155,--,0,No,0,0,Campus
 153278,University of Dubuque,Competitive,43.00%,33.00%,840,960,++/-,1,No,0,0,Campus
 447801,University of East-West Medicine,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -4096,8 +4096,8 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 167987,University of Massachusetts-Dartmouth,Competitive,59.00%,54.00%,990,1090,?,0,No,0,0,Campus
 166513,University of Massachusetts-Lowell,Competitive,66.00%,58.00%,1150,1235,?,0,No,0,0,Campus
 220862,University of Memphis,Competitive,53.00%,45.00%,1010,1125,?,0,No,0,0,Campus
-135726,University of Miami,Most Competitive,83.00%,82.00%,1270,1355,?,0,No,0,0,Campus
-170976,University of Michigan-Ann Arbor,Most Competitive+,93.00%,88.00%,1340,1435,++/-,1,No,0,0,Campus
+135726,University of Miami,Most Competitive,83.00%,82.00%,1270,1355,? (CSS),0,No,0,0,Campus
+170976,University of Michigan-Ann Arbor,Most Competitive+,93.00%,88.00%,1340,1435,++/- (CSS),1,No,0,0,Campus
 171137,University of Michigan-Dearborn,Very Competitive,55.00%,44.00%,1070,1185,---,0,No,0,0,Home
 171146,University of Michigan-Flint,Competitive,43.00%,34.00%,970,1095,?,0,No,0,0,Home
 174075,University of Minnesota-Crookston,Competitive,51.00%,28.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -4132,7 +4132,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 159939,University of New Orleans,Competitive,37.00%,33.00%,1040,1125,?,0,No,0,0,Campus
 101879,University of North Alabama,Competitive,46.00%,35.00%,1040,1140,?,0,No,0,0,Campus
 199111,University of North Carolina at Asheville,Very Competitive,61.00%,62.00%,1090,1180,?,0,No,0,0,Campus
-199120,University of North Carolina at Chapel Hill,Highly Competitive,91.00%,88.00%,1310,1405,?,0,No,0,0,Campus
+199120,University of North Carolina at Chapel Hill,Highly Competitive,91.00%,88.00%,1310,1405,? (CSS),0,No,0,0,Campus
 199139,University of North Carolina at Charlotte,Competitive,64.00%,65.00%,1120,1205,?,0,No,0,0,Campus
 199148,University of North Carolina at Greensboro,Competitive,59.00%,62.00%,1010,1095,?,0,No,0,0,Campus
 199281,University of North Carolina at Pembroke,Less Competitive,40.00%,42.00%,930,1005,?,0,No,0,0,Campus
@@ -4148,11 +4148,11 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 154095,University of Northern Iowa,Competitive,67.00%,56.00%,1040,1140,?,0,No,0,0,Campus
 204486,University of Northwestern Ohio,Noncompetitive,40.00%,38.00%,N/A,N/A,?,0,No,0,0,Campus
 174491,University of Northwestern-St Paul,Competitive,64.00%,43.00%,1080,1195,?,0,No,0,0,Campus
-152080,University of Notre Dame,Most Competitive+,96.00%,92.00%,1400,1475,+++,1,No,0,0,Campus
+152080,University of Notre Dame,Most Competitive+,96.00%,92.00%,1400,1475,+++ (CSS),1,No,0,0,Campus
 207342,University of Oklahoma-Health Sciences Center,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 207500,University of Oklahoma-Norman Campus,Very Competitive,70.00%,69.00%,1110,1210,?,0,No,0,0,Campus
 209551,University of Oregon,Competitive,74.00%,69.00%,1100,1205,?,0,No,0,0,Campus
-215062,University of Pennsylvania,Most Competitive+,96.00%,95.00%,1450,1505,+++,1,No,0,0,Campus
+215062,University of Pennsylvania,Most Competitive+,96.00%,95.00%,1450,1505,+++ (CSS),1,No,0,0,Campus
 484613,University of Phoenix-Arizona,Noncompetitive,10.00%,11.00%,N/A,N/A,--,0,No,0,0,Campus
 484631,University of Phoenix-California,Noncompetitive,19.00%,20.00%,N/A,N/A,--,0,No,0,0,Campus
 484640,University of Phoenix-Colorado,Not available,17.00%,19.00%,N/A,N/A,?,0,No,0,0,Campus
@@ -4194,9 +4194,9 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 236328,University of Puget Sound,Very Competitive,77.00%,72.00%,N/A,N/A,?,0,No,0,0,Campus
 121691,University of Redlands,Very Competitive,76.00%,77.00%,1070,1170,?,0,No,0,0,Campus
 217484,University of Rhode Island,Competitive,69.00%,56.00%,1050,1145,?,0,No,0,0,Campus
-233374,University of Richmond,Most Competitive,89.00%,84.00%,1290,1375,++/-,1,No,0,0,Campus
+233374,University of Richmond,Most Competitive,89.00%,84.00%,1290,1375,++/- (CSS),1,No,0,0,Campus
 205203,University of Rio Grande,Noncompetitive,23.00%,16.00%,N/A,N/A,?,0,No,0,0,N/A
-195030,University of Rochester,Most Competitive,87.00%,86.00%,1310,1405,?,0,No,0,0,Campus
+195030,University of Rochester,Most Competitive,87.00%,86.00%,1310,1405,? (CSS),0,No,0,0,Campus
 152336,University of Saint Francis-Fort Wayne,Competitive,54.00%,35.00%,950,1060,--,0,No,0,0,Campus
 130314,University of Saint Joseph,Competitive,62.00%,51.00%,1000,1115,?,0,No,0,0,Campus
 488785,University of Saint Katherine,Noncompetitive,7.00%,0.00%,900,1005,?,0,No,0,0,Campus
@@ -4220,7 +4220,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 137351,University of South Florida-Main Campus,Very Competitive,75.00%,74.00%,1170,1250,?,0,No,0,0,Campus
 451671,University of South Florida-Sarasota-Manatee,Very Competitive,47.00%,38.00%,1160,1225,?,0,No,0,0,Campus
 448840,University of South Florida-St Petersburg,Very Competitive,37.00%,31.00%,1140,1210,?,0,No,0,0,Campus
-123961,University of Southern California,Highly Competitive,92.00%,89.00%,1360,1445,++/-,1,No,0,0,Campus
+123961,University of Southern California,Highly Competitive,92.00%,89.00%,1360,1445,++/- (CSS),1,No,0,0,Campus
 151306,University of Southern Indiana,Competitive,50.00%,28.00%,980,1075,?,0,No,0,0,Campus
 161554,University of Southern Maine,Competitive,38.00%,27.00%,950,1055,?,0,No,0,0,Campus
 176372,University of Southern Mississippi,Competitive,49.00%,37.00%,1010,1125,?,0,No,0,0,Campus
@@ -4248,7 +4248,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 230764,University of Utah,Very Competitive,70.00%,57.00%,1140,1260,---,0,No,0,0,Campus
 216542,University of Valley Forge,Not available,47.00%,34.00%,N/A,N/A,?,0,No,0,0,Campus
 231174,University of Vermont,Highly Competitive,77.00%,74.00%,1180,1270,+++,1,No,0,0,N/A
-234076,University of Virginia-Main Campus,Most Competitive+,95.00%,92.00%,1340,1430,+++,1,No,0,0,Campus
+234076,University of Virginia-Main Campus,Most Competitive+,95.00%,92.00%,1340,1430,+++ (CSS),1,No,0,0,Campus
 377555,University of Washington-Bothell Campus,Competitive,65.00%,59.00%,1020,1140,?,0,No,0,0,Campus
 236948,University of Washington-Seattle Campus,Very Competitive,84.00%,78.00%,1220,1345,?,0,No,0,0,Campus
 377564,University of Washington-Tacoma Campus,Noncompetitive,57.00%,55.00%,980,1085,?,0,No,0,0,Campus
@@ -4300,10 +4300,10 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 486257,Valor Christian College (2 year),2 year (Noncompetitive),57.00%,42.00%,N/A,N/A,--,0,No,0,0,Campus
 152600,Valparaiso University,Competitive,71.00%,58.00%,1070,1180,?,0,No,0,0,Campus
 199838,Vance-Granville Community College (2 year),2 year (Noncompetitive),43.00%,36.00%,N/A,N/A,?,0,No,0,0,Campus
-221999,Vanderbilt University,Most Competitive+,93.00%,91.00%,1460,1510,+++,1,No,0,0,Campus
+221999,Vanderbilt University,Most Competitive+,93.00%,91.00%,1460,1510,+++ (CSS),1,No,0,0,Campus
 149639,VanderCook College of Music,Noncompetitive,59.00%,42.00%,970,1045,?,0,No,0,1,Campus
 123651,Vanguard University of Southern California,Very Competitive,61.00%,58.00%,970,1065,?,0,No,0,0,Campus
-197133,Vassar College,Most Competitive+,91.00%,83.00%,1370,1445,++/-,1,No,0,0,Campus
+197133,Vassar College,Most Competitive+,91.00%,83.00%,1370,1445,++/- (CSS),1,No,0,0,Campus
 188340,Vaughn College of Aeronautics and Technology,Competitive,42.00%,31.00%,N/A,N/A,?,0,No,0,0,Campus
 125028,Ventura College (2 year),2 year (Noncompetitive),41.00%,38.00%,N/A,N/A,?,0,No,0,0,Campus
 482228,Veritas Baptist College,Not available,67.00%,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -4318,7 +4318,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 125091,Victor Valley College (2 year),2 year (Noncompetitive),26.00%,24.00%,N/A,N/A,?,0,No,0,0,Campus
 229540,Victoria College (2 year),2 year (Noncompetitive),34.00%,29.00%,N/A,N/A,?,0,No,0,0,Campus
 197142,Villa Maria College,Not available,33.00%,16.00%,N/A,N/A,--,0,No,0,0,Campus
-216597,Villanova University,Most Competitive,90.00%,90.00%,1320,1395,++,1,No,0,0,Home
+216597,Villanova University,Most Competitive,90.00%,90.00%,1320,1395,++ (CSS),1,No,0,0,Home
 152637,Vincennes University,Noncompetitive,19.00%,10.00%,N/A,N/A,?,0,No,0,0,Campus
 449834,Virginia Beach Theological Seminary (Male only),Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 234030,Virginia Commonwealth University,Competitive,67.00%,66.00%,1070,1165,?,0,No,0,0,Campus
@@ -4343,7 +4343,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 403487,Wabash Valley College (2 year),2 year (Noncompetitive),67.00%,53.00%,N/A,N/A,+++,1,No,1,0,Campus
 226879,Wade College,Noncompetitive,50.00%,100.00%,N/A,N/A,?,0,No,0,0,N/A
 197197,Wagner College,Competitive,70.00%,62.00%,N/A,N/A,?,0,No,0,0,Campus
-199847,Wake Forest University,Most Competitive,88.00%,89.00%,N/A,N/A,++,1,No,0,0,Campus
+199847,Wake Forest University,Most Competitive,88.00%,89.00%,N/A,N/A,++ (CSS),1,No,0,0,Campus
 199856,Wake Technical Community College (2 year),2 year (Noncompetitive),36.00%,29.00%,N/A,N/A,?,0,No,0,0,Campus
 125231,Walden University,Noncompetitive,33.00%,N/A,N/A,N/A,?,0,No,0,0,Campus
 154518,Waldorf University,Less Competitive,29.00%,15.00%,920,1015,?,0,No,0,0,Campus
@@ -4363,7 +4363,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 156082,Washburn University,Competitive,37.00%,17.00%,N/A,N/A,?,0,No,0,0,Campus
 216667,Washington & Jefferson College,Very Competitive,73.00%,67.00%,N/A,N/A,?,0,No,0,0,Campus
 162210,Washington Adventist University,Less Competitive,38.00%,40.00%,820,925,?,0,No,0,0,Campus
-234207,Washington and Lee University,Most Competitive+,94.00%,95.00%,1360,1430,+++,1,No,0,0,Campus
+234207,Washington and Lee University,Most Competitive+,94.00%,95.00%,1360,1430,+++ (CSS),1,No,0,0,Campus
 164216,Washington College,Very Competitive,73.00%,59.00%,N/A,N/A,?,0,No,0,0,Campus
 161581,Washington County Community College (2 year),2 year (Noncompetitive),51.00%,0.00%,N/A,N/A,?,0,No,0,0,Campus
 216630,Washington Hospital School of Nursing (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -4389,7 +4389,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 179894,Webster University,Competitive,60.00%,49.00%,1080,1180,?,0,No,0,0,N/A
 190424,Weill Cornell Medical College,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 220206,Welch College,Noncompetitive,51.00%,38.00%,N/A,N/A,?,0,No,0,0,Campus
-168218,Wellesley College (Female only),Most Competitive+,91.00%,90.00%,1360,1445,++/-,1,No,0,0,Campus
+168218,Wellesley College (Female only),Most Competitive+,91.00%,90.00%,1360,1445,++/- (CSS),1,No,0,0,Campus
 197230,Wells College,Competitive,55.00%,44.00%,950,1095,?,0,No,0,0,Campus
 447999,WellSpring School of Allied Health-Kansas City (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 470047,WellSpring School of Allied Health-Lawrence (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -4401,7 +4401,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 131098,Wesley College,Less Competitive,26.00%,21.00%,820,940,?,0,No,0,0,Campus
 131973,Wesley Theological Seminary,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 141325,Wesleyan College,Competitive,52.00%,40.00%,940,1030,--,0,No,0,0,Campus
-130697,Wesleyan University,Most Competitive+,92.00%,88.00%,N/A,N/A,+++,1,No,0,0,Campus
+130697,Wesleyan University,Most Competitive+,92.00%,88.00%,N/A,N/A,+++ (CSS),1,No,0,0,Campus
 216764,West Chester University of Pennsylvania,Competitive,77.00%,59.00%,1030,1120,?,0,No,0,0,Campus
 441229,West Coast Ultrasound Institute,Noncompetitive,76.00%,71.00%,N/A,N/A,?,0,No,0,0,Campus
 489858,West Coast University-Center for Graduate Studies,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -4472,12 +4472,12 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 216825,Westmoreland County Community College (2 year),2 year (Noncompetitive),31.00%,22.00%,N/A,N/A,?,0,No,0,0,Campus
 229841,Wharton County Junior College (2 year),2 year (Noncompetitive),38.00%,34.00%,N/A,N/A,?,0,No,0,0,Campus
 237039,Whatcom Community College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-149781,Wheaton College,Most Competitive,89.00%,92.00%,1220,1330,?,0,No,0,1,Campus
+149781,Wheaton College,Most Competitive,89.00%,92.00%,1220,1330,? (CSS),0,No,0,1,Campus
 168281,Wheaton College,Very Competitive,77.00%,73.00%,N/A,N/A,?,0,No,0,0,Campus
 238078,Wheeling University,Less Competitive,57.00%,47.00%,910,1020,--,0,No,0,0,Campus
 434751,White Earth Tribal and Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 183105,White Mountains Community College (2 year),2 year (Noncompetitive),56.00%,61.00%,N/A,N/A,?,0,No,0,0,Campus
-237057,Whitman College,Most Competitive,88.00%,89.00%,1240,1345,?,0,No,0,0,Campus
+237057,Whitman College,Most Competitive,88.00%,89.00%,1240,1345,? (CSS),0,No,0,0,Campus
 125763,Whittier College,Competitive,69.00%,72.00%,1040,1130,?,0,No,0,0,Campus
 237066,Whitworth University,Very Competitive,76.00%,64.00%,1050,1170,?,0,No,0,0,Campus
 475200,Whitworth University-Adult Degree Programs,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -4490,11 +4490,11 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 199926,Wilkes Community College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 216931,Wilkes University,Competitive,61.00%,46.00%,1020,1120,?,0,No,0,0,Campus
 210401,Willamette University,Very Competitive,72.00%,67.00%,N/A,N/A,?,0,No,0,0,Campus
-231624,William & Mary,Most Competitive,90.00%,89.00%,1320,1415,?,0,No,0,0,Campus
+231624,William & Mary,Most Competitive,90.00%,89.00%,1320,1415,? (CSS),0,No,0,0,Campus
 176479,William Carey University,Less Competitive,49.00%,44.00%,1040,1175,--,0,No,0,0,Campus
 166717,William James College,Not available,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 122728,William Jessup University,Competitive,62.00%,54.00%,950,1080,?,0,No,0,0,Campus
-179955,William Jewell College,Competitive,62.00%,52.00%,1110,1195,?,0,No,0,0,Campus
+179955,William Jewell College,Competitive,62.00%,52.00%,1110,1195,? (CSS),0,No,0,0,Campus
 222105,William Moore College of Technology (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
 187444,William Paterson University of New Jersey,Competitive,55.00%,50.00%,N/A,N/A,?,0,No,0,0,Campus
 199272,William Peace University,Less Competitive,40.00%,34.00%,920,1030,?,0,No,0,0,Campus
@@ -4503,7 +4503,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 138479,William T McFatter Technical College (2 year),2 year (Noncompetitive),N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
 179964,William Woods University,Competitive,59.00%,84.00%,1040,1140,?,0,No,0,0,Campus
 107877,Williams Baptist University,Competitive,40.00%,25.00%,970,1055,?,0,No,0,0,Campus
-168342,Williams College,Most Competitive+,95.00%,89.00%,1410,1480,+++,1,No,0,0,Campus
+168342,Williams College,Most Competitive+,95.00%,89.00%,1410,1480,+++ (CSS),1,No,0,0,Campus
 218955,Williamsburg Technical College (2 year),2 year (Noncompetitive),17.00%,16.00%,N/A,N/A,?,0,No,0,0,N/A
 443340,Williamson Christian College,Noncompetitive,56.00%,50.00%,N/A,N/A,?,0,No,0,0,Campus
 216940,"Williamson College of the Trades (Male only, 2 year)",2 year (Competitive),N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
@@ -4532,7 +4532,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 125897,Woodbury University,Less Competitive,53.00%,43.00%,940,1080,?,0,No,0,0,Campus
 455512,Woodland Community College (2 year),2 year (Noncompetitive),28.00%,26.00%,N/A,N/A,?,0,No,0,0,Campus
 164313,Wor-Wic Community College (2 year),2 year (Noncompetitive),30.00%,20.00%,N/A,N/A,?,0,No,0,0,Campus
-168421,Worcester Polytechnic Institute,Most Competitive,89.00%,87.00%,N/A,N/A,?,0,No,0,0,Campus
+168421,Worcester Polytechnic Institute,Most Competitive,89.00%,87.00%,N/A,N/A,? (CSS),0,No,0,0,Campus
 168430,Worcester State University,Competitive,57.00%,47.00%,N/A,N/A,?,0,No,0,0,Campus
 197531,Word of Life Bible Institute (2 year),2 year (Noncompetitive),84.00%,83.00%,N/A,N/A,++/-,1,No,0,0,Campus
 401223,World Mission University,Noncompetitive,50.00%,N/A,N/A,N/A,?,0,No,0,0,Campus
@@ -4546,7 +4546,7 @@ UICHonors,University of Illinois at Chicago (Honors),Highly Competitive,88.00%,8
 160904,Xavier University of Louisiana (HBCU),Competitive,51.00%,67.00%,990,1075,?,0,Yes,0,0,Campus
 407355,"Xenon International Academy-Omaha (Female only, 2 year)",2 year (Noncompetitive),N/A,N/A,N/A,N/A,--,0,No,0,0,N/A
 237109,Yakima Valley College,Noncompetitive,N/A,N/A,N/A,N/A,?,0,No,0,0,Campus
-130794,Yale University,Most Competitive+,97.00%,97.00%,1460,1515,+++,1,No,0,0,N/A
+130794,Yale University,Most Competitive+,97.00%,97.00%,1460,1515,+++ (CSS),1,No,0,0,N/A
 106148,Yavapai College (2 year),2 year (Noncompetitive),38.00%,39.00%,N/A,N/A,?,0,No,0,0,Campus
 490319,Yeshiva Bais Aharon (Male only),Not available,7.00%,N/A,N/A,N/A,++,1,No,0,0,Campus
 491622,Yeshiva Chemdas Hatorah (Male only),Not available,N/A,N/A,N/A,N/A,--,0,No,0,0,Campus
