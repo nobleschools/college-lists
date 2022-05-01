@@ -8,7 +8,7 @@ In addition to the master Excel sheet with multiple tabs, it can
 also produce a PDF report with one page per student, analyzing
 their [current college lists](./ssv_example.pdf).
 
-To preview the main output files, check out the 6 "reference" files (3 pdf,
+To preview the main output files, check out the 6 "reference" files (3 pdf &
 3 Excel) in the tests folder. The "Network" files show the reports for a
 system of schools, the "Beta HS" ones for a single school, and the "Jeffie
 Troxler" files for a single counselor at that school.
